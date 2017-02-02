@@ -1,0 +1,45 @@
+<!-- DF_2 Edit Ox Form -->
+<form class="form-horizontal alert alert-warning" id="ox_edit_form" name="ox_edit" hidden>
+	<h3 class="text-center">Ox Card</h3>
+	<div class="form-group">
+		<label for="Num">#:<span class="text-danger" ng-show="ox_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
+		<input class="form-control" maxlength="6" name="num" placeholder="Enter Number" style="width:100px" type="text" value="{{cur_ox.num}}" ng-disabled="cur_ox.id==1" ng-model="cur_ox.num" required>
+	</div>
+	<div class="form-group">
+		<label for="B_Date">Birth Date:<span class="text-danger" ng-show="ox_edit.b_date.$invalid">&nbsp;REQUIRED!</span></label>
+		<input class="form-control" maxlength="10" name="b_date" placeholder="Enter Birth Date" style="width:200px" type="text" ng-disabled="cur_ox.id==1" ng-model="cur_ox.b_date" required>
+	</div>
+	<div class="form-group">
+		<label for="B_Num">Birth #:</label>
+		<input class="form-control" name="b_num" placeholder="Enter Birth Number" style="width:200px" type="text" value="{{cur_ox.b_num}}" ng-disabled="cur_ox.id==1" ng-model="cur_ox.b_num">
+	</div>
+	<div class="form-group">
+		<label for="Nick">Nick:</label>
+		<input class="form-control" name="nick" placeholder="Enter Nick" style="width:200px" type="text" value="{{cur_ox.nick}}" ng-disabled="cur_ox.id==1" ng-model="cur_ox.nick">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox)">Update</button>
+		<button class="btn btn-warning" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox); Ox_form_close('cancel',cur_ox.id)">List</button>
+		<button class="btn btn-danger" ng-click="Ox_form_close('cancel',cur_ox.id)">Cancel</button>
+	</div>
+
+<!--  <p class="text-danger" ng-show="ox_edit.num.$error.required">NUMBER IS REQURED!</p>
+  <tt>ox_edit.num.$viewValue={{ox_edit.num.$viewValue}}</tt><br/>
+  <tt>ox_edit.num.$modelValue={{ox_edit.num.$modelValue}}</tt><br/>
+  <tt>ox_edit.num.$valid={{ox_edit.num.$valid}}</tt><br/>
+  <tt>ox_edit.num.$error={{ox_edit.num.$error}}</tt><br/>
+  <tt>ox_edit.num.$error.required={{!!ox_edit.num.$error.required}}</tt><br/>
+  <br/>
+  <p class="text-danger" ng-show="ox_edit.b_date.$error.required">BIRTH DATE IS REQUIRED!</p>
+  <p class="text-danger" ng-show="ox_edit.b_date.$error.date">BIRTH DATE IS INVALID!</p>
+  <tt>ox_edit.b_date.$viewValue={{ox_edit.b_date.$viewValue}}</tt><br/>
+  <tt>ox_edit.b_date.$modelValue={{ox_edit.b_date.$modelValue}}</tt><br/>
+  <tt>ox_edit.b_date.$valid={{ox_edit.b_date.$valid}}</tt><br/>
+  <tt>ox_edit.b_date.$error={{ox_edit.b_date.$error}}</tt><br/>
+  <tt>ox_edit.b_date.$error.required={{!!ox_edit.b_date.$error.required}}</tt><br/>
+  <br/>
+  <tt>ox_edit.$invalid={{ox_edit.$invalid}}</tt><br/>
+  <tt>ox_edit.$valid={{ox_edit.$valid}}</tt><br/>
+  <tt>ox_edit.$error.required={{!!ox_edit.$error.required}}</tt><br/>-->
+
+</form>
