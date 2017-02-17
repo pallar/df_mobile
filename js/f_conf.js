@@ -5,7 +5,7 @@ f_conf.controller('DbController',['$scope','$http',function($scope,$http) {
 	db_Conf_get();
 
 	function db_Conf_get() {
-		$http.post('db_cmds/conf_g.php').success(function(__data) {
+		$http.post('../db_cmds/conf_g.php').success(function(__data) {
 			$scope.details = __data;
 		});
 	}
@@ -20,7 +20,7 @@ f_conf.controller('DbController',['$scope','$http',function($scope,$http) {
 //		alert(__data[1].pits); alert(__data[1].devs_by_pit); alert(__data[1].data_wires_by_pit);
 //		alert(__data[1].ports_type); alert(__data[1].port_first);
 //		alert(__data[1].waitstate_between_devs);
-		$http.post('db_cmds/conf_u.php',{
+		$http.post('../db_cmds/conf_u.php',{
 		 "state":__data[0].state,
 		 "region":__data[0].region,
 		 "subregion":__data[0].subregion,

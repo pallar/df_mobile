@@ -8,13 +8,13 @@ f_oxs.controller('DbController',['$scope','$http',function($scope,$http) {
 	$scope.show_form=true;
 
 	function db_Oxs_get() {
-		$http.post('db_cmds/oxs_g.php').success(function(__data) {
+		$http.post('../db_cmds/oxs_g.php').success(function(__data) {
 			$scope.details=__data;
 		});
 	}
 
 	$scope.db_Ox_delete=function(__info) {
-		$http.post('db_cmds/ox_d.php',{
+		$http.post('../db_cmds/ox_d.php',{
 		 'id':__info.id
 		}).success(function(__data) {
 			db_Oxs_get();
@@ -22,7 +22,7 @@ f_oxs.controller('DbController',['$scope','$http',function($scope,$http) {
 	}
 
 	$scope.db_Ox_insert=function(__info) {
-		$http.post('db_cmds/ox_i.php',{
+		$http.post('../db_cmds/ox_i.php',{
 		 'num':__info.num,
 		 'b_date':__info.b_date,
 		 'b_num':__info.b_num,
@@ -38,7 +38,7 @@ f_oxs.controller('DbController',['$scope','$http',function($scope,$http) {
 	$scope.cur_ox={};
 
 	$scope.db_Ox_update=function(__info) {
-		$http.post('db_cmds/ox_u.php',{
+		$http.post('../db_cmds/ox_u.php',{
 		 'id':__info.id,
 		 'num':__info.num,
 		 'b_date':__info.b_date,

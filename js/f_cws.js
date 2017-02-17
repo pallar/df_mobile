@@ -17,37 +17,37 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	$scope.show_form=true;
 
 	function db_Breeds_get() {
-		$http.post('db_cmds/abrs_g.php').success(function(__data) {
+		$http.post('../db_cmds/abrs_g.php').success(function(__data) {
 			$scope.breeds_details=__data;
 		});
 	}
 
 	function db_Lots_get() {
-		$http.post('db_cmds/alots_g.php').success(function(__data) {
+		$http.post('../db_cmds/alots_g.php').success(function(__data) {
 			$scope.lots_details=__data;
 		});
 	}
 
 	function db_Groups_get() {
-		$http.post('db_cmds/agrs_g.php').success(function(__data) {
+		$http.post('../db_cmds/agrs_g.php').success(function(__data) {
 			$scope.grs_details=__data;
 		});
 	}
 
 	function db_Subgrs_get() {
-		$http.post('db_cmds/asgrs_g.php').success(function(__data) {
+		$http.post('../db_cmds/asgrs_g.php').success(function(__data) {
 			$scope.subgrs_details=__data;
 		});
 	}
 
 	function db_Cws_get() {
-		$http.post('db_cmds/cws_g.php').success(function(__data) {
+		$http.post('../db_cmds/cws_g.php').success(function(__data) {
 			$scope.details=__data;
 		});
 	}
 
 	function db_Mom_get(__id) {
-		$http.post('db_cmds/cw_g.php',{
+		$http.post('../db_cmds/cw_g.php',{
 		 'id':__id
 		}).success(function(__data) {
 			$scope.cur_cw_mom_data=__data[0].nick+" (#"+__data[0].cow_num+")";
@@ -55,7 +55,7 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	}
 
 	function db_Moms_get(__id) {
-		$http.post('db_cmds/cws_g.php',{
+		$http.post('../db_cmds/cws_g.php',{
 		 '__id':__id
 		}).success(function(__data) {
 			$scope.moms_details=__data;
@@ -63,7 +63,7 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	}
 
 	function db_Dad_get(__id) {
-		$http.post('db_cmds/ox_g.php',{
+		$http.post('../db_cmds/ox_g.php',{
 		 'id':__id
 		}).success(function(__data) {
 			$scope.cur_cw_dad_data=__data[0].nick+" (#"+__data[0].num+")";
@@ -71,7 +71,7 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	}
 
 	$scope.db_Cw_delete=function(__info) {
-		$http.post('db_cmds/cw_d.php',{
+		$http.post('../db_cmds/cw_d.php',{
 		 'id':__info.id
 		}).success(function(__data) {
 			db_Cws_get();
@@ -79,7 +79,7 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	}
 
 	$scope.db_Cw_insert=function(__info) {
-		$http.post('db_cmds/cw_i.php',{
+		$http.post('../db_cmds/cw_i.php',{
 		 'cow_num':__info.cow_num,
 		 'b_date':__info.b_date,
 		 'b_num':__info.b_num,
@@ -95,7 +95,7 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	$scope.cur_cw={};
 
 	$scope.db_Cw_update=function(__info) {
-		$http.post('db_cmds/cw_u.php',{
+		$http.post('../db_cmds/cw_u.php',{
 		 'id':__info.id,
 		 'cow_num':__info.cow_num,
 		 'b_date':__info.b_date,
@@ -128,7 +128,7 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 		db_Groups_get();
 		db_Subgrs_get();
 		$scope.cur_cw=__info;
-		$http.post('db_cmds/cw_g.php',{
+		$http.post('../db_cmds/cw_g.php',{
 		 'id':__info.id
 		}).success(function(__data) {
 			$scope.cur_cw_national_descr=__data[0].national_descr;
