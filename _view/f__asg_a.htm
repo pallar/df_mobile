@@ -1,0 +1,24 @@
+<!-- DF_ajs: Add Subgroup Form -->
+<form class="form-horizontal alert alert-warning" id="sg_add_form" name="sg_add" hidden>
+	<h3 class="text-center">New Subgroup Card</h3>
+	<div class="form-group">
+		<label for="Num">#:<span class="text-danger" ng-show="sg_add.num.$invalid">&nbsp;REQUIRED!</span></label>
+		<input class="form-control" maxlength="6" name="num" placeholder="Enter Number" style="width:100px" type="text" ng-model="new_sg.num" required>
+	</div>
+	<div class="form-group">
+		<label for="Comments">Comments:</label>
+		<input class="form-control" maxlength="10" name="comments" placeholder="Enter Comments" style="width:200px" type="text" ng-model="new_sg.comments">
+	</div>
+	<div class="form-group">
+		<label for="National_Descr">National Description:</label>
+		<input class="form-control" name="national_descr" placeholder="Enter National Description" style="width:200px" type="text" ng-model="new_sg.national_descr">
+	</div>
+	<div class="form-group">
+		<label for="Nick">Nick:</label>
+		<input class="form-control" name="nick" placeholder="Enter Nick" style="width:200px" type="text" ng-model="new_sg.nick">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="sg_add.$invalid" ng-click="db_Sg_insert(new_sg); Sg_form_close('cancel')">Add</button>
+		<button class="btn btn-danger" ng-click="Sg_form_close('cancel')">Cancel</button>
+	</div>
+</form>

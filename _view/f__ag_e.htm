@@ -1,0 +1,25 @@
+<!-- DF_2 Edit Group Form -->
+<form class="form-horizontal alert alert-warning" id="g_edit_form" name="g_edit" hidden>
+	<h3 class="text-center">Group Card</h3>
+	<div class="form-group">
+		<label for="Num">#:<span class="text-danger" ng-show="g_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
+		<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="width:100px" type="text" value="{{cur_g.num}}" ng-disabled="cur_g.id==1" ng-model="cur_g.num" required>
+	</div>
+	<div class="form-group">
+		<label for="Comments">Comments:</label>
+		<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="width:200px" type="text" ng-disabled="cur_g.id==1" ng-model="cur_g.comments">
+	</div>
+	<div class="form-group">
+		<label for="National_Descr">National Description:</label>
+		<input class="form-control" maxlength="50" name="national_descr" placeholder="Enter National Description" style="width:200px" type="text" value="{{cur_g.national_descr}}" ng-disabled="cur_g.id==1" ng-model="cur_g.national_descr">
+	</div>
+	<div class="form-group">
+		<label for="Nick">Nick:</label>
+		<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="width:200px" type="text" value="{{cur_g.nick}}" ng-disabled="cur_g.id==1" ng-model="cur_g.nick">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="g_edit.$invalid || cur_g.id==1" ng-click="db_G_update(cur_g)">Update</button>
+		<button class="btn btn-warning" ng-disabled="g_edit.$invalid || cur_g.id==1" ng-click="db_G_update(cur_g); G_form_close('cancel',cur_g.id)">List</button>
+		<button class="btn btn-danger" ng-click="G_form_close('cancel',cur_g.id)">Cancel</button>
+	</div>
+</form>

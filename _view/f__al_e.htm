@@ -1,0 +1,25 @@
+<!-- DF_2 Edit Lot Form -->
+<form class="form-horizontal alert alert-warning" id="l_edit_form" name="l_edit" hidden>
+	<h3 class="text-center">Lot Card</h3>
+	<div class="form-group">
+		<label for="Num">#:<span class="text-danger" ng-show="l_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
+		<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="width:100px" type="text" value="{{cur_l.num}}" ng-disabled="cur_l.id==1" ng-model="cur_l.num" required>
+	</div>
+	<div class="form-group">
+		<label for="Comments">Comments:</label>
+		<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="width:200px" type="text" ng-disabled="cur_l.id==1" ng-model="cur_l.comments">
+	</div>
+	<div class="form-group">
+		<label for="National_Descr">National Description:</label>
+		<input class="form-control" maxlength="50" name="national_descr" placeholder="Enter National Description" style="width:200px" type="text" value="{{cur_l.national_descr}}" ng-disabled="cur_l.id==1" ng-model="cur_l.national_descr">
+	</div>
+	<div class="form-group">
+		<label for="Nick">Nick:</label>
+		<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="width:200px" type="text" value="{{cur_l.nick}}" ng-disabled="cur_l.id==1" ng-model="cur_l.nick">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="l_edit.$invalid || cur_l.id==1" ng-click="db_L_update(cur_l)">Update</button>
+		<button class="btn btn-warning" ng-disabled="l_edit.$invalid || cur_l.id==1" ng-click="db_L_update(cur_l); L_form_close('cancel',cur_l.id)">List</button>
+		<button class="btn btn-danger" ng-click="L_form_close('cancel',cur_l.id)">Cancel</button>
+	</div>
+</form>
