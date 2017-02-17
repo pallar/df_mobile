@@ -1,0 +1,71 @@
+<!-- DF_ajs: Configurator Form -->
+<form class="form-horizontal alert alert-warning" name="conf" id="conf_form" ng-submit="db_Conf_update(details)">
+	<div class="form-group">
+		<label for="State">State:</label>
+		<input class="form-control" name="state" type="text" value="{{details[0].state}}" ng-model="details[0].state">
+	</div>
+	<div class="form-group">
+		<label for="Region">Region:</label>
+		<input class="form-control" name="region" type="text" value="{{details[0].region}}" ng-model="details[0].region">
+	</div>
+	<div class="form-group">
+		<label for="Subregion">Subregion:</label>
+		<input class="form-control" name="subregion" type="text" value="{{details[0].subregion}}" ng-model="details[0].subregion">
+	</div>
+	<div class="form-group">
+		<label for="Org">Org:</label>
+		<input class="form-control" name="enterprise" type="text" value="{{details[0].enterprise}}" ng-model="details[0].enterprise">
+	</div>
+	<div class="form-group">
+		<label for="Tel">Phone:</label>
+		<input class="form-control" name="phone" type="text" value="{{details[0].phone}}" ng-model="details[0].phone">
+	</div>
+	<div class="form-group">
+		<label for="Chief">Chief:</label>
+		<input class="form-control" name="chief" type="text" value="{{details[0].chief}}" ng-model="details[0].chief">
+	</div>
+	<div class="form-group">
+		<label for="ChiefAnimalTech">Chief Animal Tech:</label>
+		<input class="form-control" name="chief_animal_technician" type="text" value="{{details[0].chief_animal_technician}}" ng-model="details[0].chief_animal_technician">
+	</div>
+	<div class="form-group">
+		<label for="Farm">Farm:</label>
+		<input class="form-control" name="farm" type="text" value="{{details[0].farm}}" ng-model="details[0].farm">
+	</div>
+	<div class="form-group">
+		<label for="Pits">Pits:</label>
+		<input class="form-control" name="pits" type="text" value="{{details[1].pits}}" ng-model="details[1].pits" autofocus required/>
+	</div>
+	<div class="form-group">
+		<label for="DevByPit">Devices By Pit:</label>
+		<input class="form-control" name="devs_by_pit" type="text" value="{{details[1].devs_by_pit}}" ng-model="details[1].devs_by_pit" autofocus required/>
+	</div>
+	<div class="form-group">
+		<label for="DataWiresByPit">Data Wires By Pit:</label>
+		<input class="form-control" name="data_wires_by_pit" type="text" value="{{details[1].data_wires_by_pit}}" ng-model="details[1].data_wires_by_pit" autofocus required/>
+	</div>
+	<div class="form-group">
+		<label for="PortsType">Ports's Type:</label>
+		<select class="form-control" name="ports_type" type="select" ng-model="details[1].ports_type">
+			<option class="form-control" value="COM">COM</option>
+			<option class="form-control" value="USBCOM">USBCOM</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="Prt1st">First Port:</label>
+		<select class="form-control" name="port_first" type="select" ng-model="details[1].port_first">
+			<option class="form-control" value="1">1</option>
+			<option class="form-control" value="2">2</option>
+			<option class="form-control" value="3">3</option>
+			<option class="form-control" value="4">4</option>
+			<option class="form-control" value="5">5</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="TimeoutBetwDevs">Timeout Between Devices:</label>
+		<input class="form-control" name="waitstate_between_devs" type="text" value="{{details[1].waitstate_between_devs}}" ng-model="details[1].waitstate_between_devs" autofocus required/>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-warning" ng-disabled="conf_form.$invalid" ng-click="msg_Update()">Update</button>
+	</div>
+</form>
