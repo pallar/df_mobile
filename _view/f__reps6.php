@@ -1,6 +1,6 @@
 <?php
 ?>
-<!-- DF_ajs: Reports Tab 1 (Milk) Form -->
+<!-- DF_ajs: Reports Tab 6 (Export) Form -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,12 +21,12 @@ include "f_menu.php";
 <nav1>
 	<div id='cssmenu'>
 		<ul>
-			<li class='active'><a href='../forms/f__reps.php?tab=0'><span>Молоко</span></a></li>
+			<li><a href='../forms/f__reps.php?tab=0'><span>Молоко</span></a></li>
 			<li><a href='../forms/f__reps.php?tab=1'><span>Управління стадом</span></a></li>
 			<li><a href='../forms/f__reps.php?tab=2'><span>Загальні</span></a></li>
 			<li><a href='../forms/f__reps.php?tab=3'><span>Здоров'я</span></a></li>
 			<li><a href='../forms/f__reps.php?tab=4'><span>Графіки</span></a></li>
-			<li class='last'><a href='../forms/f__reps.php?tab=5'><span>Експорт</span></a></li>
+			<li class='active last'><a href='../forms/f__reps.php?tab=5'><span>Експорт</span></a></li>
 		</ul>
 	</div>
 </nav1>
@@ -64,45 +64,10 @@ window.onresize=function() {
 </script>
 <div class='section group'>
 	<div class='col span_1_of_2'>
-		<div class='section group'>
-			<div class='col span_1_of_3'>
-				<div id='list'>
-					<ul>
-						<li><a href='../reports/f_mcws.php?title=%D0%9F%D0%BE+%D1%82%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%D1%85&select_table=f_cows&select_field=c.id' target='w1'>По тваринах</a></li>
-						<li><a href='../reports/f_mcws1.php?title=%D0%9F%D0%BE+%D1%82%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%D1%85%2C+%D0%B2%D0%B0%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9' target='w1'>По тваринах, валовий</a></li>
-						<li><a href='../reports/f_mcws2.php?title=%D0%9F%D0%BE+%D1%82%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%D1%85%2C+%D0%B2%D0%B0%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9 [провідність]' target='w1'> По тваринах, валовий [провідність]</a></li>
-						<li><a href='../reports/f_mcws3.php?filt_percent=0&title=%D0%9F%D0%BE+%D1%82%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%D1%85%2C+%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0+%28%25%29' target='w1'>По тваринах, динаміка (%)</a></li>
-						<li><a href='../reports/f_mcws3.php?filt_percent=1&min_percent=-10&title=%D0%9F%D0%BE+%D1%82%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%D1%85%2C+%D0%BD%D0%B5%D0%B3%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0+%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0+%28%25%29' target='w1'>По тваринах, негативна динаміка (%)</a></li>
-						<li><a href='../reports/f_mcw_gs.php?title=%D0%9F%D0%BE+%D0%BF%D0%BE%D1%80%D0%BE%D0%B4%D0%B0%D1%85&select_table=f__brs&select_field=c.breed_id' target='w1'> По породах</a></li>
-						<li><a href='../reports/f_mcw_gs.php?title=%D0%9F%D0%BE+%D1%84%D0%B5%D1%80%D0%BC%D0%B0%D1%85&select_table=f__lots&select_field=d.lot_id' target='w1'> По фермах</a></li>
-						<li><a href='../reports/f_mcw_gs.php?title=%D0%9F%D0%BE+%D1%81%D0%B5%D0%BA%D1%86%D1%96%D1%8F%D1%85&select_table=f__grs&select_field=d.gr_id' target='w1'> По секціях</a></li>
-						<li><a href='../reports/f_mcw_gs.php?title=%D0%9F%D0%BE+%D0%BFi%D0%B4%D0%B3%D1%80%D1%83%D0%BF%D0%B0%D1%85&select_table=f__sgrs&select_field=d.subgr_id' target='w1'> По пiдгрупах</a></li>
-						<li><a href='../reports/f_m.php?title=%D0%94%D0%B5%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9' target='w1'>Детальний</a></li>
-					</ul>
-					<ul>
-						<li class='caption'>КОНТРОЛЬНI ДАНI</li>
-						<li><a href='../reports/f_mcws.php?title=%D0%9F%D0%BE+%D1%82%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%D1%85%2C+%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BDi&select_table=f_cows&select_field=c.id&filt_dev=00-00' target='w1'>По тваринах, контрольнi</a></li>
-						<li><a href='../reports/f_mcw_gs.php?title=%D0%9F%D0%BE+%D0%BF%D0%BE%D1%80%D0%BE%D0%B4%D0%B0%D1%85%2C+%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BDi&select_table=f__brs&select_field=c.breed_id&filt_dev=00-00' target='w1'>По породах, контрольнi</a></li>
-						<li><a href='../reports/f_mcw_gs.php?title=%D0%9F%D0%BE+%D1%84%D0%B5%D1%80%D0%BC%D0%B0%D1%85%2C+%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BDi&select_table=f__lots&select_field=d.lot_id&filt_dev=00-00' target='w1'>По фермах, контрольнi</a></li>
-						<li><a href='../reports/f_mcw_gs.php?title=%D0%9F%D0%BE+%D1%81%D0%B5%D0%BA%D1%86%D1%96%D1%8F%D1%85%2C+%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BDi&select_table=f__grs&select_field=d.gr_id&filt_dev=00-00' target='w1'>По секціях, контрольнi</a></li>
-						<li><a href='../reports/f_mcw_gs.php?title=%D0%9F%D0%BE+%D0%BFi%D0%B4%D0%B3%D1%80%D1%83%D0%BF%D0%B0%D1%85%2C+%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BDi&select_table=f__sgrs&select_field=d.subgr_id&filt_dev=00-00' target='w1'>По пiдгрупах, контрольнi</a></li>
-						<li><a href='../reports/f_m.php?title=%D0%94%D0%B5%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9%2C+%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BDi&filt_dev=00-00' target='w1'>Детальний, контрольнi</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class='col span_2_of_3'>
-				<div id='list'>
-					<ul>
-						<li><a href='f_mlact.php?title=%D0%9B%D0%B0%D0%BA%D1%82%D0%B0%D1%86i%D1%8F+1&lact_restrict=1&filt_cowid=-1' target='w1'>Лактацiя 1</a></li>
-						<li><a href='f_mlact.php?title=%D0%9B%D0%B0%D0%BA%D1%82%D0%B0%D1%86i%D1%8F+2&lact_restrict=2&filt_cowid=-1' target='w1'>Лактацiя 2</a></li>
-						<li><a href='f_mlact.php?title=%D0%9B%D0%B0%D0%BA%D1%82%D0%B0%D1%86i%D1%8F+3&lact_restrict=3&filt_cowid=-1' target='w1'>Лактацiя 3</a></li>
-						<li><a href='f_mlact.php?title=%D0%9B%D0%B0%D0%BA%D1%82%D0%B0%D1%86i%D1%8F+4&lact_restrict=4&filt_cowid=-1' target='w1'>Лактацiя 4</a></li>
-						<li><a href='f_mlact.php?title=%D0%9B%D0%B0%D0%BA%D1%82%D0%B0%D1%86i%D1%8F+5&lact_restrict=5&filt_cowid=-1' target='w1'>Лактацiя 5</a></li>
-						<li><a href='f_mlact.php?title=%D0%9B%D0%B0%D0%BA%D1%82%D0%B0%D1%86i%D1%8F+6&lact_restrict=6&filt_cowid=-1' target='w1'>Лактацiя 6</a></li>
-						<li><a href='f_mlact.php?title=%D0%9B%D0%B0%D0%BA%D1%82%D0%B0%D1%86i%D1%8F+7&lact_restrict=7&filt_cowid=-1' target='w1'>Лактацiя 7</a></li>
-					</ul>
-				</div>
-			</div>
+		<div id='list'>
+		<ul>
+			<li><a href='../reports/f_e003.php?&select_table=f_cows&select_field=c.id&title=UNIFORM+Agri' target='w1'>UNIFORM Agri</a></li>
+		</ul>
 		</div>
 	</div>
 	<div class='col span_2_of_2'>
