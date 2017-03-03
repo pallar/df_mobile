@@ -1,0 +1,32 @@
+<?php
+/* DF_2: locales/en/f_00._en
+f__mnem1 english locale
+c: 01.07.2011
+m: 22.04.2015 */
+
+$_00_Normalize="Normalize";
+$_00_R="R, Ohm";
+$_00_R_mult="R, coeff.";
+$_00_R_res="R, result";
+
+$conduct_msg="
+<table width='100%'>
+<tr>
+	<td width='185px'></td>
+	<td>
+<b>CONDUCTIVITY SENSORS' NORMALIZATION</b><br>
+<font size='2pt'>
+To normalize milk conductivity sensors, follow these steps:<br>
+- set marks near devices (DD-06) with the necessary numbers;<br>
+- pour the solution into caps of such devices;<br>
+- wait <b>about 20 minutes</b>;<br>
+- perform one <b>nonzero</b> \"milking\" at each of such devices;<br>
+- go back to the computer and click \"$_00_Normalize\";<br>
+- close browser.
+</font>
+	</td>
+</tr>
+</table>";
+
+$php_mm["Chat"]="Chat";
+?>

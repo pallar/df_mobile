@@ -1,0 +1,32 @@
+<?php
+/* DF: locales/tr/f_00._tr
+f__mnem1 azerbaijani locale
+c: 01.07.2011
+m: 26.04.2015 */
+
+$_00_Normalize="Normal";
+$_00_R="R, Ohm";
+$_00_R_mult="R, koeff.";
+$_00_R_res="R, sonuç";
+
+$conduct_msg="
+<table width='100%'>
+<tr>
+	<td width='185px'></td>
+	<td>
+<b>Normalleştirme iletkenlik sensörü</b><br>
+<font size='2pt'>
+Süt iletkenlik sensörleri normalleşmesi için, aşağıdaki adımları izleyin:<br>
+- Onay işareti odaların yanında bir BD-06 gerekli;<br>
+- Kapaklar gerekli BD-06 içine çözüm dökün;<br>
+- bekle <b>en az 20 dakika</b>;<br>
+- geçirin <b>sıfır olmayan</b> \"sağım\" gerekli üzerinde her BD-06;<br>
+- geri dön ve bilgisayara tıkla \"$_00_Normalize\";<br>
+- Tarayıcı penceresini kapatın.
+</font>
+	</td>
+</tr>
+</table>";
+
+$php_mm["Chat"]="Müzakere noktası";
+?>

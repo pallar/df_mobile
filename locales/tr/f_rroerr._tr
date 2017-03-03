@@ -1,0 +1,11 @@
+<?php
+/* DF: locales/tr/f_rroerr._tr
+reports (operations text set: error messages) azerbaijani locale
+c: 16.05.2011
+m: 26.04.2015 */
+
+$ged["ALGO_NOT_READY!"]="Gelişiminde...";
+$ged["Warning"]="Uyarı";
+$ged["Bad_insem"]="Dikkat: çok uzun doğum sonrası taahhütlü işlemler tohumlama vardır.";
+$ged["Bad_insem~"]="HATA!";
+?>

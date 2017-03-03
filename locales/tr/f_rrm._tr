@@ -1,0 +1,34 @@
+<?php
+/* DF: locales/tr/f_rrm._tr
+reports (milk text set) azerbaijani locale
+c: 12.05.2011
+m: 29.09.2015 */
+
+$ged["TAG,0"]="RFID Tanıtma.";
+$ged["TAG,0~"]="? RFID";
+$ged["Dev._cmd_t~"]="Rapor";
+$ged["Interv.~"]="Devam.";
+$ged["Start_manual"]="Manuel start";
+$ged["Start_manual~"]="MS";
+$ged["Start_retr."]="Yeniden başlatma";
+$ged["Start_retr.~"]="YB";
+$ged["Break_done"]="Interrupted sağım";
+$ged["Break_done~"]="IS";
+$ged["Exhaust"]="Düşük nada";
+$ged["Exhaust~"]="DN";
+$ged["M."]="Mastitis";
+$ged["M.~"]="M";
+$ged["M.d.~"]="Bir hayvan mastit meme imha derecesi";
+$ged["Conduct."]="İletkenlik, mSm";
+$ged["Conduct.~"]="İlet., mSm";
+$ged["T."]="Travma";
+$ged["T.~"]="T";
+$ged["O."]="Av";
+$ged["O.~"]="A";
+$ged["Dev."]="Sağım ün. №";
+$ged["Dev.~"]="Sü";
+$ged["dairy_cycles"]="sağım";
+$ged["Dairy_cycle"]="Operasyon sağım";
+$ged["Period_restricted_007"]="Bu bir satır fazla yedi gün boyunca bu raporu yürütmek için yasaktır.";
+$ged["Period_restricted_014"]="Bu bir satırda bu raporu daha on dört gün çalıştırmak yasaktır.";
+?>

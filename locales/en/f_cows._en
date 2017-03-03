@@ -1,0 +1,46 @@
+<?php
+/* DF_2: locales/en/f_cows._en
+cows english locale
+c: 25.05.2011
+m: 26.04.2015 */
+
+$ged['days']="days";
+$ged['Ages_groups']="Age groups";
+$ged['Telyci']="Heifers";
+$ged['Neteli']="Heifers";
+$ged['Cows']="Cows";
+$ged['Insems']="Insemination";
+$ged['Rectals']="Rectals";
+$ged['Aborts']="Abort.";
+$ged['Zapusks']="Dry";
+
+$ged['filts0_3!']="<font color='red'>ATTENTION! REMOVED COWS ARE SHOWN IN RED!</font>";
+
+$ged['filts0_1']="show cows to separate";
+$ged['filts0_2']="show cows, which could be milked";
+$ged['filts0_3']="show dead cows";
+$ged['filts0_4']="show cows not to separate";
+$ged['filts0_5']="show cows, which could not be milked";
+$ged['filts0_6']="show active cows";
+
+$ged['filts0_1~']="j.";
+$ged['filts0_2~']="e.";
+$ged['filts0_3~']="r.";
+$ged['filts0_4~']="-";
+$ged['filts0_5~']="-";
+$ged['filts0_6~']="-";
+
+$ged['filts9_1']="show cows with mastitis";
+$ged['filts9_2']="show injured cows";
+$ged['filts9_3']="show cows at hit";
+$ged['filts9_4']="show cows without mastitis";
+$ged['filts9_5']="show cows without injuries";
+$ged['filts9_6']="show cows not at hit";
+
+$ged['filts9_1~']="m.";
+$ged['filts9_2~']="t.";
+$ged['filts9_3~']="o.";
+$ged['filts9_4~']="-";
+$ged['filts9_5~']="-";
+$ged['filts9_6~']="-";
+?>

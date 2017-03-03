@@ -1,0 +1,14 @@
+.gradient_0f0 {
+	background-color:rgb(207,219,239);
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(207,239,219,1)), color-stop(55%, rgba(107,139,119,1))); /* chrome, safari4+ */
+}
+
+.gradient_f00 {
+	background-color:rgb(178,0,0);
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(201,201,201,1)), color-stop(55%, rgba(178,0,0,1))); /* chrome, safari4+ */
+}
+
+.btn_h0 {-webkit-appearance:none; height:25px;}
+.sel_h0 {-webkit-appearance:none; padding:4px 0;}
+.tbl_h0 {height:25px; width:100%;}
+.txt_h0 {-webkit-appearance:none; padding:5px 5px;}

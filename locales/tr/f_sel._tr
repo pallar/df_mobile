@@ -1,0 +1,127 @@
+<?php
+/* DF: locales/tr/f_sel._tr
+reports azerbaijani locale
+c: 25.12.2005
+m: 26.04.2015 */
+
+include( "../locales/$lang/f_prep._$lang" );
+include( "../locales/$lang/f_php._$lang" );
+
+$ged["days_relative_to"]="belirli gün sayısı";
+$ged["relative_to"]="göreli";
+$ged["No."]="№";
+$ged["Dev."]="Sü";
+$ged["TOTAL"]="TOPLAM";
+$ged["operunknown"]="E-hata: bir tür bilinmeyen çalışma";
+$ged["RHM000hist."]="Tarihçe";
+//* MILK_RPTS, GRPH_RPTS
+$ged["RR0301"]="Hayvanlar";
+$ged["RR0301.02"]="Hayvanlar, brüt";
+$ged["RR0301.03"]="Hayvanlar, dinamikleri (%)";
+$ged["RR0301.04"]="Hayvanlar, negatif dinamikleri (%)";
+$ged["RR0304"]="Hayvanlar, plan göstericileri";
+$ged["RR0305"]="Hayvanlar, interpolasyon";
+$ged["RR0306"]=$ged["RR2104"];
+$ged["RR0307"]=$ged["RR2102"];
+$ged["RR0308"]=$ged["RR2103"];
+$ged["RR0309"]=$ged["RR2103.A"];
+$ged["RR0310"]="Detay";
+$ged["RR0312"]="Hayvanlar: belirlenmiş durum";
+$ged["RR0313"]="Hayvanlar: mastit ile";
+$ged["RR0316"]="Hayvanlar: mastit ile, plan göstericileri";
+$ged["RR0317"]="Hayvanlar: mastit ile, interpolasyon";
+$ged["RR0318"]=$ged["RR2104"].": mastit ile";
+$ged["RR0319"]=$ged["RR2102"].": mastit ile";
+$ged["RR0320"]=$ged["RR2103"].": mastit ile";
+$ged["RR0321"]=$ged["RR2103.A"].": mastit ile";
+$ged["RR0322"]="Detay: mastit ile";
+$ged["RR0324"]="Hayvanlar RFID ile";
+$ged["RR0325"]="Hayvanlar: RFID";
+$ged["RR0328"]="Hayvanlar: RFID, plan göstericileri";
+$ged["RR0329"]="Hayvanlar: RFID, interpolasyon";
+$ged["RR0330"]=$ged["RR2104"].": RFID";
+$ged["RR0331"]=$ged["RR2102"].": RFID";
+$ged["RR0332"]=$ged["RR2103"].": RFID";
+$ged["RR0333"]=$ged["RR2103.A"].": RFID";
+$ged["RR0334"]="Detay: RFID";
+$ged["RR0336"]="Operatör çalışmaları";
+$ged["RR0337"]="Süt sağma makinesi ayrıntılı operatörleri";
+$ged["RR0338"]="More";
+$ged["RR0339"]="Süt kalitesi";
+$ged["RR0340"]="Laktasyon 1";
+$ged["RR0341"]="Laktasyon 2";
+$ged["RR0342"]="Laktasyon 3";
+$ged["RR0343"]="Laktasyon 4";
+$ged["RR0344"]="Laktasyon 5";
+$ged["RR0345"]="Laktasyon 6";
+$ged["RR0346"]="Laktasyon 7";
+$ged["RR0349"]="Deney";
+$ged["RR0350"]="Hayvanlar, kontrol";
+$ged["RR0351"]=$ged["RR2104"].", kontrol";
+$ged["RR0352"]=$ged["RR2102"].", kontrol";
+$ged["RR0353"]=$ged["RR2103"].", kontrol";
+$ged["RR0354"]=$ged["RR2103.A"].", kontrol";
+$ged["RR0355"]="Detay, kontrol";
+//* HLTH_RPTS
+$ged["RR0201"]="Hayvan Bakımı (durum, hastalık)";
+$ged["RR0202"]="Vetoperatsii";
+$ged["RR0202.01"]="Aşılama";
+$ged["RR0203"]="Rektal";
+$ged["RR0204"]="Genel hayvan verileri";
+$ged["RR0205"]="üreme parametreleri";
+$ged["RR0206"]="Hayat verimlilik";
+$ged["RR0207"]="Süt kalite kontrolü";
+$ged["RR0208"]="Ağırlık dinamikleri";
+$ged["RR0209"]="Metabolizma";
+$ged["RR0210"]="Birçok somatik hücreleri";
+$ged["RR0211"]="Mastit";
+$ged["RR0212"]="Yaralanma (detay)";
+$ged["RR0213"]="Abort";
+$ged["RR0214"]="Buzağılama";
+$ged["RR0215"]="Süt verimi";
+$ged["RR0216"]="Süt üretiminde düşüş";
+$ged["RR0217"]="Çeviriler, silme";
+$ged["RR0218.01"]="Tohumlama";
+$ged["RR0218.02"]="Tohumlama Sanatı.";
+//* COMM_RPTS
+$ged["RR0102.1"]="Hayvanlar, tohumlama edilebilir";
+$ged["RR0102.2"]="İnsemine olmuş hayvanlar";
+$ged["RR0102.3"]="Hayvanlar, rektal gerçekleştirilebilir";
+$ged["RR0102.4"]="Hayvanlar";
+$ged["RR0102.5"]="Laktasyon Hayvanlar";
+$ged["RR0102.6"]="Yararsız Hayvanlar";
+$ged["RR0103.1"]="Hayvanlar: bölüme ait olmayanlar";
+$ged["RR0103.2"]="Hayvanlar: bölüm +insem.+";
+$ged["RR0103.3"]="Hayvanlar: bölüm +buzağı+";
+$ged["RR0103.4"]="Hayvanlar: bölüm +buzağılama+";
+$ged["RR0103.5"]="Hayvanlar: bölüm +laktasyon+";
+$ged["RR0103.6"]="Hayvanlar: bölüm +yararsız+";
+$ged["RR0103.7"]="Hayvanlar: bölüm +kesim+";
+//
+$ged["RR0116"]="Düveler 7 güne kadar, yenidoğan";
+$ged["RR0117"]="Düveler 14 güne kadar";
+$ged["RR0118"]="Düveler 6 aya kadar (183 gün)";
+$ged["RR0119"]="Düveler 1 yila kadar (365 gün)";
+$ged["RR0120"]="Düveler 2 yila kadar (730 gün)";
+$ged["RR0121"]="Hayvanlar 4 yila kadar(1460 gün)";
+$ged["RR0122"]="Yaşlı Hayvanlar";
+$ged["RR0123"]="Tüm Hayvanlar";
+//
+$ged["RR0127"]="Hayvanlar ve ölçüm";
+$ged["RR0128"]="Hayvanların yaş oranı";
+$ged["RR0129"]="Veri laktasyon";
+$ged["RR0130"]="Geçersiz işlem";
+$ged["RR0131"]="Sağım hariç tüm işlemler";
+$ged["RR0132"]="Hayvanlar: kartları";
+$ged["RR0139"]="Hayvanlar: RFIDs";
+$ged["RR0140"]="YENİ RFIDs";
+//* SELE_RPTS
+$ged["[C35]"]="Hayvanlar belirsiz durumu ile";
+$ged["[C36]"]="Yaş.İnekler, buzağılamadan";
+$ged["RR2201"]="Düve";
+$ged["RR2202"]="Düve";
+$ged["RR2203"]="İnek";
+$ged["RR2204"]="Boğa";
+$ged["RR2206"]="Hayvanlar belirsiz durumu ile";
+$ged["RR2207"]="Yaş.İnekler, buzağılamadan";
+?>

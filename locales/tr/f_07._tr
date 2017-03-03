@@ -1,0 +1,91 @@
+<?php
+/* DF: locales/tr/f_07._tr
+f__conf azerbaijani locale
+c: 11.11.2008
+m: 26.04.2015 */
+
+$_07_="Ayarlar";
+
+$state_az="AZ (Azərbaycan Respublikası)";
+$state_rb="РБ (Рэспублiка Беларусь)";
+$state_rm="RM (Republica Moldova)";
+$state_rf="РФ (Российская Федерация)";
+$state_ukr="Україна";
+
+$_07_sectOwner="Çiftlik";
+$_07_state="devlet"; $_07_fnt_state="";
+$_07_regions="bölgesi (cumhuriyet / bölge), ilçe"; $_07_fnt_regions="";
+$_07_region_tip="bölgesi (cumhuriyet / bölge)";
+$_07_subregion_tip="ilçe";
+$_07_org="yasal ad. (fiz.) ad."; $_07_fnt_org="";
+$_07_addr="adresi (nufus, cadde.)"; $_07_fnt_addr="";
+$_07_tel="telefon"; $_07_fnt_tel="";
+$_07_chief="yönetmen"; $_07_fnt_chief="";
+$_07_chiefAnimalTech="ana hayvancılık"; $_07_fnt_chiefAnimalTech="";
+$_07_farm="çiftliğin adı"; $_07_fnt_farm="";
+
+$_07_sectUdm="UDM";
+$_07_stalls="к-во стойл"; $_07_fnt_stalls="";
+
+$_07_sectUde="Sağımhane";
+$_07_pits="çukur sayı"; $_07_fnt_pits="";
+$_07_devsByPit="bir çukurda sağım üniteleri sayı"; $_07_fnt_devsByPit="";
+$_07_dataWiresByPit="aynı çukura iletişim hatlarının sayı"; $_07_fnt_dataWiresByPit="";
+
+$_07_devsQ="veritabanı sayısı"; $_07_fnt_devsQ="";
+$_07_prtsTyp="bağlantı port türü"; $_07_fnt_prtsTyp="";
+$_07_prt1="ilk port"; $_07_fnt_prt1="";
+$_07_waitBetwDevs="makine arası gecikme"; $_07_fnt_waitBetDevs="";
+$_07_rfidMode="hayvanların tanınması"; $_07_fnt_rfidMode="";
+$_07_rfidModes[1]="ASUF: yerel";
+$_07_rfidModes[2]="ASUF: makine. ALLFLEX";
+$_07_rfidModes[3]="ASUF: içerik";
+$_07_rfidModes[4]="ASUF: makine. TEXAS INSTRUMENTS";
+$_07_drmdsByPit="bir çukurun içinde operatörler sayı"; $_07_fnt_drmdsByPit="";
+$_07_drmdBdsMode="operatörü hizmet"; $_07_fnt_drmdBdsMode="";
+$_07_drmdBdss[1]="bir çukurun tarafı";
+$_07_drmdBdss[2]="her iki tarafta çukur bir kesimi";
+$_07_jaggs="golün seçim sayı (\"böler\")"; $_07_fnt_jaggs="";
+$_07_jprtsTyp="port seçimi golün tipi"; $_07_fnt_jprtsTyp="";
+$_07_jprt1="ilk port seçimi gol"; $_07_fnt_jprt1="";
+$_07_jcmdTimeout="zaman aşımı komutu"; $_07_fnt_jcmdTimeout="";
+$_07_jignoreSimilar="tekrarlar işlemez"; $_07_fnt_jignoreSimilar="";
+
+$_07_sectSched="Zamanlama";
+$_07_sched="sağımlar başlangıç zamanı 1 / 2 / 3";
+
+$_07_sectExtra="Seçenekler";
+$_07_lang="dil";
+$_07_langs[1]="белорусский"; $langs_val[1]="be"; $langs_dis[be]="";
+$_07_langs[2]="русский"; $langs_val[2]="ru"; $langs_dis[ru]="";
+$_07_langs[3]="turkiye"; $langs_val[3]="tr"; $langs_dis[tr]="";
+$_07_langs[4]="украинский"; $langs_val[4]="uk"; $langs_dis[uk]="";
+$_07_langs[5]="english"; $langs_val[5]="en"; $langs_dis[en]="";
+
+$_07_err1="<b>HATA</b>: Kırmızı işaretli alanları doldurun.";
+$_07_err1024="<b>HATA</b>: Bir çukurda veritabanları sayısı: 8, 12, 16, 20, 24 veya 32.";
+$_07_err524288="<b>HATA</b>: ASUF-1 eksik seçim kapısı.";
+$_07_err2097152="<b>HATA</b>: $_07_jprt1 $ sağım için ayrılmış.";
+$_07_err4194304="<b>HATA</b>: Sağımda açısından zamanlamayı kontrol edin.";
+$_07_readonly="Erişim engellendi!";
+
+$_07_insem1st_days0="ilk gunde tohumlama öncesi (doğum sonrası)";//days before 1st insemination (after birthday)
+$_07_not_abort1st_days0="ilk gün iptale önce (doğum sonrası) ";//days before 1st abort (after birthday)
+$_07_rectal_days0="öncesi. - rektal (gün)";//days before rectal (after insemination)
+$_07_insem_days0_fault_rectal="negative rektal - öncesi. (gün)";//days before insemination (after negative rectal)
+$_07_prep_zapusk_days0="öncesi. - preparing (gün)";//days before zapusk preparing (after insemination)
+$_07_zapusk_days0="tohumlama hazırlık öncesi. (gün)";//days before zapusk (after insemination)
+$_07_late_zapusk_days0="tohumlama gecikme öncesi. (gün)";//days before late zapusk (after insemination)
+$_07_not_abort_days0="tohumlama öncesi. iptale önce (gün)";//days before abort (after insemination)
+$_07_insem_days0="iptaleden tohumlama öncesi. (gün)";//days before insemination (after abort)
+$_07_insem_days0_abort="iptaleden tohumlama kadar. (gün)";//days before insemination (after abort)
+
+$_07_jattrs="seçim kapısı (ek özellikleri)"; $_07_fnt_jattrs="";
+$_07_jattr_t="yaralanma"; $_07_fnt_jattr_t="";
+$_07_jattr_o="avı"; $_07_fnt_jattr_o="";
+$_07_jattr_m="mastit"; $_07_fnt_jattr_m="";
+
+$_07_conductiv="süt elektriksel iletkenliği";
+$_07_auto_prep_zapusk="yarı otomatik atılımı";
+$_07_auto_prep_zapusk_day="hazırlıkları başlamadan atılım günü";
+?>

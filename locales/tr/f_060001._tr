@@ -1,0 +1,14 @@
+<?php
+/* DF: locales/tr/f_060001._tr
+f__ops azerbaijani locale
+c: 22.09.2009
+m: 19.09.2013 */
+
+$ged["_06_errors"]="Operasyonda hatalar vardı Hayvan №&nbsp;";
+$ged["_06_err_01"]="çok büyük verim";
+$ged["_06_err_02"]="süre verim sonuç daha fazladır";
+$ged["_06_err_03"]="başlatım zamanı sağım formata uymuyor<u>ss:dd:ss</u>";
+$ged["_06_err_04"]="bitiş zamanı sağım formata uymuyor<u>ss:dd:ss</u>";
+$ged["_06_err_05"]="bitiş zamanı başlatım zamanında az";
+$ged["_06_err_06"]="sağım süresi formata uymuyor<u>dd:ss</u>";
+?>

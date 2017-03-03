@@ -1,0 +1,91 @@
+<?php
+/* DF_2: locales/ru/f_07._ru
+f__conf russian locale
+c: 11.11.2008
+m: 26.04.2015 */
+
+$_07_="Настройка";
+
+$state_az="AZ (Azərbaycan Respublikası)";
+$state_rb="РБ (Рэспублiка Беларусь)";
+$state_rm="RM (Republica Moldova)";
+$state_rf="РФ (Российская Федерация)";
+$state_ukr="Україна";
+
+$_07_sectOwner="Хозяйство";
+$_07_state="государство"; $_07_fnt_state="";
+$_07_regions="регион (обл., респ., край), р-н"; $_07_fnt_regions="";
+$_07_region_tip="регион (область, республика, край, ...)";
+$_07_subregion_tip="район";
+$_07_org="название юридич. (физ.) лица"; $_07_fnt_org="";
+$_07_addr="адрес (нас. пункт, улица)"; $_07_fnt_addr="";
+$_07_tel="телефон"; $_07_fnt_tel="";
+$_07_chief="директор"; $_07_fnt_chief="";
+$_07_chiefAnimalTech="главный зоотехник"; $_07_fnt_chiefAnimalTech="";
+$_07_farm="название фермы"; $_07_fnt_farm="";
+
+$_07_sectUdm="Молокопровод";
+$_07_stalls="к-во стойл"; $_07_fnt_stalls="";
+
+$_07_sectUde="Доильный зал";
+$_07_pits="к-во ям"; $_07_fnt_pits="";
+$_07_devsByPit="к-во БД в одной яме"; $_07_fnt_devsByPit="";
+$_07_dataWiresByPit="к-во линий связи на одну яму"; $_07_fnt_dataWiresByPit="";
+
+$_07_devsQ="общее к-во БД"; $_07_fnt_devsQ="";
+$_07_prtsTyp="тип порта"; $_07_fnt_prtsTyp="";
+$_07_prt1="первый порт"; $_07_fnt_prt1="";
+$_07_waitBetwDevs="межаппаратная задержка"; $_07_fnt_waitBetDevs="";
+$_07_rfidMode="распознавание животных"; $_07_fnt_rfidMode="";
+$_07_rfidModes[1]="АСУФ: локальное";
+$_07_rfidModes[2]="АСУФ: на базе оборудов. ALLFLEX";
+$_07_rfidModes[3]="АСУФ: привязное содержание";
+$_07_rfidModes[4]="АСУФ: на базе оборудов. TEXAS INSTRUMENTS";
+$_07_drmdsByPit="к-во операторов в одной яме"; $_07_fnt_drmdsByPit="";
+$_07_drmdBdsMode="оператор обслуживает"; $_07_fnt_drmdBdsMode="";
+$_07_drmdBdss[1]="одну сторону ямы";
+$_07_drmdBdss[2]="часть ямы с двух сторон";
+$_07_jaggs="к-во селекц. ворот (\"расколов\")"; $_07_fnt_jaggs="";
+$_07_jprtsTyp="тип порта селекц. ворот"; $_07_fnt_jprtsTyp="";
+$_07_jprt1="первый порт селекц. ворот"; $_07_fnt_jprt1="";
+$_07_jcmdTimeout="таймаут команды"; $_07_fnt_jcmdTimeout="";
+$_07_jignoreSimilar="не обрабатывать повторы"; $_07_fnt_jignoreSimilar="";
+
+$_07_sectSched="Расписание работы";
+$_07_sched="время начала доений 1 / 2 / 3";
+
+$_07_sectExtra="Дополнительные параметры";
+$_07_lang="язык";
+$_07_langs[1]="белорусский"; $langs_val[1]="be"; $langs_dis[be]="";
+$_07_langs[2]="русский"; $langs_val[2]="ru"; $langs_dis[ru]="";
+$_07_langs[3]="turkiye"; $langs_val[3]="tr"; $langs_dis[tr]="";
+$_07_langs[4]="украинский"; $langs_val[4]="uk"; $langs_dis[uk]="";
+$_07_langs[5]="английский"; $langs_val[5]="en"; $langs_dis[en]="";
+
+$_07_err1="<b>ОШИБКА</b>: заполните, пожалуйста, выделенные красным поля.";
+$_07_err1024="<b>ОШИБКА</b>: проверьте, пожалуйста, кол-во БД в одной яме.";
+$_07_err524288="<b>ОШИБКА</b>: селекционные ворота отсутствуют в АСУФ с локальными считывателями.";
+$_07_err2097152="<b>ОШИБКА</b>: $_07_jprt1 зарезервирован за доильным залом.";
+$_07_err4194304="<b>ОШИБКА</b>: проверьте, пожалуйста, точки расписания доений.";
+$_07_readonly="У ВАС НЕТ ПРАВА РЕДАКТИРОВАНИЯ НАСТРОЕК!";
+
+$_07_insem1st_days0="Первое осем. в возрасте (дней)";//days before 1st insemination (after birthday)
+$_07_not_abort1st_days0="Первый отёл в возрасте (дней)";//days before 1st abort (after birthday)
+$_07_rectal_days0="От осем. до рект. (дней)";//days before rectal (after insemination)
+$_07_insem_days0_fault_rectal="От негативных рект. до осем. (дней)";//days before insemination (after bad rectal)
+$_07_prep_zapusk_days0="От осем. до подготовки к запуску (дней)";//days before zapusk preparing (after insemination)
+$_07_zapusk_days0="От осем. до запуска (дней)";//days before zapusk (after insemination)
+$_07_late_zapusk_days0="От осем. до позднего запуска (дней)";//days before late zapusk (after insemination)
+$_07_not_abort_days0="От осем. до отёла (дней)";//days before abort (after insemination)
+$_07_insem_days0="От отёла до осем. (дней)";//days before insemination (after abort)
+$_07_insem_days0_abort="От аборта до осем. (дней)";//days before insemination (after abort)
+
+$_07_jattrs="БУСВ: дополнительные признаки"; $_07_fnt_jattrs="";
+$_07_jattr_t="травма"; $_07_fnt_jattr_t="";
+$_07_jattr_o="охота"; $_07_fnt_jattr_o="";
+$_07_jattr_m="мастит"; $_07_fnt_jattr_m="";
+
+$_07_conductiv="Электропроводность молока";
+$_07_auto_prep_zapusk="Полуавтоматическое выведение в запуск";
+$_07_auto_prep_zapusk_day="День от начала подготовки к запуску";
+?>

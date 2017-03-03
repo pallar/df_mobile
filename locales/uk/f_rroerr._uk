@@ -1,0 +1,11 @@
+<?php
+/* DF_2: locales/uk/f_rroerr._uk
+reports (operations text set: error messages) ukrainian locale
+c: 16.05.2011
+m: 31.03.2015 */
+
+$ged["ALGO_NOT_READY!"]="в розробці...";
+$ged["Warning"]="Попередження";
+$ged["Bad_insem"]="Увага! Занадто довго після отелу відсутнє запліднення.";
+$ged["Bad_insem~"]="ПОМИЛКА!";
+?>

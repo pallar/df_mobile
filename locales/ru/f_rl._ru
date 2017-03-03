@@ -1,0 +1,22 @@
+<?php
+/* DF_2: locales/ru/f_rl._ru
+reports (list set) russian locale
+c: 13.05.2011
+m: 26.04.2015 */
+
+//common section: tab 1
+$ged["r-td-conductivity"]="проводимость";
+//common section: tab 3
+$ged["r-th-BY_ANIMALS_STATES"]="ПО СТАТУСУ ЖИВОТНЫХ";
+$ged["r-th-BY_ANIMALS_AGES"]="ПО ВОЗРАСТУ ЖИВОТНЫХ";
+$ged["r-th-ALL_ANIMALS"]="ПО ВСЕМ ЖИВОТНЫМ";
+$ged["r-td-Fore"]="Прогнозирование";
+$ged["r-td-Insem_Analysis"]="Анализ осеменения";
+$ged["r-td-Insem_Plan"]="План осеменения";
+$ged["r-td-Prep_Zapusk_Plan"]="План подготовки запуска (все)";
+$ged["r-td-Zapusk_Plan"]="План запуска (все)";
+$ged["r-td-Zapusk_Plan_From_To"]="План запуска (за период)";
+$ged["r-td-Abort_Plan"]="План отёла (все)";
+$ged["r-td-Abort_Plan_From_To"]="План отёла (за период)";
+$ged["r-td-Plan_20110516"]="План развития стада";
+?>

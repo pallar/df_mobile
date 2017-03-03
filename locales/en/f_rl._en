@@ -1,0 +1,22 @@
+<?php
+/* DF: locales/en/f_rl._en
+reports (list set) english locale
+c: 13.05.2011
+m: 26.04.2015 */
+
+//common section: tab 1
+$ged["r-td-conductivity"]="conductivity";
+//common section: tab 3
+$ged["r-th-BY_ANIMALS_STATES"]="BY ANIMAL STATUS";
+$ged["r-th-BY_ANIMALS_AGES"]="BY ANIMAL AGE";
+$ged["r-th-ALL_ANIMALS"]="TOTAL";
+$ged["r-td-Fore"]="Forecast";
+$ged["r-td-Insem_Analysis"]="Insemination analisys";
+$ged["r-td-Insem_Plan"]="Insemination plan";
+$ged["r-td-Prep_Zapusk_Plan"]="Drying preparing plan (all)";
+$ged["r-td-Zapusk_Plan"]="Drying plan (all)";
+$ged["r-td-Zapusk_Plan_From_To"]="Drying plan (by period)";
+$ged["r-td-Abort_Plan"]="Calving plan (all)";
+$ged["r-td-Abort_Plan_From_To"]="Calving plan (by period)";
+$ged["r-td-Plan_20110516"]="Farm planning";
+?>

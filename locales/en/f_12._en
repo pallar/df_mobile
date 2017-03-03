@@ -1,0 +1,11 @@
+<?php
+/* DF_2
+web_cam english locale
+c: 11.11.2008
+m: 25.04.2015 */
+
+$_12_zoom_lnk_tip="Explode view";
+$_12_ipcam_head="Web camera №";
+$_12_ipcam_err="Web camera does not work...";
+$_12_per="Delay (sec.)";
+?>

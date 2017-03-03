@@ -1,0 +1,30 @@
+<?php
+/* DF: locales/tr/f_02._tr
+f__todo azerbaijani locale
+c: 22.11.2007
+m: 02.06.2014 */
+
+$_02_cb_cap="detay";
+$_02_h_cap["10"]="Hayvanlar belirsiz durumu ile";
+$_02_h_cap["11"]="Hayvanlar çiftleşme edilebilir";
+$_02_h_cap["12"]="Ciftleşmiş Hayvanlar";
+$_02_h_cap["12_01"]="... bir defa";
+$_02_h_cap["12_02"]="... iki veya daha fazla";
+$_02_h_cap["13"]="Rektal gerçekleştirilebilir Hayvanlar";
+$_02_h_cap["14"]="Buzağsız Hayvanlar";
+$_02_h_cap["15"]="Buzağı Hayvanlar";
+$_02_h_cap["15_01"]="... ilk tohumlamadan sonra";
+$_02_h_cap["15_02"]="... kinci tohumlamadan sonra";
+$_02_h_cap["15_03"]="... üçüncü (...) tohumlamadan sonra";
+$_02_h_cap["16"]="";
+$_02_h_cap["16_01"]="Doğum";
+$_02_h_cap["16_02"]="Kürtaj";
+$_02_h_cap["17"]="Bölüm Hayvanlar";
+$_02_h_cap["18"]="Avı Hayvanlar";
+$_02_h_cap["19"]="Laktasyon Hayvanlar";
+$_02_h_cap["20"]="Çalıştır Hayvanlar";
+$_02_h_cap["21"]="Başlangıçta Hayvanlar";
+$_02_h_cap["Index"]="Dizin";
+$_02_h_cap["Value"]="Değer";
+$_02_h_cap["Percent"]="%";
+?>

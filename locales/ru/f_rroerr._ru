@@ -1,0 +1,11 @@
+<?php
+/* DF_2: locales/ru/f_rroerr._ru
+reports (operations text set: error messages) russian locale
+c: 16.05.2011
+m: 26.04.2015 */
+
+$ged["ALGO_NOT_READY!"]="в разработке...";
+$ged["Warning"]="Предупреждения";
+$ged["Bad_insem"]="Внимание! Слишком долго после отёла отсутствуют зарегистрированные операции осеменения.";
+$ged["Bad_insem~"]="ОШИБКА!";
+?>

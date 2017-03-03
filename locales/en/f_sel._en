@@ -1,0 +1,127 @@
+<?php
+/* DF: locales/en/f_sel._en
+reports english locale
+c: 25.12.2005
+m: 26.04.2015 */
+
+include( "../locales/$lang/f_prep$lang.php" );
+include( "../locales/$lang/f_php$lang.php" );
+
+$ged["days_relative_to"]="days relatively to";
+$ged["relative_to"]="relatively";
+$ged["No."]="№";
+$ged["Dev."]="Dev.";
+$ged["TOTAL"]="TOTAL";
+$ged["operunknown"]="E-error at operation: unknown operation type";
+$ged["RHM000hist."]="History";
+//* MILK_RPTS, GRPH_RPTS
+$ged["RR0301"]="By cows";
+$ged["RR0301.02"]="By cows, total";
+$ged["RR0301.03"]="By cows, dynamics (%)";
+$ged["RR0301.04"]="By cows, negative dynamics (%)";
+$ged["RR0304"]="By cows, planning res.";
+$ged["RR0305"]="By cows, with interpolation";
+$ged["RR0306"]=$ged["RR2104"];
+$ged["RR0307"]=$ged["RR2102"];
+$ged["RR0308"]=$ged["RR2103"];
+$ged["RR0309"]=$ged["RR2103.A"];
+$ged["RR0310"]="Detailed";
+$ged["RR0312"]="ONLY COWS WITH CHOSEN CONDITION";
+$ged["RR0313"]="Only cows with mastitis";
+$ged["RR0316"]="Only cows with mastitis, planning res.";
+$ged["RR0317"]="Only cows with mastitis, with interpolation";
+$ged["RR0318"]=$ged["RR2104"].": only with mastitis";
+$ged["RR0319"]=$ged["RR2102"].": only with mastitis";
+$ged["RR0320"]=$ged["RR2103"].": only with mastitis";
+$ged["RR0321"]=$ged["RR2103.A"].": only with mastitis";
+$ged["RR0322"]="Detailed: only with mastitis";
+$ged["RR0324"]="ONLY COWS WITH RFID";
+$ged["RR0325"]="Only cows with RFID";
+$ged["RR0328"]="Only cows with RFID, planning res.";
+$ged["RR0329"]="Only cows with RFID, with interpolation";
+$ged["RR0330"]=$ged["RR2104"].": only with RFID";
+$ged["RR0331"]=$ged["RR2102"].": only with RFID";
+$ged["RR0332"]=$ged["RR2103"].": only with RFID";
+$ged["RR0333"]=$ged["RR2103.A"].": only with RFID";
+$ged["RR0334"]="Detailed: only with RFID";
+$ged["RR0336"]="OPERATORS SUMMARY";
+$ged["RR0337"]="Detailed by milkers";
+$ged["RR0338"]="ADDITIONAL";
+$ged["RR0339"]="By milk quality";
+$ged["RR0340"]="Lactation 1";
+$ged["RR0341"]="Lactation 2";
+$ged["RR0342"]="Lactation 3";
+$ged["RR0343"]="Lactation 4";
+$ged["RR0344"]="Lactation 5";
+$ged["RR0345"]="Lactation 6";
+$ged["RR0346"]="Lactation 7";
+$ged["RR0349"]="CONTROL DATA";
+$ged["RR0350"]="By cows, control";
+$ged["RR0351"]=$ged["RR2104"].", control";
+$ged["RR0352"]=$ged["RR2102"].", control";
+$ged["RR0353"]=$ged["RR2103"].", control";
+$ged["RR0354"]=$ged["RR2103.A"].", control";
+$ged["RR0355"]="Detailed, control";
+//* HLTH_RPTS
+$ged["RR0201"]="Animal watchins (condition, deseases)";
+$ged["RR0202"]="Veterinary";
+$ged["RR0202.01"]="Vactinations";
+$ged["RR0203"]="Rectal";
+$ged["RR0204"]="Other data";
+$ged["RR0205"]="Reproduction parameters";
+$ged["RR0206"]="Reproduction";
+$ged["RR0207"]="Milk quality control";
+$ged["RR0208"]="Weight dynamics";
+$ged["RR0209"]="Metabolic disorders";
+$ged["RR0210"]="Too many somatic cells";
+$ged["RR0211"]="Mastitis";
+$ged["RR0212"]="Injuries (detailed)";
+$ged["RR0213"]="Abortions";
+$ged["RR0214"]="Calving";
+$ged["RR0215"]="Milk productivity";
+$ged["RR0216"]="Reducing of dairy productivity";
+$ged["RR0217"]="Transferrings";
+$ged["RR0218.01"]="Inseminations";
+$ged["RR0218.02"]="Inseminations artificial";
+//* COMM_RPTS
+$ged["RR0102.1"]="Cows, which are ready for insemination";
+$ged["RR0102.2"]="Inseminated cows";
+$ged["RR0102.3"]="Ready for rectal check";
+$ged["RR0102.4"]="Pregnant cows";
+$ged["RR0102.5"]="Cows at lactation";
+$ged["RR0102.6"]="Dry cows";
+$ged["RR0103.1"]="Cows witout department";
+$ged["RR0103.2"]="Cows at department +insemination+";
+$ged["RR0103.3"]="Cows at department +pregnant+";
+$ged["RR0103.4"]="Cows at department +calving+";
+$ged["RR0103.5"]="Cows at department +lactation+";
+$ged["RR0103.6"]="Cows at department +dry+";
+$ged["RR0103.7"]="Cows at department +out+";
+//
+$ged["RR0116"]="Heifers before 7 days";
+$ged["RR0117"]="Heifers before 14 days";
+$ged["RR0118"]="Heifers before 183 days";
+$ged["RR0119"]="Heifers before 365 days";
+$ged["RR0120"]="Cows before 2х years old (730 days)";
+$ged["RR0121"]="Cows before 4х years old (1460 days)";
+$ged["RR0122"]="Groun-up cows";
+$ged["RR0123"]="All cows";
+//
+$ged["RR0127"]="Cows and measurments";
+$ged["RR0128"]="Quantity proportions by age";
+$ged["RR0129"]="Days of lactation";
+$ged["RR0130"]="Wrong operations";
+$ged["RR0131"]="All operations exept milking";
+$ged["RR0132"]="Cows: cards";
+$ged["RR0139"]="Cows: Transponders";
+$ged["RR0140"]="New Transponders";
+//* SELE_RPTS
+$ged["[C35]"]="Cows with unknown status";
+$ged["[C36]"]="Cows without calvings";
+$ged["RR2201"]="Heifers";
+$ged["RR2202"]="Heifers";
+$ged["RR2203"]="Cows";
+$ged["RR2204"]="Bulls";
+$ged["RR2206"]="Cows with unknown status";
+$ged["RR2207"]="Cows without calvings";
+?>

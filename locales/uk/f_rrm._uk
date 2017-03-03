@@ -1,0 +1,34 @@
+<?php
+/* DF_2: locales/uk/f_rrm._uk
+reports (milk text set) ukrainian locale
+c: 12.05.2011
+m: 29.09.2015 */
+
+$ged["TAG,0"]="RFID iдент.";
+$ged["TAG,0~"]="? RFID";
+$ged["Dev._cmd_t~"]="Звiт";
+$ged["Interv.~"]="Трив.";
+$ged["Start_manual"]="Ручний пуск";
+$ged["Start_manual~"]="РП";
+$ged["Start_retr."]="Повт. пуск";
+$ged["Start_retr.~"]="ПП";
+$ged["Break_done"]="Перерване доїння";
+$ged["Break_done~"]="ПД";
+$ged["Exhaust"]="Низький надiй";
+$ged["Exhaust~"]="НН";
+$ged["M."]="Мастит";
+$ged["M.~"]="М";
+$ged["M.d.~"]="Ступенi ураження маститом вимені тварини";
+$ged["Conduct."]="Провiднiсть, мСм";
+$ged["Conduct.~"]="Пров., мСм";
+$ged["T."]="Травма";
+$ged["T.~"]="Т";
+$ged["O."]="Овул.";
+$ged["O.~"]="О";
+$ged["Dev."]="Апарат №";
+$ged["Dev.~"]="БД";
+$ged["dairy_cycles"]="доїнь";
+$ged["Dairy_cycle"]="Операцiя доїння";
+$ged["Period_restricted_007"]="Заборонено виконувати цей звiт більше, нiж за сiм днiв поспiль.";
+$ged["Period_restricted_014"]="Заборонено виконувати цей звiт більше, нiж за чотирнадцять днiв поспiль.";
+?>

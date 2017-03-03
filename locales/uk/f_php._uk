@@ -1,0 +1,219 @@
+<?php
+/* DF_2: locales/uk/f_php._uk
+ukrainian locale
+c: 25.12.2005
+m: 03.05.2015 */
+
+//DESCRIPTION=DF Ukraine, UA locale (422), utf-8
+//*****************************************************************************
+//ATTENTION! ROWS WITH 'DONT EDIT' MUST BE IN UKRAINIAN FOR ANY LOCALE!
+//*****************************************************************************
+//sysWait
+$php_mm[0]="зачекайте...";
+$php_mm_tip[0]="Зачекайте кілька секунд...";
+//sysStart
+$php_mm[1]="стартую...";
+//sysRestart
+$php_mm[2]="перезавантажуюсь...";
+//sysOk
+$php_mm[3]="з'єднання встановлено";
+//sysError
+$php_mm[4]="немає з'єднання...";
+//sysNocds
+$php_mm[5]="Немає з'єднання з базою даних. Програму буде завершено.";
+//sysNocdu
+$php_mm[6]="Немає з'єднання з базою даних. Натиснiть *Yes*, щоб вийти з програми. Натиснiть *No*, щоб зачекати ще.";
+//sysExit
+$php_mm[9]="Якщо Ви впевненi, що можна зупинити обмiн даними з обладнанням - натиснiть *Yes*.";
+//mySql
+$php_mm["TABLE"]="ТАБЛИЦЯ";
+$php_mm["ERROR"]="ПОМИЛКА";
+$php_mm["ACCESS_DENIED"]="<table height='80%' width='100%'><tr><td><center><h2><blink>Анонімний перегляд даних заблоковано адміністрацією господарства.</blink></h2></center></td></tr>";
+//common verbs
+$php_mm["_com_app_cap"]="Інтернет-Ферма";
+$php_mm["_com_ok_btn_cap"]="Ok";
+$php_mm["_com_cancel_btn_cap"]="X";
+$php_mm["_com_reg_btn_cap"]="Реєструватись";
+$php_mm["_com_reg_btn_tip"]="Увійти до системи";
+$php_mm["_com_accept_btn_cap"]="Застосувати";
+$php_mm["_com_accept_btn_tip"]="";
+$php_mm["_com_forward_btn_cap"]="Далі";
+$php_mm["_com_forward_btn_tip"]="Завершити введення в поточному вікні, вiдкрити наступне";
+$php_mm["_com_ver_for_prn_lnk_cap"]="Версія для друку";
+$php_mm["_com_output_to_print_lnk_cap"]="ДРУКУВАТИ";
+$php_mm["_com_milking_cap"]="доїння";
+$php_mm["_com_milking_tip"]="";
+$php_mm["_com_s10_cap"]="ранкове";
+$php_mm["_com_s10_tip"]="";
+$php_mm["_com_s11_cap"]="2";
+$php_mm["_com_s11_tip"]="";
+$php_mm["_com_s20_cap"]="денне";
+$php_mm["_com_s20_tip"]="";
+$php_mm["_com_s21_cap"]="4";
+$php_mm["_com_s21_tip"]="";
+$php_mm["_com_s30_cap"]="вечiрне";
+$php_mm["_com_s30_tip"]="";
+$php_mm["_com_s31_cap"]="6";
+$php_mm["_com_s31_tip"]="";
+$php_mm["_com_animal_cap"]="тварина";
+$php_mm["_com_animal_tip"]="";
+$php_mm["_com_animals_cap"]="тварини";
+$php_mm["_com_animals_tip"]="";
+$php_mm["_com_known_tag_cap"]="з зареєстр. RFID";
+$php_mm["_com_known_tag_tip"]="";
+$php_mm["_com_unknown_tag_cap"]="з невiдомим RFID";
+$php_mm["_com_unknown_tag_tip"]="";
+$php_mm["_com_wo_tag_cap"]="без RFID або збій";
+$php_mm["_com_wo_tag_tip"]="";
+$php_mm["_com_with_mastitus_cap"]="з маститом";
+$php_mm["_com_with_mastitus_tip"]="";
+$php_mm["_com_wo_mastitus_cap"]="без маститу";
+$php_mm["_com_wo_mastitus_tip"]="";
+$php_mm["_com_with_trauma_cap"]="травмовані";
+$php_mm["_com_with_trauma_tip"]="";
+$php_mm["_com_wo_trauma_cap"]="нетравмовані";
+$php_mm["_com_wo_trauma_tip"]="";
+$php_mm["_com_wanted_ox_cap"]="\"в охоті\"";
+$php_mm["_com_wanted_ox_tip"]="";
+$php_mm["_com_not_wanted_ox_cap"]="не \"в охоті\"";
+$php_mm["_com_not_wanted_ox_tip"]="";
+$php_mm["_com_only_one_dev_cap"]="всі блоки крім номерів";
+$php_mm["_com_only_one_dev_tip"]="";
+$php_mm["_com_rephd1_cap"]="виключено зі звіту";
+$php_mm["_com_rephd2_cap"]="створено";
+$php_mm["_com_no_selected_groups_cap"]="НЕ ПОЗНАЧЕНО ЖОДНОЇ ГРУПИ...";
+$php_mm["_com_no_selected_animals_cap"]="НЕ ПОЗНАЧЕНО ЖОДНОЇ ТВАРИНИ...";
+$php_mm["_com_select_all_in_group_cap"]="Встановити/зняти позначку для всiх тварин групи";
+$php_mm["_com_ZAP_lnk_cap"]="Видалити";
+$php_mm["_com_DELE_lnk_cap"]="Позначити для видалення";
+$php_mm["_com_INSE_lnk_cap"]="Додати";
+$php_mm["_com_LOCA_lnk_cap"]="Знайти";
+$php_mm["_com_UPDA_lnk_cap"]="Змінити";
+//form:00
+$php_mm["_00_cap"]="Мнемосхема - ".$php_mm["_com_app_cap"];
+$php_mm["_00_tip"]="";
+$php_mm["_00_linuxconf_btn_cap"]="LiN";//"linux config" link
+$php_mm["_00_linuxconf_btn_tip"]="Встановити дозволені параметри Linux";
+$php_mm["_00_login_btn_cap"]="";//"login" link
+$php_mm["_00_login_btn_tip"]="Увійти як інший користувач";
+$php_mm["_00_mnemo_btn_cap"]="МНЕМОСХЕМА";//"goto mnemo" link
+$php_mm["_00_mnemo_btn_tip"]="Відобразити мнемосхему доїльного зала";
+$php_mm["_00_detrep_btn_cap"]="ПО ЗАЛУ";//"detailed report" link
+$php_mm["_00_detrep_btn_tip"]="Протокол доїльного залу";
+$php_mm["_00_todo_btn_cap"]="ЩОДЕННИК";//"farm plan" link
+$php_mm["_00_todo_btn_tip"]="План роботи персонала";
+$php_mm["_00_reps_btn_cap"]="ЗВІТИ";//"reports" link
+$php_mm["_00_reps_btn_tip"]="Звіти за період. Конструктор звітів";
+$php_mm["_00_cards_btn_cap"]="КАРТОТЕКА";//"cards" link
+$php_mm["_00_cards_btn_tip"]="Картки груп та тварин";
+$php_mm["_00_opers_btn_cap"]="ОПЕРАЦІЇ";//"operations" link
+$php_mm["_00_opers_btn_tip"]="Переведення, запліднення тощо";
+$php_mm["_00_conf_btn_cap"]="НАЛАШТУВАННЯ";//"config" link
+$php_mm["_00_conf_btn_tip"]="Змінити налаштування";
+$php_mm["_00_man_btn_cap"]="?";//"about" link
+$php_mm["_00_man_btn_tip"]="Про програму";
+$php_mm["_00_per_btn_cap"]="ПЕРІОД";//"period" link
+$php_mm["_00_per_btn_tip"]="Встановити звітний перiод";
+$php_mm["_00_nextdevs_btn_cap"]="";//"goto next bds" button
+$php_mm["_00_nextdevs_btn_tip"]="Відобразити на мнемосхемі наступні блоки доїння";
+$php_mm["_00_power_ok_cap"]="220 В: OK";//"power:ok" element
+$php_mm["_00_power_ok_tip"]="Напруга живлення (220 В) в нормі";
+$php_mm["_00_power_absent_cap"]="220 В: аварія: до вимкнення залишилось, сек.:";//"power:absent" element
+$php_mm["_00_power_absent_tip"]="Немає напруги живлення (220 В), комп'ютер буде вимкнено";
+$php_mm["_00_power_ctrloff_cap"]="220 В: ?";//"power:ctrloff" element
+$php_mm["_00_power_ctrloff_tip"]="Напруга живлення (220 В) НЕ КОНТРОЛЮЄТЬСЯ";
+$php_mm["_00_transact_cap"]="транзакція";//"transaction" element
+$php_mm["_00_devs_cap"]="апаратів";//"total devices" element
+
+$php_mm["_00_devnum_column_cap"]="БД";//col. "device"
+$php_mm["_00_devstat_column_cap"]="Фаза";//col. "device state"
+$php_mm["_00_cow_column_cap"]="Тварина (№, прізв.)";//col. "current cow"
+$php_mm["_00_milkvol_column_cap"]="Надій та трив.";//col. "cow's milk quantity"
+$php_mm["_00_manualstart_column_cap"]="Ручн.пуск";//col. "manual starting"
+$php_mm["_00_retries_column_cap"]="Повт.пуск";//col. "retries of starting"
+$php_mm["_00_manualstop_column_cap"]="Ручн.стоп";//col. "manual breaking"
+$php_mm["_00_mast_column_cap"]="Мастит";//col. "cow's mastitus"
+$php_mm["_00_mast_column_tip"]="мастит";
+$php_mm["_00_trauma_column_cap"]="Травма";//col. "cow's trauma"
+$php_mm["_00_trauma_column_tip"]="травма";
+$php_mm["_00_ovul_column_cap"]="Овул.";//col. "cow's ovul"
+$php_mm["_00_ovul_column_tip"]="овул.";
+
+$php_mm["_00_tot_10_cap"]="вранці";
+$php_mm["_00_tot_20_cap"]="вдень";
+$php_mm["_00_tot_30_cap"]="ввечері";
+$php_mm["_00_tot_40_cap"]="за добу";
+
+$php_mm["_00_zoom_lnk_cap"]="Збільшити";
+$php_mm["_00_zoom_lnk_tip"]="Розгорнути зображення з камери на весь екран";
+//form:01
+$php_mm["_01_cap"]="По залу - ".$php_mm["_com_app_cap"];
+$php_mm["_01_tab1_cap"]="Детальний";
+$php_mm["_01_tab2_cap"]="Протокол доїння";
+$php_mm["_01_tab3_cap"]="Контрольні дані (згорнуто за тваринами з початку року)";
+//form:03
+$php_mm["_03_cap"]="Звіти - ".$php_mm["_com_app_cap"];
+$php_mm["_03_tab1_cap"]="Молоко";
+$php_mm["_03_tab2_cap"]="Управління стадом";
+$php_mm["_03_tab3_cap"]="Загальні";
+$php_mm["_03_tab4_cap"]="Здоров'я";
+$php_mm["_03_tab5_cap"]="Графіки";
+$php_mm["_03_tab6_cap"]="Експорт";
+//form:04
+$php_mm["_04_cap"]="Звітний період";
+$php_mm["_04_from_cap"]="З 00:00...";//from
+$php_mm["_04_to_cap"]="По 23:59...";//to
+$php_mm["_mm_101"]="січень,січня";//jan
+$php_mm["_mm_102"]="лютий,лютого";//feb
+$php_mm["_mm_103"]="березень,березня";//mar
+$php_mm["_mm_104"]="квітень,квітня";//apr
+$php_mm["_mm_105"]="травень,травня";//may
+$php_mm["_mm_106"]="червень,червня";//jun
+$php_mm["_mm_107"]="липень,липня";//jul
+$php_mm["_mm_108"]="серпень,серпня";//aug
+$php_mm["_mm_109"]="вересень,вересня";//sep
+$php_mm["_mm_110"]="жовтень,жовтня";//oct
+$php_mm["_mm_111"]="листопад,листопада";//nov
+$php_mm["_mm_112"]="грудень,грудня";//dec
+//form:05
+$php_mm["_05_cap"]="Картотека - ".$php_mm["_com_app_cap"];
+$php_mm["_05_lists_cap"]="Переліки";
+$php_mm["_05_list_cap"]="Перелік";
+$php_mm["_05_ls_lnk_cap"]="Ферми";//Herds
+$php_mm["_05_gs_lnk_cap"]="Секції";//Groups
+$php_mm["_05_ss_lnk_cap"]="Підгрупи";
+$php_mm["_05_bs_lnk_cap"]="Породи";
+$php_mm["_05_gstab_lnk_cap"]="Групи";
+$php_mm["_05_cstab_lnk_cap"]="Корови та телиці";
+$php_mm["_05_tstab_lnk_cap"]="RFIDs";
+$php_mm["_05_ostab_lnk_cap"]="Бики";
+$php_mm["_05_l_card_cap"]="Картка ферми - ".$php_mm["_com_app_cap"];
+$php_mm["_05_g_card_cap"]="Картка секції - ".$php_mm["_com_app_cap"];
+$php_mm["_05_s_card_cap"]="Картка підгрупи - ".$php_mm["_com_app_cap"];
+$php_mm["_05_b_card_cap"]="Картка породи - ".$php_mm["_com_app_cap"];
+$php_mm["_05_c_card_cap"]="Картка корови (телиці) - ".$php_mm["_com_app_cap"];
+$php_mm["_05_o_card_cap"]="Картка бика - ".$php_mm["_com_app_cap"];
+//form:06
+$php_mm["_06_cap"]="Внесення операції(-й) - ".$php_mm["_com_app_cap"];
+$php_mm["_06_tip"]="Внесення операції(-й)";
+$php_mm["_06_level1_cap"]="виберіть тип опер., виберіть тварин в групі(-ах), натисніть \"Далі\"";
+$php_mm["_06_level1_tip"]="виберіть тип опер., виберіть тварин в групі(-ах), натисніть \"Далі\"";
+$php_mm["_06_ret_to_level1_cap"]="змінити тип операції та тварин";
+$php_mm["_06_ret_to_level1_tip"]="УВАГА! Натискання цього посилання веде до втрати даних з таблиці, що розташована нижче!";
+$php_mm["_06_edit_cap"]="Редагування операції - ".$php_mm["_com_app_cap"];
+$php_mm["_06_edit_tip"]="Редагування операції";
+$php_mm["_06_forward_btn_tip"]="Додати операцію(-ї) до бази даних";
+$php_mm["_06_forward_update_btn_tip"]="Замінити операцію(-ї) в базі даних";
+$php_mm["_06_forward_delete_btn_tip"]="Видалити операцію(-ї) з бази даних";
+$php_mm["_06_oper_deleted_cap"]="ВИДАЛЕНО";
+$php_mm["_06_oper_inserted_list"]="Перелік внесених операцій";
+//form:11
+$php_mm["_11_cap"]="Фільтри звіту:";
+$php_mm["_11_gr1_cap"]="за часом доїння:";
+$php_mm["_11_gr2_cap"]="за розпізнаванням тварин:";
+$php_mm["_11_gr3_cap"]="за станом тварин:";
+$php_mm["_11_gr4_cap"]="за перелiком тварин:";
+$php_mm["_11_gr5_cap"]="за блоком доїння:";
+$php_mm["_11_filt_cap"]="фільтр:";
+//form:12
+?>

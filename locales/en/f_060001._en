@@ -1,0 +1,14 @@
+<?php
+/* DF_2
+f__ops english locale
+c: 22.09.2009
+m: 26.04.2015 */
+
+$ged["_06_errors"]="Errors are found with animal №nbsp;";
+$ged["_06_err_01"]="too much milk at a time";
+$ged["_06_err_02"]="muilk for a cup of time is more than total";
+$ged["_06_err_03"]="starting time is not valid <u>hh:mm:ss</u>";
+$ged["_06_err_04"]="ending time is not valid <u>hh:mm:ss</u>";
+$ged["_06_err_05"]="ending time is less than starting";
+$ged["_06_err_06"]="duration is not valid <u>mm:ss</u>";
+?>

@@ -1,0 +1,20 @@
+<?php
+/* DF_2: locales/uk/f_devs._uk
+ukrainian locale
+c: 25.12.2005
+m: 26.04.2015 */
+
+$php_m[760]="?";
+$php_m[761]="промивка";//s
+$php_m[762]="вiльний";//w
+$php_m[763]="доїння";//m
+$php_m[764]="звiт";//t
+$php_m[765]="помилка";//e
+$php_m[766]="int_db overflow";//o indDB overflow
+$php_m[767]="не бачу";//-
+$php_m[768]="завершено";//r
+$php_m[769]="номер твар.";//i
+$php_m[770]="RFID";//x
+$php_m[771]="RFID прогр.";//a
+$php_m[772]="версiя";//v
+?>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta content='text/html;charset=utf-8' http-equiv='content-type'>
+<meta content='text/html; charset=utf-8' http-equiv='content-type'>
 <meta name='generator' content='Dairy_Farm:php'>
 <meta name='author' content='PALLAR LTD., 2008-2015'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -16,17 +16,17 @@
 <link href='../_responsive/f_list.css' rel='stylesheet' type='text/css'>
 <link href='../_responsive/f_menu.css' rel='stylesheet' type='text/css'>
 <?php
-include "f_menu.php";
+$curr_app_tab=3; include "f_menu.php";
 ?>
 <nav1>
 	<div id='cssmenu'>
 		<ul>
-			<li><a href='../forms/f__reps.php?tab=0'><span>Молоко</span></a></li>
-			<li class='active'><a href='../forms/f__reps.php?tab=1'><span>Управління стадом</span></a></li>
-			<li><a href='../forms/f__reps.php?tab=2'><span>Загальні</span></a></li>
-			<li><a href='../forms/f__reps.php?tab=3'><span>Здоров'я</span></a></li>
-			<li><a href='../forms/f__reps.php?tab=4'><span>Графіки</span></a></li>
-			<li class='last'><a href='../forms/f__reps.php?tab=5'><span>Експорт</span></a></li>
+			<li><a href='f__reps1.php'><span>Молоко</span></a></li>
+			<li class='active'><a href='f__reps2.php'><span>Управління стадом</span></a></li>
+			<li><a href='f__reps3.php'><span>Загальні</span></a></li>
+			<li><a href='f__reps4.php'><span>Здоров'я</span></a></li>
+			<li><a href='f__reps5.php'><span>Графіки</span></a></li>
+			<li class='last'><a href='f__reps6.php'><span>Експорт</span></a></li>
 		</ul>
 	</div>
 </nav1>

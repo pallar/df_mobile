@@ -1,0 +1,20 @@
+<?php
+/* DF: locales/en/f_devs._en
+devices english locale
+c: 25.12.2005
+m: 14.08.2015 */
+
+$php_m[760]="?";
+$php_m[761]="washing";//s
+$php_m[762]="free";//w
+$php_m[763]="busy";//m
+$php_m[764]="report";//t
+$php_m[765]="error";//e
+$php_m[766]="int_db err.";//o intDB overflow
+$php_m[767]="offline";//-
+$php_m[768]="done";//r
+$php_m[769]="cow num.";//i
+$php_m[770]="RFID";//x
+$php_m[771]="put RFID";//a
+$php_m[772]="version";//v
+?>

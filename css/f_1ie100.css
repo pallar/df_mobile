@@ -1,0 +1,13 @@
+.gradient_0f0 {
+	background-color:rgb(129,46,188);
+	background-image:-ms-linear-gradient(top, rgba(129,188,46,1) 0%, rgba(101,147,36,1) 55%); /* ie10+ */
+}
+
+.gradient_f00 {
+	background-color:rgb(178,0,0);
+	background-image:-ms-linear-gradient(top, rgba(201,201,201,1) 0%, rgba(178,0,0,1) 55%); /* ie10+ */
+}
+
+.btn_h0 {height:25px;}
+.sel_h0 {height:25px; padding:3px; width:100%;}
+.tbl_h0 {height:25px; width:100%;}

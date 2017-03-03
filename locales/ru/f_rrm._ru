@@ -1,0 +1,34 @@
+<?php
+/* DF_2: locales/ru/f_rrm._ru
+reports (milk text set) russian locale
+c: 12.05.2011
+m: 29.09.2015 */
+
+$ged["TAG,0"]="RFID идент.";
+$ged["TAG,0~"]="? RFID";
+$ged["Dev._cmd_t~"]="Отчёт";
+$ged["Interv.~"]="Длит.";
+$ged["Start_manual"]="Ручной пуск";
+$ged["Start_manual~"]="РП";
+$ged["Start_retr."]="Повт. пуск";
+$ged["Start_retr.~"]="ПП";
+$ged["Break_done"]="Прерванное доение";
+$ged["Break_done~"]="ПД";
+$ged["Exhaust"]="Низкий надой";
+$ged["Exhaust~"]="НН";
+$ged["M."]="Мастит";
+$ged["M.~"]="М";
+$ged["M.d.~"]="Cтепени поражения маститом вымени животного";
+$ged["Conduct."]="Проводимость, мСм";
+$ged["Conduct.~"]="Пров., мСм";
+$ged["T."]="Травма";
+$ged["T.~"]="Т";
+$ged["O."]="Охота";
+$ged["O.~"]="О";
+$ged["Dev."]="Аппарат №";
+$ged["Dev.~"]="БД";
+$ged["dairy_cycles"]="доений";
+$ged["Dairy_cycle"]="Операция доения";
+$ged["Period_restricted_007"]="Запрещено выполнять этот отчёт более, чем за семь дней подряд.";
+$ged["Period_restricted_014"]="Запрещено выполнять этот отчёт более, чем за четырнадцать дней подряд.";
+?>

@@ -1,0 +1,46 @@
+<?php
+/* DF: locales/tr/f_cows._tr
+cows azerbaijani locale
+c: 25.05.2011
+m: 26.04.2015 */
+
+$ged['days']="gün";
+$ged['Ages_groups']="Yaş grupları";
+$ged['Telyci']="Düve";
+$ged['Neteli']="Düve";
+$ged['Cows']="Inekler";
+$ged['Insems']="Tohumlama";
+$ged['Rectals']="Rektal";
+$ged['Aborts']="Buzağılama";
+$ged['Zapusks']="Başlangıç";
+
+$ged['filts0_3!']="<font color='red'>DIKKAT! Cıkmış hayvanlar kırmızıyla görüntülenmişdir!</font>";
+
+$ged['filts0_1']="hayvanları, bölüm üzere seciminde ayrılmalıdır";
+$ged['filts0_2']="sağılan hayvanları göster";
+$ged['filts0_3']="silinen hayvanları göster";
+$ged['filts0_4']="bölüm üzere seciminde ayrılmalı olmayan hayvanları göster";
+$ged['filts0_5']="sağıma yararsız hayvlanrı göster";
+$ged['filts0_6']="silinmeyen hayvanları göster";
+
+$ged['filts0_1~']="j.";
+$ged['filts0_2~']="+.";
+$ged['filts0_3~']="s.";
+$ged['filts0_4~']="-";
+$ged['filts0_5~']="-";
+$ged['filts0_6~']="-";
+
+$ged['filts9_1']="mastit hayvanları göster";
+$ged['filts9_2']="travma hayvanları göster";
+$ged['filts9_3']="av hayvanları göster";
+$ged['filts9_4']="mastitsiz hayvanları göster";
+$ged['filts9_5']="mravmasız hayvanları göster";
+$ged['filts9_6']="avsiz hayvanları göster";
+
+$ged['filts9_1~']="m.";
+$ged['filts9_2~']="t.";
+$ged['filts9_3~']="a.";
+$ged['filts9_4~']="-";
+$ged['filts9_5~']="-";
+$ged['filts9_6~']="-";
+?>

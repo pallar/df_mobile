@@ -1,0 +1,20 @@
+<?php
+/* DF: locales/tr/f_devs._tr
+azerbaijani locale
+c: 25.12.2005
+m: 26.04.2015 */
+
+$php_m[760]="?";
+$php_m[761]="yikama";//s
+$php_m[762]="özgür";//w
+$php_m[763]="sağım";//m
+$php_m[764]="rapor";//t
+$php_m[765]="hata";//e
+$php_m[766]="int_db overflow";//o sağım blokun taşması
+$php_m[767]="bağlantı yok";//-
+$php_m[768]="tamamlandı";//r
+$php_m[769]="hayv. numara.";//i
+$php_m[770]="RFID";//x
+$php_m[771]="RFID prog.";//a
+$php_m[772]="version";//v
+?>

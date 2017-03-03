@@ -1,6 +1,22 @@
 <?php
+for($app_tab=1; $app_tab<=8; $app_tab++) {
+	$app_tabs[$app_tab]="<li";
+}
+$tmp=$app_tabs[$curr_app_tab]; $app_tabs[$curr_app_tab]=$tmp." class='active";
+for($app_tab=1; $app_tab<=7; $app_tab++) {
+	if($app_tab!=$curr_app_tab) {
+		$tmp=$app_tabs[$app_tab]; $app_tabs[$app_tab]=$tmp.">";
+	} else {
+		$tmp=$app_tabs[$app_tab]; $app_tabs[$app_tab]=$tmp."'>";
+	}
+}
+if($curr_app_tab!=8) {
+	$tmp=$app_tabs[8]; $app_tabs[$app_tab]=$tmp." class='last'>";
+} else {
+	$tmp=$app_tabs[8]; $app_tabs[$app_tab]=$tmp." last'>";
+}
 ?>
-<script language='JavaScript' src='../css/f_first.js'></script>
+<script language='JavaScript' src='../dflib/f_first.js'></script>
 <script language='JavaScript' type='text/javascript'>
 function Is_CookiesOn() {
 	if ( navigator.cookieEnabled==false ) alert( 'SWITCH ON COOKIES!' );
@@ -110,7 +126,7 @@ function Period_Close() {
 </head>
 
 <body onload='Is_CookiesOn(); App_Login(); App_OnStart();' onkeypress='App_HotKeys();' oncontextmenu='return false;'>
-
+	
 <div class='mk' id='login_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:270px; z-index:10;' onmouseover='in_menu=true;'>
 </div>
 <div class='mk' id='period_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:270px; z-index:10;' onmouseover='in_menu=true;'>
@@ -121,14 +137,16 @@ function Period_Close() {
 		<ul>
 			<li class='client_rtc'><span id='rtc_div'></span></li>
 			<li style='min-width:120px;'><a style='color:#33ffff;' onclick='Login_Show(); return false;'><span id='uname_div'>&nbsp;</span></a></li>
-			<li><a href='../index.php'><span>МНЕМОСХЕМА</span></a></li>
-			<li><a href='../forms/f__parl.php'><span>ПО ЗАЛУ</span></a></li>
-			<li class='active'><a href='../forms/f__reps.php'><span>ЗВІТИ</span></a></li>
-			<li><a href='../forms/f__cards.php'><span>КАРТОТЕКА</span></a></li>
-			<li><a href='../forms/f__ops.php'><span>ОПЕРАЦІЇ</span></a></li>
-			<li><a href='../forms/f__conf.php'><span>НАЛАШТУВАННЯ</span></a></li>
-			<li><a href='../man/?lang=uk' target='w1'><span>?</span></a></li>
-			<li class='last'><a onclick='Per_FromCoo(); Period_Show(); return false'><span>ПЕРІОД</span></a></li>
+<?php
+echo "			".$app_tabs[1]."<a href='../index.php'><span>МНЕМОСХЕМА</span></a></li>
+			".$app_tabs[2]."<a href='../_view/f__parl.php'><span>ПО ЗАЛУ</span></a></li>
+			".$app_tabs[3]."<a href='../_view/f__reps.php'><span>ЗВІТИ</span></a></li>
+			".$app_tabs[4]."<a href='../_view/f__cards.php'><span>КАРТОТЕКА</span></a></li>
+			".$app_tabs[5]."<a href='../_view/f__ops.php'><span>ОПЕРАЦІЇ</span></a></li>
+			".$app_tabs[6]."<a href='../_view/f__conf.php'><span>НАЛАШТУВАННЯ</span></a></li>
+			".$app_tabs[7]."<a href='../man/?lang=uk' target='w1'><span>?</span></a></li>
+			".$app_tabs[8]."<a onclick='Per_FromCoo(); Period_Show(); return false;'><span>ПЕРІОД</span></a></li>";
+?>
 		</ul>
 	</div>
 </nav>

@@ -1,0 +1,9 @@
+<?php
+/* DF_2: locales/uk/f_05._uk
+f__cards ukrainian locale
+c: 27.12.2010
+m: 31.03.2015 */
+
+$_05_TOM_cap="Т/О/М";
+$_05_TOM_tip="Травма/Овул./Мастит";
+?>

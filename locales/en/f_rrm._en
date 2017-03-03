@@ -1,0 +1,34 @@
+<?php
+/* DF: locales/en/f_rrm._en
+reports (milk text set) english locale
+c: 12.05.2011
+m: 29.09.2015 */
+
+$ged["TAG,0"]="RFID";
+$ged["TAG,0~"]="? RFID";
+$ged["Dev._cmd_t~"]="Report";
+$ged["Interv.~"]="Dur.";
+$ged["Start_manual"]="Manual start";
+$ged["Start_manual~"]="MS";
+$ged["Start_retr."]="Retries";
+$ged["Start_retr.~"]="SR";
+$ged["Break_done"]="Interrupted";
+$ged["Break_done~"]="I";
+$ged["Exhaust"]="Low milk";
+$ged["Exhaust~"]="LM";
+$ged["M."]="Mastitis";
+$ged["M.~"]="M";
+$ged["M.d.~"]="The degree of affection by mastitis for each teat of the animal's udder";
+$ged["Conduct."]="Conductivity, mS";
+$ged["Conduct.~"]="Cond., mS";
+$ged["T."]="Trauma";
+$ged["T.~"]="T";
+$ged["O."]="Ovulation";
+$ged["O.~"]="O";
+$ged["Dev."]="Dev. №";
+$ged["Dev.~"]="D.";
+$ged["dairy_cycles"]="cycles";
+$ged["Dairy_cycle"]="Cycle";
+$ged["Period_restricted_007"]="The period of this report must be less than 7 days.";
+$ged["Period_restricted_014"]="The period of this report must be less than 14 days.";
+?>

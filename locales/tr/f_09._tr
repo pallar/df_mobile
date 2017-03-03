@@ -1,0 +1,13 @@
+<?php
+/* DF: locales/tr/f_09._tr
+azerbaijani locale
+c: 12.08.2015
+m: 14.08.2015 */
+
+//form:09
+$php_mm["_09_"]="Kullanıcı - ".$php_mm["_com_app_cap"];
+$php_mm["_09_user_"]="Kullanıcı:";
+$php_mm["_09_user_tip"]="Sistemine kayıt için listeden bir kullanıcı seçin";
+$php_mm["_09_passw_"]="Şifre:";
+$php_mm["_09_passw_tip"]="";
+?>

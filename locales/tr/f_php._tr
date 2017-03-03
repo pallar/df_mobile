@@ -1,0 +1,225 @@
+<?php
+/* DF: locales/tr/f_php._tr
+azerbaijani locale
+c: 25.12.2005
+m: 03.05.2015 */
+
+//DESCRIPTION=DF Ukraine, RU locale (419), utf-8
+//*****************************************************************************
+//ATTENTION! ROWS WITH 'DONT EDIT' MUST BE IN UKRAINIAN FOR ANY LOCALE!
+//*****************************************************************************
+//sysWait
+$php_mm[0]="bekleyin...";
+$php_mm_tip[0]="bir kaç saniye bekleyin...";
+//sysStart
+$php_mm[1]="start...";
+//sysRestart
+$php_mm[2]="restart...";
+//sysOk
+$php_mm[3]="ready";
+//sysError
+$php_mm[4]="not ready...";
+//sysNocds
+$php_mm[5]="Veritabana bağlantı yok. Programı tamamlanacaktır.";
+//sysNocdu
+$php_mm[6]="Veritabana bağlantı yok. Programından çıkmak için *Yes* tıklatın. Beklemek icin *No* tıklatın.";
+//sysExit
+$php_mm[9]="Eğer donanım ile iletişim durdurmak eminseniz - *Yes* tıklatın.";
+//mySql
+$php_mm["TABLE"]="TABLE";
+$php_mm["ERROR"]="HATA";
+$php_mm["ACCESS_DENIED"]="<table height='80%' width='100%'><tr><td><center><h2><blink>Anonim erişimi yönetimi tarafından engellendi.</blink></h2></center></td></tr>";
+//common verbs
+$php_mm["_com_app_cap"]="İnternet-Çiftlik";
+$php_mm["_com_ok_btn_cap"]="Ok";
+$php_mm["_com_cancel_btn_cap"]="X";
+$php_mm["_com_reg_btn_cap"]="Giriş";
+$php_mm["_com_reg_btn_tip"]="Oturum aç";
+$php_mm["_com_accept_btn_cap"]="Uygula";
+$php_mm["_com_accept_btn_tip"]="";
+$php_mm["_com_forward_btn_cap"]="Sonraki";
+$php_mm["_com_forward_btn_tip"]="Sonraki açmak, geçerli pencerede girişini tamamlayın";
+$php_mm["_com_ver_for_prn_lnk_cap"]="Yazdır";
+$php_mm["_com_output_to_print_lnk_cap"]="BASKI";
+$php_mm["_com_milking_cap"]="sağım";
+$php_mm["_com_milking_tip"]="";
+$php_mm["_com_s10_cap"]="sabah";
+$php_mm["_com_s10_tip"]="";
+$php_mm["_com_s11_cap"]="2";
+$php_mm["_com_s11_tip"]="";
+$php_mm["_com_s20_cap"]="gün";
+$php_mm["_com_s20_tip"]="";
+$php_mm["_com_s21_cap"]="4";
+$php_mm["_com_s21_tip"]="";
+$php_mm["_com_s30_cap"]="akşam";
+$php_mm["_com_s30_tip"]="";
+$php_mm["_com_s31_cap"]="6";
+$php_mm["_com_s31_tip"]="";
+$php_mm["_com_animal_cap"]="hayvan";
+$php_mm["_com_animal_tip"]="";
+$php_mm["_com_animals_cap"]="hayvanlar";
+$php_mm["_com_animals_tip"]="";
+$php_mm["_com_known_tag_cap"]="kayıt.";
+$php_mm["_com_known_tag_tip"]="";
+$php_mm["_com_unknown_tag_cap"]="kayıtsız. RFID";
+$php_mm["_com_unknown_tag_tip"]="";
+$php_mm["_com_wo_tag_cap"]="hata RFID";
+$php_mm["_com_wo_tag_tip"]="";
+$php_mm["_com_with_mastitus_cap"]="mastit";
+$php_mm["_com_with_mastitus_tip"]="";
+$php_mm["_com_wo_mastitus_cap"]="mastitis olmadan";
+$php_mm["_com_wo_mastitus_tip"]="";
+$php_mm["_com_with_trauma_cap"]="yaralı";
+$php_mm["_com_with_trauma_tip"]="";
+$php_mm["_com_wo_trauma_cap"]="yaralanmamış";
+$php_mm["_com_wo_trauma_tip"]="";
+$php_mm["_com_wanted_ox_cap"]="\"avı\"";
+$php_mm["_com_wanted_ox_tip"]="";
+$php_mm["_com_not_wanted_ox_cap"]="yok \"avsız\"";
+$php_mm["_com_not_wanted_ox_tip"]="";
+$php_mm["_com_only_one_dev_cap"]="numaralar dışında tüm bloklar";
+$php_mm["_com_only_one_dev_tip"]="";
+$php_mm["_com_rephd1_cap"]="rapordan çıkarılmamalıdır";
+$php_mm["_com_rephd2_cap"]="yarat";
+$php_mm["_com_no_selected_groups_cap"]="SEçKIN OLUNMAYAN GRUP...";
+$php_mm["_com_no_selected_animals_cap"]="SEçKIN OLUNMAYAN HAYVANLAR...";
+$php_mm["_com_select_all_in_group_cap"]="Set/grup üzere işareti bütün hayvanlardan sil";
+$php_mm["_com_ZAP_lnk_cap"]="Sil";
+$php_mm["_com_DELE_lnk_cap"]="Removal Mark";
+$php_mm["_com_INSE_lnk_cap"]="Ekle";
+$php_mm["_com_LOCA_lnk_cap"]="Ara";
+$php_mm["_com_UPDA_lnk_cap"]="Değiştir";
+//form:00
+$php_mm["_00_cap"]="Main - ".$php_mm["_com_app_cap"];
+$php_mm["_00_tip"]="";
+$php_mm["_00_linuxconf_btn_cap"]="LiN";//"linux config" link
+$php_mm["_00_linuxconf_btn_tip"]="Linux izin parametrelerini ayarlayın";
+$php_mm["_00_login_btn_cap"]="";//"login" link
+$php_mm["_00_login_btn_tip"]="Farklı bir kullanıcı olarak oturum açın";
+$php_mm["_00_mnemo_btn_cap"]="MNEMOS";//"goto mnemo" link
+$php_mm["_00_mnemo_btn_tip"]="Ekran taklit salonu";
+$php_mm["_00_detrep_btn_cap"]="SALONDA";//"detailed report" link
+$php_mm["_00_detrep_btn_tip"]="Sağım salonda protokolü";
+$php_mm["_00_todo_btn_cap"]="GÜNLÜK";//"farm plan" link
+$php_mm["_00_todo_btn_tip"]="Personel planı";
+$php_mm["_00_reps_btn_cap"]="RAPORLAR";//"reports" link
+$php_mm["_00_reps_btn_tip"]="Dönemi için Raporlar";
+$php_mm["_00_cards_btn_cap"]="DOSYALAR";//"cards" link
+$php_mm["_00_cards_btn_tip"]="Kartlar grupları ve hayvanlar";
+$php_mm["_00_opers_btn_cap"]="İŞLEMLERİ";//"operations" link
+$php_mm["_00_opers_btn_tip"]="Çeviriler, tohumlama ";
+$php_mm["_00_conf_btn_cap"]="AYAR";//"config" link
+$php_mm["_00_conf_btn_tip"]="Ayarları Değiştir";
+$php_mm["_00_man_btn_cap"]="?";//"about" link
+$php_mm["_00_man_btn_tip"]="Hakkında";
+$php_mm["_00_per_btn_cap"]="DÖNEM";//"period" link
+$php_mm["_00_per_btn_tip"]="Raporlama dönemi ayarla";
+$php_mm["_00_nextdevs_btn_cap"]="";//"goto next devs" button
+$php_mm["_00_nextdevs_btn_tip"]="sağım üniteleri grafik aşağıdaki göster";
+$php_mm["_00_power_ok_cap"]="220 V: OK";//"power:ok" element
+$php_mm["_00_power_ok_tip"]="Güc (220 V) normal";
+$php_mm["_00_power_absent_cap"]="220 V: kaza: kapatmak için, san.:";//"power:absent" element
+$php_mm["_00_power_absent_tip"]="Güc yok (220 V), bilgisayar kapanır";
+$php_mm["_00_power_ctrloff_cap"]="220 V: ?";//"power:ctrloff" element
+$php_mm["_00_power_ctrloff_tip"]="Güc (220 V) kontrolsuz";
+$php_mm["_00_transact_cap"]="transaction";//"transaction" element
+$php_mm["_00_devs_cap"]="sağım ünit.";//"total devices" element
+
+$php_mm["_00_devnum_column_cap"]="Sü";//col. "device"
+$php_mm["_00_devstat_column_cap"]="Faz";//col. "device state"
+$php_mm["_00_cow_column_cap"]="Hayvanlar (№, isim)";//col. "current cow"
+$php_mm["_00_milkvol_column_cap"]="Sağım ve zaman.";//col. "cow's milk quantity"
+$php_mm["_00_manualstart_column_cap"]="MS";//col. "manual starting"
+$php_mm["_00_retries_column_cap"]="YB";//col. "retries of starting"
+$php_mm["_00_manualstop_column_cap"]="IS";//col. "manual breaking"
+$php_mm["_00_mast_column_cap"]="Mastit";//col. "cow's mastitus"
+$php_mm["_00_mast_column_tip"]="mastit";
+$php_mm["_00_trauma_column_cap"]="Travma";//col. "cow's trauma"
+$php_mm["_00_trauma_column_tip"]="travma";
+$php_mm["_00_ovul_column_cap"]="Av";//col. "cow's ovul"
+$php_mm["_00_ovul_column_tip"]="av";
+
+$php_mm["_00_tot_10_cap"]="sabah";//"milk quantity at the 1st day's session"
+$php_mm["_00_tot_20_cap"]="gün";//"milk quantity at the 2nd day's session"
+$php_mm["_00_tot_30_cap"]="akşam";//"milk quantity at the 3rd day's session"
+$php_mm["_00_tot_40_cap"]="günlük";//"total milk quantity"
+
+$php_mm["_00_zoom_lnk_cap"]="Zoom";
+$php_mm["_00_zoom_lnk_tip"]="Fullscreen";
+//form:01
+$php_mm["_01_cap"]="Salon - ".$php_mm["_com_app_cap"];
+$php_mm["_01_tab1_cap"]="Detay";
+$php_mm["_01_tab2_cap"]="Sağım protokolu";
+$php_mm["_01_tab3_cap"]="Veriler (свёрнуто по животным с начала года)";
+//form:03
+$php_mm["_03_cap"]="Raporlar - ".$php_mm["_com_app_cap"];
+$php_mm["_03_tab1_cap"]="Süt";
+$php_mm["_03_tab2_cap"]="Sürü Yönetim";
+$php_mm["_03_tab3_cap"]="Genel";
+$php_mm["_03_tab4_cap"]="Sağlık";
+$php_mm["_03_tab5_cap"]="Grafikler";
+$php_mm["_03_tab6_cap"]="Eksport";
+//form:04
+$php_mm["_04_cap"]="Raporlama dönemi";
+$php_mm["_04_from_cap"]="00:00...";//from
+$php_mm["_04_to_cap"]="23:59...";//to
+$php_mm["_mm_101"]="Ocak,Ocak";//jan
+$php_mm["_mm_102"]="Şubat,Şubat";//feb
+$php_mm["_mm_103"]="Mart,Mart";//mar
+$php_mm["_mm_104"]="Nisan,Nisan";//apr
+$php_mm["_mm_105"]="Mayis,Mayis";//may
+$php_mm["_mm_106"]="Haziran,Haziran";//jun
+$php_mm["_mm_107"]="Temmuz,Temmuz";//jul
+$php_mm["_mm_108"]="Ağustos,Ağustos";//aug
+$php_mm["_mm_109"]="Eylül,Eylül";//sep
+$php_mm["_mm_110"]="Ekim ,Ekim";//oct
+$php_mm["_mm_111"]="Kasım,Kasım";//nov
+$php_mm["_mm_112"]="Aralık,Aralık";//dec
+//form:05
+$php_mm["_05_cap"]="Hesap - ".$php_mm["_com_app_cap"];
+$php_mm["_05_lists_cap"]="Listeler";
+$php_mm["_05_list_cap"]="Liste";
+$php_mm["_05_ls_lnk_cap"]="Cift";//Herds
+$php_mm["_05_gs_lnk_cap"]="Gruplar";//Groups
+$php_mm["_05_ss_lnk_cap"]="Altgruplar";
+$php_mm["_05_bs_lnk_cap"]="Türler";
+$php_mm["_05_gstab_lnk_cap"]="Grup";
+$php_mm["_05_cstab_lnk_cap"]="İnek ve Düve";
+$php_mm["_05_tstab_lnk_cap"]="RFIDs";
+$php_mm["_05_ostab_lnk_cap"]="Boğa";
+$php_mm["_05_l_card_cap"]=$php_mm["_com_app_cap"].": Kart çiftlik";
+$php_mm["_05_g_card_cap"]=$php_mm["_com_app_cap"].": Kart bölümüne";
+$php_mm["_05_s_card_cap"]=$php_mm["_com_app_cap"].": Kart alt grupları";
+$php_mm["_05_b_card_cap"]=$php_mm["_com_app_cap"].": Kart türler";
+$php_mm["_05_c_card_cap"]=$php_mm["_com_app_cap"].": Kart inek";
+$php_mm["_05_o_card_cap"]=$php_mm["_com_app_cap"].": Kart boğa";
+//form:06
+$php_mm["_06_cap"]="Ekleme - ".$php_mm["_com_app_cap"];
+$php_mm["_06_tip"]="Ekleme";
+$php_mm["_06_level1_cap"]="operasyon türünü seçin, hayvanları işaretleyin, tıklayın \"Sonraki...\"";
+$php_mm["_06_level1_tip"]="operasyon türünü seçin, hayvanları işaretleyin, tıklayın \"Sonraki...\"";
+$php_mm["_06_ret_to_level1_cap"]="operasyonunun türünü ve hayvanları değiştirin";
+$php_mm["_06_ret_to_level1_tip"]="UYARI! Bu bağlantıyı tıkladığınızda aşağıdaki tablodan verileri kaybedersiniz!";
+$php_mm["_06_edit_cap"]=$php_mm["_com_app_cap"].": Düzenleme işlemleri";
+$php_mm["_06_edit_tip"]="Düzenleme işlemleri";
+$php_mm["_06_forward_btn_tip"]="Veritabanında işlemi ekle";
+$php_mm["_06_forward_update_btn_tip"]="Veritabanında işlem değiştirin";
+$php_mm["_06_forward_delete_btn_tip"]="Veritabanından işlem sil";
+$php_mm["_06_oper_deleted_cap"]="Kaldırıldı";
+$php_mm["_06_oper_inserted_list"]="Operasyonlar listesi";
+//form:09
+$php_mm["_09_cap"]="Kullanıcı - ".$php_mm["_com_app_cap"];
+$php_mm["_09_user_cap"]="Kullanıcı:";
+$php_mm["_09_user_tip"]="Sistemine kayıt için listeden bir kullanıcı seçin";
+$php_mm["_09_passw_cap"]="Şifre:";
+$php_mm["_09_passw_tip"]="";
+//form:11
+$php_mm["_11_cap"]="Filtreler:";
+$php_mm["_11_gr1_cap"]="zaman sağım:";
+$php_mm["_11_gr2_cap"]="hayvan tanıtma";
+$php_mm["_11_gr3_cap"]="durum:";
+$php_mm["_11_gr4_cap"]="liste:";
+$php_mm["_11_gr5_cap"]="sağım bloku:";
+$php_mm["_11_filt_cap"]="Filtre:";
+//form:12
+?>

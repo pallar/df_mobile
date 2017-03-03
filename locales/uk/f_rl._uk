@@ -1,0 +1,22 @@
+<?php
+/* DF_2: locales/uk/f_rl._uk
+reports (list set) ukrainian locale
+c: 13.05.2011
+m: 26.04.2015 */
+
+//tab 1
+$ged["r-td-conductivity"]="провідність";
+//tab 3
+$ged["r-th-BY_ANIMALS_STATES"]="ЗА СТАТУСОМ ТВАРИН";
+$ged["r-th-BY_ANIMALS_AGES"]="ЗА ВІКОМ ТВАРИН";
+$ged["r-th-ALL_ANIMALS"]="ЗАГАЛОМ";
+$ged["r-td-Fore"]="Прогнозування";
+$ged["r-td-Insem_Analysis"]="Аналіз запліднень";
+$ged["r-td-Insem_Plan"]="План запліднень";
+$ged["r-td-Prep_Zapusk_Plan"]="План підготовки запуску (всі)";
+$ged["r-td-Zapusk_Plan"]="План запуску (всі)";
+$ged["r-td-Zapusk_Plan_From_To"]="План запуску (за період)";
+$ged["r-td-Abort_Plan"]="План отелів (всі)";
+$ged["r-td-Abort_Plan_From_To"]="План отелів (за період)";
+$ged["r-td-Plan_20110516"]="Планування стада";
+?>

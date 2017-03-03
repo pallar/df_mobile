@@ -1,0 +1,11 @@
+<?php
+/* DF: locales/tr/f_12._tr
+web_cam azerbaijani locale
+c: 11.11.2008
+m: 05.07.2012 */
+
+$_12_zoom_lnk_tip="Tam ekran kamera görüntüsünü açın";
+$_12_ipcam_head="Kameradan görüntü №";
+$_12_ipcam_err="Kamera çalışmıyor...";
+$_12_per="Yenile aralığı (saniye)";
+?>

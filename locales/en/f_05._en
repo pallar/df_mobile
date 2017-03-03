@@ -1,0 +1,9 @@
+<?php
+/* DF_2
+f__cards english locale
+c: 27.12.2010
+m: 09.07.2013 */
+
+$_05_TOM_cap="T/O/M";
+$_05_TOM_tip="Injury/Ovul./Mastitis";
+?>

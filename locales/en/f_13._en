@@ -1,0 +1,55 @@
+<?php
+/* DF_2: locales/en/f_13._en
+card english locale
+c: 11.11.2008
+m: 26.04.2015 */
+
+$_13_cwcard_cap="Cow' card";
+$_13_oxcard_cap="Ox' card";
+$_13_brcard_cap="Breed' card";
+$_13_grcard_cap="Section' card";
+$_13_ltcard_cap="Farm' card";
+$_13_sgcard_cap="Subgroup' card";
+$_13_pay_attention_cap="Be carefull!";
+$_13_card_changes_done_cap="updated.";
+$_13_card_no_changes_by_user_cap="the data was not been updated.";
+$_13_card_update_error_cap="UPDATE ERROR.<br>REPEAT, PLEASE.";
+$_13_card_no_changes_done_cap="canceled by user.";
+$_13_card_protected_cap="SPECIAL CARD!";
+$_13_card_anonymous_user_cap="THE GUEST RIGHTS!";
+$_13_cw_such_num_busy_cap="THE COW WITH SUCH NUMBER IS REGISTERED.";
+$_13_cw_such_rfid_busy_cap="THE COW WITH SUCH RFID-CODE IS REGISTERED.";
+$_13_ox_such_num_busy_cap="THE BULL WITH SUCH NUMBER IS REGISTERED.";
+$_13_cw_kg_cap="(kg)";
+$_13_cw_days_cap="(days)";
+$_13_cw_today_cap="Today";
+$_13_cw_yesterday_cap="Yesterday";
+$_13_cw_milk_cap="Yield";
+$_13_cw_milk_interval_cap="Dur.";
+$_13_cw_min_intens_cap="Min. flow";
+$_13_cw_avg_intens_cap="Avg. flow";
+$_13_cw_max_intens_cap="Max. flow";
+$_13_cw_week_cap="Statistics by week";
+$_13_cw_week_3_days_ago_cap="3 days ago";
+$_13_cw_week_4_days_ago_cap="4 days ago";
+$_13_cw_week_5_days_ago_cap="5 days ago";
+$_13_cw_week_6_days_ago_cap="6 days ago";
+$_13_cw_week_7_days_ago_cap="7 days ago";
+$_13_cw_week_tot_cap="By week";
+$_13_cw_lact_cap="Lact.";
+$_13_cw_lact_tot_milk_cap="Total milk";
+$_13_cw_lact_min_milk_cap="Min. milk";
+$_13_cw_lact_avg_milk_cap="Avg. milk";
+$_13_cw_lact_max_milk_cap="Max. milk";
+$_13_card_dep_sect_cap="Sect.";
+$_13_card_bdt_sect_cap="Newborn.";
+$_13_card_adv_sect_cap="Details";
+$_13_card_birthday_date_cap="DOB";
+$_13_card_rfid_confirmation_cap="RFID verification";
+$_13_card_rfid_date_cap="RFID date";
+$_13_card_birthday_num_cap="Newborn number";
+$_13_card_diff_owner_cap="Outside cow";
+//Control values
+$_13_card_ctrl_value1_cap="Lactation days (control min.)";
+$_13_card_ctrl_value2_cap="Yield, kg (control min.)";
+?>

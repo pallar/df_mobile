@@ -1,0 +1,91 @@
+<?php
+/* DF_2
+f__conf english locale
+c: 11.11.2008
+m: 26.08.2014 */
+
+$_07_="Settings";
+
+$state_az="AR (Azərbaycan Respublikası)";
+$state_rb="РБ (Рэспубліка Беларусь)";
+$state_rm="RM (Republica Moldova)";
+$state_rf="РФ (Российская Федерация)";
+$state_ukr="Україна";
+
+$_07_sectOwner="Owner";
+$_07_state="state"; $_07_fnt_state="";
+$_07_regions="region (republic)"; $_07_fnt_regions="";
+$_07_region_tip="region (zone, republic, region...)";
+$_07_subregion_tip="region";
+$_07_org="enterprise"; $_07_fnt_org="";
+$_07_addr="address (town, street)"; $_07_fnt_addr="";
+$_07_tel="phone #"; $_07_fnt_tel="";
+$_07_chief="chief"; $_07_fnt_chief="";
+$_07_chiefAnimalTech="animal technician"; $_07_fnt_chiefAnimalTech="";
+$_07_farm="farm"; $_07_fnt_farm="";
+
+$_07_sectUdm="Milkwire";
+$_07_stalls="stalls"; $_07_fnt_stalls="";
+
+$_07_sectUde="Parlor";
+$_07_pits="pits"; $_07_fnt_pits="";
+$_07_devsByPit="devices at one pit"; $_07_fnt_devsByPit="";
+$_07_dataWiresByPit="computer lines by one pit"; $_07_fnt_dataWiresByPit="";
+
+$_07_devsQ="total devices quantity"; $_07_fnt_devsQ="";
+$_07_prtsTyp="port type"; $_07_fnt_prtsTyp="";
+$_07_prt1="first port"; $_07_fnt_prt1="";
+$_07_waitBetwDevs="devices i/o timeout"; $_07_fnt_waitBetDevs="";
+$_07_rfidMode="RFID"; $_07_fnt_rfidMode="";
+$_07_rfidModes[1]="DF: local readers";
+$_07_rfidModes[2]="DF: AllFlex-based central readers";
+$_07_rfidModes[3]="DF: tied cows";
+$_07_rfidModes[4]="DF: Texas Instruments based central readers";
+$_07_drmdsByPit="dairymaids at one pit"; $_07_fnt_drmdsByPit="";
+$_07_drmdBdsMode="dairymaid works with"; $_07_fnt_drmdBdsMode="";
+$_07_drmdBdss[1]="only one side of the pit";
+$_07_drmdBdss[2]="a part of the pit on both sides";
+$_07_jaggs="jaggs"; $_07_fnt_jaggs="";
+$_07_jprtsTyp="jaggs` port type"; $_07_fnt_jprtsTyp="";
+$_07_jprt1="jaggs` first port"; $_07_fnt_jprt1="";
+$_07_jcmdTimeout="jaggs` timeout"; $_07_fnt_jcmdTimeout="";
+$_07_jignoreSimilar="ignore similar rfids"; $_07_fnt_jignoreSimilar="";
+
+$_07_sectSched="Schedule";
+$_07_sched="milking starts at";
+
+$_07_sectExtra="Additional parameters";
+$_07_lang="language";
+$_07_langs[1]="belorussian"; $langs_val[1]="be"; $langs_dis[be]="";
+$_07_langs[2]="russian"; $langs_val[2]="ru"; $langs_dis[ru]="";
+$_07_langs[3]="turkish"; $langs_val[3]="tr"; $langs_dis[tr]="";
+$_07_langs[4]="ukrainian"; $langs_val[4]="uk"; $langs_dis[uk]="";
+$_07_langs[5]="english"; $langs_val[5]="en"; $langs_dis[en]="";
+
+$_07_err1="<b>ERROR</b>: fill all fields with errors.";
+$_07_err1024="<b>ERROR</b>: check devices` quantity at one pit.";
+$_07_err524288="<b>ERROR</b>: DF with local readers has not jagss.";
+$_07_err2097152="<b>ERROR</b>: $_07_jprt1 is reserved by parlor.";
+$_07_err4194304="<b>ERROR</b>: check the schedule.";
+$_07_readonly="YOU HAVE NOT RIGHTS TO EDIT SETTINGS!";
+
+$_07_insem1st_days0="First insemination at age of (days)";//days before 1st insemination (after birthday)
+$_07_not_abort1st_days0="First calving at age of (days)";//days before 1st abort (after birthday)
+$_07_rectal_days0="From insemination to rectal (days)";//days before rectal (after insemination)
+$_07_insem_days0_fault_rectal="From false rectal to insemination (days)";//days before insemination (after bad rectal)
+$_07_prep_zapusk_days0="From insemination to dry prep. (days)";//days before zapusk preparing (after insemination)
+$_07_zapusk_days0="From insemination to dry (days)";//days before zapusk (after insemination)
+$_07_late_zapusk_days0="From insemination to late dry (days)";//days before late zapusk (after insemination)
+$_07_not_abort_days0="From insemination to calving (days)";//days before abort (after insemination)
+$_07_insem_days0="From calving to insemination (days)";//days before insemination (after abort)
+$_07_insem_days0_abort="From abort to inseminaton (days)";//days before insemination (after abort)
+
+$_07_jattrs="Additional symptoms to jagg"; $_07_fnt_jattrs="";
+$_07_jattr_t="injury"; $_07_fnt_jattr_t="";
+$_07_jattr_o="ovul."; $_07_fnt_jattr_o="";
+$_07_jattr_m="mastit."; $_07_fnt_jattr_m="";
+
+$_07_conductiv="Milk` electrical conductivity";
+$_07_auto_prep_zapusk="Automatic carrying to dry";
+$_07_auto_prep_zapusk_day="A day from preparing to dry";
+?>

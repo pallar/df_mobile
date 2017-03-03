@@ -1,0 +1,22 @@
+<?php
+/* DF: locales/tr/f_rl._tr
+reports (list set) azerbaijani locale
+c: 13.05.2011
+m: 02.06.2014 */
+
+//common section: tab 1
+$ged["r-td-conductivity"]="iletkenlik";
+//common section: tab 3
+$ged["r-th-BY_ANIMALS_STATES"]="HAYVANLARIN DURUMU ÜZERİNE";//RR0101
+$ged["r-th-BY_ANIMALS_AGES"]="HAYVANLARIN YAŞ ÜZERE";//RR0114
+$ged["r-th-ALL_ANIMALS"]="TÜM HAYVANLAR";//RR0125
+$ged["r-td-Fore"]="Tahmin";//RR0134
+$ged["r-td-Insem_Analysis"]="Tohumlamanın Analizi";
+$ged["r-td-Insem_Plan"]="Tohumlama Planı";
+$ged["r-td-Prep_Zapusk_Plan"]="Eğitim planı başlangıç (tümü)";
+$ged["r-td-Zapusk_Plan"]="Lansmanı Planı (tümü)";
+$ged["r-td-Zapusk_Plan_From_To"]="Lansmanı Planı (bir süre için)";
+$ged["r-td-Abort_Plan"]="Planı buzağılama (tümü)";
+$ged["r-td-Abort_Plan_From_To"]="Buzağılama Planı (bir süre için)";
+$ged["r-td-Plan_20110516"]="Kalkınma Planı sürüsü";
+?>

@@ -1,0 +1,11 @@
+<?php
+/* DF: locales/en/f_rroerr._en
+reports (operations text set: error messages) english locale
+c: 16.05.2011
+m: 26.04.2015 */
+
+$ged["ALGO_NOT_READY!"]="under development...";
+$ged["Warning"]="Warning";
+$ged["Bad_insem"]="Attention! There are unregistered insemination operations after calving for a long time.";
+$ged["Bad_insem~"]="ERROR!";
+?>
