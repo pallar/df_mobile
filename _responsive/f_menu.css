@@ -210,9 +210,14 @@
     background:#9baef9;
     content:"=";
     display:block;
-    height:31px;
-    padding:15px 0 0 5px;
+    font-size:14px;
+    font-weight:bold;
+    padding:15px 5px 15px 5px;
   }
+  nav content {
+    border:1px solid black;
+  }
+
   #cssmenu ul li {
     float:none;
     display:none;

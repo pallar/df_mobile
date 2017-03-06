@@ -16,6 +16,22 @@ if($curr_app_tab!=8) {
 	$tmp=$app_tabs[8]; $app_tabs[$app_tab]=$tmp." last'>";
 }
 ?>
+<meta content='text/html;charset=utf-8' http-equiv='content-type'>
+<meta name='generator' content='Dairy_Farm:php'>
+<meta name='author' content='PALLAR LTD., 2008-2017'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link href='../css/f_.css' rel='stylesheet' type='text/css'>
+<link href='../css/f_0.css' rel='stylesheet' type='text/css'>
+<link href='../css/f_1ch100.css' rel='stylesheet' type='text/css'>
+<link href='../_responsive/f_rgcl.css' rel='stylesheet' type='text/css'>
+<link href='../_responsive/f_rg2cls.css' rel='stylesheet' type='text/css'>
+<link href='../_responsive/f_list.css' rel='stylesheet' type='text/css'>
+<link href='../_responsive/f_menu.css' rel='stylesheet' type='text/css'>
+<link href='../css.lib/bootstrap.css' rel='stylesheet' type='text/css'>
+<script language='JavaScript' src='../js.lib/angular/angular.js'></script>
+<script language='JavaScript' src='../js.lib/bootstrap/bootstrap.js'></script>
+<script language='JavaScript' src='../js.lib/jquery/jquery.js'></script>
+<script language='JavaScript' src='../js.lib/ngprogbar.js'></script>
 <script language='JavaScript' src='../dflib/f_first.js'></script>
 <script language='JavaScript' type='text/javascript'>
 function Is_CookiesOn() {
@@ -132,21 +148,22 @@ function Period_Close() {
 <div class='mk' id='period_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:270px; z-index:10;' onmouseover='in_menu=true;'>
 </div>
 <div class='shadow' id='__shadow__' name='__shadow__'></div>
+<?php
+echo "
 <nav>
 	<div id='cssmenu'>
 		<ul>
 			<li class='client_rtc'><span id='rtc_div'></span></li>
 			<li style='min-width:120px;'><a style='color:#33ffff;' onclick='Login_Show(); return false;'><span id='uname_div'>&nbsp;</span></a></li>
-<?php
-echo "			".$app_tabs[1]."<a href='../index.php'><span>МНЕМОСХЕМА</span></a></li>
+			".$app_tabs[1]."<a href='../index.php'><span>МНЕМОСХЕМА</span></a></li>
 			".$app_tabs[2]."<a href='../_view/f__parl.php'><span>ПО ЗАЛУ</span></a></li>
 			".$app_tabs[3]."<a href='../_view/f__reps.php'><span>ЗВІТИ</span></a></li>
 			".$app_tabs[4]."<a href='../_view/f__cards.php'><span>КАРТОТЕКА</span></a></li>
 			".$app_tabs[5]."<a href='../_view/f__ops.php'><span>ОПЕРАЦІЇ</span></a></li>
 			".$app_tabs[6]."<a href='../_view/f__conf.php'><span>НАЛАШТУВАННЯ</span></a></li>
 			".$app_tabs[7]."<a href='../man/?lang=uk' target='w1'><span>?</span></a></li>
-			".$app_tabs[8]."<a onclick='Per_FromCoo(); Period_Show(); return false;'><span>ПЕРІОД</span></a></li>";
-?>
+			".$app_tabs[8]."<a onclick='Per_FromCoo(); Period_Show(); return false;'><span>ПЕРІОД</span></a></li>
 		</ul>
 	</div>
 </nav>
+";

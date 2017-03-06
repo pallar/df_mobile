@@ -4,23 +4,7 @@
 <!DOCTYPE html>
 <html ng-app="f_ls">
 <head>
-<meta content='text/html;charset=utf-8' http-equiv='content-type'>
-<meta name='generator' content='Dairy_Farm:php'>
-<meta name='author' content='PALLAR LTD., 2008-2015'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>[2017:0214]&nbsp;Картотека - Інтернет-Ферма</title>
-<link href='../css/f_0.css' rel='stylesheet' type='text/css'>
-<link href='../css/f_1ch100.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_rgcl.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_rg2cls.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_list.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_menu.css' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="../css.lib/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../css/f_.css">
-<script src="../js.lib/jquery/jquery.js"></script>
-<script src="../js.lib/angular/angular.js"></script>
-<script src="../js.lib/bootstrap/bootstrap.js"></script>
-<script src="../js.lib/ngprogbar.js"></script>
+<title>[2017:0303]&nbsp;Картотека - Інтернет-Ферма</title>
 <?php
 $curr_app_tab=4; include "f_menu.php";
 ?>
