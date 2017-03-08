@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html ng-app="f_gs">
 <head>
-<title>[2017:0303]&nbsp;Картотека - Інтернет-Ферма</title>
 <?php
+$title="Картотека - Інтернет-Ферма";
 $curr_app_tab=4; include "f_menu.php";
 ?>
 
@@ -58,13 +58,11 @@ window.onresize=function() {
 <div class="container wrapper" ng-controller="DbController">
 <!--	<h1 class="text-center">Groups</h1>-->
 	<nav class="navbar navbar-default">
-		<div class="navbar-header">
-			<div class="alert alert-default navbar-brand search-box">
-				<button class="btn btn-primary" ng-show="show_form" ng-click="G_add_form_show()">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-			</div>
-			<div class="alert alert-default input-group search-box">
-				<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." ng-model="search_query"></span>
-			</div>
+		<div class="alert alert-default navbar-brand search-box">
+			<button class="btn btn-primary" ng-show="show_form" ng-click="G_add_form_show()">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+		</div>
+		<div class="alert alert-default input-group search-box">
+			<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." ng-model="search_query"></span>
 		</div>
 	</nav>
 	<div class="col-md-6 col-md-offset-3">
@@ -78,18 +76,16 @@ window.onresize=function() {
 	<div class="table-responsive" id="gs_list">
 		<table class="table table-hover">
 		<tr>
-			<th>Id</th>
-			<th>#</th>
+			<th width='60px'></th>
+			<th width='60px'></th>
 			<th>Nick</th>
-			<th></th>
-			<th></th>
+			<th width='70px'>#</th>
 		</tr>
 		<tr ng-repeat="detail in details | filter:search_query">
-			<td><span>{{detail.id}}</span><a name={{detail.id}}></a></td>
-			<td>{{detail.num}}</td>
-			<td>{{detail.nick}}</td>
 			<td><button class="btn btn-warning" title="Edit Group" ng-click="G_edit_form_show(detail)"><span class="glyphicon glyphicon-edit"></span></button></td>
 			<td><button class="btn btn-danger" title="Delete Group" ng-disabled="detail.id==1" ng-click="db_G_delete(detail)"><span class="glyphicon glyphicon-trash"></span></button></td>
+			<td>{{detail.nick}}</td>
+			<td>{{detail.num}}</td>
 		</tr>
 		</table>
 	</div>

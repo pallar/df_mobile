@@ -66,5 +66,5 @@ f_sgs.controller('DbController',['$scope','$http',function($scope,$http) {
 		$('#sgs_list').css('display','none');
 		$('#sg_add_form').css('display','none');
 		$('#sg_edit_form').slideToggle();
-	}	
+	}
 }]);

@@ -15,6 +15,9 @@ if($curr_app_tab!=8) {
 } else {
 	$tmp=$app_tabs[8]; $app_tabs[$app_tab]=$tmp." last'>";
 }
+$title="[2017:0303]&nbsp;".$title;
+echo "
+<title>$title</title>";
 ?>
 <meta content='text/html;charset=utf-8' http-equiv='content-type'>
 <meta name='generator' content='Dairy_Farm:php'>

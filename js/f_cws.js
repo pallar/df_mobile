@@ -143,5 +143,5 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 		$('#cws_list').css('display','none');
 		$('#cw_add_form').css('display','none');
 		$('#cw_edit_form').slideToggle();
-	}	
+	}
 }]);

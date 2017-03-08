@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html ng-app="f_cws">
 <head>
-<title>[2017:0303]&nbsp;Картотека - Інтернет-Ферма</title>
 <?php
+$title="Картотека - Інтернет-Ферма";
 $curr_app_tab=4; include "f_menu.php";
 ?>
 
@@ -79,29 +79,27 @@ window.onresize=function() {
 	<div class="table-responsive" id="cws_list">
 		<table class="table table-hover">
 		<tr>
-			<th>Id</th>
-			<th>Cow #</th>
-			<th>Date of Birth</th>
-			<th>Birth #</th>
+			<th width='60px'></th>
+			<th width='60px'></th>
+    		<th width='70px'>#</th>
 			<th>Nick</th>
-			<th></th>
-			<th></th>
+			<th width='100px'>Date of Birth</th>
+			<th>Birth #</th>
 		</tr>
 		<tr ng-repeat="detail in details | filter:search_query">
-			<td><span>{{detail.id}}</span></td>
-			<td>{{detail.cow_num}}</td>
-			<td>{{detail.b_date}}</td>
-			<td>{{detail.b_num}}</td>
-			<td>{{detail.nick}}</td>
 			<td><button class="btn btn-warning" title="Edit Cow" ng-click="Cw_edit_form_show(detail)"><span class="glyphicon glyphicon-edit"></span></button></td>
 			<td><button class="btn btn-danger" title="Delete Cow" ng-disabled="detail.id==1" ng-click="db_Cw_delete(detail)"><span class="glyphicon glyphicon-trash"></span></button></td>
+			<td>{{detail.cow_num}}</td>
+			<td>{{detail.nick}}</td>
+			<td>{{detail.b_date}}</td>
+			<td>{{detail.b_num}}</td>
 		</tr>
 		</table>
 	</div>
 	<nav class="navbar navbar-default" ng-if="hasMoreData">
 		<div class="navbar-header">
 			<div class="alert alert-default navbar-brand">
-				<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>-->
+				<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
 			</div>
 		</div>
 	</nav>

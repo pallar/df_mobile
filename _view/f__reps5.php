@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>[2017:0303]&nbsp;Звіти - Інтернет-Ферма</title>
 <?php
+$title="Звіти - Інтернет-Ферма";
 $curr_app_tab=3; include "f_menu.php";
 ?>
 

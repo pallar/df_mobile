@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html ng-app="f_conf">
 <head>
-<title>[2017:0303]&nbsp;Конфігуратор - Інтернет-Ферма</title>
 <?php
+$title="Конфігуратор - Інтернет-Ферма";
 $curr_app_tab=6; include "f_menu.php";
 ?>
 

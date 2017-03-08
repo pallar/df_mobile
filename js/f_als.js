@@ -66,5 +66,5 @@ f_ls.controller('DbController',['$scope','$http',function($scope,$http) {
 		$('#ls_list').css('display','none');
 		$('#l_add_form').css('display','none');
 		$('#l_edit_form').slideToggle();
-	}	
+	}
 }]);

@@ -70,5 +70,5 @@ f_oxs.controller('DbController',['$scope','$http',function($scope,$http) {
 		$('#oxs_list').css('display','none');
 		$('#ox_add_form').css('display','none');
 		$('#ox_edit_form').slideToggle();
-	}	
+	}
 }]);
