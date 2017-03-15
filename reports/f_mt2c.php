@@ -1,8 +1,8 @@
 <?php
 /* DF_2: reports/f_mt2c.php
 math: extracting by table, total for 7(8) days (AVIDA)
-created: 25.12.2005
-modified: 08.07.2015 */
+c: 25.12.2005
+m: 08.07.2015 */
 
 //total by day
 function Total_ByIdAndDate( $r, $m, $mc, $dc ) {

@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Parlor Report Form -->
 <!DOCTYPE html>
-<html>
+<html ng-app='f_parl'>
 <head>
 <?php
 $title="По залу - Інтернет-Ферма";

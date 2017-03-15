@@ -1,11 +1,11 @@
 <?php
 /* DF_2: reports/f_ccw1.php
 report: cow card 2-mol ([c]ard of [c]o[w][1]:Ukraine)
-created: 15.09.2009
-modified: 01.07.2015 */
+c: 15.09.2009
+m: 13.03.2017 */
 
-$_GET[cow_id];
-$_GET[ret0];//link to return to previous page
+$cow_id=$_GET["cow_id"];
+$ret0=$_GET["ret0"];//link to return to previous page
 //TEMPORARY ALL URSs POINT TO PART1
 $idx_a=array( "0", "1", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2" );
 //$idx_a=array( "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" );
@@ -89,8 +89,8 @@ function Data_SELE( $dbt, $id, $ident ) {
 		 `a1_0901`, `a1_0902`, `a1_0903`, `a1_0904`, `a1_0905`, `a1_0907`,
 		 `a1_19`
 		 FROM $c_f2ml WHERE $c_f2ml.id*1=$id", $db );
-		$sqerr=mysql_errno();
-		if ( $sqlerr==0 ) {
+		$error=mysql_errno();
+		if ( $error==0 ) {
 			$row=mysql_fetch_row( $res ); $ri=0;
 			for ( $ai=1; $ai<=9; $ai++ ) for ( $aj=1; $aj<=8; $aj++ ) $a1[$ai][$aj]=-1;
 			$a1[0][19]=-1;
@@ -118,8 +118,8 @@ function Data_SELE( $dbt, $id, $ident ) {
 		 `a1_0401`, `a1_0402`, `a1_0403`,
 		 `a1_0501`, `a1_0503`
 		 FROM $o_f2ml WHERE $o_f2ml.id*1=$id", $db );
-		$sqlerr=mysql_errno();
-		if ( $sqlerr==0 ) {
+		$error=mysql_errno();
+		if ( $error==0 ) {
 			$row=mysql_fetch_row( $res ); $ri=1;
 			for ( $ai=1; $ai<=5; $ai++ ) for ( $aj=1; $aj<=3; $aj++ ) $a1[$ai][$aj]=-1;
 			for ( $ai=1; $ai<=5; $ai++ ) for ( $aj=1; $aj<=3; $aj++ ) {
@@ -460,6 +460,8 @@ function ArrayNbsp() {
 		if ( $a>0 & $b>0 ) $mf_[$ai][08]=round( $a*$b/100, 2 ); else $mf_[$ai][08]="&nbsp;";
 	}
 }
+
+Dbase_connect(); Dbase_select();
 
 $res=mysql_query( "SELECT region, subregion FROM $globals", $db ); $row=mysql_fetch_row( $res );
 $region=$row[0]; $subregion=$row[1];

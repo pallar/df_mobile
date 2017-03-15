@@ -1,19 +1,30 @@
 <?php
-/*
-DF_2: reports/f_oratio.php
+/* DF_2: reports/f_oratio.php
 report: herd current quantitative ratio
-created: 21.04.2011
-modified: 02.06.2014
-*/
+c: 21.04.2011
+m: 15.03.2017 */
 
 ob_start();//lock output to set cookies properly!
+$noCSS=$_GET["noCSS"]*1;
 
-$_GET[title]; $title_=$title;
+$title_=$title=$_GET["title"];
 
 $dontuse_period=1;//ONLY IN THIS REPORT
-$repfilt__hide = 1;//hide filters
+$repfilt__hide=1;//hide filters
 
 include( "f_jfilt.php" );
+
+$th1=$_02_h_["Index"];
+$th2=$_02_h_["Value"];
+$th3=$_02_h_["Percent"];
+
+$_mod_rep_CSS=1;
+$_mod_rep_CSS_content="
+	/* Label the data */
+	#rep_tbody td:nth-of-type(1):before { content:\"".$th1."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(2):before { content:\"".$th2."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(3):before { content:\"".$th3."\"; text-align:left; top:0; }";
+
 include( "frhead.php" );
 
 $all=0;
@@ -73,69 +84,94 @@ if ( $all>0 ) {
 	$p_calvings=round( $calvings/$all );
 	$p_aborts=round( $aborts/$all );
 	$p_others=round( $others/$all );
+} else {
+	$p_insem="-";
+	$p_insem1="-"; $p_insem2="-";
+	$p_pregn="-";
+	$p_pregn1="-"; $p_pregn2="-"; $p_pregn3="-"; $p_pregn4="-";
+	$p_npregn="-";
+	$p_calvings="-";
+	$p_aborts="-";
+	$p_others="-";
 }
 
 echo "
-<table cellspacing='1' class='st2' width='500px'>
-<tr class='st_title2' style='height:28px'>
-	<td $cjust width='50%'><b>".$_02_h_cap['Index']."</b></td>
-	<td $cjust width='25%'><b>".$_02_h_cap['Value']."</b></td>
-	<td $cjust width='25%'><b>".$_02_h_cap['Percent']."</b></td>
-</tr>";
-RepTr();//inseminated
+<table>
+<thead id='rep_thead'>
+<tr $cjust height='28px'>
+	<th $cjust width='50%'><b>".$th1."</b></th>
+	<th $cjust width='25%'><b>".$th2."</b></th>
+	<th $cjust width='25%'><b>".$th3."</b></th>
+</tr>
+</thead>
+<tbody id='rep_tbody'>";
+//RepTr();//inseminated
 echo "
-	<td><b>".$_02_h_cap['12']."</b>:&nbsp;</td>
+<tr $rjust>
+	<td><b>".$_02_h_["12"]."</b>:</td>
 	<td $cjust><b>$insem</b></td>
 	<td $cjust><b>$p_insem</b></td>
 </tr>";
-RepTr();//inseminated once
+//RepTr();//inseminated once
 echo "
-	<td $rjust>".$_02_h_cap['12_01'].":&nbsp;<br>".$_02_h_cap['12_02'].":&nbsp;</td>
+<tr $rjust>
+	<td $rjust>".$_02_h_["12_01"].":<br>".$_02_h_["12_02"].":</td>
 	<td $cjust>$insem1<br>$insem2</td>
 	<td $cjust>$p_insem1<br>$p_insem2</td>
 </tr>";
-RepTr();//pregnant
+//RepTr();//pregnant
 echo "
-	<td><b>".$_02_h_cap['15']."</b>:&nbsp;</td>
+<tr $rjust>
+	<td><b>".$_02_h_["15"]."</b>:</td>
 	<td $cjust><b>$pregn</b></td>
 	<td $cjust><b>$p_pregn</b></td>
 </tr>";
-RepTr();//pregnant after first insem
+//RepTr();//pregnant after first insem
 echo "
-	<td $rjust>".$_02_h_cap['15_01'].":&nbsp;<br>".$_02_h_cap['15_02'].":&nbsp;<br>".$_02_h_cap['15_03'].":&nbsp;</td>
+<tr $rjust>
+	<td $rjust>".$_02_h_["15_01"].":<br>".$_02_h_["15_02"].":<br>".$_02_h_["15_03"].":</td>
 	<td $cjust>$pregn1<br>$pregn2<br>$pregn3 ($pregn4)</td>
 	<td $cjust>$p_pregn1<br>$p_pregn2<br>$p_pregn3 ($p_pregn4)</td>
 </tr>";
-RepTr();//not pregnant
+//RepTr();//not pregnant
 echo "
-	<td><b>".$_02_h_cap['14']."</b>:&nbsp;</td>
+<tr $rjust>
+	<td><b>".$_02_h_["14"]."</b>:</td>
 	<td $cjust><b>$npregn</b></td>
 	<td $cjust><b>$p_npregn</b></td>
 </tr>";
-RepTr();//calvings
+//RepTr();//calvings
 echo "
-	<td><b>".$_02_h_cap['16_01']."</b>:&nbsp;</td>
+<tr $rjust>
+	<td><b>".$_02_h_["16_01"]."</b>:</td>
 	<td $cjust><b>$calvings</b></td>
 	<td $cjust><b>$p_calvings</b></td>
 </tr>";
-RepTr();//aborts
+//RepTr();//aborts
 echo "
-	<td><b>".$_02_h_cap['16_02']."</b>:&nbsp;</td>
+<tr $rjust>
+	<td><b>".$_02_h_["16_02"]."</b>:</td>
 	<td $cjust><b>$aborts</b></td>
 	<td $cjust><b>$p_aborts</b></td>
 </tr>";
-RepTr();//others
+//RepTr();//others
 echo "
-	<td><b>".$_02_h_cap['10']."</b>:&nbsp;</td>
+<tr $rjust>
+	<td><b>".$_02_h_["10"]."</b>:</td>
 	<td $cjust><b>$others</b></td>
 	<td $cjust><b>$p_others</b></td>
 </tr>
-<tr class='st_title2' style='height:28px'>
-	<td $cjust><b>".$ged['TOTAL']."</b>:&nbsp;</td>
-	<td $cjust><b>$all</b></td>
-	<td $cjust><b></b></td>
+</tbody>
+<tfoot id='rep_tfoot'>
+<tr $rjust height='28px'>
+	<td $cjust><b>".$ged["TOTAL"]."</b>:</td>
+	<td><b>$all</b></td>
+	<td>&nbsp;</td>
 </tr>
-</table>";
+</tfoot>
+</table><br>";
 
-ob_end_flush();//unlock output to set cookies properly!
+include( "frfoot.php" );
+
+ob_end_flush();
 ?>

@@ -4,27 +4,27 @@ f__todo english locale
 c: 22.11.2007
 m: 25.04.2015 */
 
-$_02_cb_cap="in detail";
-$_02_h_cap['10']="Animals with uncertain status";
-$_02_h_cap['11']="Animals that can be seeding";
-$_02_h_cap['12']="Animals that have been seeded";
-$_02_h_cap['12_01']="... one time";
-$_02_h_cap['12_02']="... twice or more";
-$_02_h_cap['13']="Animals, for which you can pursue rectals";
-$_02_h_cap['14']="Not pregnant animals";
-$_02_h_cap['15']="Pregnant animals";
-$_02_h_cap['15_01']="... after first insemination";
-$_02_h_cap['15_02']="... after second insemination";
-$_02_h_cap['15_03']="... after third (fourth) insemination";
-$_02_h_cap['16']="";
-$_02_h_cap['16_01']="Calvings";
-$_02_h_cap['16_02']="Aborts";
-$_02_h_cap['17']="Animals at yield";
-$_02_h_cap['18']="Animals at ovulation";
-$_02_h_cap['19']="Animals at lactation";
-$_02_h_cap['20']="Animals to dry";
-$_02_h_cap['21']="Dry animals";
-$_02_h_cap['Index']="Index";
-$_02_h_cap['Value']="Value";
-$_02_h_cap['Percent']="Percent";
+$_02_cb_="in detail";
+$_02_h_['10']="Animals with uncertain status";
+$_02_h_['11']="Animals that can be seeding";
+$_02_h_['12']="Animals that have been seeded";
+$_02_h_['12_01']="... one time";
+$_02_h_['12_02']="... twice or more";
+$_02_h_['13']="Animals, for which you can pursue rectals";
+$_02_h_['14']="Not pregnant animals";
+$_02_h_['15']="Pregnant animals";
+$_02_h_['15_01']="... after first insemination";
+$_02_h_['15_02']="... after second insemination";
+$_02_h_['15_03']="... after third (fourth) insemination";
+$_02_h_['16']="";
+$_02_h_['16_01']="Calvings";
+$_02_h_['16_02']="Aborts";
+$_02_h_['17']="Animals at yield";
+$_02_h_['18']="Animals at ovulation";
+$_02_h_['19']="Animals at lactation";
+$_02_h_['20']="Animals to dry";
+$_02_h_['21']="Dry animals";
+$_02_h_['Index']="Index";
+$_02_h_['Value']="Value";
+$_02_h_['Percent']="Percent";
 ?>

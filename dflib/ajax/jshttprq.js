@@ -519,7 +519,7 @@ JsHttpRequest.LOADERS.form={loader:function(req) {
 		s.style.position="absolute";
 		s.style.display="none";
 		s.style.visibility="hidden";
-		s.innerHTML=(_4e?"":"<form"+(th.method=="POST"?" enctype=\"multipart/form-data\" method=\"post\"":"")+"></form>")+"<iframe name=\""+_55+"\" id=\""+_55+"\" style=\"width:0px; height:0px; overflow:hidden; border:none\"></iframe>";
+		s.innerHTML=(_4e?"":"<form"+(th.method=="POST"?" enctype=\"multipart/form-data\" method=\"post\"":"")+"></form>")+"<iframe name=\""+_55+"\" id=\""+_55+"\" style=\"width:0; height:0; overflow:hidden; border:none\"></iframe>";
 		if (!_4e) {
 			_4e=th.span.firstChild;
 		}

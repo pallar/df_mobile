@@ -8,7 +8,6 @@ var f_ops=angular.module('f_ops',['ngProgress']);
 
 f_ops.controller('DbController',['$scope','$http',function($scope,$http) {
 	db_Cws_get();
-
 	
 //	$scope.progressbar=ngProgressFactory.createInstance();
 //	$scope.progressbar.start();
@@ -21,7 +20,4 @@ f_ops.controller('DbController',['$scope','$http',function($scope,$http) {
 			$scope.details=__data;
 		});
 	}
-
-	$scope.cur_cw={};
-
 }]);

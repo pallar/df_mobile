@@ -2,21 +2,20 @@
 /* DF_2: reports/f_ofore[CAST]3.php
 report: forecast for all cows (moving from group to group)
 c: 24.09.2008
-m: 12.07.2015 */
+m: 14.03.2017 */
 
 $dbt_ext="_o";
 
 ob_start();//lock output to set cookies properly!
 
-$graph=$_GET[graph]*1;
-$title_=$_GET[title];
+$graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 
 $outsele_=-1; $outsele_table=-1; $outsele_field=-1;
 
-$cows_cnt=0;
-
 //$dontuse_period=4;//PERIOD_BEGIN=now(), PERIOD_END=now()
 $dontuse_filt=1;//ONLY IN THIS REPORT
+
+$cows_cnt=0;
 
 include( "f_jfilt.php" );
 include( "../dflib/f_filt1.php" );
@@ -24,7 +23,8 @@ include( "../locales/$lang/f_rl._$lang" );
 
 $sself="../".$hRep['ofore3'];
 
-$dontuse_period=$_GET[dontuse_period]*1;
+$dontuse_period=$_GET["dontuse_period"]*1;
+
 if ( $dontuse_period==4 ) {
 	$du_p=0; $href_title_=$ged['r-td-Abort_Plan_From_To'];
 } else {
@@ -46,7 +46,7 @@ $y0z=$date0z[0]; $m0z=$date0z[1]; $d0z=$date0z[2];
 
 $db_id=0;
 
-if ( $graph==0 ) {
+if ( $graph<1 ) {
 	echo $ged['days_relative_to']."&nbsp;".$now_dmY."
 <table cellspacing='1' class='st2'>
 <tr $cjust class='st_title2' style='height:28px'>
@@ -275,7 +275,7 @@ if ( $sqlerr==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 	mysql_free_result( $res1 );
 }
 
-if ( $graph==0 ) {
+if ( $graph<1 ) {
 	if ( $mq==0 ) {
 		$mt1="-";
 	} else {
@@ -292,7 +292,7 @@ if ( $graph==0 ) {
 </tr>
 </table><br>";
 
-} else if ( $graph==1 ) {
+} else {
 	$dots_set=$dots[0];
 	if ( $dots_cnt>300 ) $dots_cnt=300;//no more than 300 dots for JpGraph!
 	for ( $i=1; $i<=$dots_cnt; $i++ )

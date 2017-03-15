@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Reports Tab 3 (Common) Form -->
 <!DOCTYPE html>
-<html>
+<html ng-app='f_reps'>
 <head>
 <?php
 $title="Звіти - Інтернет-Ферма";
@@ -65,7 +65,6 @@ window.onresize=function() {
 			<li><a href='../reports/f_lcws.php?title=%D0%9A%D0%BE%D1%80%D0%BE%D0%B2%D0%B8&sele_byState=A0' target='w1'>Корови</a></li>
 			<li><a href='../reports/f_lcws.php?title=%D0%A2%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B8+%D0%B7+%D0%BD%D0%B5%D0%B2%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%BC+%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%BE%D0%BC&sele_byState=A**' target='w1'>Тварини з невизначеним статусом</a></li>
 			<li><a href='../reports/f_lcws.php?title=%D0%9A%D0%BE%D1%80%D0%BE%D0%B2%D0%B8+%D0%B7%D0%B3%D1%96%D0%B4%D0%BD%D0%BE+%D0%B2%D1%96%D0%BA%D1%83%2C+%D0%B0%D0%BB%D0%B5+%D0%B1%D0%B5%D0%B7+%D0%BE%D1%82%D0%B5%D0%BB%D1%96%D0%B2&sele_byState=A0q' target='w1'>Корови згідно віку, але без отелів</a></li>
-<!--			<li><a href='../reports/f_lcws3.php?title=%D0%A2%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B8%2C+%D1%8F%D0%BA%D0%B8%D1%85+%D0%BD%D0%B5+%D0%B7%D0%B0%D0%BA%D1%80i%D0%BF%D0%B8%D0%BB%D0%B8+%D0%B7%D0%B0+%D0%B2i%D0%B4%D0%B4i%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F%D0%BC&sele_where=64&locate_where=64' target='w1'>Тварини, яких не закрiпили за вiддiленням</a></li>-->
 			<li><a href='../reports/f_los.php?title=%D0%91%D0%B8%D0%BA%D0%B8' target='w1'>Бики</a></li>
 			<li class='caption'>ЗА ВІКОМ ТВАРИН</li>
 			<li><a href='../reports/f_lcws.php?title=%D0%A2%D0%B5%D0%BB%D0%B8%D1%86i+%D0%B4%D0%BE+7+%D0%B4%D0%BDi%D0%B2%2C+%D0%BD%D0%BE%D0%B2%D0%BE%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%B6%D0%B5%D0%BDi&sele_byAge=0:6' target='w1'>Телицi до 7 днiв, новонародженi</a></li>

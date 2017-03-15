@@ -2,7 +2,7 @@
 /* DF_2: reports/f_jselm.php
 report: input select for any milk report
 c: 20.02.2007
-m: 08.07.2015 */
+m: 14.03.2017 */
 
 if ( $filts1>-1 ) {
 	$restrict_by_field1=1;

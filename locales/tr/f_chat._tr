@@ -2,11 +2,11 @@
 /* DF: locales/tr/f_chat._tr
 chat azerbaijani locale
 c: 08.11.2012
-m: 14.08.2015 */
+m: 26.04.2015 */
 
 $ged["chat_header"]="Müzakere noktası - İnternet-Çiftlik";
 $ged["chat_info"]="Kayıt yapın <a href='../'>\"İnternet-Çiftlik\"</a>.";
-$ged["chat_nick"]="Adınız:";
-$ged["chat_message"]="Mesaj:";
+$ged["chat_message"]="Mesaj";
+$ged["chat_nick"]="Adınız";
 $ged["chat_send"]="Gönder";
 ?>

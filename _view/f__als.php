@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Lots Form -->
 <!DOCTYPE html>
-<html ng-app="f_ls">
+<html ng-app='f_ls'>
 <head>
 <?php
 $title="Картотека - Інтернет-Ферма";

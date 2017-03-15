@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Oxes Form -->
 <!DOCTYPE html>
-<html ng-app="f_oxs">
+<html ng-app='f_oxs'>
 <head>
 <meta content='text/html;charset=utf-8' http-equiv='content-type'>
 <meta name='generator' content='Dairy_Farm:php'>

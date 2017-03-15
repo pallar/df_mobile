@@ -2,18 +2,8 @@
 ?>
 <!-- DF_ajs: Mnemo Form -->
 <!DOCTYPE html>
-<html>
+<html ng-app='f_mnemo'>
 <head>
-<meta content='text/html;charset=utf-8' http-equiv='content-type'>
-<meta name='generator' content='Dairy_Farm:php'>
-<meta name='author' content='PALLAR LTD., 2008-2017'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<link href='../css/f_0.css' rel='stylesheet' type='text/css'>
-<link href='../css/f_1ch100.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_rgcl.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_rg2cls.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_list.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_menu.css' rel='stylesheet' type='text/css'>
 <?php
 $title="Мнемосхема";
 $curr_app_tab=1; include "f_menu.php";

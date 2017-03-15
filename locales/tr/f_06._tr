@@ -4,8 +4,8 @@ f__ops azerbaijani locale
 c: 22.09.2009
 m: 04.12.2010 */
 
-$_06_reset_cap="reset";
-$_06_every_second_day_cap="bir gün sonra";
-$_in_oper_for_animal_no_cap="bir hayvanın işleminde";
-$_animal_commentary_cap="hayvanlar ile operasyon yorumu №&nbsp;";
+$_06_reset_="reset";
+$_06_every_second_day_="bir gün sonra";
+$_in_oper_for_animal_no_="bir hayvanın işleminde";
+$_animal_commentary_="hayvanlar ile operasyon yorumu №&nbsp;";
 ?>

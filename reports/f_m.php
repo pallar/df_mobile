@@ -2,15 +2,14 @@
 /* DF_2: reports/f_m.php
 report: extracting
 c: 25.12.2005
-m: 29.09.2015 */
+m: 15.03.2017 */
 
 $skip_clichk=1;
 
 ob_start();//lock output to set cookies properly!
+$noCSS=$_GET["noCSS"]*1;
 
 $graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
-
-$noCSS=$_GET["noCSS"]*1;
 
 $outsele_=-1; $outsele_table=-1; $outsele_field=-1;
 $restrict_by_field=$_GET["restrict_by_field"]*1;
@@ -68,30 +67,30 @@ $th23=$ged["Dev."]; $th23_=$ged["Dev.~"];
 
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="
-  /* Label the data */
-  #rep_tbody td:nth-of-type(1):before { content:'".$th1."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(2):before { content:'".$th2."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(3):before { content:'".$th3."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(4):before { content:'".$th4."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(5):before { content:'".$th5."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(6):before { content:'".$th6."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(7):before { content:'".$th7."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(8):before { content:'".$th8."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(9):before { content:'".$th9."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(10):before { content:'".$th10."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(11):before { content:'".$th11."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(12):before { content:'".$th12."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(13):before { content:'".$th13."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(14):before { content:'".$th14."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(15):before { content:'".$th15."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(16):before { content:'".$th16."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(17):before { content:'".$th17."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(18):before { content:'".$th18."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(19):before { content:'".$th19."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(20):before { content:'".$th20."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(21):before { content:'".$th21."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(22):before { content:'".$th22."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(23):before { content:'".$th23."'; text-align:left; top:0; }";
+	/* Label the data */
+	#rep_tbody td:nth-of-type(1):before { content:\"".$th1."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(2):before { content:\"".$th2."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(3):before { content:\"".$th3."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(4):before { content:\"".$th4."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(5):before { content:\"".$th5."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(6):before { content:\"".$th6."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(7):before { content:\"".$th7."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(8):before { content:\"".$th8."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(9):before { content:\"".$th9."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(10):before { content:\"".$th10."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(11):before { content:\"".$th11."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(12):before { content:\"".$th12."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(13):before { content:\"".$th13."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(14):before { content:\"".$th14."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(15):before { content:\"".$th15."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(16):before { content:\"".$th16."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(17):before { content:\"".$th17."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(18):before { content:\"".$th18."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(19):before { content:\"".$th19."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(20):before { content:\"".$th20."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(21):before { content:\"".$th21."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(22):before { content:\"".$th22."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(23):before { content:\"".$th23."\"; text-align:left; top:0; }";
 
 include( "frhead.php" );
 include( "../dflib/f_filt1.php" );
@@ -161,8 +160,7 @@ if ( $graph<1 ) {
 	echo "
 	<th title='".$th21."' width='3%'><b>".$th21_."<b></th>
 	<th title='".$th22."' width='3%'><b>".$th22_."<b></th>
-	<th title='".$th23."' width='17px'><b>".$th23_."</b></th>";
-	echo "
+	<th title='".$th23."' width='17px'><b>".$th23_."</b></th>
 </tr>
 </thead>
 <tbody id='rep_tbody'>";
@@ -284,8 +282,7 @@ while ( $yc<=$yl+1 ) {
 						echo "
 	<td $cjust>".$tr."&nbsp;</td>
 	<td $cjust>".$ov."&nbsp;</td>
-	<td title='".$rfid_res."'>#".$dev_num."</td>";
-						echo "
+	<td title='".$rfid_res."'>#".$dev_num."</td>
 </tr>";
 					}
 					$t_rows++;
@@ -324,22 +321,22 @@ if ( $t_ss<10 ) $t_ss="0".$t_ss;
 if ( $graph<1 ) {
 	echo "
 </tbody>
-<tbody id='rep_tfoot'>
+<tfoot id='rep_tfoot'>
 <tr $rjust height='28px'>
-	<td $cjust><b>".$ged["TOTAL"].":</b></td>
-	<td><center>".$ged["dairy_cycles"].":</center><b>".$t_rows."&nbsp;</b></td>
-	<td><center>".$ged["animals"].":</center><b>".$t_cows."&nbsp;</b></td>
+	<td $cjust><b>".$ged["TOTAL"].":</b>&nbsp;</td>
+	<td><center>".$ged["dairy_cycles"].":</center><b>".$t_rows."</b>&nbsp;</td>
+	<td><center>".$ged["animals"].":</center><b>".$t_cows."</b>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
-	<td><b>".$t_m."&nbsp;</b></td>
-	<td><b>".$t_m30_1."&nbsp;</b></td>
-	<td><b>".$t_m30_2."&nbsp;</b></td>
-	<td><b>".$t_m30_3."&nbsp;</b></td>
-	<td><b>".$t_m60."&nbsp;</b></td>
+	<td><b>".$t_m."</b>&nbsp;</td>
+	<td><b>".$t_m30_1."</b>&nbsp;</td>
+	<td><b>".$t_m30_2."</b>&nbsp;</td>
+	<td><b>".$t_m30_3."</b>&nbsp;</td>
+	<td><b>".$t_m60."</b>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
-	<td></b>".$t_hh.":<br>".$t_mm.":".$t_ss."&nbsp;</b></td>
+	<td></b>".$t_hh.":<br>".$t_mm.":".$t_ss."</b>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
@@ -350,10 +347,9 @@ if ( $graph<1 ) {
 	echo "
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
-	<td>&nbsp;</td>";
-	echo "
+	<td>&nbsp;</td>
 </tr>
-</tbody>
+</tfoot>
 </table><br>";
 
 } else {

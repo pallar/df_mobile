@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Reports Tab 1 (Milk) Form -->
 <!DOCTYPE html>
-<html>
+<html ng-app='f_reps'>
 <head>
 <?php
 $title="Звіти - Інтернет-Ферма";

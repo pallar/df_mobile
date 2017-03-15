@@ -15,7 +15,7 @@ if($curr_app_tab!=8) {
 } else {
 	$tmp=$app_tabs[8]; $app_tabs[$app_tab]=$tmp." last'>";
 }
-$title="[2017:0303]&nbsp;".$title;
+$title="[2017:0307]&nbsp;".$title;
 echo "
 <title>$title</title>";
 ?>
@@ -32,8 +32,8 @@ echo "
 <link href='../_responsive/f_menu.css' rel='stylesheet' type='text/css'>
 <link href='../css.lib/bootstrap.css' rel='stylesheet' type='text/css'>
 <script language='JavaScript' src='../js.lib/angular/angular.js'></script>
-<script language='JavaScript' src='../js.lib/bootstrap/bootstrap.js'></script>
 <script language='JavaScript' src='../js.lib/jquery/jquery.js'></script>
+<script language='JavaScript' src='../js.lib/bootstrap/bootstrap.js'></script>
 <script language='JavaScript' src='../js.lib/ngprogbar.js'></script>
 <script language='JavaScript' src='../dflib/f_first.js'></script>
 <script language='JavaScript' type='text/javascript'>
@@ -61,7 +61,7 @@ function ok_keyp( i_, ok_ ) {
 
 function Login_Show() {
 	Period_Close();
-	JsHttpRequest.query( '../forms/f__login.php',
+	JsHttpRequest.query( '../_view/f__login.php',
 		{ buttn:'1' },
 		function( responseJS, responseText ) {
 			el=$$( '__shadow__' );
@@ -80,7 +80,7 @@ function Login_Show() {
 function Login_OnOk() {
 	var user=$$( 'user' ).value;
 	var passwd=$$( 'pass' ).value;
-	JsHttpRequest.query( '../forms/f__login.php',
+	JsHttpRequest.query( '../_view/f__login.php',
 		{ event:'login_checkpassw', user:user, passwd:passwd },
 		function( responseJS, responseText ) {
 			if ( responseJS==null | responseJS=='' ) {
@@ -99,7 +99,7 @@ function Login_OnOk() {
 function Login_OnCancel() {
 	var user='not_changed';
 	var passwd='not_required';
-	JsHttpRequest.query( '../forms/f__login.php',
+	JsHttpRequest.query( '../_view/f__login.php',
 		{ event:'login_cancel', user:user, passwd:passwd },
 		function( responseJS, responseText ) {
 			if ( responseJS==null | responseJS=='' ) {
@@ -152,7 +152,7 @@ function Period_Close() {
 </div>
 <div class='shadow' id='__shadow__' name='__shadow__'></div>
 <?php
-echo "
+echo"
 <nav>
 	<div id='cssmenu'>
 		<ul>
@@ -168,5 +168,4 @@ echo "
 			".$app_tabs[8]."<a onclick='Per_FromCoo(); Period_Show(); return false;'><span>ПЕРІОД</span></a></li>
 		</ul>
 	</div>
-</nav>
-";
+</nav>";

@@ -23,11 +23,11 @@ if ( $cb_[$op]==0 ) {
 	<td width='4%'><b>".PhraseCarry( $ged['Lact._sched.'], " ", 1 )."</b></td>
 -->
 	<td width='4%'><b>".$ged['Lact.']."</b></td>
-	<td width='7%'><b>".PhraseCarry( $_13_cw_lact_tot_milk_cap.",".$_13_cw_kg_cap, ",", 1)."</b></td>
-	<td width='7%'><b>".PhraseCarry( $_13_cw_lact_max_milk_cap.",".$_13_cw_kg_cap, ",", 1)."</b></td>
-	<td width='7%'><b>".PhraseCarry( $_13_cw_min_intens_cap.",".$_13_cw_kg_cap, ",", 1)."</b></td>
-	<td width='7%'><b>".PhraseCarry( $_13_cw_avg_intens_cap.",".$_13_cw_kg_cap, ",", 1)."</b></td>
-	<td width='7%'><b>".PhraseCarry( $_13_cw_max_intens_cap.",".$_13_cw_kg_cap, ",", 1)."</b></td>
+	<td width='7%'><b>".PhraseCarry( $_13_cw_lact_tot_milk_.",".$_13_cw_kg_, ",", 1)."</b></td>
+	<td width='7%'><b>".PhraseCarry( $_13_cw_lact_max_milk_.",".$_13_cw_kg_, ",", 1)."</b></td>
+	<td width='7%'><b>".PhraseCarry( $_13_cw_min_intens_.",".$_13_cw_kg_, ",", 1)."</b></td>
+	<td width='7%'><b>".PhraseCarry( $_13_cw_avg_intens_.",".$_13_cw_kg_, ",", 1)."</b></td>
+	<td width='7%'><b>".PhraseCarry( $_13_cw_max_intens_.",".$_13_cw_kg_, ",", 1)."</b></td>
 </tr>";
 } else {
 	echo "
@@ -74,32 +74,32 @@ while ( $row=mysql_fetch_row( $res )) {
 //with no opers
 	if ( $op==10 & $cowst[$cowid]==0 & $days_frombirth<480 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
 	}
 //to inseminate
 	if ( $op==11 & (( $cowst[$cowid]==0 & $days_frombirth>=480 ) | ( $cowst[$cowid]==2048 & $days>=91 ))) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
 	}
 //inseminated
 	if ( $op==12 & ( $cowst[$cowid]==128 | $cowst[$cowid]==256 ) & $days<=90 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
 	}
 //to do rectal
 	if ( $op==13 & ( $cowst[$cowid]==128 | $cowst[$cowid]==256 ) & $days>=91 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
 	}
 //with fault insemin.
 	if ( $op==14 & $cowst[$cowid]==512 & $cowst512[$cowid]<>4 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
 	}
 //pregnant
 	if ( $op==15 & $cowst[$cowid]==512 & $cowst512[$cowid]==4 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
 	}
 //the beginning of lactation period
 	if ( $op==17 & $cowst[$cowid]==2048 & $days<=90 ) {

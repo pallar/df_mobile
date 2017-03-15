@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Opers Form -->
 <!DOCTYPE html>
-<html>
+<html ng-app='f_ops'>
 <head>
 <?php
 $title="Операції - Інтернет-Ферма";
@@ -49,7 +49,7 @@ window.onresize=function() {
 	<div class="table-responsive" id="cws_list">
 		<table class="table table-hover">
 		<tr>
-    		<th width='70px'>#</th>
+			<th width='70px'>#</th>
 			<th>Nick</th>
 			<th width='100px'>Date of Birth</th>
 			<th>Birth #</th>
@@ -63,10 +63,8 @@ window.onresize=function() {
 		</table>
 	</div>
 	<nav class="navbar navbar-default" ng-if="hasMoreData">
-		<div class="navbar-header">
-			<div class="alert alert-default navbar-brand">
-				<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
-			</div>
+		<div class="alert alert-default navbar-brand">
+			<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
 		</div>
 	</nav>
 </div>

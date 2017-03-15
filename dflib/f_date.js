@@ -1,7 +1,7 @@
 //DF_2: dflib/f_date.js
 //common dates functions
-//created: 18.09.2007
-//modified: 27.10.2012
+//c: 18.09.2007
+//m: 15.03.2017
 
 //Element Id
 function El_( el ) {

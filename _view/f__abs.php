@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Breeds Form -->
 <!DOCTYPE html>
-<html ng-app="f_bs">
+<html ng-app='f_bs'>
 <head>
 <?php
 $title="Картотека - Інтернет-Ферма";

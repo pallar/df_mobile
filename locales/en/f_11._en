@@ -5,13 +5,13 @@ c: 10.07.2015
 m: 10.07.2015 */
 
 //form:11
-$php_mm["_11_cap"]="Report filters:";
-$php_mm["_11_gr1_cap"]="by time:";
-$php_mm["_11_gr2_cap"]="by identification:";
-$php_mm["_11_gr3_cap"]="by animals status:";
-$php_mm["_11_gr4_cap"]="by animals list:";
-$php_mm["_11_gr5_cap"]="by device №:";
-$php_mm["_11_filt_cap"]="filter:";
+$php_mm["_11_"]="Report filters:";
+$php_mm["_11_gr1_"]="by time:";
+$php_mm["_11_gr2_"]="by identification:";
+$php_mm["_11_gr3_"]="by animals status:";
+$php_mm["_11_gr4_"]="by animals list:";
+$php_mm["_11_gr5_"]="by device №:";
+$php_mm["_11_filt_"]="filter:";
 $php_mm["_11_from"]="from:";
 $php_mm["_11_to"]="to:";
 ?>

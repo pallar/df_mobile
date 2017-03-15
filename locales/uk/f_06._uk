@@ -4,8 +4,8 @@ f__ops ukrainian locale
 c: 22.09.2009
 m: 31.03.2015 */
 
-$_06_reset_cap="скинути";
-$_06_every_second_day_cap="через день";
-$_in_oper_for_animal_no_cap="в операції по тварині";
-$_animal_commentary_cap="коментар до операцiї з твариною №&nbsp;";
+$_06_reset_="скинути";
+$_06_every_second_day_="через день";
+$_in_oper_for_animal_no_="в операції по тварині";
+$_animal_commentary_="коментар до операцiї з твариною №&nbsp;";
 ?>

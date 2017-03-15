@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mt1.php
 report: extracting by table, total for 7 last days, relative
 c: 25.12.2005
-m: 28.07.2015 */
+m: 15.03.2017 */
 
 function OutputRes_ByIdAndDate( $r, $sess ) {
 	global $rjust, $mf, $mf_days, $df, $mrowt, $mrowaq;
@@ -180,7 +180,7 @@ if ( $graph<1 ) {
 	if ( $mt1<1 ) $mt1="";
 	if ( $mtm<1 ) $mtm="";
 	echo "
-<tr $rjust>
+<tr $rjust height='28px'>
 	<td $cjust class='st_title2'><b>".$ged["TOTAL"].":</td>
 	<td><b>".$itt."&nbsp;</b></td>
 	<td><b>".$mtt."&nbsp;</b></td>

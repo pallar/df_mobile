@@ -2,9 +2,10 @@
 /* DF_2: reports/f_mlact.php
 report: total milk by lactation
 c: 09.06.2005
-m: 28.07.2015 */
+m: 15.03.2017 */
 
 ob_start();//lock output to set cookies properly!
+$noCSS=$_GET["noCSS"]*1;
 
 $skip_echo=0;//to skip output of results and not graph mode
 

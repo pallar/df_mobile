@@ -1,22 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 .wrapper {
-	min-height: 960px;
+	min-height:960px;
 }
 
-form#cw_add_form, form#cw_edit_form, form#ox_add_form, form#ox_edit_form {
-	padding: 0 35px 15px;
+#conf_form,
+#b_add_form, #b_edit_form, #l_add_form, #l_edit_form, #sg_add_form, #sg_edit_form,
+#cw_add_form, #cw_edit_form, #ox_add_form, #ox_edit_form {
+	padding:0 30px 0 30px;
 }
 
 table tr th {
-	background: #f8f8f8;
+	background:#f8f8f8;
 }
 
 .search-box {
-	padding-bottom: 0;
+	padding-bottom:0;
 }
 
-@media screen and (max-width: 368px) {
+@media screen and (max-width:368px) {
 	.wrapper {
-		min-width: 340px;
+		min-width:340px;
 	}
 }

@@ -2,14 +2,14 @@
 /* DF_2: reports/f_ofore4.php
 report: extracting
 c: 16.05.2011
-m: 28.07.2015 */
+m: 14.03.2017 */
 
 $skip_clichk=1;
 
 ob_start();//lock output to set cookies properly!
 
 $graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
-if ( strlen( $title_ )<=1 ) $title_=$php_mm["_01_tab1_cap"];
+if ( strlen( $title_ )<=1 ) $title_=$php_mm["_01_tab1_"];
 
 $restrict_by_field=$_GET["restrict_by_field"]*1;
 $restrict_field=$_GET["restrict_field"];
@@ -41,13 +41,13 @@ if ( $restrict_id==0 ) {
 $rows_cnt=0; $vl=0;
 $dots_cnt=0;
 
-if ( $graph==0 ) {
+if ( $graph<1 ) {
 	echo "
 <table cellspacing='1' class='st2' style='width:100%'>
 <tr $cjust class='st_title2' style='height:28px'>
-	<td rowspan='2' width='1%'><b>".$ged["Month"]."</b></td>
-	<td rowspan='2' width='1%'><b>".PhraseCarry( $ged["Milk"].",".$ged["kg"], ",", 1 )."</b></td>
-	<td rowspan='2' width='1%'><b>".PhraseCarry( $ged["Average:Animal"].",".$ged["kg"], ",", 1 )."</b></td>
+	<td rowspan='2' width='1%'><b>".$ged['Month']."</b></td>
+	<td rowspan='2' width='1%'><b>".PhraseCarry( $ged['Milk'].",".$ged['kg'], ",", 1 )."</b></td>
+	<td rowspan='2' width='1%'><b>".PhraseCarry( $ged["Average:Animal"].",".$ged['kg'], ",", 1 )."</b></td>
 	<td rowspan='2' width='1%'><b>".$ged["Animals"]."</b></td>
 	<td colspan='3'><b>".$ged["Ages_groups"]."</b></td>
 	<td colspan='3'><b>".$ged["Aborts"]."</b></td>
@@ -86,7 +86,7 @@ if ( $sqlerr1==0 ) { while ( $row1=mysql_fetch_row( $res1 )) {
 		$ctrl_dmY="28.".$mc1z.".".$yc1z; $ctrl_Ymd=$yc1z."-".$mc1z."-28";
 		if ( $cows_marked[$dbt][$row1[0]]==0 ) {
 			$cows_marked[$dbt][$row1[0]]=1;
-			if ( $cows_z_Ymd[$row1[0]]>$ctrl_Ymd | $cows_z_Ymd[$row1[0]]=="" ) {
+			if ( $cows_z_Ymd[$row1[0]]>$ctrl_Ymd | $cows_z_Ymd[$row1[0]]=='' ) {
 				$t=DaysBetween( $cows_b_dmY[$row1[0]], $ctrl_dmY );
 				if ( $t>0 ) {
 					if ( $t<=$insem1st_days0 ) $cnt_telyci_mm[$dbt][1]++;
@@ -95,9 +95,9 @@ if ( $sqlerr1==0 ) { while ( $row1=mysql_fetch_row( $res1 )) {
 				}
 			}
 		}
-		if ( $mc1<12 ) $mc1++; else { $mc1=1; $yc1++; }
+		if ( $mc1<12 ) $mc1++; else { $mc1=1; $yc1++;}
 	}
-} mysql_free_result( $res1 ); }
+} mysql_free_result( $res1 );}
 
 unset( $cows_marked );
 
@@ -123,7 +123,7 @@ if ( $sqlerr2==0 ) { while ( $row2=mysql_fetch_row( $res2 )) {
 			}
 //		}
 	}
-} mysql_free_result( $res2 ); }
+} mysql_free_result( $res2 );}
 
 $yc=$yf; $mc=$mf;
 while ( $yc*100+$mc<=$yl*100+$ml ) {
@@ -149,8 +149,8 @@ while ( $yc*100+$mc<=$yl*100+$ml ) {
 			$dots[$dots_cnt]=$m;
 			$dots_cnt++;
 		}
-	} mysql_free_result( $res ); }
-	if ( $mc<12 ) $mc++; else { $mc=1; $yc++; }
+	} mysql_free_result( $res );}
+	if ( $mc<12 ) $mc++; else { $mc=1; $yc++;}
 }
 
 $yc=$yf; $mc=$mf;
@@ -183,15 +183,15 @@ while ( $yc*100+$mc<=$yl*100+$ml ) {
 	<td>".$cnt_anims__mm[$dbt][2]."&nbsp;</td>
 	<td>".$cnt_anims__mm[$dbt][3]."&nbsp;</td>
 </tr>";
-	if ( $mc<12 ) $mc++; else { $mc=1; $yc++; }
+	if ( $mc<12 ) $mc++; else { $mc=1; $yc++;}
 }
 
 $total_m=round( $total_m, 1 );
 
-if ( $graph==0 ) {
+if ( $graph<1 ) {
 	echo "
 <tr class='st_title2' style='height:28px'>
-	<td $cjust><b>".$ged["TOTAL"].":</b></td>
+	<td $cjust><b>".$ged['TOTAL'].":</b></td>
 	<td $rjust><b>".$total_m."&nbsp;</b></td>
 	<td $rjust><b>&nbsp;</b></td>
 	<td $rjust><b>&nbsp;</b></td>
@@ -205,17 +205,17 @@ if ( $graph==0 ) {
 </tr>
 </table><br>";
 
-} else if ( $graph==1 ) {
+} else {
 	$dots_set=$dots[0];
 	if ( $dots_cnt>300 ) $dots_cnt=300;//no more than 300 dots for JpGraph!
 	for ( $i=1; $i<=$dots_cnt; $i++ ) $dots_set=$dots_set.";".$dots[$i];
 	if ( $dots_cnt>2 ) {//no chance to build graph from less than two dots
 		echo "
 <br>
-<font size='5'><b>&#8661;</b></font>&nbsp;".$ged["Milk,kg"]."
+<font size='5'><b>&#8661;</b></font>&nbsp;".$ged['Milk,kg']."
 <center><input type='image' src='fgraphgd.php?dots_cnt=$dots_cnt&dots_set=$dots_set'></center>
 <center><font size='5'><b>&hArr;</b></font>&nbsp;".$ged["Dairy_cycle"]."</center>";
-	}
+	} else;
 }
 
 ob_end_flush();

@@ -2,13 +2,13 @@
 /* DF_2: reports/f_ofore[CAST]1.php
 report: forecast for all cows (moving from group to group)
 c: 24.09.2008
-m: 28.07.2015 */
+m: 14.03.2017 */
 
 $dbt_ext="_o";
 
 ob_start();//lock output to set cookies properly!
 
-$graph=$_GET"[graph"]*1; $title_=$title=$_GET["title"];
+$graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 
 $outsele_=-1; $outsele_table=-1; $outsele_field=-1;
 

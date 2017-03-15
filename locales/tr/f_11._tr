@@ -5,12 +5,12 @@ c: 10.07.2015
 m: 10.07.2015 */
 
 //form:11
-$php_mm["_11_cap"]="Filtreler:";
-$php_mm["_11_gr1_cap"]="zaman sağım:";
-$php_mm["_11_gr2_cap"]="hayvan tanıtma";
-$php_mm["_11_gr3_cap"]="durum:";
-$php_mm["_11_gr4_cap"]="liste:";
-$php_mm["_11_gr5_cap"]="sağım bloku:";
+$php_mm["_11_"]="Filtreler:";
+$php_mm["_11_gr1_"]="zaman sağım:";
+$php_mm["_11_gr2_"]="hayvan tanıtma";
+$php_mm["_11_gr3_"]="durum:";
+$php_mm["_11_gr4_"]="liste:";
+$php_mm["_11_gr5_"]="sağım bloku:";
 $php_mm["_11_from"]="from:";
 $php_mm["_11_to"]="to:";
 ?>

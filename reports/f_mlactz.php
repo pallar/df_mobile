@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mlactz.php
 report: total milk by lactation (ONLY CALCULATION)
 c: 09.06.2005
-m: 23.08.2013 */
+m: 14.03.2017 */
 
 function DateDiff( $start, $end ) {
 	$start_ts=strtotime( $start );
@@ -13,8 +13,8 @@ function DateDiff( $start, $end ) {
 
 function MilkPrediction( $Mday, $this_Mkg ) {
 /*
- $Mday=lactation day, where data exists
- $this_Mkg=milk (kg) at this day
+	$Mday=lactation day, where data exists
+	$this_Mkg=milk (kg) at this day
 */
 	$Mkg=array(
 	 '10'=>36, '20'=>42, '30'=>47, '60'=>48, '90'=>47, '120'=>45,

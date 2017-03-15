@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Subgroups Form -->
 <!DOCTYPE html>
-<html ng-app="f_sgs">
+<html ng-app='f_sgs'>
 <head>
 <?php
 $title="Картотека - Інтернет-Ферма";

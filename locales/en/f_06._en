@@ -4,8 +4,8 @@ f__ops english locale
 c: 22.09.2009
 m: 21.05.2013 */
 
-$_06_reset_cap="reset";
-$_06_every_second_day_cap="after one day";
-$_in_oper_for_animal_no_cap="operations by cow";
-$_animal_commentary_cap="comment. for cow's operation №&nbsp;";
+$_06_reset_="reset";
+$_06_every_second_day_="after one day";
+$_in_oper_for_animal_no_="operations by cow";
+$_animal_commentary_="comment. for cow's operation №&nbsp;";
 ?>

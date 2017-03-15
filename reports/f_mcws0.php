@@ -2,13 +2,12 @@
 /* DF_2: reports/f_mcws0.php
 report: extracting by cows & days
 c: 25.12.2005
-m: 08.07.2015 */
+m: 14.03.2017 */
 
 ob_start();//lock output to set cookies properly!
 
-$graph=$_GET[graph]*1;
-$title_=$_GET[title];
-if ( strlen( $title_ )<=1 ) $title_=$php_mm["_01_tab3_cap"];
+$graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
+if ( strlen( $title_ )<=1 ) $title_=$php_mm["_01_tab3_"];
 
 $outsele_=-1; $outsele_table=-1; $outsele_field=-1;
 
@@ -23,7 +22,7 @@ mysql_free_result( $res );
 $i=0; $mtotal=0; $mtotal_mast=0; $cows_cnt=0; $t_sec=0;
 $dots_cnt=0;
 
-if ( $graph==0 ) {
+if ( $graph<1 ) {
 	echo "
 <table cellspacing='1' class='st2'>
 <tr $cjust class='st_title2' style='height:28px'>
@@ -122,7 +121,7 @@ while ( $yc<=$yl+1 ) {
 				$mtotal_[30]=$mtotal_[30]+$m_sess[30];
 				$mtotal_[31]=$mtotal_[31]+$m_sess[31];
 
-				if ( $graph==0 ) {
+				if ( $graph<1 ) {
 					RepTr( $rownum );
 					echo "
 	<td $rjust onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1' target='w1'>$rnum</td>
@@ -150,7 +149,7 @@ while ( $yc<=$yl+1 ) {
 	if ( $mc<12 ) $mc++; else { $mc=1; $yc++; }
 }
 
-if ( $graph==0 ) {
+if ( $graph<1 ) {
 	echo "
 <tr $rjust class='st_title2'>
 	<td $cjust class='st_title2'><b>".$ged['TOTAL'].":</td>
@@ -173,7 +172,7 @@ if ( $graph==0 ) {
 </tr>
 </table><br>";
 
-} else if ( $graph==1 ) {
+} else {
 	$dots_set=$dots[0];
 	if ( $dots_cnt>300 ) $dots_cnt=300;//no more than 300 dots for JpGraph!
 	for ( $i=1; $i<=$dots_cnt; $i++ ) $dots_set=$dots_set.";".$dots[$i];

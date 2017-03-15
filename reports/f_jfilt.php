@@ -2,7 +2,7 @@
 /* DF_2: reports/f_jfilt.php
 report: input filter for any report
 c: 20.02.2007
-m: 28.07.2015 */
+m: 14.03.2017 */
 
 if ( $stop_f_jfilt==0 ) {
 	function PHP3_cal_days_in_month( $CAL_TYPE, $mm, $yyyy ) {
@@ -28,7 +28,7 @@ if ( $stop_f_jfilt==0 ) {
 		include( "../dflib/f_librep.php" );
 	}
 
-	if ( $dontuse_filt<>1 ) {
+	if ( $dontuse_filt!=1 ) {
 		$rep_filt=CookieGet( "rep-filt" )*1;
 		$_10_restrict=( $rep_filt & 1 )/1;//morning
 		$_11_restrict=( $rep_filt & 2 )/2;
@@ -48,14 +48,14 @@ if ( $stop_f_jfilt==0 ) {
 	}
 
 	$per_beg=$_GET["per_beg"];
-	if ( trim( $per_beg."."<>"." )) {
+	if ( trim( $per_beg."."!="." )) {
 		$s=split( "[.]", $per_beg );
 		$per_beg=Int2StrZ( $s[2], 4 )."-".Int2StrZ( $s[1], 2 )."-".Int2StrZ( $s[0], 2 );
 	}
 	$beg=$per_beg;
 
 	$per_end=$_GET["per_end"];
-	if ( trim( $per_end."."<>"." )) {
+	if ( trim( $per_end."."!="." )) {
 		$s=split( "[.]", $per_end );
 		$per_end=Int2StrZ( $s[2], 4 )."-".Int2StrZ( $s[1], 2 )."-".Int2StrZ( $s[0], 2 );
 	}
@@ -72,7 +72,7 @@ if ( $stop_f_jfilt==0 ) {
 		$bd_first_tmp=$bd_first_; $bd_first_=$bd_last_; $bd_last_=$bd_first_tmp;
 	}
 	if ( $bd_first_>0 | $bd_last_>0 ) {
-		$WHEREADV_txt.=" *".$php_mm["_com_only_one_dev_cap"]."&nbsp;";
+		$WHEREADV_txt.=" *".$php_mm["_com_only_one_dev_"]."&nbsp;";
 		if ( $bd_first_>0 ) {
 			$bd_first=$bd_first_;
 			$WHEREADV=$WHEREADV." AND bd_num>=$bd_first";
@@ -94,78 +94,78 @@ if ( $stop_f_jfilt==0 ) {
 
 	if ( $_10_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND milk_sess*1<>10";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s10_cap"]." ".$php_mm["_com_milking_cap"];
-		if ( $WHEREADV1<>1 ) $WHEREADV1=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s10_"]." ".$php_mm["_com_milking_"];
+		if ( $WHEREADV1!=1 ) $WHEREADV1=1;
 	}
 	if ( $_11_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND milk_sess*1<>11";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s11_cap"]." ".$php_mm["_com_milking_cap"];
-		if ( $WHEREADV1<>1 ) $WHEREADV1=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s11_"]." ".$php_mm["_com_milking_"];
+		if ( $WHEREADV1!=1 ) $WHEREADV1=1;
 	}
 	if ( $_20_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND milk_sess*1<>20";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s20_cap"]." ".$php_mm["_com_milking_cap"];
-		if ( $WHEREADV1<>1 ) $WHEREADV1=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s20_"]." ".$php_mm["_com_milking_"];
+		if ( $WHEREADV1!=1 ) $WHEREADV1=1;
 	}
 	if ( $_21_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND milk_sess*1<>21";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s21_cap"]." ".$php_mm["_com_milking_cap"];
-		if ( $WHEREADV1<>1 ) $WHEREADV1=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s21_"]." ".$php_mm["_com_milking_"];
+		if ( $WHEREADV1!=1 ) $WHEREADV1=1;
 	}
 	if ( $_30_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND milk_sess*1<>30";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s30_cap"]." ".$php_mm["_com_milking_cap"];
-		if ( $WHEREADV1<>1 ) $WHEREADV1=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s30_"]." ".$php_mm["_com_milking_"];
+		if ( $WHEREADV1!=1 ) $WHEREADV1=1;
 	}
 	if ( $_31_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND milk_sess*1<>31";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s31_cap"]." ".$php_mm["_com_milking_cap"];
-		if ( $WHEREADV1<>1 ) $WHEREADV1=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_s31_"]." ".$php_mm["_com_milking_"];
+		if ( $WHEREADV1!=1 ) $WHEREADV1=1;
 	}
-	if ( $WHEREADV1<>0 ) $WHEREADV_txt=$WHEREADV_txt."<br>";
+	if ( $WHEREADV1!=0 ) $WHEREADV_txt=$WHEREADV_txt."<br>";
 	if ( $_knowntag_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND cow_id<2";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_known_tag_cap"];
-		if ( $WHEREADV2<>1 ) $WHEREADV2=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_known_tag_"];
+		if ( $WHEREADV2!=1 ) $WHEREADV2=1;
 	}
 	if ( $_unknowntag_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND cow_id<>0";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_unknown_tag_cap"];
-		if ( $WHEREADV2<>1 ) $WHEREADV2=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_unknown_tag_"];
+		if ( $WHEREADV2!=1 ) $WHEREADV2=1;
 	}
 	if ( $_notag_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND cow_id<>1";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_wo_tag_cap"];
-		if ( $WHEREADV2<>1 ) $WHEREADV2=1;
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_wo_tag_"];
+		if ( $WHEREADV2!=1 ) $WHEREADV2=1;
 	}
-	if ( $WHEREADV2<>0 ) $WHEREADV_txt=$WHEREADV_txt."<br>";
+	if ( $WHEREADV2!=0 ) $WHEREADV_txt=$WHEREADV_txt."<br>";
 	if ( $_mast_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND mast_4*1<=0";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_with_mastitus_cap"];
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_with_mastitus_"];
 	}
 	if ( $_nomast_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND mast_4*1<>0";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_wo_mastitus_cap"];
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_wo_mastitus_"];
 	}
 	if ( $_trau_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND tr*1<>1";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_with_trauma_cap"];
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_with_trauma_"];
 	}
 	if ( $_notrau_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND tr*1<>0";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_wo_trauma_cap"];
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_wo_trauma_"];
 	}
 	if ( $_ovul_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND ov*1<>1";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_wanted_ox_cap"];
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_wanted_ox_"];
 	}
 	if ( $_noovul_restrict>0 ) {
 		$WHEREADV=$WHEREADV." AND ov*1<>0";
-		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_cap"]." ".$php_mm["_com_not_wanted_ox_cap"];
+		$WHEREADV_txt=$WHEREADV_txt." *".$php_mm["_com_animals_"]." ".$php_mm["_com_not_wanted_ox_"];
 	}
 
 //calc period [BEGIN]
-	if ( $dontuse_period<>5 ) {
+	if ( $dontuse_period!=5 ) {
 		$end=CookieGet( "_dt2" );//only in this script, not "f_jper1.php"
 		$end1=substr( $end, 8, 2 ).".".substr( $end, 5, 2 ).".".substr( $end, 0, 4 );
 		$yl=intval( substr( $end, 0, 4 )); $ml=intval( substr( $end, 5, 2 )); $dl=intval( substr( $end, 8, 2 ));

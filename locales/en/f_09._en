@@ -5,7 +5,7 @@ c: 12.08.2015
 m: 14.08.2015 */
 
 //form:09
-$php_mm["_09_"]="User - ".$php_mm["_com_app_cap"];
+$php_mm["_09_"]="User - ".$php_mm["_com_app_"];
 $php_mm["_09_user_"]="User:";
 $php_mm["_09_user_tip"]="Select the user to enter the system";
 $php_mm["_09_passw_"]="Password:";

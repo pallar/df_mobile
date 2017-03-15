@@ -2,7 +2,7 @@
 /* DF_2: reports/fgraph1.php
 diagram/chart report init for GD
 c: 07.08.2007
-m: 08.07.2015 */
+m: 14.03.2017 */
 
 if ( $lineplot_h==0 ) $lineplot_h=400;//default lineplot height
 if ( $lineplot_h<200 ) $lineplot_h=200;//default lineplot height patch
@@ -17,7 +17,7 @@ echo "
 <style>
 .lineplot_all {background-color:".$bg_color."; height:".$lineplot_h."px; margin:0 auto; overflow:hidden; padding:0; }
 .lineplot_axis {border-bottom:1px solid; border-left:1px solid; height:".$axis_h."px; margin:0 0 0 0; }
-.lineplot_bar {height:100%; float:left; margin:0 auto; position:relative; margin:0 2px; width:6px; }
+.lineplot_bar {height:100%; float:left; margin:0 2px; position:relative; width:6px; }
 .lineplot_cont {bottom:0; margin:0 auto; position:absolute; width:6px; }
 .lineplot_val { }
 .lineplot_dot {background-color:".$maindot_color."; height:4px; width:4px; }

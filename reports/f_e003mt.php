@@ -2,12 +2,11 @@
 /* DF_2: reports/f_e003mt.php
 report: dairy by table
 c: 14.03.2011
-m: 08.07.2015 */
+m: 13.03.2017 */
 
-$graph=$_GET[graph]*1;
-$title_=$_GET[title];
+$graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 
-$restrict_field=$_GET[select_field];
+$restrict_field=$_GET["select_field"];
 
 $outsele__=$outsele_;//ERROR!!!
 $outsele_field__=$outsele_field_;//ERROR!!!
@@ -32,8 +31,8 @@ $cws_cnt=0;
 
 if ( $outsele_*1==-1 ) $res1=mysql_query( "SELECT id, cow_num, nick FROM $cows ORDER BY cow_num*1", $db );
 else $res1=mysql_query( "SELECT id, num, nick FROM $outsele_table ORDER BY nick", $db );
-$sqlerr=mysql_errno();
-if ( $sqlerr==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
+$error=mysql_errno();
+if ( $error==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 	$cws_cnt++;
 	$cws_s[$cws_cnt]=$row[1]*1;//sorted
 	$cws_ns[$row[0]*1]=$cws_cnt;//not sorted
@@ -44,13 +43,15 @@ if ( $graph<1 ) {
 Номер корови;Надій,кг;;;<br>";
 }
 
-$yc_prv=$yc; $mc_prv=$mc; $dc_prv=$dc;
+$yc_prv=$yc;
+$mc_prv=$mc;
+$dc_prv=$dc;
 
 while ( $yc<=$yl+1 ) {
 	$dbt=Int2StrZ( $yc, 4 ).Int2StrZ( $mc, 2 )."_m";
 	if ( $yc*100+$mc<=$yl*100+$ml ) {
 		include( "f_jselm.php" );//DONT TOUCH THIS INCLUDE
-		if ( $sqerr==0 ) { while ( $row=mysql_fetch_row( $res )) {//cut errors
+		if ( $error==0 ) { while ( $row=mysql_fetch_row( $res )) {//cut errors
 			$dc=$row[1]*1;//operation's day
 			$odt=$yc*100+$mc+$dc/100;//operation's date
 			$odtt=$yc+"-"+$mc+"-"+$dc;
@@ -61,12 +62,14 @@ while ( $yc<=$yl+1 ) {
 				$mm=$mcws[$idx][$odtt];
 				$mcws[$idx][$odtt]=$mm+$m;
 			}
-		} mysql_free_result( $res ); }
+		} mysql_free_result( $res );}//else echo $error.": ".mysql_error()."<br>";
 	}
-	if ( $mc<12 ) $mc++; else { $mc=1; $yc++; }
+	if ( $mc<12 ) $mc++; else { $mc=1; $yc++;}
 }
 
-$yc=$yc_prv; $mc=$mc_prv; $dc=$dc_prv;
+$yc=$yc_prv;
+$mc=$mc_prv;
+$dc=$dc_prv;
 
 while ( $yc<=$yl+1 ) {
 	$odt=$yc*100+$mc+$dc/100;//operation's date
@@ -75,23 +78,27 @@ while ( $yc<=$yl+1 ) {
 	if ( $yc*100+$mc<=$yl*100+$ml ) {
 		if ( $odt>$repend | $odt<$repbeg );
 		else {
-			for ( $k=1; $k<$cws_cnt; $k++ ) if ( $mcws[$k][$odtt]>0 ) {
-				$mcws1=str_replace( ".", ",", $mcws[$k][$odtt] );
-				$num=$cws_s[$k];
-				if ( $day_ready[$odtt]==0 ) {
-					$dcc=$dc; if ( $dc<=9 ) $dcc="0".$dc;
-					$mcc=$mc; if ( $mc<=9 ) $mcc="0".$mc;
-					$ycc=substr( $yc, 2, 2 );
-					echo "
+			for ( $k=1; $k<$cws_cnt; $k++ )
+				if ( $mcws[$k][$odtt]>0 ) {
+					$mcws1=str_replace( ".", ",", $mcws[$k][$odtt] );
+					$num=$cws_s[$k];
+					if ( $day_ready[$odtt]==0 ) {
+						$dcc=$dc; if ( $dc<=9 ) $dcc="0".$dc;
+						$mcc=$mc; if ( $mc<=9 ) $mcc="0".$mc;
+						$ycc=substr( $yc, 2, 2 );
+						echo "
 $dcc.$mcc.$ycc;;;;<br>";
-					$day_ready[$odtt]=1;
-				}
-				echo "
+						$day_ready[$odtt]=1;
+					}
+					echo "
 $num;$mcws1;;;<br>";
-			}
+				}
 		}
 	}
-	if ( $dc<31 ) $dc++; else { if ( $mc<12 ) $mc++; else { $mc=1; $dc=1; $yc++; }}
+	if ( $dc<31 ) $dc++;
+	else {
+		if ( $mc<12 ) $mc++; else { $mc=1; $dc=1; $yc++;}
+	}
 }
 
 ob_end_flush();

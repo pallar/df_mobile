@@ -22,24 +22,4 @@
 		<button class="btn btn-warning" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox); Ox_form_close('cancel',cur_ox.id)">List</button>
 		<button class="btn btn-danger" ng-click="Ox_form_close('cancel',cur_ox.id)">Cancel</button>
 	</div>
-
-<!--  <p class="text-danger" ng-show="ox_edit.num.$error.required">NUMBER IS REQURED!</p>
-  <tt>ox_edit.num.$viewValue={{ox_edit.num.$viewValue}}</tt><br/>
-  <tt>ox_edit.num.$modelValue={{ox_edit.num.$modelValue}}</tt><br/>
-  <tt>ox_edit.num.$valid={{ox_edit.num.$valid}}</tt><br/>
-  <tt>ox_edit.num.$error={{ox_edit.num.$error}}</tt><br/>
-  <tt>ox_edit.num.$error.required={{!!ox_edit.num.$error.required}}</tt><br/>
-  <br/>
-  <p class="text-danger" ng-show="ox_edit.b_date.$error.required">BIRTH DATE IS REQUIRED!</p>
-  <p class="text-danger" ng-show="ox_edit.b_date.$error.date">BIRTH DATE IS INVALID!</p>
-  <tt>ox_edit.b_date.$viewValue={{ox_edit.b_date.$viewValue}}</tt><br/>
-  <tt>ox_edit.b_date.$modelValue={{ox_edit.b_date.$modelValue}}</tt><br/>
-  <tt>ox_edit.b_date.$valid={{ox_edit.b_date.$valid}}</tt><br/>
-  <tt>ox_edit.b_date.$error={{ox_edit.b_date.$error}}</tt><br/>
-  <tt>ox_edit.b_date.$error.required={{!!ox_edit.b_date.$error.required}}</tt><br/>
-  <br/>
-  <tt>ox_edit.$invalid={{ox_edit.$invalid}}</tt><br/>
-  <tt>ox_edit.$valid={{ox_edit.$valid}}</tt><br/>
-  <tt>ox_edit.$error.required={{!!ox_edit.$error.required}}</tt><br/>-->
-
 </form>

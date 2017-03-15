@@ -4,6 +4,6 @@ f__cards azerbaijani locale
 c: 27.12.2010
 m: 23.01.2012 */
 
-$_05_TOM_cap="Т/О/М";
+$_05_TOM_="Т/О/М";
 $_05_TOM_tip="Travma/Avcılık/Mastitis";
 ?>

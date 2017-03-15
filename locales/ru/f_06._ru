@@ -4,8 +4,8 @@ f__ops russian locale
 c: 22.09.2009
 m: 26.04.2015 */
 
-$_06_reset_cap="сбросить";
-$_06_every_second_day_cap="через день";
-$_in_oper_for_animal_no_cap="в операции по животному";
-$_animal_commentary_cap="комментарий к операции с животным №&nbsp;";
+$_06_reset_="сбросить";
+$_06_every_second_day_="через день";
+$_in_oper_for_animal_no_="в операции по животному";
+$_animal_commentary_="комментарий к операции с животным №&nbsp;";
 ?>

@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mt.php
 report: extracting by table
 c: 25.12.2005
-m: 21.08.2015 */
+m: 15.03.2017 */
 
 $graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 
@@ -32,20 +32,21 @@ $th4_2="0 ".$ged["kg"];
 
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="
-  /* Label the data */
-  #rep_tbody td:nth-of-type(1):before { content:'".$th1."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(2):before { content:'".$th2."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(3):before { content:'".$th3." : ".$th3_1."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(4):before { content:'".$th3." : ".$th3_2."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(5):before { content:'".$th3." : ".$th3_3."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(6):before { content:'".$th3." : ".$th3_4."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(7):before { content:'".$th3." : ".$th3_5."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(8):before { content:'".$th4." : ".$th4_1."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(9):before { content:'".$th4." : ".$th4_2."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(10):before { content:'".$th5."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(11):before { content:'".$th6."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(12):before { content:'".$th7."'; text-align:left; top:0; }
-  #rep_tbody td:nth-of-type(13):before { content:'".$th8."'; text-align:left; top:0; }";
+	/* Label the data */
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }
+	#rep_tbody td:nth-of-type(1):before { content:\"".$th1."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(2):before { content:\"".$th2."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(3):before { content:\"".$th3." : ".$th3_1."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(4):before { content:\"".$th3." : ".$th3_2."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(5):before { content:\"".$th3." : ".$th3_3."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(6):before { content:\"".$th3." : ".$th3_4."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(7):before { content:\"".$th3." : ".$th3_5."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(8):before { content:\"".$th4." : ".$th4_1."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(9):before { content:\"".$th4." : ".$th4_2."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(10):before { content:\"".$th5."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(11):before { content:\"".$th6."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(12):before { content:\"".$th7."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(13):before { content:\"".$th8."\"; text-align:left; top:0; }";
 include( "frhead.php" );
 
 if ( $title_==$ged['RR2102'] ) $title_next=$ged['RR2102-'];
@@ -57,7 +58,7 @@ if ( $title_==$ged['RR0301'] ) $title_next=$ged['RR0301-'];
 $outsele_=$outsele__;//ERROR!!!
 $outsele_field_=$outsele_field__;//ERROR!!!
 
-$t_cows=$t_m=$t_mmast=$t_ids=$dots_cnt=0;
+$t_cows=$t_m=$t_mq=$t_m0q=$t_mmast=$t_ids=$dots_cnt=0;
 $repbeg=$yf.$mf.$df; $repend=$yl.$ml.$dl;
 
 if ( $outsele_*1==-1 ) $db_id=0; else $db_id=21;
@@ -96,7 +97,7 @@ while ( $yc<=$yl+1 ) {
 		if ( $sqlerr<1 ) { while ( $row=mysql_fetch_row( $res )) {
 			$dc=$row[1]*1;//operation's day
 			$odt=$yc.$mc.$dc;//operation's date
-			if ( $odt>$repend | $odt<$repbeg ) break;
+			if ( $odt>$repend | $odt<$repbeg );
 			else {//operation's in period, thats calc
 				$bd=$row[17]*1;
 				if ((( trim( $filt_dev."." )!="." ) & ( $bd>=$bd_first ) & ( $bd<=$bd_last )) | (( trim( $filt_dev."." )=="." ) & ( $bd>0 ))) {
@@ -137,14 +138,14 @@ while ( $yc<=$yl+1 ) {
 			$r=$row[0]*1;
 			if ( $r_mq[$r]>0 ) {
 				$t_ids++;
-				if ( $r_mq[$r]==0 ) { $r_m1=""; $r_mq[$r]=""; }
+				if ( $r_mq[$r]==0 ) { $r_m1="&nbsp;"; $r_mq[$r]="&nbsp;"; }
 				else { $r_m1=floor( $r_m[$r]/$r_mq[$r]*10 )/10; }
-				if ( $r_cows[$r]==0 ) { $r_m2=""; $r_cows[$r]=""; }
+				if ( $r_cows[$r]==0 ) { $r_m2="&nbsp;"; $r_cows[$r]="&nbsp;"; }
 				else { $r_m2=floor( $r_m[$r]/$r_cows[$r]*10 )/10; }
-				if ( $r_dt[$r]==0 ) { $r_m3=""; $r_dt[$r]=""; }
+				if ( $r_dt[$r]==0 ) { $r_m3="&nbsp;"; $r_dt[$r]="&nbsp;"; }
 				else { $r_m3=floor( $r_m[$r]/$r_dt[$r]*10 )/10; }
-				if ( $r_mmast[$r]==0 ) $r_mmast[$r]="";
-				if ( $r_m0q[$r]==0 ) $r_m0q[$r]="";
+				if ( $r_mmast[$r]==0 ) $r_mmast[$r]="&nbsp;";
+				if ( $r_m0q[$r]==0 ) $r_m0q[$r]="&nbsp;";
 				if ( $graph<1 ) {//show text report
 					$num=$cownum_div.$row[1].$cownum_div1;
 					$nick=$row[2];
@@ -166,24 +167,24 @@ while ( $yc<=$yl+1 ) {
 <tr $rjust>";
 					if ( $db_id+$noCSS<1 ) echo "
 	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=$r&ret0=-1'><b>".$num."</b></td>
-	<td $ljust title='".$nick1."' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1'>&nbsp;".$nick_."&nbsp;</td>";
+	<td $ljust title='".$nick1."' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1'>&nbsp;".$nick_."</td>";
 					else echo "
 	<td>$num</td>
-	<td $ljust title='".$nick."'>&nbsp;".$nick_."&nbsp;</td>";
+	<td $ljust title='".$nick."'>&nbsp;".$nick_."</td>";
 					if ( $noCSS ) echo "
-	<td>".$r_m[$r]."&nbsp;</td>"; else echo "
-	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep['m']."?restrict_id=$r&restrict_field=$restrict_field&restrict_by_field=1&title=$title_next_'>".$r_m[$r]."&nbsp;</td>";
+	<td>".$r_m[$r]."</td>"; else echo "
+	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep['m']."?restrict_id=$r&restrict_field=$restrict_field&restrict_by_field=1&title=$title_next_'>".$r_m[$r]."</td>";
 					echo "
-	<td>".$r_m1."&nbsp;</td>
-	<td>".$r_m2."&nbsp;</td>
-	<td>".$r_m3."&nbsp;</td>
-	<td>".$r_mmast[$r]."&nbsp;</td>
-	<td>".$r_mq[$r]."&nbsp;</td>
-	<td>".$r_m0q[$r]."&nbsp;</td>
-	<td>".$r_cows[$r]."&nbsp;</td>
-	<td $cjust>".$r_beg[$r]."&nbsp;</td>
-	<td $cjust>".$r_end[$r]."&nbsp;</td>
-	<td $cjust>".$t_hh.":".$t_mm.":".$t_ss."&nbsp;</td>
+	<td>".$r_m1."</td>
+	<td>".$r_m2."</td>
+	<td>".$r_m3."</td>
+	<td>".$r_mmast[$r]."</td>
+	<td>".$r_mq[$r]."</td>
+	<td>".$r_m0q[$r]."</td>
+	<td>".$r_cows[$r]."</td>
+	<td $cjust>".$r_beg[$r]."</td>
+	<td $cjust>".$r_end[$r]."</td>
+	<td $cjust>".$t_hh.":".$t_mm.":".$t_ss."</td>
 </tr>";
 				} else {//show diagram
 					$dots[$dots_cnt]=$mrow[$r];
@@ -197,27 +198,27 @@ while ( $yc<=$yl+1 ) {
 }
 
 if ( $graph<1 ) {
-	if ( $t_mq>0 ) $t_m1=round( $t_m/$t_mq, 1 ); else $t_m1="";
-	if ( $t_cows>0 ) $t_m2=round( $t_m/$t_cows, 1 ); else $t_m2="";
+	if ( $t_mq>0 ) $t_m1=round( $t_m/$t_mq, 1 ); else $t_m1="&nbsp;";
+	if ( $t_cows>0 ) $t_m2=round( $t_m/$t_cows, 1 ); else $t_m2="&nbsp;";
 	echo "
 </tbody>
-<tbody id='rep_tfoot'>
+<tfoot id='rep_tfoot'>
 <tr $rjust height='28px'>
-	<td $cjust><b>".$ged['TOTAL'].":</b></td>
-	<td><b>".$t_ids."&nbsp;</b></td>
-	<td><b>".$t_m."&nbsp;</b></td>
-	<td><b>".$t_m1."&nbsp;</b></td>
-	<td><b>".$t_m2."&nbsp;</b></td>
+	<td $cjust><b>".$ged["TOTAL"].":</b></td>
+	<td><b>".$t_ids."</b></td>
+	<td><b>".$t_m."</b></td>
+	<td><b>".$t_m1."</b></td>
+	<td><b>".$t_m2."</b></td>
 	<td>&nbsp;</td>
-	<td><b>".$t_mmast."&nbsp;</b></td>
-	<td><b>".$t_mq."&nbsp;</b></td>
-	<td><b>".$t_m0q."&nbsp;</b></td>
-	<td><b>".$t_cows."&nbsp;</b></td>
+	<td><b>".$t_mmast."</b></td>
+	<td><b>".$t_mq."</b></td>
+	<td><b>".$t_m0q."</b></td>
+	<td><b>".$t_cows."</b></td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 </tr>
-</tbody>
+</tfoot>
 </table><br>";
 
 } else {
@@ -228,7 +229,7 @@ if ( $graph<1 ) {
 	if ( $dots_cnt>2 ) {//no chance to build graph from less than two dots
 		echo "
 <br>
-<font size='5'><b>&#8661;</b></font>&nbsp;".$ged['Milk'].",".$ged['kg']."
+<font size='5'><b>&#8661;</b></font>&nbsp;".$ged["Milk"].",".$ged["kg"]."
 <center><input type='image' src='fgraphgd.php?dots_cnt=$dots_cnt&dots_set=$dots_set'></center>";
 	} else;
 }

@@ -9,7 +9,6 @@ var f_cws=angular.module('f_cws',['ngProgress']);
 f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	db_Cws_get();
 
-	
 //	$scope.progressbar=ngProgressFactory.createInstance();
 //	$scope.progressbar.start();
 

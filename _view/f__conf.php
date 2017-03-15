@@ -2,7 +2,7 @@
 ?>
 <!-- DF_ajs: Configurator Form -->
 <!DOCTYPE html>
-<html ng-app="f_conf">
+<html ng-app='f_conf'>
 <head>
 <?php
 $title="Конфігуратор - Інтернет-Ферма";
@@ -37,7 +37,6 @@ window.onresize=function() {
 </script>
 
 <div class="container wrapper" ng-controller="DbController">
-<!---	<h1 class="text-center">Configurator</h1>-->
 	<div class="col-md-6 col-md-offset-3">
 <!-- Form template -->
 		<div ng-include src="'f__conf0.htm'"></div>

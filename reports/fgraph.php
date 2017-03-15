@@ -2,7 +2,7 @@
 /* DF_2: reports/fgraph.php
 diagram/chart report init
 c: 24.06.2011
-m: 03.05.2015 */
+m: 14.03.2017 */
 
 if ( $chart_h==0 ) $chart_h=267;//default chart height
 $text_h=13;
@@ -14,11 +14,11 @@ echo "
 <style>
 .chart_all { height:".$chart_all_h."px; margin:0 0 0 5px; overflow:hidden; padding:0; }
 .chart_axis { height:".$axis_h."px; border-bottom:1px solid; border-left:1px solid; padding-left:2px; }
-.chart_bar { height:100%; margin:0 auto; float:left; position:relative; margin:0 2px; width:32px; }
+.chart_bar { height:100%; float:left; margin:0 2px; position:relative; width:32px; }
 .chart_cont { bottom:-15px; margin:0 auto; width:32px; overflow:hidden; position:absolute; }
 .chart_y_val { height:".$text_h."px; text-align:center; }
 .chart_col { background-color:".$bar_color."; }
-.chart_x_val { height:".$text_h."px; text-align:center; margin-top:3px; }
+.chart_x_val { height:".$text_h."px; margin-top:3px; text-align:center; }
 </style>";
 
 //$dots - array of values

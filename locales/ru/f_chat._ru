@@ -4,9 +4,9 @@ chat russian locale
 c: 08.11.2012
 m: 14.08.2015 */
 
-$ged["chat_header"]="Чат - ".$php_mm["_com_app_cap"];
-$ged["chat_info"]="Зарегистрируйтесь в системе <a href='../'>\"".$php_mm["_com_app_cap"]."\"</a>.";
-$ged["chat_nick"]="Ваше имя";
+$ged["chat_header"]="Чат - ".$php_mm["_com_app_"];
+$ged["chat_info"]="Зарегистрируйтесь в системе <a href='../'>\"".$php_mm["_com_app_"]."\"</a>.";
 $ged["chat_message"]="Ваше сообщение";
+$ged["chat_nick"]="Ваше имя";
 $ged["chat_send"]="Отправить";
 ?>

@@ -195,6 +195,7 @@ if ( $skip_W3C_DOCTYPE!=1 ) {
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>";
 	if ( $skip_CSS!=1 ) echo "
 <link href='../f_0.css' rel='stylesheet' type='text/css'>
+<link href='../f_1.css' rel='stylesheet' type='text/css'>
 <link href='../oper/f_opcss.css' rel='stylesheet' type='text/css'>
 <link href='../_responsive/f_rgcl.css' rel='stylesheet' type='text/css'>
 <link href='../_responsive/f_rg2cls.css' rel='stylesheet' type='text/css'>
