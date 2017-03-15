@@ -30,30 +30,35 @@ $th3_5=$ged["mastit"];
 $th4_1=$ged["total_"];
 $th4_2="0 ".$ged["kg"];
 
+$th_cnt=13;
+$th[1]=$th1; $th[2]=$th2;
+$th[3]=$th3." : ".$th3_1; $th[4]=$th3." : ".$th3_2; $th[5]=$th3." : ".$th3_3;
+$th[6]=$th3." : ".$th3_4; $th[7]=$th3." : ".$th3_5;
+$th[8]=$th4." : ".$th4_1; $th[9]=$th4." : ".$th4_2;
+$th[10]=$th5; $th[11]=$th6; $th[12]=$th7; $th[13]=$th8;
+if ( $restrict_field=="c.id" ) {
+	$th_cnt=12;
+	$th[1]=$th1; $th[2]=$th2;
+	$th[3]=$th3." : ".$th3_1; $th[4]=$th3." : ".$th3_2; $th[5]=$th3." : ".$th3_3;
+	$th[6]=$th3." : ".$th3_4; $th[7]=$th3." : ".$th3_5;
+	$th[8]=$th4." : ".$th4_1; $th[9]=$th4." : ".$th4_2;
+ 	$th[10]=$th6; $th[11]=$th7; $th[12]=$th8;
+}
+
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="
 	/* Label the data */
-	#rep_tbody td:nth-of-type(1) { background:#ddd; }
-	#rep_tbody td:nth-of-type(1):before { content:\"".$th1."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(2):before { content:\"".$th2."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(3):before { content:\"".$th3." : ".$th3_1."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(4):before { content:\"".$th3." : ".$th3_2."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(5):before { content:\"".$th3." : ".$th3_3."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(6):before { content:\"".$th3." : ".$th3_4."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(7):before { content:\"".$th3." : ".$th3_5."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(8):before { content:\"".$th4." : ".$th4_1."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(9):before { content:\"".$th4." : ".$th4_2."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(10):before { content:\"".$th5."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(11):before { content:\"".$th6."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(12):before { content:\"".$th7."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(13):before { content:\"".$th8."\"; text-align:left; top:0; }";
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }";
+for ( $i=1; $i<=$th_cnt; $i++ ) $_mod_rep_CSS_content=$_mod_rep_CSS_content."
+	#rep_tbody td:nth-of-type(".$i."):before { content:\"".$th[$i]."\"; text-align:left; top:0; }";
+
 include( "frhead.php" );
 
-if ( $title_==$ged['RR2102'] ) $title_next=$ged['RR2102-'];
-if ( $title_==$ged['RR2103'] ) $title_next=$ged['RR2103-'];
-if ( $title_==$ged['RR2103.A'] ) $title_next=$ged['RR2103.A-'];
-if ( $title_==$ged['RR2104'] ) $title_next=$ged['RR2104-'];
-if ( $title_==$ged['RR0301'] ) $title_next=$ged['RR0301-'];
+if ( $title_==$ged["RR2102"] ) $title_next=$ged["RR2102-"];
+if ( $title_==$ged["RR2103"] ) $title_next=$ged["RR2103-"];
+if ( $title_==$ged["RR2103.A"] ) $title_next=$ged["RR2103.A-"];
+if ( $title_==$ged["RR2104"] ) $title_next=$ged["RR2104-"];
+if ( $title_==$ged["RR0301"] ) $title_next=$ged["RR0301-"];
 
 $outsele_=$outsele__;//ERROR!!!
 $outsele_field_=$outsele_field__;//ERROR!!!
@@ -71,8 +76,10 @@ if ( $graph<1 ) {
 	<th rowspan='2' width='7%'><b>".$th1."</b></th>
 	<th class='th' rowspan='2'><b>".$th2."</b></th>
 	<th colspan='5'><b>".$th3."</b></th>
-	<th colspan='2'><b>".$th4."</b></th>
-	<th rowspan='2' width='50px'><b>".$th5."</b></th>
+	<th colspan='2'><b>".$th4."</b></th>";
+	if ( $restrict_field!="c.id" ) echo "
+	<th rowspan='2' width='50px'><b>".$th5."</b></th>";
+	echo "
 	<th rowspan='2' width='167px'><b>".$th6."</b></th>
 	<th rowspan='2' width='167px'><b>".$th7."</b></th>
 	<th rowspan='2' width='7%'><b>".$th8."</b></th>
@@ -157,31 +164,33 @@ while ( $yc<=$yl+1 ) {
 					if ( $t_ss*1<10 ) $t_ss="0".$t_ss;
 					if ( $outsele_*1==-1 ) {
 						$nick1=$nick."&nbsp;/&nbsp;".$row[3];
-						$nick_=Str_Cut( $nick, 27, $contentCharset )."<br>/&nbsp;".$row[3];
+						$nick_=StrCutLen1( $nick, 27, $contentCharset )."<br>/&nbsp;".$row[3];
 					} else {
 						$nick1=$nick;
-						$nick_=Str_Cut( $nick, 27, $contentCharset );
+						$nick_=StrCutLen1( $nick, 27, $contentCharset );
 					}
 					$title_next_=$title_next.":&nbsp;".$nick;
 					echo "
 <tr $rjust>";
 					if ( $db_id+$noCSS<1 ) echo "
-	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=$r&ret0=-1'><b>".$num."</b></td>
+	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm["0520"]."?cow_id=$r&ret0=-1'><b>".$num."</b></td>
 	<td $ljust title='".$nick1."' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1'>&nbsp;".$nick_."</td>";
 					else echo "
 	<td>$num</td>
 	<td $ljust title='".$nick."'>&nbsp;".$nick_."</td>";
 					if ( $noCSS ) echo "
 	<td>".$r_m[$r]."</td>"; else echo "
-	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep['m']."?restrict_id=$r&restrict_field=$restrict_field&restrict_by_field=1&title=$title_next_'>".$r_m[$r]."</td>";
+	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep["m"]."?restrict_id=$r&restrict_field=$restrict_field&restrict_by_field=1&title=$title_next_'>".$r_m[$r]."</td>";
 					echo "
 	<td>".$r_m1."</td>
 	<td>".$r_m2."</td>
 	<td>".$r_m3."</td>
 	<td>".$r_mmast[$r]."</td>
 	<td>".$r_mq[$r]."</td>
-	<td>".$r_m0q[$r]."</td>
-	<td>".$r_cows[$r]."</td>
+	<td>".$r_m0q[$r]."</td>";
+	if ( $restrict_field!="c.id" ) echo "
+	<td>".$r_cows[$r]."</td>";
+	echo "
 	<td $cjust>".$r_beg[$r]."</td>
 	<td $cjust>".$r_end[$r]."</td>
 	<td $cjust>".$t_hh.":".$t_mm.":".$t_ss."</td>
@@ -212,8 +221,10 @@ if ( $graph<1 ) {
 	<td>&nbsp;</td>
 	<td><b>".$t_mmast."</b></td>
 	<td><b>".$t_mq."</b></td>
-	<td><b>".$t_m0q."</b></td>
-	<td><b>".$t_cows."</b></td>
+	<td><b>".$t_m0q."</b></td>";
+	if ( $restrict_field!="c.id" ) echo "
+	<td><b>".$t_cows."</b></td>";
+	echo "
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>

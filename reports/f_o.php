@@ -120,7 +120,7 @@ if ( $error==0 ) { while ( $row=mysql_fetch_row( $res )) {
 		if ( $opertype*1==-1 ) {
 			$tmp=$tmp."<td>".$cowoperdes."&nbsp;</td>";
 		}
-		$comments=PhraseCarry1( $row[17], "<br>", 40, $content_charset );
+		$comments=PhraseCarry1( $row[17], "<br>", 40, $contentCharset );
 		$tmp=$tmp."<td>".$descr."&nbsp;</td><td>".$comments[1]."&nbsp;</td>";
 		$a[$rows_cnt]=$tmp;
 		$rows_cnt++;
@@ -150,7 +150,7 @@ if ( $filt_cowid>0 & (( $outsele_!=-1 & $outsele_==2048 ) | ( $outsele_==-1 ))) 
 				if ( $opertype*1==-1 ) {
 					$tmp=$tmp."<td>".$ged["daughter"]."&nbsp;".$cowoperdes."&nsbp;</td>";
 				}
-				$comments=PhraseCarry1( $row[3], "<br>", 40, $content_charset );
+				$comments=PhraseCarry1( $row[3], "<br>", 40, $contentCharset );
 				$tmp=$tmp."<td>".$comments[1]."&nbsp;</td>";
 				$a[$rows_cnt]=$tmp;
 				$rows_cnt++;

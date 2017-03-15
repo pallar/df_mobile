@@ -396,17 +396,17 @@ if ( $send_buf!="" ) {
 		<label><input class='y_chk' $ao1c id='co_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
 		<label><input class='y_chk' $am1c id='cm_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
 	</td>
-	<td $cjust title='".$ged['s1']."&nbsp;".$ged['s2']."&nbsp;".$ged['s3']."&nbsp;".$ged['s1']."&nbsp;".$ged['s2']."&nbsp;".$ged['s3']."&nbsp;"."' width='180px'>$row35_</td>";
+	<td $cjust title='".$ged["s1"]."&nbsp;".$ged["s2"]."&nbsp;".$ged["s3"]."&nbsp;".$ged["s1"]."&nbsp;".$ged["s2"]."&nbsp;".$ged["s3"]."&nbsp;"."' width='180px'>$row35_</td>";
 				} else {
 					if ( strlen( $aj1_ )>strlen( $ja1_ )) $ja1_=$aj1_;
 					echo "
 <tr>
 	<td $cjust width='20px'>&nbsp;$ja1_</td>
 	<td $cjust width='64px'>&nbsp;$at1_ $ao1_ $am1_</td>
-	<td $cjust title='".$ged['s1']."&nbsp;".$ged['s2']."&nbsp;".$ged['s3']."&nbsp;".$ged['s1']."&nbsp;".$ged['s2']."&nbsp;".$ged['s3']."&nbsp;"."' width='180px'>$row35_&nbsp;</td>";
-				}
+	<td $cjust title='".$ged["s1"]."&nbsp;".$ged["s2"]."&nbsp;".$ged["s3"]."&nbsp;".$ged["s1"]."&nbsp;".$ged["s2"]."&nbsp;".$ged["s3"]."&nbsp;"."' width='180px'>$row35_&nbsp;</td>";				}
 				for ( $row_i=8; $row_i<=10; $row_i++ ) {
-					$orow[$row_i]=StrCutLen1( $row[$row_i], 6, $content_charset );
+echo "1111";
+					$orow[$row_i]=StrCutLen1( $row[$row_i], 6, $contentCharset );
 					if ( strlen( $row[$row_i] )<=6 ) $row[$row_i]="";
 				}
 				if ( $birthday=="31.12.1991" ) $birthday_color="#cccccc"; else $birthday_color="#000000";
@@ -438,21 +438,21 @@ if ( $send_buf!="" ) {
 </tbody>
 <tfoot id='rep_tfoot'>
 <tr $rjust style='height:28px'>
-	<td width='20px'>".$j_jagg."&nbsp;</td>
-	<td width='64px'>&nbsp;</td>
-	<td width='180px'>".$j_du."&nbsp;</td>
-	<td width='60px'>".$j."&nbsp;</td>";
+	<td>".$j_jagg."&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>".$j_du."&nbsp;</td>
+	<td>".$j."&nbsp;</td>";
 	if ( $nocardsfilt!=1 ) echo "
-	<td width='101px'>&nbsp;</td>";
+	<td>&nbsp;</td>";
 	else echo "
-	<td width='101px'>&nbsp;</td>";
+	<td>&nbsp;</td>";
 	echo "
-	<td width='50px'>&nbsp;</td>
-	<td width='50px'>&nbsp;</td>
-	<td width='65px'>&nbsp;</td>";
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>";
 	if ( $nocardsfilt!=1 ) echo "
-	<td width='50px'>&nbsp;</td>
-	<td width='30px'>&nbsp;</td>";
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>";
 	else echo "
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>";

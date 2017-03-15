@@ -59,7 +59,7 @@ function StrCh2Ch( $s, $c_in, $c_out ) {
 	return $res;
 }
 
-function Str_Cut( $s, $s_len, $charset ) {
+function StrCutLen1( $s, $s_len, $charset ) {
 	$s=trim( $s ); if ( strlen( $s )==0 ) $res='&nbsp;';
 	else {
 		$res=mb_substr( $s, 0, $s_len, $charset );

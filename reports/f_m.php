@@ -239,9 +239,9 @@ while ( $yc<=$yl+1 ) {
 							$m1=$m1*2;
 						}
 						$rfid_res=$row[25];
-						$cwnickSh=Str_Cut( $cwnick, 8, $contentCharset );
-						$ltnickSh=Str_Cut( $ltnick, 12, $contentCharset ); if ( $ltnick==$ltnickSh ) $ltnick="";
-						$grnickSh=Str_Cut( $grnick, 12, $contentCharset ); if ( $grnick==$grnickSh ) $grnick="";
+						$cwnickSh=StrCutLen1( $cwnick, 8, $contentCharset );
+						$ltnickSh=StrCutLen1( $ltnick, 12, $contentCharset ); if ( $ltnick==$ltnickSh ) $ltnick="";
+						$grnickSh=StrCutLen1( $grnick, 12, $contentCharset ); if ( $grnick==$grnickSh ) $grnick="";
 						$tt=split( ":", $mtime ); $tt=$tt[0]*60+$tt[1]; if ( $tt>0 ) $m99=round( $m/$tt*60, 1 ); else $m99=0;
 						if ( $filt_cowid<=0 ) $m_url="onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep["m"]."?filt_cowid=".$row[0]."&title=".$ged["RR0301-"].":&nbsp;".$cwnick."' target='w1'";
 						else $m_url="onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep["mcws1"]."?filt_cowid=".$row[0]."&title=".$ged["RR0301-"].":&nbsp;".$cwnick."'";

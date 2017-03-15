@@ -2,7 +2,7 @@
 /* DF_2: reports/f_ofore[CAST]2.php
 report: forecast for all cows (moving from group to group)
 c: 24.09.2008
-m: 14.03.2017 */
+m: 15.03.2017 */
 
 $dbt_ext="_o";
 
@@ -160,10 +160,10 @@ if ( $sqlerr==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 	$abort_date_arr=split( "-", $abort_dates );
 	$ltname=$row[9]; $grname=$row[10]; $sgname=$row[11];
 //fix long rows [BEGIN]
-	$orow[cwnick]=Str_Cut( $cwnick, 34, $contentCharset ); if ( $orow[cwnick]==$cwnick ) $cwnick=="";
-	$orow[ltname]=Str_Cut( $ltname, 16 )); if ( strlen( $orow[ltname] )==strlen( $ltname )) $ltname=="";
-	$orow[grname]=Str_Cut( $grname, 16 )); if ( trlen( $orow[grname] )==strlen( $grname )) $grname=="";
-	$orow[sgname]=Str_Cut( $sgname, 16 ); if ( $orow[sgname] )==strlen( $sgname )) $sgname=="";
+	$orow[cwnick]=StrCutLen1( $cwnick, 34, $contentCharset ); if ( $orow[cwnick]==$cwnick ) $cwnick=="";
+	$orow[ltname]=StrCutLen1( $ltname, 16, $contentCharset ); if ( strlen( $orow[ltname] )==strlen( $ltname )) $ltname=="";
+	$orow[grname]=StrCutLen1( $grname, 16, $contentCharset ); if ( trlen( $orow[grname] )==strlen( $grname )) $grname=="";
+	$orow[sgname]=StrCutLen1( $sgname, 16, $contentCharset ); if ( $orow[sgname] )==strlen( $sgname )) $sgname=="";
 //fix long rows [END]
 //states [BEGIN]
 //insem? - may be inseminated

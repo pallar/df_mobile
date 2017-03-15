@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mcws0.php
 report: extracting by cows & days
 c: 25.12.2005
-m: 14.03.2017 */
+m: 15.03.2017 */
 
 ob_start();//lock output to set cookies properly!
 
@@ -96,7 +96,7 @@ while ( $yc<=$yl+1 ) {
 			$m0cnt=$milk0_cnt[$r]; if ( $m0cnt==0 ) $m0cnt="";
 			if ( $m<>0 ) {
 				$rnum=$cownum_div.$row[1].$cownum_div1; $rnick=$row[2];
-				$rnick_=Str_Cut( $rnick, 41, $contentCharset );
+				$rnick_=StrCutLen1( $rnick, 41, $contentCharset );
 				$mbeg=$milk_beg[$r]; $mend=$milk_end[$r];
 				$t_sec=$milk_time[$r]; $t_hh=floor( $t_sec/3600 );
 				$t_sec=$t_sec-$t_hh*3600; $t_mm=floor( $t_sec/60 );

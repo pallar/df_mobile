@@ -90,10 +90,10 @@ if ( mysql_errno()<1 ) { while ( $row=mysql_fetch_row( $res1 )) {
 			$nick=$row[2];
 			if ( $outsele_*1==-1 ) {
 				$nick1=$nick."&nbsp;/&nbsp;".$row[3];
-				$nick_=Str_Cut( $nick, 27, $contentCharset )."<br>/&nbsp;".$row[3];
+				$nick_=StrCutLen1( $nick, 27, $contentCharset )."<br>/&nbsp;".$row[3];
 			} else {
 				$nick1=$nick;
-				$nick_=Str_Cut( $nick, 27, $contentCharset );
+				$nick_=StrCutLen1( $nick, 27, $contentCharset );
 			}
 			$tsec=$mrow_tsec[$r][0]*1;
 			if ( $tsec>0 ) {
