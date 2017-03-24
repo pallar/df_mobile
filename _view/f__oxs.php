@@ -1,10 +1,10 @@
 <?php
-?>
-<!-- DF_ajs: Oxes Form -->
-<!DOCTYPE html>
-<html ng-app='f_oxs'>
-<head>
-<?php
+$ANGULAR_IS_USED=1;
+$HTML_COMMENT="<!-- DF_ajs: Oxes Form -->";
+$HTML_TAG="<html ng-app='f_oxs'>";
+
+include( "../f_vars.php" );
+
 $title="Картотека - Інтернет-Ферма";
 $curr_app_tab=4; include "f_menu.php";
 ?>
@@ -29,8 +29,7 @@ var nav1=document.getElementsByTagName( 'nav1' );
 do_nav();
 
 function do_nav() {
-	var width=window.innerWidth || document.documentElement.clientWidth;
-	window.document.cookie='_width='+width+';path=/';
+	get_window_prop();
 	if ( width<=800 ) {
 		childs=nav[0].children[0].children[0].childElementCount;
 		childs1=nav1[0].children[0].children[0].childElementCount;
@@ -46,7 +45,6 @@ function do_nav() {
 
 window.onresize=function() {
 	do_nav();
-	var width=window.innerWidth || document.documentElement.clientWidth;
 	childs=nav[0].children[0].children[0].childElementCount;
 	childs1=nav1[0].children[0].children[0].childElementCount;
 	if ( width>800 ) menu_li_style='inline-block'; else menu_li_style='none';

@@ -12,7 +12,7 @@ echo "
 if( $ipcams[0]==0 ) echo "
 		<img border='0' src='dfimg/img/menu/cow01.gif' width='180px'>";
 else for( $ipc=1; $ipc<=$ipcams[0]; $ipc++ ) echo "
-		<iframe frameborder='0' scrolling='no' src='../web_cam/index.php?ipc=$ipc&image_only=1' style='height:135px; margin-left:-5px; margin-right:-5px; width:180px'></iframe>";
+<!--		<iframe frameborder='0' scrolling='no' src='../web_cam/index.php?ipc=$ipc&image_only=1' style='height:135px; margin-left:-5px; margin-right:-5px; width:180px'></iframe>-->";
 echo "
 	</div>
 	<div class='col span_180px_right'>

@@ -19,17 +19,8 @@ $title="[2017:0307]&nbsp;".$title;
 echo "
 <title>$title</title>";
 ?>
-<meta content='text/html;charset=utf-8' http-equiv='content-type'>
-<meta name='generator' content='Dairy_Farm:php'>
-<meta name='author' content='PALLAR LTD., 2008-2017'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
 <link href='../css/f_.css' rel='stylesheet' type='text/css'>
-<link href='../css/f_0.css' rel='stylesheet' type='text/css'>
-<link href='../css/f_1ch100.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_rgcl.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_rg2cls.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_list.css' rel='stylesheet' type='text/css'>
-<link href='../_responsive/f_menu.css' rel='stylesheet' type='text/css'>
 <link href='../css.lib/bootstrap.css' rel='stylesheet' type='text/css'>
 <script language='JavaScript' src='../js.lib/angular/angular.js'></script>
 <script language='JavaScript' src='../js.lib/jquery/jquery.js'></script>
@@ -169,3 +160,13 @@ echo"
 		</ul>
 	</div>
 </nav>";
+?>
+
+<script language='JavaScript' type='text/javascript'>
+function get_window_prop() {
+	window.width=window.innerWidth || document.documentElement.clientWidth;
+	window.height=window.innerHeight;
+	window.document.cookie='_width='+width+';path=/';
+	window.document.cookie='_height='+height+';path=/';
+}
+</script>

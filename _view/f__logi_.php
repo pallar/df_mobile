@@ -26,7 +26,27 @@ switch ( $event ) {
 		$buttn=$_REQUEST["buttn"]*1;
 		if ( $buttn==1 ) {
 			ob_end_flush();
+			$HUA="_".$_SERVER["HTTP_USER_AGENT"];
 			echo "
+<html>
+<head>
+<link href='".$hcss["f_0.css"]."' rel='stylesheet' type='text/css'>
+<link href='../oper/f_opcss.css' rel='stylesheet' type='text/css'>";
+			if ( strpos( $HUA, "Firefox" )!=0 ) echo "
+<link href='".$hcss["f_1ff036.css"]."' rel='stylesheet' type='text/css'>";
+			else if ( strpos( $HUA, "MSIE 6.0" )!=0 ) echo "
+<link href='".$hcss["f_1ie060.css"]."' rel='stylesheet' type='text/css'>";
+			else if ( strpos( $HUA, "Chrome" )!=0 ) echo "
+<link href='".$hcss["f_1ch100.css"]."' rel='stylesheet' type='text/css'>";
+			else if ( strpos( $HUA, "Opera" )!=0 ) echo "
+<link href='".$hcss["f_1op110.css"]."' rel='stylesheet' type='text/css'>";
+			else if ( strpos( $HUA, "Safari" )!=0 ) echo "
+<link href='".$hcss["f_1ch100.css"]."' rel='stylesheet' type='text/css'>";
+			echo "
+</head>
+
+<body>
+
 <center>
 <table width='90%'>
 <tr>
@@ -36,14 +56,17 @@ switch ( $event ) {
 		<tr>
 			<td style='border:100px; color:#666666; width:93px'>".$php_mm["_09_user_"]."&nbsp;</td>
 			<td style='width:145px'>
-				<select class='sel sel_h0' id='user' name='user' size='1'; style='width:145px'>";
-			$res=mysqli_query( "SELECT id, nick, comments FROM $person ORDER BY id DESC" );
-			while ( $row=mysqli_fetch_row( $res )) {
+				<select class='sel sel_h0' id='user' name='user' style='width:145px'>";
+			$res=mysql_query( "SELECT id, nick, comments FROM $person ORDER BY id DESC" );
+			$sqlerr=mysql_errno();
+			if ( $sqlerr!=0 ) echo "
+					<option value='ERROR'>ERROR&nbsp;</option>";
+			else while ( $row=mysql_fetch_row( $res )) {
 				$id=$row[0]; $nick=$row[1]; $comments=$row[2];
 				echo "
 					<option value='".$row[0]."'>$comments&nbsp;</option>";
 			}
-			mysqli_free_result( $res );
+			mysql_free_result( $res );
 			echo "
 				</select>
 			</td>
@@ -64,7 +87,10 @@ switch ( $event ) {
 		</table>
 	</td>
 </table>
-</center>";
+</center>
+
+</body>
+</html>";
 			$row=ob_get_contents();
 		} else {
 			$row="!!!";
@@ -73,8 +99,8 @@ switch ( $event ) {
 		break;
 	case "login_checkpassw":
 		$uuid=$_REQUEST["user"]*1; $uupass=trim( $_REQUEST["passwd"] );
-		$res=mysqli_query( "SELECT id, passw, comments FROM $person WHERE id=$uuid" );
-		$row=mysqli_fetch_row( $res ); mysqli_free_result( $res );
+		$res=mysql_query( "SELECT id, passw, comments FROM $person WHERE id=$uuid" );
+		$row=mysql_fetch_row( $res ); mysql_free_result( $res );
 		$uid=$row[0]*1; $upassw=trim( $row[1] ); $unick=trim( $row[2] );
 		if ( $uid==9 | ( $upassw==$uupass & $uid==$uuid*1 )) {
 			$uunick=$unick; $userCoo=$uid; Period_FromDb( $userCoo, $vars );//TO SET PERIOD

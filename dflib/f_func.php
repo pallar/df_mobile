@@ -478,6 +478,7 @@ if ( $uuid>0 ) {
 	$logindiv__onload_show=0;
 }
 $_width=CookieGet( "_width" );
+$_height=CookieGet( "_height" )*1;
 $userCoo=CookieGet( "userCoo" );
 $guest_from_wan=( CookieGet( "_intranet" )!="1" ) & $deny_from_wan;
 ?>

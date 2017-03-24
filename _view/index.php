@@ -1,9 +1,9 @@
 <?php
 ob_start();
 
-$skip_W3C_DOCTYPE=1;
-
 $ANGULAR_IS_USED=1;
+$HTML_COMMENT="<!-- DF_ajs: Mnemo Form -->";
+$HTML_TAG="<html ng-app='f_mnemo'>";
 
 include( "../f_vars.php" );
 include( "../dflib/f_func.php" );
@@ -18,12 +18,7 @@ include( "../locales/$lang/f_php._$lang" );
 include( "../locales/$lang/f_00._$lang" );
 
 $dev_b=$dev_1st; $dev_e=$dev_b+$devs_onmnemo-1;
-?>
-<!-- DF_ajs: Mnemo Form -->
-<!DOCTYPE html>
-<html ng-app='f_mnemo'>
-<head>
-<?php
+
 $title="Мнемосхема";
 $curr_app_tab=1; include "f_menu.php";
 ?>
@@ -33,8 +28,7 @@ var nav=document.getElementsByTagName( 'nav' );
 do_nav();
 
 function do_nav() {
-	var width=window.innerWidth || document.documentElement.clientWidth;
-	window.document.cookie='_width='+width+';path=/';
+	get_window_prop();
 	if ( width<=800 ) {
 		childs=nav[0].children[0].children[0].childElementCount;
 		nav[0].onclick=function( event ) {
@@ -48,7 +42,6 @@ function do_nav() {
 
 window.onresize=function() {
 	do_nav();
-	var width=window.innerWidth || document.documentElement.clientWidth;
 	childs=nav[0].children[0].children[0].childElementCount;
 	if ( width>800 ) menu_li_style='inline-block'; else menu_li_style='none';
 	for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=menu_li_style;
@@ -71,8 +64,9 @@ else {
 
 include( "../locales/$lang/f_admmsg._$lang" );
 
+echo "
+</body>
+</html>";
+
 ob_end_flush();
 ?>
-
-</body>
-</html>

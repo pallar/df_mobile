@@ -212,12 +212,17 @@ $connect->set_charset( $dbCharset );
 if ( $skip_W3C_DOCTYPE!=1 ) {
 	$HUA="_".$_SERVER["HTTP_USER_AGENT"];
 	echo "
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html>";
+	if ( $ANGULAR_IS_USED>0 ) echo "
+$HTML_COMMENT
+$HTML_TAG";
+	else echo "
+<html>";
+	echo "
 <head>
 <meta content='text/html;charset=".$contentCharset."' http-equiv='content-type'>
 <meta name='generator' content='Dairy_Farm:php'>
-<meta name='author' content='PALLAR LTD., 2008-2015'>
+<meta name='author' content='PALLAR LTD., 2008-2017'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>";
 	if ( $skip_CSS!=1 ) echo "
 <link href='".$hcss["f_0.css"]."' rel='stylesheet' type='text/css'>
@@ -229,13 +234,13 @@ if ( $skip_W3C_DOCTYPE!=1 ) {
 	if ( $skip_CSS!=1 ) {
 		if ( strpos( $HUA, "Firefox" )!=0 ) echo "
 <link href='".$hcss["f_1ff036.css"]."' rel='stylesheet' type='text/css'>";
-		if ( strpos( $HUA, "MSIE 6.0" )!=0 ) echo "
+		else if ( strpos( $HUA, "MSIE 6.0" )!=0 ) echo "
 <link href='".$hcss["f_1ie060.css"]."' rel='stylesheet' type='text/css'>";
-		if ( strpos( $HUA, "Chrome" )!=0 ) echo "
+		else if ( strpos( $HUA, "Chrome" )!=0 ) echo "
 <link href='".$hcss["f_1ch100.css"]."' rel='stylesheet' type='text/css'>";
-		if ( strpos( $HUA, "Opera" )!=0 ) echo "
+		else if ( strpos( $HUA, "Opera" )!=0 ) echo "
 <link href='".$hcss["f_1op110.css"]."' rel='stylesheet' type='text/css'>";
-		if ( strpos( $HUA, "Safari" )!=0 ) echo "
+		else if ( strpos( $HUA, "Safari" )!=0 ) echo "
 <link href='".$hcss["f_1ch100.css"]."' rel='stylesheet' type='text/css'>";
 	}
 }
