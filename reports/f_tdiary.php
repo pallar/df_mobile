@@ -74,57 +74,57 @@ while ( $row=mysql_fetch_row( $res )) {
 //with no opers
 	if ( $op==10 & $cowst[$cowid]==0 & $days_frombirth<480 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //to inseminate
 	if ( $op==11 & (( $cowst[$cowid]==0 & $days_frombirth>=480 ) | ( $cowst[$cowid]==2048 & $days>=91 ))) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //inseminated
 	if ( $op==12 & ( $cowst[$cowid]==128 | $cowst[$cowid]==256 ) & $days<=90 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //to do rectal
 	if ( $op==13 & ( $cowst[$cowid]==128 | $cowst[$cowid]==256 ) & $days>=91 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //with fault insemin.
 	if ( $op==14 & $cowst[$cowid]==512 & $cowst512[$cowid]<>4 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //pregnant
 	if ( $op==15 & $cowst[$cowid]==512 & $cowst512[$cowid]==4 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //the beginning of lactation period
 	if ( $op==17 & $cowst[$cowid]==2048 & $days<=90 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //ovulated
 	if ( $op==18 & $cowst[$cowid]==2048 & $days>=91 & $days<=91+16) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //lactation period
 	if ( $op==19 & $cowst[$cowid]==2048 & $days>=91+17 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //to zapusk
 	if ( $op==20 & ( $cowst[$cowid]==128 | $cowst[$cowid]==256 ) & $days>=285-60 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 //zapusk period
 	if ( $op==21 & $cowst[$cowid]==4096 & $days<=75 ) {
 		$jk++;
-		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0;}
+		CowRow_Draw( $lactm ); if ( $jk==$jk_byrow & $cb_[$op+1]>0 ) { echo "<br>"; $jk=0; }
 	}
 }
 

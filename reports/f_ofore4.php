@@ -2,7 +2,7 @@
 /* DF_2: reports/f_ofore4.php
 report: extracting
 c: 16.05.2011
-m: 14.03.2017 */
+m: 23.03.2017 */
 
 $skip_clichk=1;
 
@@ -95,9 +95,9 @@ if ( $sqlerr1==0 ) { while ( $row1=mysql_fetch_row( $res1 )) {
 				}
 			}
 		}
-		if ( $mc1<12 ) $mc1++; else { $mc1=1; $yc1++;}
+		if ( $mc1<12 ) $mc1++; else { $mc1=1; $yc1++; }
 	}
-} mysql_free_result( $res1 );}
+} mysql_free_result( $res1 ); }
 
 unset( $cows_marked );
 
@@ -123,7 +123,7 @@ if ( $sqlerr2==0 ) { while ( $row2=mysql_fetch_row( $res2 )) {
 			}
 //		}
 	}
-} mysql_free_result( $res2 );}
+} mysql_free_result( $res2 ); }
 
 $yc=$yf; $mc=$mf;
 while ( $yc*100+$mc<=$yl*100+$ml ) {
@@ -149,8 +149,8 @@ while ( $yc*100+$mc<=$yl*100+$ml ) {
 			$dots[$dots_cnt]=$m;
 			$dots_cnt++;
 		}
-	} mysql_free_result( $res );}
-	if ( $mc<12 ) $mc++; else { $mc=1; $yc++;}
+	} mysql_free_result( $res ); }
+	if ( $mc<12 ) $mc++; else { $mc=1; $yc++; }
 }
 
 $yc=$yf; $mc=$mf;
@@ -183,7 +183,7 @@ while ( $yc*100+$mc<=$yl*100+$ml ) {
 	<td>".$cnt_anims__mm[$dbt][2]."&nbsp;</td>
 	<td>".$cnt_anims__mm[$dbt][3]."&nbsp;</td>
 </tr>";
-	if ( $mc<12 ) $mc++; else { $mc=1; $yc++;}
+	if ( $mc<12 ) $mc++; else { $mc=1; $yc++; }
 }
 
 $total_m=round( $total_m, 1 );

@@ -13,12 +13,12 @@ while ( $row=mysql_fetch_row( $res )) {
 	$i++;
 	$iid=$row[0]; $upd=0;
 	$upd_query="UPDATE $oxes SET ";
-	if ( $row[1]*1==0 ) { $upd=1; $upd_query=$upd_query."breed_id='1', ";}
-	if ( $row[2]*1==0 ) { $upd=1; $upd_query=$upd_query."gr_id='1', ";}
-	if ( $row[3]*1==0 ) { $upd=1; $upd_query=$upd_query."lot_id='1', ";}
-	if ( $row[4]*1==0 ) { $upd=1; $upd_query=$upd_query."subgr_id='1', ";}
-	if ( $row[5]*1==0 ) { $upd=1; $upd_query=$upd_query."mth_id='1', ";}
-	if ( $row[6]*1==0 ) { $upd=1; $upd_query=$upd_query."fth_id='1', ";}
+	if ( $row[1]*1==0 ) { $upd=1; $upd_query=$upd_query."breed_id='1', "; }
+	if ( $row[2]*1==0 ) { $upd=1; $upd_query=$upd_query."gr_id='1', "; }
+	if ( $row[3]*1==0 ) { $upd=1; $upd_query=$upd_query."lot_id='1', "; }
+	if ( $row[4]*1==0 ) { $upd=1; $upd_query=$upd_query."subgr_id='1', "; }
+	if ( $row[5]*1==0 ) { $upd=1; $upd_query=$upd_query."mth_id='1', "; }
+	if ( $row[6]*1==0 ) { $upd=1; $upd_query=$upd_query."fth_id='1', "; }
 	$upd_query=trim( $upd_query );
 	if ( $upd!=0 ) {
 		$upd_query=substr( $upd_query, 0, strlen( $upd_query )-1 )." WHERE id='$iid'";

@@ -2,7 +2,7 @@
 /* DF_2: reports/f_o.php
 report: operations other than extracting
 c: 25.12.2005
-m: 15.03.2017 */
+m: 23.03.2017 */
 
 $dbt_ext="_o";
 
@@ -125,7 +125,7 @@ if ( $error==0 ) { while ( $row=mysql_fetch_row( $res )) {
 		$a[$rows_cnt]=$tmp;
 		$rows_cnt++;
 	}
-} mysql_free_result( $res );}
+} mysql_free_result( $res ); }
 
 if ( $filt_cowid>0 & (( $outsele_!=-1 & $outsele_==2048 ) | ( $outsele_==-1 ))) {
 	$res=mysql_query( "SELECT b_date, cow_num, nick, comments, modif_date, modif_time, id

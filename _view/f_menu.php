@@ -61,7 +61,7 @@ function ok_keyp( i_, ok_ ) {
 
 function Login_Show() {
 	Period_Close();
-	JsHttpRequest.query( '../_view/f__login.php',
+	JsHttpRequest.query( '../_view/f__logi_.php',
 		{ buttn:'1' },
 		function( responseJS, responseText ) {
 			el=$$( '__shadow__' );
@@ -80,7 +80,7 @@ function Login_Show() {
 function Login_OnOk() {
 	var user=$$( 'user' ).value;
 	var passwd=$$( 'pass' ).value;
-	JsHttpRequest.query( '../_view/f__login.php',
+	JsHttpRequest.query( '../_view/f__logi_.php',
 		{ event:'login_checkpassw', user:user, passwd:passwd },
 		function( responseJS, responseText ) {
 			if ( responseJS==null | responseJS=='' ) {
@@ -99,7 +99,7 @@ function Login_OnOk() {
 function Login_OnCancel() {
 	var user='not_changed';
 	var passwd='not_required';
-	JsHttpRequest.query( '../_view/f__login.php',
+	JsHttpRequest.query( '../_view/f__logi_.php',
 		{ event:'login_cancel', user:user, passwd:passwd },
 		function( responseJS, responseText ) {
 			if ( responseJS==null | responseJS=='' ) {

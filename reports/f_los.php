@@ -8,7 +8,6 @@ ob_start();//lock output to set cookies properly!
 $noCSS=$_GET["noCSS"]*1;
 
 $title_=$title=$_GET["title"];
-if ( strlen( $title_ )<=1 ) $title_="";
 
 $dontuse_period=1;
 $outsele_=-1; $outsele_table=-1; $outsele_field=-1;

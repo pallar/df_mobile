@@ -2,9 +2,10 @@
 /* DF_2: reports/f_mcws0.php
 report: extracting by cows & days
 c: 25.12.2005
-m: 15.03.2017 */
+m: 19.03.2017 */
 
 ob_start();//lock output to set cookies properly!
+$noCSS=$_GET["noCSS"]*1;
 
 $graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 if ( strlen( $title_ )<=1 ) $title_=$php_mm["_01_tab3_"];

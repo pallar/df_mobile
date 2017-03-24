@@ -2,7 +2,7 @@
 /* DF_2: reports/f_e003mt.php
 report: dairy by table
 c: 14.03.2011
-m: 13.03.2017 */
+m: 23.03.2017 */
 
 $graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 
@@ -62,9 +62,9 @@ while ( $yc<=$yl+1 ) {
 				$mm=$mcws[$idx][$odtt];
 				$mcws[$idx][$odtt]=$mm+$m;
 			}
-		} mysql_free_result( $res );}//else echo $error.": ".mysql_error()."<br>";
+		} mysql_free_result( $res ); }//else echo $error.": ".mysql_error()."<br>";
 	}
-	if ( $mc<12 ) $mc++; else { $mc=1; $yc++;}
+	if ( $mc<12 ) $mc++; else { $mc=1; $yc++; }
 }
 
 $yc=$yc_prv;
@@ -97,7 +97,7 @@ $num;$mcws1;;;<br>";
 	}
 	if ( $dc<31 ) $dc++;
 	else {
-		if ( $mc<12 ) $mc++; else { $mc=1; $dc=1; $yc++;}
+		if ( $mc<12 ) $mc++; else { $mc=1; $dc=1; $yc++; }
 	}
 }
 

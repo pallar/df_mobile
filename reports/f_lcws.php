@@ -31,6 +31,11 @@ $_mod_rep_CSS_content="
 	/* Label the data */";
 for ( $i=1; $i<=10; $i++ ) $_mod_rep_CSS_content=$_mod_rep_CSS_content."
 	#rep_tbody td:nth-of-type(".$i."):before { content:\"".$th[$i]."\"; text-align:left; top:0; }";
+$_mod_rep_CSS_content=$_mod_rep_CSS_content."
+	#rep_tfoot td:nth-of-type(1):before { content:\"".$th[1].":\"; font-weight:bold; text-align:left; top:0; }
+	#rep_tfoot td:nth-of-type(2):before { content:\"".$th[2].":\"; font-weight:bold; text-align:left; top:0; }
+	#rep_tfoot td:nth-of-type(3):before { content:\"".$th[3].":\"; font-weight:bold; text-align:left; top:0; }
+	#rep_tfoot td:nth-of-type(4):before { content:\"".$ged["TOTAL"].":\"; font-weight:bold; text-align:left; top:0; }";
 
 include( "frhead.php" );
 

@@ -2,7 +2,7 @@
 /* DF_2: db_cmds/conf_u.php
 Update Config (Dairy Farm [CONF]igurator)
 c: 13.06.2006
-m: 16.09.2016 */
+m: 23.03.2017 */
 
 $modif_Ymd=date( "Y-m-d" ); $modif_His=date( "H:i:s" );
 
@@ -172,7 +172,7 @@ else if ( $do_js!="" ) {
 		if ( $dataWiresByPit<$dataWiresByPit_MIN || $dataWiresByPit>$dataWiresByPit_MAX || ( $dataWiresByPit>$devsByPit/2 && $devsByPit!=0 )) {
 			$errnum=+2048;
 			$_07_fnt_dataWiresByPit=$err_fnt;
-			if ( $dataWiresByPit==1 && $devsByPit<=1 ) { $errnum=-2048; $_07_fnt_dataWiresByPit="";}
+			if ( $dataWiresByPit==1 && $devsByPit<=1 ) { $errnum=-2048; $_07_fnt_dataWiresByPit=""; }
 		}
 //$jaggs and $jprts must be 0 if local rfid readers are used
 		if ( $rfidMode==1 || $rfidMode==3 && ( $jaggs>0 || $jprts>0 )) {
@@ -378,7 +378,7 @@ $lang=trim( $r[11] );
 if ( strlen( $state )==0 ) $state=$state_ukr; if ( $state=="Ukraine" ) $state=$state_ukr;
 $rfidMode=$r[16]*1;
 for ( $i=1; $i<=$rfidModes; $i++ ) $rfidModes_sel[$i]=""; $rfidModes_sel[$rfidMode]="selected";
-for ( $i=1; $i<=$langs; $i++ ) { $j=$langs_val[$i]; $langs_sel[$j]=$langs_dis[$j];} $langs_sel[$lang]=$langs_sel[$lang]." selected";
+for ( $i=1; $i<=$langs; $i++ ) { $j=$langs_val[$i]; $langs_sel[$j]=$langs_dis[$j]; } $langs_sel[$lang]=$langs_sel[$lang]." selected";
 $os=trim( $r[12] );
 $suex_dir=trim( $r[13] ); $suex_ver=trim( $r[14] ); $suex_passw=trim( $r[15] );
 //parlor from db
@@ -394,16 +394,16 @@ $res=mysql_query( "SELECT
  FROM $hardw" );
 $r=mysql_fetch_row( $res ); mysql_free_result( $res );
 $pits=$r[0]*1;
-if ( $pits<1 ) { $pits=1; Sql_query( "UPDATE $hardw SET pits='$pits'" );}
+if ( $pits<1 ) { $pits=1; Sql_query( "UPDATE $hardw SET pits='$pits'" ); }
 $drmdsByPit=$r[1]*1;
 for ( $i=1; $i<=6; $i++ ) $drmdsByPit_sel[$i]=""; $drmdsByPit_sel[$drmdsByPit]="selected";
 $drmdBdsMode=$r[2]*1;
 for ( $i=1; $i<=2; $i++ ) $drmdBdsMode_sel[$i]=""; $drmdBdsMode_sel[$drmdBdsMode]="selected";
 $devsByPit=$r[3]*1;
 $dataWiresByPit=$r[4]*1;
-if ( $dataWiresByPit>$devsByPit/2 || $dataWiresByPit<1 ) { $dataWiresByPit=1; Sql_query( "UPDATE $hardw SET data_wires_by_pit='$dataWiresByPit'" );}
+if ( $dataWiresByPit>$devsByPit/2 || $dataWiresByPit<1 ) { $dataWiresByPit=1; Sql_query( "UPDATE $hardw SET data_wires_by_pit='$dataWiresByPit'" ); }
 $waitBetwDevs=$r[5]*1;
-if ( $waitBetwDevs<50 ) { $waitBetwDevs=50; Sql_query( "UPDATE $hardw SET waitstate_between_devs='$waitBetwDevs'" );}
+if ( $waitBetwDevs<50 ) { $waitBetwDevs=50; Sql_query( "UPDATE $hardw SET waitstate_between_devs='$waitBetwDevs'" ); }
 $prts=$r[6]*1;
 $prtsTyp=trim( $r[7] );
 $prtsTyp_sel[COM]=""; $prtsTyp_sel[USB]=""; $prtsTyp_sel[USBCOM]=""; $prtsTyp_sel[$prtsTyp]="selected";
@@ -424,7 +424,7 @@ $jprtsTyp_sel[COM]=""; $jprtsTyp_sel[USB]=""; $jprtsTyp_sel[USBCOM]=""; $jprtsTy
 $jprt1=$r[3]*1;
 for ( $i=$jprt_MIN; $i<=$jprt_MAX; $i++ ) $jprt_sel[$i]=""; $jprt_sel[$jprt1]="selected";
 $jcmdT=$r[6]*1;
-if ( $jcmdT<$jcmdT_MIN ) { $jcmdT=$jcmdT_MIN; Sql_query( "UPDATE $hardwj SET cmd_timeout='$jcmdT'" );}
+if ( $jcmdT<$jcmdT_MIN ) { $jcmdT=$jcmdT_MIN; Sql_query( "UPDATE $hardwj SET cmd_timeout='$jcmdT'" ); }
 $jignSimilar=$r[7]*1;
 if ( $jignSimilar==1 ) $jignSimilar_checked="checked";
 //$jaggs and $jprts must be 0 if local rfid readers are used
@@ -448,7 +448,7 @@ if ( $rfidMode==3 ) {
 			$r[1]=$cowSheds; $r[2]=$dataWires;
 		}
 		$k=$r[1]*10+$r[2]; if ( $k<100 ) $k="0".$k;
-		if ( $r[4]*1==0 ) { $r[3]=""; $r[4]="";}
+		if ( $r[4]*1==0 ) { $r[3]=""; $r[4]=""; }
 		$cowshed["$k"]["dev_min"]=$r[3];
 		$cowshed["$k"]["dev_max"]=$r[4];
 		$cowshed["$k"]["stall_min"]=$r[5];

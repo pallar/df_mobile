@@ -2,7 +2,7 @@
 /* DF_2: dflib/f_tcws.php
 cows list
 c: 10.12.2005
-m: 15.03.2017 */
+m: 23.03.2017 */
 ?>
 
 <script type='text/javascript' src='../dflib/f_tcws_u.js'></script>
@@ -244,7 +244,6 @@ if ( $send_buf!="" ) {
 	 $cows.cow_num, $cows.nick,
 	 $cows.national_descr,
 	 $cows.b_num, $cows.b_date,
-	 mother.nick, $oxes.nick,
 	 $breeds.nick,
 	 $groups.nick,
 	 $subgrs.nick,
@@ -253,23 +252,17 @@ if ( $send_buf!="" ) {
 	 $cows.rfid_native, $cows.rfid_num, $cows.rfid_date, $cows.rfid_time,
 	 $cows.comments,
 	 $cows.a_dates, $cows.b_dates, $cows.c_dates,
-	 $cows.mth_id, $cows.fth_id,
 	 $cows.breed_id,
 	 $cows.gr_id,
 	 $cows.subgr_id,
 	 $cows.lot_id,
-	 $cows.created_date, $cows.created_time,
-	 $cows.locked,
-	 $cows.modif_uid, $cows.modif_date, $cows.modif_time,
 	 $cows.id,
 	 $cows.dont_use,
 	 $cows.milk_total,
 	 $cows.restrict_sched, $cows.bd_leds,
 	 $cows.z_dates
-	 FROM $cows, $oxes, $cows mother, $breeds, $groups, $lots, $subgrs
-	 WHERE $oxes.id=$cows.fth_id AND
-	 mother.id=$cows.mth_id AND
-	 $breeds.id=$cows.breed_id AND
+	 FROM $cows, $breeds, $groups, $lots, $subgrs
+	 WHERE $breeds.id=$cows.breed_id AND
 	 $groups.id=$cows.gr_id AND
 	 $lots.id=$cows.lot_id AND
 	 $subgrs.id=$cows.subgr_id";
@@ -289,7 +282,7 @@ if ( $send_buf!="" ) {
 		$query=$query." AND $cows.z_dates=''";
 	$query=$query."
 	 ORDER BY ".$cows_order;
-	$res=mysql_query( $query, $db );
+	$res=mysql_query( $query );
 	while ( $row=mysql_fetch_row( $res )) {
 		$cowrow_vis1=0;
 		$cownum=$cownum_div.$row[0].$cownum_div1;
@@ -299,7 +292,7 @@ if ( $send_buf!="" ) {
 //DUBLICATED NUMBERS
 		$birthday=substr( $row[4], 8, 2 ).".".substr( $row[4], 5, 2 ).".".substr( $row[4], 0, 4 );
 		$days=DaysBetween( $birthday, $now_dmY );
-		$zapl_dates=strlen( $row[17] ); $otel_dates=strlen( $row[19] );
+		$zapl_dates=strlen( $row[15] ); $otel_dates=strlen( $row[17] );
 		if ( strlen( $sele_byState )<=1 ) {
 			if ( $sele_byAge_from==0 & $sele_byAge_to==0 ) $cowrow_vis1=1;//select all cows
 			else if ( $sele_byAge_from>=0 & $sele_byAge_to>0 )//select cows which age in []
@@ -315,22 +308,22 @@ if ( $send_buf!="" ) {
 			if ( $sele_byState==$ss ) $cowrow_vis1=1;
 		}
 		if ( $sele_byState=="" & $sele_byAge=="" ) $cowrow_vis=1;
-		$bdleds=$row[36]*1;
+		$bdleds=$row[32]*1;
 		$ao1c=""; $at1c=""; $am1c="";
 		$ao1_=""; $at1_=""; $am1_="";
 		$aj1_="";
-		if (( $bdleds & 2 )*1==2 ) { $ao1c="checked"; $ao1_="o+";}
-		if (( $bdleds & 4 )*1==4 ) { $at1c="checked"; $at1_="t+";}
-		if (( $bdleds & 8 )*1==8 ) { $am1c="checked"; $am1_="m+";}
+		if (( $bdleds & 2 )*1==2 ) { $ao1c="checked"; $ao1_="o+"; }
+		if (( $bdleds & 4 )*1==4 ) { $at1c="checked"; $at1_="t+"; }
+		if (( $bdleds & 8 )*1==8 ) { $am1c="checked"; $am1_="m+"; }
 		if ( $ao1_=="o+" & $ao0_=="o+" ) $aj1_="+";
 		if ( $at1_=="t+" & $at0_=="t+" ) $aj1_="+";
 		if ( $am1_=="m+" & $am0_=="m+" ) $aj1_="+";
 //jagg & dont_use
-		$du=$row[33]*1;
+		$du=$row[23]*1;
 		$jagg1='';
 		$ja1_=''; $du1_='';
-		if ( $du!=32768 & $du!=0 ) { $du1_="+";}
-		if (( $du & 32768 )*1==32768 ) { $jagg1='checked'; $ja1_='+';}
+		if ( $du!=32768 & $du!=0 ) { $du1_="+"; }
+		if (( $du & 32768 )*1==32768 ) { $jagg1='checked'; $ja1_='+'; }
 		if ( $filts0_1!="" & $filts0_4=="" ) {
 			if ( $aj1_!="" | $jagg1!="" ) $cowrow_vis=1;
 			if ( $aj1_=="" & $jagg1=="" ) $cowrow_vis=0;
@@ -350,32 +343,32 @@ if ( $send_buf!="" ) {
 		if ( $cowrow_vis==1 & $cowrow_vis1==1 ) {
 			$chk1=''; $chk2=''; $chk3=''; $chk4=''; $chk5=''; $chk6='';
 			$ck1_=''; $ck2_=''; $ck3_=''; $ck4_=''; $ck5_=''; $ck6_='';
-			if (( $du & 1 )*1==1 ) { $chk1='checked'; $ck1_='1';}
-			if (( $du & 2 )*1==2 ) { $chk2='checked'; $ck2_='2';}
-			if (( $du & 4 )*1==4 ) { $chk3='checked'; $ck3_='4';}
-			if (( $du & 16 )*1==16 ) { $chk4='checked'; $ck4_='16';}
-			if (( $du & 32 )*1==32 ) { $chk5='checked'; $ck5_='32';}
-			if (( $du & 64 )*1==64 ) { $chk6='checked'; $ck6_='64';}
-			$rfid_num=trim( PhraseCarry( $row[13], " ", 2 ));
-			$tot_milk=$row[34]*1; if ( $tot_milk==0 ) $tot_milk="";
+			if (( $du & 1 )*1==1 ) { $chk1='checked'; $ck1_='1'; }
+			if (( $du & 2 )*1==2 ) { $chk2='checked'; $ck2_='2'; }
+			if (( $du & 4 )*1==4 ) { $chk3='checked'; $ck3_='4'; }
+			if (( $du & 16 )*1==16 ) { $chk4='checked'; $ck4_='16'; }
+			if (( $du & 32 )*1==32 ) { $chk5='checked'; $ck5_='32'; }
+			if (( $du & 64 )*1==64 ) { $chk6='checked'; $ck6_='64'; }
+			$rfid_num=trim( PhraseCarry( $row[11], " ", 2 ));
+			$tot_milk=$row[24]*1; if ( $tot_milk==0 ) $tot_milk="";
 			if ( $row[0]=="1913" ) $deff="default"; else $deff="";
-			if ( strlen( $row[35] )!=0 ) {
-//				$row35="<a href='../oper/f_o_jagg.php?key=-1&opertype=8192&cow_id=".$row[32]."'>".CardsSched_Decode( $row[35] );
-				$row35=CardsSched_Decode( $row[35] );
+			if ( strlen( $row[25] )!=0 ) {
+//				$row35="<a href='../oper/f_o_jagg.php?key=-1&opertype=8192&cow_id=".$row[22]."'>".CardsSched_Decode( $row[25] );
+				$row35=CardsSched_Decode( $row[25] );
 				if ( $du!=32768 & $du!=0 );
-				else if ( strlen( $row35 )>2 ) { $du1_="+";}
+				else if ( strlen( $row35 )>2 ) { $du1_="+"; }
 				$row35_=$row35;
 			} else {
 				if ( $userCoo!=9 & $nocardsctrls!=1 ) {
 					$row35="
-		<label><input class='y_chk' $chk1 id='c1_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
-		<label><input class='y_chk' $chk2 id='c2_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
-		<label><input class='y_chk' $chk3 id='c3_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>";
+		<label><input class='y_chk' $chk1 id='c1_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>
+		<label><input class='y_chk' $chk2 id='c2_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>
+		<label><input class='y_chk' $chk3 id='c3_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>";
 					if ( $sesss!=3 ) $row35=$row35."
-		<label><input class='y_chk' $chk4 id='c4_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
-		<label><input class='y_chk' $chk5 id='c5_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
-		<label><input class='y_chk' $chk6 id='c6_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>";
-//					$row35=$row35."&nbsp;<a href='../oper/f_o_jagg.php?key=-1&opertype=8192&cow_id=".$row[32]."'>".$op8192;
+		<label><input class='y_chk' $chk4 id='c4_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>
+		<label><input class='y_chk' $chk5 id='c5_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>
+		<label><input class='y_chk' $chk6 id='c6_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>";
+//					$row35=$row35."&nbsp;<a href='../oper/f_o_jagg.php?key=-1&opertype=8192&cow_id=".$row[22]."'>".$op8192;
 					$row35=$row35."&nbsp;";
 				} else {
 					$row35=$ck1_."&nbsp;".$ck2_."&nbsp;".$ck3_;
@@ -389,12 +382,12 @@ if ( $send_buf!="" ) {
 				if ( $userCoo!=9 & $nocardsctrls!=1 ) {
 					echo "
 <tr>
-	<td $cjust height='28px' width='20px'><label><input class='y_chk' $jagg1 id='c0_$row[32]' $deff type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'>$aj1_</label></td>";
+	<td $cjust height='28px' width='20px'><label><input class='y_chk' $jagg1 id='c0_$row[22]' $deff type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'>$aj1_</label></td>";
 					echo "
 	<td $cjust width='64px'>
-		<label><input class='y_chk' $at1c id='ct_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
-		<label><input class='y_chk' $ao1c id='co_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
-		<label><input class='y_chk' $am1c id='cm_$row[32]' type='checkbox' onclick='CowDontuse_ToCoo( $row[32], $sesss )'></label>
+		<label><input class='y_chk' $at1c id='ct_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>
+		<label><input class='y_chk' $ao1c id='co_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>
+		<label><input class='y_chk' $am1c id='cm_$row[22]' type='checkbox' onclick='CowDontuse_ToCoo( $row[22], $sesss )'></label>
 	</td>
 	<td $cjust title='".$ged["s1"]."&nbsp;".$ged["s2"]."&nbsp;".$ged["s3"]."&nbsp;".$ged["s1"]."&nbsp;".$ged["s2"]."&nbsp;".$ged["s3"]."&nbsp;"."' width='180px'>$row35_</td>";
 				} else {
@@ -404,30 +397,29 @@ if ( $send_buf!="" ) {
 	<td $cjust width='20px'>&nbsp;$ja1_</td>
 	<td $cjust width='64px'>&nbsp;$at1_ $ao1_ $am1_</td>
 	<td $cjust title='".$ged["s1"]."&nbsp;".$ged["s2"]."&nbsp;".$ged["s3"]."&nbsp;".$ged["s1"]."&nbsp;".$ged["s2"]."&nbsp;".$ged["s3"]."&nbsp;"."' width='180px'>$row35_&nbsp;</td>";				}
-				for ( $row_i=8; $row_i<=10; $row_i++ ) {
-echo "1111";
+				for ( $row_i=6; $row_i<=8; $row_i++ ) {
 					$orow[$row_i]=StrCutLen1( $row[$row_i], 6, $contentCharset );
 					if ( strlen( $row[$row_i] )<=6 ) $row[$row_i]="";
 				}
 				if ( $birthday=="31.12.1991" ) $birthday_color="#cccccc"; else $birthday_color="#000000";
 				echo "
-	<td $rjust id='hilight_$row[32]' title='".$ged['Nick__OPEN_CARD_tip']."' width='60px' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[32]."&ret0=05'><b>".$cownum."</b>&nbsp;</td>";
-//	<a href='../".$hRep['ccw1']."?cow_id=".$row[32]."&ret0=05'>
-	if ( strlen( $row[37] )>0 ) $birthday_color="red'";
+	<td $rjust id='hilight_$row[22]' title='".$ged['Nick__OPEN_CARD_tip']."' width='60px' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[22]."&ret0=05'><b>".$cownum."</b>&nbsp;</td>";
+//	<a href='../".$hRep['ccw1']."?cow_id=".$row[22]."&ret0=05'>
+	if ( strlen( $row[27] )>0 ) $birthday_color="red'";
 	if ( $nocardsfilt!=1 ) echo "
 	<td title='$row[1] ".$ged['Nat._Id.'].":"."$row[2]' width='101px'><input readonly style='border:0; font-size:12; height:100%; width:99%' type='text' value='$row[1]'/></td>";
 	else echo "
 	<td width='101px'>&nbsp;$row[1]</td>";
 	echo "
-	<td title='$row[10]' width='50px'>&nbsp;$orow[10]</td>
 	<td title='$row[8]' width='50px'>&nbsp;$orow[8]</td>
+	<td title='$row[6]' width='50px'>&nbsp;$orow[6]</td>
 	<td $cjust style='color:$birthday_color' width='65px'>&nbsp;$birthday</td>";
 				if ( $nocardsfilt!=1 ) echo "
-	<td width='50px'><input readonly style='border:0; font-size:11; height:100%; width:99%' type='text' value='$row[12]'/></td>
-	<td width='30px'><input readonly style='border:0; font-size:11; height:100%; width:99%' type='text' value='$row[16]'/></td>";
+	<td width='50px'><input readonly style='border:0; font-size:11; height:100%; width:99%' type='text' value='$row[10]'/></td>
+	<td width='30px'><input readonly style='border:0; font-size:11; height:100%; width:99%' type='text' value='$row[14]'/></td>";
 				else echo "
-	<td>&nbsp;$row[12]</td>
-	<td>&nbsp;$row[16]</td>";
+	<td>&nbsp;$row[10]</td>
+	<td>&nbsp;$row[14]</td>";
 				echo "
 </tr>";
 				$j++;
