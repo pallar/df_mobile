@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mt1.php
 report: extracting by table, total for 8 last days
 c: 25.12.2005
-m: 15.03.2017 */
+m: 24.03.2017 */
 
 function OutputRes_ByIdAndDate( $r, $sess ) {
 	global $rjust, $mf, $mf_days, $df, $mrowt, $mrowaq;
@@ -38,14 +38,14 @@ $th3_[1]=$ged["total_"];
 $th3_[2]=$ged["average"];
 $th3_[3]=$ged["mastit"];
 $mcz=Int2StrZ( $mf, 2 ); $dcz=Int2StrZ( $df, 2 );
-for ( $i=1; $i<=8; $i++ ) {
+for ( $i=1; $i<9; $i++ ) {
 	$th3_[3+$i]=$dcz;
 	if ( $dcz*1<$mf_days ) $dcz=Int2StrZ( $dcz*1+1, 2 );
 	else $dcz="01";
 }
 $th4_[1]=$ged["total_"];
 $th4_[2]=$ged["mastit"];
-$th4_[3]="0&nbsp;".$ged["kg"];
+$th4_[3]="0 ".$ged["kg"];
 
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="

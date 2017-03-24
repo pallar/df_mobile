@@ -2,15 +2,15 @@
 /* DF_2: dflib/f_filt1a.php
 filter: filter for group (draw + read/write)
 c: 27.03.2011
-m: 09.07.2015 */
+m: 24.03.2017 */
 
 include( "f_filt1.php" );
 
 echo "
-<select class='sel' style='background:#cacaca; margin-left:4px; width:100px' onclick='CookieSet( \"".$_filtsXmode."_filts1\", this.value )'>
+<select class='sel sel_h0' style='background:#cacaca; margin-left:4px; width:100px' onclick='CookieSet( \"".$_filtsXmode."_filts1\", this.value )'>
 	<option value='-1%-1%-1%-1' ";
 if ( $filts1==-1 & $filts2==-1 ) echo "selected ";
-echo ">".$ged['All_List']."</option>";
+echo ">".$ged["All_List"]."</option>";
 $selectors=mysql_query( "SELECT id, nick FROM $groups", $db );
 while ( $selector=mysql_fetch_row( $selectors )) {
 	echo "

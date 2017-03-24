@@ -1,10 +1,8 @@
 <?php
-/*
-DF_2: dflib/f_filt0.php
+/* DF_2: dflib/f_filt0.php
 filter: filter for cows status (read)
-created: 01.12.2011
-modified: 23.01.2012
-*/
+c: 01.12.2011
+m: 24.03.2017 */
 
 $_filts0=CookieGet( "_filts0" )*1;
 $filts0=$_filts0;

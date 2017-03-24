@@ -8,7 +8,7 @@ function mastitus_keyp( i ) {
 			if ( keyCode==0 ) return true;//cursor moving
 			if ( keyCode==8 );//BkSpace
 			else if ( keyCode>=48 & keyCode<=52 ) {
-	    			if ( el.value.length==len ) return false;
+				if ( el.value.length==len ) return false;
 				var new_i=Number( el.value+String( keyCode-48 ));
 				if ( new_i<min ) {
 					alert( new_i+' < '+min+' !' ); return false;
@@ -77,8 +77,8 @@ function real_decs( i ) {
 function real_chg( i, min, max, len, decs ) {
 	var el=document.getElementById( String( i ));
 	var new_i=Number( el.value );
-	if ( el.value.length==0 ) el.style.backgroundColor="yellow";
-	else el.style.backgroundColor="white";
+	if ( el.value.length==0 ) el.style.backgroundColor='yellow';
+	else el.style.backgroundColor='white';
 	if ( null!=typeof( el )) {
 		if ( isNaN( el.value )) el.value=el.value.substr( 0, el.value.length-1 );
 		if ( new_i<Number( min )) {

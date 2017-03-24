@@ -15,7 +15,7 @@ if($curr_app_tab!=8) {
 } else {
 	$tmp=$app_tabs[8]; $app_tabs[$app_tab]=$tmp." last'>";
 }
-$title="[2017:0307]&nbsp;".$title;
+$title=$app_rel."&nbsp;".$title;
 echo "
 <title>$title</title>";
 ?>

@@ -5,8 +5,10 @@ c: 04.06.2008
 m: 30.11.2015 */
 
 //DONT CHANGE THIS FILE IN ANY CASE, BECAUSE YOU MAY DESTROY DATABASE!
-$app_rel="[2015:1130]"; $dbstruc_rel="[2009:0820]";
+$app_rel="[2017:0324]"; $dbstruc_rel="[2009:0820]";
 $log_me=0;//if $log_me==1 then log mode is activated
+
+$ANGULAR_IS_USED=1;
 
 $contentCharset="utf-8";//windows-1251
 $connectionCharset="utf8";//cp1251

@@ -1,8 +1,8 @@
 <?php
-/* DF_2: reports/f_mt1.php
+/* DF_2: reports/f_mt3.php
 report: extracting by table, total for 7 last days, relative
 c: 25.12.2005
-m: 15.03.2017 */
+m: 24.03.2017 */
 
 function OutputRes_ByIdAndDate( $r, $sess ) {
 	global $rjust, $mf, $mf_days, $df, $mrowt, $mrowaq;
@@ -18,6 +18,10 @@ function OutputRes_ByIdAndDate( $r, $sess ) {
 			else $rel=round( $mrowt[$r][$idx.$sess]/$prev*100-100, 0 );
 			echo "
 	<td $tstyle>".$rel."&nbsp;</td>";
+		} else {
+			echo "
+	<td $tstyle>&nbsp;</td>";
+		
 		}
 		$prev=$mrowt[$r][$idx.$sess];
 		if ( $dcz*1<$mf_days )
@@ -33,38 +37,76 @@ function OutputRes_ByIdAndDate( $r, $sess ) {
 $graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 
 include( "f_mt1c.php" );
+
+$th1=$ged["Number"];
+if ( $outsele_*1==-1 ) $th2=$ged["Nick"]." / ".$ged["Group"];
+else $th2=$ged["Name"];
+$th3=$ged["Milk"].",".$ged["kg"]; $th3p=$ged["Milk"].",%";
+$th4=$ged["Start/Stop"];
+$th5=$ged["Duration"];
+$th3_[1]=$ged["total_"];
+$th3_[2]=$ged["average"];
+$th3_[3]=$ged["mastit"];
+$mcz=Int2StrZ( $mf, 2 ); $dcz=Int2StrZ( $df, 2 );
+for ( $i=1; $i<9; $i++ ) {
+	$th3_[3+$i]=$dcz;
+	if ( $dcz*1<$mf_days ) $dcz=Int2StrZ( $dcz*1+1, 2 );
+	else $dcz="01";
+}
+$th4_[1]=$ged["total_"];
+$th4_[2]=$ged["mastit"];
+$th4_[3]="0 ".$ged["kg"];
+
+$_mod_rep_CSS=1;
+$_mod_rep_CSS_content="
+	/* Label the data */
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }
+	#rep_tbody td:nth-of-type(1):before { content:\"".$th1."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(2):before { content:\"".$th2."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(3):before { content:\"".$th3." : ".$th3_[1]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(4):before { content:\"".$th3." : ".$th3_[2]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(5):before { content:\"".$th3." : ".$th3_[3]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(6):before { content:\"".$th3p." : ".$th3_[4]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(7):before { content:\"".$th3p." : ".$th3_[5]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(8):before { content:\"".$th3p." : ".$th3_[6]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(9):before { content:\"".$th3p." : ".$th3_[7]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(10):before { content:\"".$th3p." : ".$th3_[8]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(11):before { content:\"".$th3p." : ".$th3_[9]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(12):before { content:\"".$th3p." : ".$th3_[10]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(13):before { content:\"".$th3p." : ".$th3_[11]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(14):before { content:\"".$th4." : ".$th4_[1]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(15):before { content:\"".$th4." : ".$th4_[2]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(16):before { content:\"".$th4." : ".$th4_[3]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(17):before { content:\"".$th5."\"; text-align:left; top:0; }";
 include( "frhead.php" );
 
 if ( $graph<1 ) {
 	echo "
 <table>
+<thead id='rep_thead'>
 <tr $cjust style='height:28px'>
-	<td rowspan='2' width='7%'><b>".$ged["Number"]."</b></td>
-	<td rowspan='2'><b>";
-	if ( $outsele_*1==-1 ) echo $ged["Nick"]."&nbsp;/&nbsp;".$ged["Group"];
-	else echo $ged["Name"];
-	echo "</b></td>
-	<td colspan='3'><b>".$ged["Milk"].",".$ged["kg"]."</b></td>
-	<td colspan='7'><b>".$ged["Milk"].",%</b></td>
-	<td colspan='3'><b>".$ged["Start/Stop"]."</b></td>
-	<td rowspan='2' width='7%'><b>".$ged["Duration"]."</b></td>
+	<th rowspan='2' width='7%'><b>".$th1."</b></td>
+	<th rowspan='2'><b>".$th2."</b></td>
+	<th colspan='3'><b>".$th3."</b></td>
+	<th colspan='8'><b>".$th3p."</b></td>
+	<th colspan='3'><b>".$th4."</b></td>
+	<th rowspan='2' width='7%'><b>".$ged["Duration"]."</b></td>
 </tr>
-<tr $cjust class='st_title2'>
-	<td width='7%'><b>".$ged["total_"]."</b></td>
-	<td width='7%'><b>".$ged["average"]."</b></td>
-	<td width='7%'><b>".$ged["mastit"]."</b></td>";
-	$mcz=Int2StrZ( $mf, 2 ); $dcz=Int2StrZ( $df, 2 );
-	for ( $i=1; $i<=8; $i++ ) {
-		if ( $i>1 ) echo "
-	<td width='4%'><b>".$dcz."</b></td>";
-		if ( $dcz*1<$mf_days ) $dcz=Int2StrZ( $dcz*1+1, 2 );
-		else $dcz="01";
+<tr $cjust>
+	<th width='7%'><b>".$th3_[1]."</b></td>
+	<th width='7%'><b>".$th3_[2]."</b></td>
+	<th width='7%'><b>".$th3_[3]."</b></td>";
+	for ( $i=1; $i<9; $i++ ) {
+		echo "
+	<th width='4%'><b>".$th3_[3+$i]."</b></td>";
 	}
 	echo "
-	<td width='50px'><b>".$ged["total_"]."</b></td>
-	<td width='50px'><b>".$ged["mastit"]."</b></td>
-	<td width='50px'><b>"."0&nbsp;".$ged["kg"]."</b></td>
-</tr>";
+	<th width='50px'><b>".$th4_[1]."</b></td>
+	<th width='50px'><b>".$th4_[2]."</b></td>
+	<th width='50px'><b>".$th4_[3]."</b></td>
+</tr>
+</thead>
+<tbody id='rep_tbody'>";
 }
 
 $sessc=4;//sessions count
@@ -126,12 +168,12 @@ if ( mysql_errno()<1 ) { while ( $row=mysql_fetch_row( $res1 )) {
 				echo "
 <tr $rjust>";
 				if ( $noCSS ) echo "
-	<td rowspan='".$sessc."'>".$num."</td>
-	<td rowspan='".$sessc."' title='".$nick1."'>".$nick_."&nbsp;</td>
+	<td>".$num."</td>
+	<td $ljust title='".$nick1."'>".$nick_."&nbsp;</td>
 	<td>".$mrowt[$r][0]."&nbsp;</td>"; else echo "
-	<td rowspan='$sessc' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=$r&ret0=00'><b>".$num."</b></td>
-	<td $ljust rowspan='$sessc' title='$nick1' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=$r&ret0=00'>".$nick_."&nbsp;</td>
-	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep['m']."?restrict_id=$r&restrict_field=c.id&restrict_by_field=1&title=".$ged['RR0301-'].":&nbsp;".$nick."'>".$mrowt[$r][0]."&nbsp;</td>";
+	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=$r&ret0=00'><b>".$num."</b></td>
+	<td title='".$nick1."' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=00'>".$nick_."&nbsp;</td>
+	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep['m']."?restrict_id=".$r."&restrict_field=c.id&restrict_by_field=1&title=".$ged['RR0301-'].":&nbsp;".$nick."'>".$mrowt[$r][0]."&nbsp;</td>";
 				echo "
 	<td>".$mrow1."&nbsp;</td>
 	<td>".$mrowm[$r][0]."&nbsp;</td>";
@@ -154,6 +196,8 @@ if ( mysql_errno()<1 ) { while ( $row=mysql_fetch_row( $res1 )) {
 						} else $t_His="";
 						echo "
 <tr $rjust style='background:#eee;'>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
 	<td>".$mrowt[$r][$sess]."&nbsp;</td>
 	<td $ljust>&nbsp;</td>
 	<td $ljust>&nbsp;</td>";
@@ -176,26 +220,30 @@ if ( mysql_errno()<1 ) { while ( $row=mysql_fetch_row( $res1 )) {
 
 if ( $graph<1 ) {
 	if ( $mttq>0 ) $mt1=floor( $mtt/$mttq*10 )/10;
-	if ( $mtt<1 ) $mtt="";
-	if ( $mt1<1 ) $mt1="";
-	if ( $mtm<1 ) $mtm="";
+	if ( $mtt==0 ) $mtt="&nbsp;";
+	if ( $mt1==0 ) $mt1="&nbsp;";
+	if ( $mtm==0 ) $mtm="&nbsp;";
 	echo "
+</tbody>
+<tfoot id='rep_tfoot'>
 <tr $rjust height='28px'>
-	<td $cjust class='st_title2'><b>".$ged["TOTAL"].":</td>
-	<td><b>".$itt."&nbsp;</b></td>
-	<td><b>".$mtt."&nbsp;</b></td>
-	<td><b>".$mt1."&nbsp;</b></td>
-	<td><b>".$mtm."&nbsp;</b></td>
-	<td colspan='7'>&nbsp;</td>";
-	if ( $mttq<1 ) $mttq="";
-	if ( $mtmq<1 ) $mtmq="";
-	if ( $mt0q<1 ) $mt0q="";
+	<td $cjust><b>".$ged["TOTAL"].":</b></td>
+	<td><b>".$itt."</b></td>
+	<td><b>".$mtt."</b></td>
+	<td><b>".$mt1."</b></td>
+	<td><b>".$mtm."</b></td>";
+	for ( $i=1; $i<9; $i++ ) echo "
+	<td>&nbsp;</td>";
+	if ( $mttq<1 ) $mttq="&nbsp;";
+	if ( $mtmq<1 ) $mtmq="&nbsp;";
+	if ( $mt0q<1 ) $mt0q="&nbsp;";
 	echo "
-	<td><b>".$mttq."&nbsp;</b></td>
-	<td><b>".$mtmq."&nbsp;</b></td>
-	<td><b>".$mt0q."&nbsp;</b></td>
+	<td><b>".$mttq."</b></td>
+	<td><b>".$mtmq."</b></td>
+	<td><b>".$mt0q."</b></td>
 	<td>&nbsp;</td>
 </tr>
+</tfoot>
 </table><br>";
 
 } else {
@@ -205,7 +253,7 @@ if ( $graph<1 ) {
 	if ( $dots_cnt>2 ) {//no chance to build diagram from less than two dots
 		echo "
 <center><input type='image' src='fgraphgd.php?dots_cnt=$dots_cnt&dots_set=$dots_set'></center>";
-	} else;
+	}
 }
 
 include( "frfoot.php" );

@@ -2,7 +2,9 @@
 /* DF_2: dflib/f_tgs.php
 groups list
 c: 10.12.2005
-m: 15.11.2015 */
+m: 23.03.2017 */
+
+$_list_height=$_height-200;
 
 function CardsMode_GroupsSubmode_Tabs( $l_c, $g_c, $s_c, $t_c ) {
 	global $php_mm, $hDir, $hFrm;
@@ -11,10 +13,10 @@ function CardsMode_GroupsSubmode_Tabs( $l_c, $g_c, $s_c, $t_c ) {
 		<tr>
 			<td>
 				<div class='b_h'>
-					<a href='../".$hFrm['0500']."?cards_groups_tab=bs' class='$t_c'><div class='p_100'></div>&nbsp;&nbsp;".$php_mm["_05_bs_lnk_"]."&nbsp;&nbsp;</a>
-					<a href='../".$hFrm['0500']."?cards_groups_tab=ss' class='$s_c'><div class='p_100'></div>&nbsp;&nbsp;".$php_mm["_05_ss_lnk_"]."&nbsp;&nbsp;</a>
-					<a href='../".$hFrm['0500']."?cards_groups_tab=gs' class='$g_c'><div class='p_100'></div>&nbsp;&nbsp;".$php_mm["_05_gs_lnk_"]."&nbsp;&nbsp;</a>
-					<a href='../".$hFrm['0500']."?cards_groups_tab=ls' class='$l_c'><div class='p_100'></div>&nbsp;&nbsp;".$php_mm["_05_ls_lnk_"]."&nbsp;&nbsp;</a>
+					<a href='../".$hFrm["0500"]."?gtab=bs' class='$t_c'><div class='p_100'></div>&nbsp;&nbsp;".$php_mm["_05_bs_lnk_"]."&nbsp;&nbsp;</a>
+					<a href='../".$hFrm["0500"]."?gtab=ss' class='$s_c'><div class='p_100'></div>&nbsp;&nbsp;".$php_mm["_05_ss_lnk_"]."&nbsp;&nbsp;</a>
+					<a href='../".$hFrm["0500"]."?gtab=gs' class='$g_c'><div class='p_100'></div>&nbsp;&nbsp;".$php_mm["_05_gs_lnk_"]."&nbsp;&nbsp;</a>
+					<a href='../".$hFrm["0500"]."?gtab=ls' class='$l_c'><div class='p_100'></div>&nbsp;&nbsp;".$php_mm["_05_ls_lnk_"]."&nbsp;&nbsp;</a>
 				</div>
 			</td>
 		</tr>
@@ -29,8 +31,8 @@ function CardsGroupsHead( $js_group_type, $i, $ii, $all_checked ) {
 		<table cellspacing='1' class='st2' style='width:495px'>
 		<tr $cjust class='st_title2' style='height:28px'>
 			<td width='20px'></td>
-			<td width='100px'>".$ged['Number']."</td>
-			<td>".$ged['Name']."</td>
+			<td width='100px'>".$ged["Number"]."</td>
+			<td>".$ged["Name"]."</td>
 		</tr>
 		</table>
 		</div>";
@@ -56,13 +58,12 @@ function CardsGroupsList( $i, $groups_db, $group_type, $cb_array ) {
 	echo "
 		<div style='height:313px; overflow-x:hidden; overflow-y:scroll'>
 		<table cellspacing='1' class='st2' style='width:495px'>";
-	$res=mysql_query( "SELECT id FROM $groups_db", $db ) or die( mysql_error());
+	$res=mysql_query( "SELECT id FROM $groups_db", $db );
 	$all_checked=1;
 	while ( $row=mysql_fetch_row( $res )) {
 		if ( $cb_array[$row[0]*1]*1==0 ) $all_checked=0;
 	}
 	mysql_free_result( $res );
-	CookieSet( $userCoo."_gscbs", $all_checked );
 	$res=mysql_query( "SELECT
 	 id,
 	 num, nick,
@@ -93,58 +94,48 @@ function CardsGroupsList( $i, $groups_db, $group_type, $cb_array ) {
 
 include( "../dflib/f_tfunc.php" );
 
-$grs_list=trim( CookieGet( $userCoo."_".$onegroup_name ));
-if ( $grs_list!="" )
-	if ( $grs_list*1==-1 ) {
-		$group_state=trim( CookieGet( $userCoo."_gscbs" ));
-		Cbs_ToDb( $groups_dbt, $onegroup_name, $group_state );
-	} else {
-		Cb_ToDb( $onegroup_name, $grs_list, trim( CookieGet( $userCoo."_".$onegroup_name."state" )));
-	}
-$x=Cbs_FromDb( "$onegroup_name" );
-for ( $i=0; $i<count( $x ); $i++ ) $cb_array[$x[$i]*1]=1;
-
+if ( $tab==0 ) $form_name=$gtab; else $form_name="c".$tab."s";
 echo "
-<form name='df2__$onegroup_name' method='post' action='$PHP_SELF'>";
-if ( $cards_tab_==0 ) {
+<form name='df2__$form_name' method='post' action='$PHP_SELF'>";
+if ( $tab==0 ) {
 	echo "
-<div style='height:70%; visibility:$c_gdiv_vis; $c_gdiv_disp'>
+<div style='height:".$_list_height."px'>
 <table>
 <tr>
 	<td style='padding-top:3px' valign='top'>";
 	switch( $onegroup_name ) {
 	case 'cw_b':
 		CardsMode_GroupsSubmode_Tabs( "rCG", "rCG", "rCG", "rC" );
-		$_find=$_GET[cw_b_find];
-		$_edit=$_GET[cw_b_edit];
-		$_del=$_GET[cw_b_del];
-		$_add=$_GET[cw_b_add];
+		$_find=$_GET["cw_b_find"];
+		$_edit=$_GET["cw_b_edit"];
+		$_del=$_GET["cw_b_del"];
+		$_add=$_GET["cw_b_add"];
 		break;
 	case 'cw_g':
 		CardsMode_GroupsSubmode_Tabs( "rCG", "rC", "rCG", "rCG" );
-		$_find=$_GET[cw_g_find];
-		$_edit=$_GET[cw_g_edit];
-		$_del=$_GET[cw_g_del];
-		$_add=$_GET[cw_g_add];
+		$_find=$_GET["cw_g_find"];
+		$_edit=$_GET["cw_g_edit"];
+		$_del=$_GET["cw_g_del"];
+		$_add=$_GET["cw_g_add"];
 		break;
 	case 'cw_l':
 		CardsMode_GroupsSubmode_Tabs( "rC", "rCG", "rCG", "rCG" );
-		$_find=$_GET[cw_l_find];
-		$_edit=$_GET[cw_l_edit];
-		$_del=$_GET[cw_l_del];
-		$_add=$_GET[cw_l_add];
+		$_find=$_GET["cw_l_find"];
+		$_edit=$_GET["cw_l_edit"];
+		$_del=$_GET["cw_l_del"];
+		$_add=$_GET["cw_l_add"];
 		break;
 	case 'cw_s':
 		CardsMode_GroupsSubmode_Tabs( "rCG", "rCG", "rC", "rCG" );
-		$_find=$_GET[cw_s_find];
-		$_edit=$_GET[cw_s_edit];
-		$_del=$_GET[cw_s_del];
-		$_add=$_GET[cw_s_add];
+		$_find=$_GET["cw_s_find"];
+		$_edit=$_GET["cw_s_edit"];
+		$_del=$_GET["cw_s_del"];
+		$_add=$_GET["cw_s_add"];
 		break;
 	}
 	$i=0; $jj=0;
 	$res=mysql_query( "SELECT id FROM $groups_dbt", $db );
-	while ( $row=mysql_fetch_row( $res )) $jj=$jj+1;
+	while ( $row=mysql_fetch_row( $res )) $jj++;
 	mysql_free_result( $res );
 	if ( $_add==$jj ) {
 		$num=$num_prefix."$jj";
@@ -156,7 +147,7 @@ if ( $cards_tab_==0 ) {
 		 VALUES (
 		 '$now_Ymd', '$now_His',
 		 '$noy_Ymd', '$now_His',
-		 '$num', '$nick' )" ) or die( mysql_error());
+		 '$num', '$nick' )" );
 		$jj=$jj+1;
 	}
 	echo "
@@ -189,8 +180,8 @@ if ( $cards_tab_==0 ) {
 </tr>
 </table>";
 } else {
-	if ( $cards_tab_==1 ) include( "f_tcws.php" );
-	elseif ( $cards_tab_==3 ) include( "f_ttgs.php" );
+	if ( $tab==1 ) include( "f_tcws.php" );
+	elseif ( $tab==2 ) include( "f_ttgs.php" );
 	else include( "f_tos.php" );
 	echo "
 <input id='reload_' style='visibility:hidden' type='submit' value='refresh'>";
