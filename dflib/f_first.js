@@ -1,6 +1,10 @@
-//DF_2: forms/f__first.js
+//DF_2: dflib/f_first.js
 //c: 17.07.2006
-//m: 03.03.2017
+//m: 29.03.2017
+
+function $$( id ) {
+	return document.getElementById( id );
+}
 
 function Trim( s ) {
 	if ( s.indexOf( " " )==-1 ) return s;
@@ -41,22 +45,6 @@ function User_Get() {
 
 function UserNick_Get() {
 	return decodeURI( CookieGet( "unickCoo" ));
-}
-
-function Url_Parl() {
-	window.location="forms/f__parl.php";
-}
-
-function Url_Reps() {
-	window.location="forms/f__reps.php";
-}
-
-function Url_Cards() {
-	window.location="forms/f__cards.php";
-}
-
-function Url_Opers() {
-	window.location="forms/f__ops.php";
 }
 
 //Application.OnStart
@@ -102,8 +90,4 @@ function App_Login() {
 		el.innerHTML=userStr;
 		Timer=setTimeout( "App_Login()", 1000 );
 	}
-}
-
-//Application.HotKeys
-function App_HotKeys() {
 }

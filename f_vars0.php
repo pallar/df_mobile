@@ -2,7 +2,7 @@
 /* DF_2: f_vars0.php
 init: main vars
 c: 14.10.2008
-m: 24.03.2017 */
+m: 28.03.2017 */
 
 ob_start();
 
@@ -209,6 +209,13 @@ $connect->set_charset( $dbCharset );
 //if ( $connect->connect_error ) die( $connect->connect_error );
 
 //CRITICAL! DONT TOUCH THIS!
+$HUA="_".$_SERVER["HTTP_USER_AGENT"];
+if ( strpos( $HUA, "Firefox" )!=0 ) $HUA="Firefox";
+else if ( strpos( $HUA, "MSIE 6.0" )!=0 ) $HUA="MSIE";
+else if ( strpos( $HUA, "Chrome" )!=0 ) $HUA="Chrome";
+else if ( strpos( $HUA, "Opera" )!=0 ) $HUA="Opera";
+else if ( strpos( $HUA, "Safari" )!=0 ) $HUA="Safari";
+CookieSet( "_agent", $HUA  );
 if ( $skip_W3C_DOCTYPE!=1 ) {
 	$HUA="_".$_SERVER["HTTP_USER_AGENT"];
 	echo "

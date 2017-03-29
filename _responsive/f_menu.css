@@ -206,14 +206,6 @@
 }
 
 @media screen and (max-width:800px) {
-  nav:before {
-    background:#9baef9;
-    content:"=";
-    display:block;
-    font-size:14px;
-    font-weight:bold;
-    padding:15px 5px 15px 5px;
-  }
   nav content {
     border:1px solid black;
   }
@@ -271,5 +263,16 @@
   }
   #cssmenu1 ul li a:before {
     display:none;
+  }
+}
+
+@media screen and (max-width:800px) {
+  nav:before {
+    background:#9baef9;
+    content:"=";
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    padding:15px 5px 15px 5px;
   }
 }

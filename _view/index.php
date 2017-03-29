@@ -34,8 +34,27 @@ function do_nav() {
 		nav[0].onclick=function( event ) {
 			event=event || window.event;
 			var t=event.target || event.srcElement;
-//			if (t!=this) return true;
-			for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+			for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none' ? 'block' : 'none';
+			css_files=document.styleSheets.length;
+//			alert( css_files );
+			for ( css_file=1; css_file<css_files; css_file++ ) {
+				css_href=document.styleSheets[css_file].href;
+//				alert( css_href );
+				if ( css_href!=null ) {
+					if ( css_href.indexOf( "f_menu.css" )>0 ) {
+						css_menu_rules=document.styleSheets[css_file].cssRules.length;
+						for ( css_menu_rule=1; css_menu_rule<css_menu_rules; css_menu_rule++ ) {
+							cur_rule=document.styleSheets[css_file].cssRules[css_menu_rule].cssText;
+							if ( cur_rule.indexOf( "nav::before" )>0 ) {
+								content_rule=cur_rule;
+								alert( cur_rule );
+//								document.styleSheets[css_file].deleteRule( css_menu_rule );
+//								document.styleSheets[css_file].insertRule( 'nav:before { content:"||"; }' );
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
