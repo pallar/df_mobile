@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_care.php
 oper ----8 (104) [care]
 c: 09.01.2006
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -130,8 +130,8 @@ if ( $add_oper!="" ) {
 <div style='height:".$_list_height."px; $tbody_style'>
 	<table cellspacing='1' class='st2'>";
 	else if ( $varsession!=1 ) {
-		GrTr();
 		echo "
+	<tr ".GrTrCol().">
 		<td rowspan='2' height='41px'>&nbsp;</td>
 		<td rowspan='2'>&nbsp;</td>
 		<td rowspan='2'>&nbsp;</td>
@@ -143,9 +143,8 @@ if ( $add_oper!="" ) {
 		<td><input style='$rr_style; height:18px' type='text' value='$d16_[4]' onkeypress='return false'></td>
 		<td rowspan='2'><input style='$rr_style; height:100%' type='text' value='$co' onkeypress='return false'></td>
 		<td rowspan='2'><input style='$rr_style; height:100%' type='text' value='$dmY' onkeypress='return false'></td>
-	</tr>";
-		GrTr();
-		echo "
+	</tr>
+	<tr ".GrTrCol().">
 		<td><input style='$rr_style; height:18px' type='text' value='$sta_desc[$d1]' onkeypress='return false'></td>
 		<td><input style='$rr_style; height:18px' type='text' value='$sta_desc[$d2]' onkeypress='return false'></td>
 		<td><input style='$rr_style; height:18px' type='text' value='$sta_desc[$d3]' onkeypress='return false'></td>
@@ -162,8 +161,8 @@ if ( $add_oper!="" ) {
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) { if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
-			$bgcol=GrTr();
 			if ( $div_hide!=1 ) echo "
+	<tr ".GrTrCol().">
 		<td $cjust rowspan='2' width='$td1w'>".$j."</td>";
 			echo "
 		<td $cjust height='22px' rowspan='2' title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
@@ -178,7 +177,7 @@ if ( $add_oper!="" ) {
 		<td rowspan='2' style='background:#fff' width='$tddw'><input id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$rw_style; height:41px' type='text' value='$co'></td>
 		<td rowspan='2' style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$li_style; height:41px' type='text' value='$dmY' onkeypress='return false'></a></td>
 	</tr>
-	<tr bgcolor='$bgcol'>
+	<tr ".GrTrCol().">
 		<td height='22px' style='background:#fff' width='$td5w'><select name='d1_1_[$i]' style='$li_style; height:18px'>";
 			$d1_1=mysql_query( "SELECT id, descr FROM $states", $db );
 			while ( $row1=mysql_fetch_row( $d1_1 )) {

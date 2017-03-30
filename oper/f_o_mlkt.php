@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_mlkt.php
 oper ----2 (102) [milk testing]
 c: 09.01.2006
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -124,9 +124,8 @@ if ( $add_oper!="" ) {
 </div>
 <div style='height:".$_list_height."px; $tbody_style'>
 	<table cellspacing='1' class='st2'>";
-	else if ( $varsession!=1 ) {
-		GrTr();
-		echo "
+	else if ( $varsession!=1 ) echo "
+	<tr ".GrTrCol().">
 		<td width='$td5w'><input style='$rr_style' type='text' value='$somop' onkeypress='return false'></td>
 		<td width='$td6w'><input style='$rr_style' type='text' value='$somo1' onkeypress='return false'></td>
 		<td width='$td7w'><input style='$rr_style' type='text' value='$fatp' onkeypress='return false'></td>
@@ -134,13 +133,13 @@ if ( $add_oper!="" ) {
 		<td width='$tddw'><input style='$rr_style' type='text' value='$co' onkeypress='return false'></td>
 		<td width='$tdew'><input style='$rr_style' type='text' value='$dmY' onkeypress='return false'></td>
 	</tr>";
-	}
 	$j=0;
 	$res=mysql_query( $query, $db );
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
-			GrTr();
+			echo "
+	<tr ".GrTrCol().">";
 			if ( $div_hide!=1 ) echo "
 		<td $cjust width='$td1w'>".$j."</td>
 		<td $cjust height='22px' title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>

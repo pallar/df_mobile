@@ -2,7 +2,7 @@
 /* DF_2: reports/f_diary.php
 report: todo_diary
 c: 22.11.2007
-m: 28.07.2015 */
+m: 30.03.2017 */
 ?>
 
 <script language='JavaScript'>
@@ -32,7 +32,8 @@ function CowRow_Draw( $lactm ) {
 	global $hFrm;
 	global $j, $rs, $row, $days, $birthday, $op, $days_frombirth, $lact, $now_dmY, $cowst, $cowst512, $cowid, $cb_;
 	global $cjust, $ljust, $rjust;
-	if ( $cb_[$op]==0 ) RepTr( $rownum );
+	if ( $cb_[$op]==0 ) echo "
+<tr ".RepTrCol().">";
 	$date="";
 //may be inseminated
 	if ( $op==11 & $cowst[$cowid]==0 ) {

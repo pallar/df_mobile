@@ -2,7 +2,7 @@
 /* DF_2: reports/f_o.php
 report: operations other than extracting
 c: 25.12.2005
-m: 23.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";
 
@@ -110,14 +110,14 @@ if ( $error==0 ) { while ( $row=mysql_fetch_row( $res )) {
 		if ( $userCoo!=9 ) $operkey="<a href='../oper/f_o_".$url_.".php?".$params."&opertype=".$oper_id."&key=".$dbt.":".$row[22].":".$row[0]."&ret0=".$ret0."'>".$operkey."</a>";
 		$cownick=$row[5];
 		$cownum=$cownum_div.$row[4].$cownum_div1;
-		if ( $filt_cowid==-1 ) $cownum="<a href='../".$hRep['o']."?filt_cowid=$cowid&title=".$ged['RHM000hist.'].":&nbsp;".$php_mm["_com_animal_"]."&nbsp;".$ged['No.']."&nbsp;$cownum,&nbsp;".$ged['nick']."&nbsp;$cownick'><b>".$cownum."</b></a>";
+		if ( $filt_cowid==-1 ) $cownum="<a href='../".$hRep["o"]."?filt_cowid=$cowid&title=".$ged["RHM000hist."].":&nbsp;".$php_mm["_com_animal_"]."&nbsp;".$ged["No."]."&nbsp;$cownum,&nbsp;".$ged["nick"]."&nbsp;$cownick'><b>".$cownum."</b></a>";
 		$cowoperdes=$row[6];
 //$a - array of table content
 		$tmp=$odt.$rdiv."<td>".$operkey."</td><td>".Date_FromDb2Scr( $upd_date, "." )."<br>$upd_time"."</td>";
 		if ( $filt_cowid==-1 ) {
 			$tmp=$tmp."<td $rjust>".$cownum."</td><td>".$cownick."&nbsp;</td>";
 		}
-		if ( $opertype*1==-1 ) {
+		if ( $opertype*1==-1 || $cow_hist==1 ) {
 			$tmp=$tmp."<td>".$cowoperdes."&nbsp;</td>";
 		}
 		$comments=PhraseCarry1( $row[17], "<br>", 40, $contentCharset );

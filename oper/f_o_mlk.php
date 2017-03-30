@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_mlk.php
 oper ----1 (101) [milking]
 c: 09.01.2006
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -166,7 +166,8 @@ function milksess_keyp( i_ ) {
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) { if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
-			GrTr();
+			echo "
+	<tr ".GrTrCol().">";
 			if ( $div_hide!=1 ) echo "
 		<td $cjust width='$td1w'>".$j."</td>
 		<td $cjust title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td3w'>".StrCutLen1( $row[3], 5, $contentCharset )."</td>
@@ -180,7 +181,7 @@ function milksess_keyp( i_ ) {
 		<td width='$td2w'><input id='_dur".$i."' maxlength='5' name='arr_dur[".$i."]' size='3' style='$rw_style; height:100%' type='text' value='$old_dur' onclick='time_keyp( \"_time".$i."\", \"is\" )' onfocus='time_keyp( \"_time".$i."\", \"is\" )' onkeypress='time_keyp( \"_dur".$i."\", \"is\" )'></td>
 		<td width='$td9w'><select id='_sess".$i."' name='arr_sess[".$i."]' style='$li_style; height:100%'>";
 			$res1=mysql_query( "SELECT id, name FROM $sessions", $db );
-			while ( $row1=mysql_fetch_row( $res1 )) echo "<option value='$row1[0]'>$row1[1]</option>";
+			while ( $row1=mysql_fetch_row( $res1 )) echo "<option value='".$row1[0]."'>".$row1[1]."</option>";
 			echo "</select></td>
 		<td width='$td5w'><input id='bd".$i."' maxlength='2' name='arr_bd[".$i."]' size='1' style='$rw_style; height:100%' type='text' value='$old_dev' onclick='int_keyp( \"bd$i\", 0, 96, 2 )' onfocus='int_keyp( \"bd$i\", 0, 96, 2 )' onkeypress='int_keyp( \"bd$i\", 0, 96, 2 )'></td>
 		<td width='$td5w'><input class='y_chk' id='notag".$i."' name='arr_notag[".$i."]' type='checkbox'></td>

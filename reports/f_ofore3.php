@@ -2,7 +2,7 @@
 /* DF_2: reports/f_ofore[CAST]3.php
 report: forecast for all cows (moving from group to group)
 c: 24.09.2008
-m: 15.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";
 
@@ -258,10 +258,10 @@ if ( $sqlerr==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 		if (( $dontuse_period!=4 & $parturition_Ymd>=$beg & $parturition_Ymd<=$end ) | ( $dontuse_period==4 )) {
 			$parturition_days=DaysBetween( $now_dmY, $not_abort_date_next );
 			$parturition_date=$not_abort_date_next;
-			RepTr( $rownum );
 			if ( $state_add!=-1 ) $state=$ged[$state].",&nbsp;".$ged[$state_add]; else $state=$ged[$state];
 			if ( $userCoo!=9 & $userCoo!=0 ) $parturition_days="<a href='../".$hFrm['0600']."' target='_blank'>".$parturition_days."</a>";
 			echo "
+<tr ".RepTrCol().">
 	<td $rjust><b><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=-1' target='_blank'>".$cwnum."</a></b></td>
 	<td title='$cwnick'><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=-1' target='_blank'>".$orow[cwnick]."</a>&nbsp;</td>
 	<td title='$grname'>".$orow[grname]."&nbsp;</td>

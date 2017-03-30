@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_vacc.php
 oper ---32 (106) [vaccination]
 c: 09.01.2006
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -119,7 +119,8 @@ if ( $add_oper!="" ) {
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) { if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
-			GrTr();
+			echo "
+	<tr ".GrTrCol().">";
 			if ( $div_hide!=1 ) echo "
 		<td $cjust rowspan='2' width='$td1w'>".$j."</td>
 		<td $cjust height='22px' rowspan='2' title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>

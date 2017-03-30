@@ -2,7 +2,7 @@
 /* DF_2: reports/f_ofore[CAST]1.php
 report: forecast for all cows (moving from group to group)
 c: 24.09.2008
-m: 15.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";
 
@@ -245,7 +245,6 @@ if ( $sqlerr==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 	if ( $prep_zapusk_days==-1 ) $prep_zapusk_days="&nbsp;";
 	if ( $zapusk_days==-1 ) $zapusk_days="&nbsp;";
 	if ( $not_abort_days==-1 ) $not_abort_days="&nbsp;";
-	RepTr( $rownum );
 	if ( $state_add!=-1 ) $state=$ged[$state].",&nbsp;".$ged[$state_add]; else $state=$ged[$state];
 	$idx="$m0z-$d0z"; $sess=0; $mrow0z=$mrowt[$r][$idx.$sess];
 	$idx="$m1z-$d1z"; $sess=0; $mrow1z=$mrowt[$r][$idx.$sess];
@@ -255,6 +254,7 @@ if ( $sqlerr==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 		$mrow1=floor( $mrowt[$r][0]/7*10 )/10;
 	}
 	echo "
+<tr ".RepTrCol().">
 	<td $rjust><b><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=-1'>".$cwnum."</a></b></td>
 	<td title='$cwnick'><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=-1'>".$orow[cwnick]."</a>&nbsp;</td>
 	<td $rjust>$age_days&nbsp;</td>

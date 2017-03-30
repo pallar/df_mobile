@@ -2,7 +2,7 @@
 /* DF_2: reports/f_oratio.php
 report: herd current quantitative ratio
 c: 21.04.2011
-m: 15.03.2017 */
+m: 30.03.2017 */
 
 ob_start();//lock output to set cookies properly!
 $noCSS=$_GET["noCSS"]*1;
@@ -105,56 +105,56 @@ echo "
 </tr>
 </thead>
 <tbody id='rep_tbody'>";
-//RepTr();//inseminated
+//inseminated
 echo "
 <tr $rjust>
 	<td><b>".$_02_h_["12"]."</b>:</td>
 	<td $cjust><b>$insem</b></td>
 	<td $cjust><b>$p_insem</b></td>
 </tr>";
-//RepTr();//inseminated once
+//inseminated once
 echo "
 <tr $rjust>
 	<td $rjust>".$_02_h_["12_01"].":<br>".$_02_h_["12_02"].":</td>
 	<td $cjust>$insem1<br>$insem2</td>
 	<td $cjust>$p_insem1<br>$p_insem2</td>
 </tr>";
-//RepTr();//pregnant
+//pregnant
 echo "
 <tr $rjust>
 	<td><b>".$_02_h_["15"]."</b>:</td>
 	<td $cjust><b>$pregn</b></td>
 	<td $cjust><b>$p_pregn</b></td>
 </tr>";
-//RepTr();//pregnant after first insem
+//pregnant after first insem
 echo "
 <tr $rjust>
 	<td $rjust>".$_02_h_["15_01"].":<br>".$_02_h_["15_02"].":<br>".$_02_h_["15_03"].":</td>
 	<td $cjust>$pregn1<br>$pregn2<br>$pregn3 ($pregn4)</td>
 	<td $cjust>$p_pregn1<br>$p_pregn2<br>$p_pregn3 ($p_pregn4)</td>
 </tr>";
-//RepTr();//not pregnant
+//not pregnant
 echo "
 <tr $rjust>
 	<td><b>".$_02_h_["14"]."</b>:</td>
 	<td $cjust><b>$npregn</b></td>
 	<td $cjust><b>$p_npregn</b></td>
 </tr>";
-//RepTr();//calvings
+//calvings
 echo "
 <tr $rjust>
 	<td><b>".$_02_h_["16_01"]."</b>:</td>
 	<td $cjust><b>$calvings</b></td>
 	<td $cjust><b>$p_calvings</b></td>
 </tr>";
-//RepTr();//aborts
+//aborts
 echo "
 <tr $rjust>
 	<td><b>".$_02_h_["16_02"]."</b>:</td>
 	<td $cjust><b>$aborts</b></td>
 	<td $cjust><b>$p_aborts</b></td>
 </tr>";
-//RepTr();//others
+//others
 echo "
 <tr $rjust>
 	<td><b>".$_02_h_["10"]."</b>:</td>

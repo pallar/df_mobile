@@ -2,7 +2,7 @@
 /* DF_2: oper/f_chcws.php
 form: cows operations: get cows from list
 c: 09.01.2006
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $_list_height=$_height-200;
 
@@ -211,7 +211,8 @@ if ( $submit1!="" ) {
 	$res=mysql_query( $query, $db );
 	$k=0;
 	while ( $row=mysql_fetch_row( $res )) {
-		GrTr();
+			echo "
+		<tr ".GrTrCol().">";
 		$kk=$k+1;
 		$z_col='black'; if ( strlen( $row[3] )>0 ) $z_col='red';
 		echo "

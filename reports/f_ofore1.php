@@ -2,7 +2,7 @@
 /* DF_2: reports/f_o.php
 report: operations other than extracting
 c: 10.05.2005
-m: 14.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";
 
@@ -62,8 +62,8 @@ while ( $row=mysql_fetch_array( $res )) {
 				$warning=$ged["Bad_insem~"];
 				$warning_tip=$ged["Bad_insem"];
 			}
-			RepTr( 0 );
 			echo "
+<tr ".RepTrCol().">
 	<td $rjust><a href='../".$hFrm['0520']."?cow_id=".$row[0]."'>".$cownum_div.$row[cow_num].$cownum_div1."</a></td>
 	<td><a href='../".$hFrm['0520']."?cow_id=".$row[0]."'>".$row[nick]."</td>
 	<td>$row1[nick]</td>

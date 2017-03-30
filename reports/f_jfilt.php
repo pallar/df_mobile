@@ -2,7 +2,7 @@
 /* DF_2: reports/f_jfilt.php
 report: input filter for any report
 c: 20.02.2007
-m: 14.03.2017 */
+m: 30.03.2017 */
 
 //TEMPORARY
 $yf=2016; $mf=01; $df=15;
@@ -239,7 +239,9 @@ if ( $stop_f_jfilt==0 ) {
 	$now_dmY=date( "d.m.Y" ); $now_His=date( "H:i:s" );
 }
 
-$filt_cowid=$_GET["filt_cowid"]*1; if ( $filt_cowid<1 ) $filt_cowid=-1;//one cow
+if ( $cow_hist!=1 ) {
+	$filt_cowid=$_GET["filt_cowid"]*1; if ( $filt_cowid<1 ) $filt_cowid=-1;//one cow
+}
 
 $outsele1=-1;
 $outsele2=-1;

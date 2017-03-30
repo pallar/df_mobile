@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_meas.php
 oper ----4 (103) [measurings]
 c: 09.01.2006
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -128,9 +128,8 @@ if ( $add_oper!="" ) {
 </div>
 <div style='height:".$_list_height."px; $tbody_style'>
 	<table cellspacing='1' class='st2'>";
-	else if ( $varsession!=1 ) {
-		GrTr();
-		echo "
+	else if ( $varsession!=1 ) echo "
+	<tr ".GrTrCol().">
 		<td width='$td2w'>&nbsp;</td>
 		<td width='$td3w'>&nbsp;</td>
 		<td width='$td4w'>&nbsp;</td>
@@ -145,7 +144,6 @@ if ( $add_oper!="" ) {
 		<td width='$tddw'><input style='$rr_style; height:18px' type='text' value='$co' onkeypress='return false'></td>
 		<td height='22px' width='$tdew'><input style='$rr_style; height:18px' type='text' value='$dmY' onkeypress='return false'></td>
 	</tr>";
-	}
 	$res=mysql_query( "SELECT $cows.id, $cows.cow_num, $cows.nick, $groups.nick
 	 FROM $cows, $groups
 	 WHERE $groups.id=$cows.gr_id
@@ -154,7 +152,8 @@ if ( $add_oper!="" ) {
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) { if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
-			GrTr();
+			echo "
+	<tr ".GrTrCol().">";
 			if ( $div_hide!=1 ) echo "
 		<td $cjust width='$td1w'>".$j."</td>";
 			echo "

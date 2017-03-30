@@ -2,9 +2,9 @@
 /* DF_2: dflib/f_tgs.php
 groups list
 c: 10.12.2005
-m: 23.03.2017 */
+m: 30.03.2017 */
 
-$_list_height=$_height-200;
+$_list_height=$_height-230;
 
 function CardsMode_GroupsSubmode_Tabs( $l_c, $g_c, $s_c, $t_c ) {
 	global $php_mm, $hDir, $hFrm;
@@ -73,13 +73,13 @@ function CardsGroupsList( $i, $groups_db, $group_type, $cb_array ) {
 	 ORDER BY ORD( $groups_db.nick )", $db );
 	$k=0;
 	while ( $row=mysql_fetch_row( $res )) {
-		GrTr();
 		$kk=$k+1;
 		if ( $cb_array[$row[0]*1]==1 ) $checked_str="checked";
 		else $checked_str="";
 		if ( trim( $row[1]."." )=="." ) $row[1]="<font color='#ff0000'>?</font>";
 		if ( $row[0]*1>1 & trim( $row[2]."." )=="." ) $row[2]="<font color='#ff0000'>?</font>";
 		echo "
+		<tr ".GrTrCol().">
 			<td height='23px' width='20px' $cjust></td>
 			<td height='23px' $rjust width='100px'><b><a href='../".$hFrm['0510']."?locked=".$row[5]."&url_mode=".$group_type."&url_id=".$row[0]."'>".$row[1]."&nbsp;</b></td>
 			<td><a href='../".$hFrm['0510']."?locked=".$row[5]."&url_mode=".$group_type."&url_id=".$row[0]."'>".$row[2]."&nbsp;</td>

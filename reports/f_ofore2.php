@@ -2,7 +2,7 @@
 /* DF_2: reports/f_ofore[CAST]2.php
 report: forecast for all cows (moving from group to group)
 c: 24.09.2008
-m: 15.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";
 
@@ -261,10 +261,10 @@ if ( $sqlerr==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 		if (( $dontuse_period!=4 & ( $prep_zapusk_Ymd>=$beg & $prep_zapusk_Ymd<=$end ) | ( $zapusk_Ymd>=$beg & $zapusk_Ymd<=$end )) | $dontuse_period==4 | ( $dontuse_period==1 & $prep_zapusk_days<=10 & $prep_zapusk_days>=0 )) {
 			$prep_zapusk_days=DaysBetween( $now_dmY, $prep_zapusk_date_next );
 			$zapusk_days=DaysBetween( $now_dmY, $zapusk_date_next );
-			RepTr( $rownum );
 			if ( $state_add!=-1 ) $state=$ged[$state].",&nbsp;".$ged[$state_add]; else $state=$ged[$state];
 			if ( $userCoo!=9 & $userCoo!=0 ) $prep_zapusk_days="<a href='../".$hFrm['0600']."' target='_blank'>".$prep_zapusk_days."</a>";
 			echo "
+<tr ".RepTrCol().">
 	<td $rjust><b><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=-1' target='_blank'>".$cwnum."</a></b></td>
 	<td title='".$cwnick."'><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=-1' target='_blank'>".$orow[cwnick]."</a>&nbsp;</td>
 	<td title='".$grname."'>".$orow[grname]."&nbsp;</td>

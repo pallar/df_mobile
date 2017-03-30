@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_jagg.php
 oper -8192 (114) [jagging and "disable milking"]
 c: 10.08.2009
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -93,7 +93,8 @@ function reset_all_keyp( i_ ) {
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) { if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
-			GrTr();
+			echo "
+	<tr ".GrTrCol().">";
 			$i1=10000+$i*1; $i2=20000+$i*1; $i3=30000+$i*1; $i4=40000+$i*1; $i5=50000+$i*1;
 			if ( $div_hide!=1 ) echo "
 		<td rowspan='2' $cjust width='$td1w'>".$j."</td>";
@@ -110,9 +111,8 @@ function reset_all_keyp( i_ ) {
 			<a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$li_style; height:18px' type='text' value='$dmY' onkeypress='return false'></a>
 			<a onclick='reset_all_keyp( ".$i." ); return false' href=''><input size='8' style='border:none; cursor:pointer; height:24px; width:100%' type='text' value='".$_06_reset_."' onkeypress='return false'></a>
 		</td>
-	</tr>";
-		GrTr();
-		echo "
+	</tr>
+	<tr ".GrTrCol().">
 		<td width='$td5w'>
 			<input id='c1".$i1."' name='c1_[".$i1."]' style='cursor:pointer' title='".$php_mm["_com_s10_"]."' type='checkbox'>".mb_substr( $php_mm["_com_s10_"], 0, 1, $contentCharset )."
 			<input id='c2".$i1."' name='c2_[".$i1."]' style='cursor:pointer' title='".$php_mm["_com_s20_"]."' type='checkbox'>".mb_substr( $php_mm["_com_s20_"], 0, 1, $contentCharset )."

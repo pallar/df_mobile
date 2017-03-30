@@ -1,8 +1,8 @@
 <?php
 /* DF_2: oper/f_opres.php
 report: operations other than extracting (special edition)
-created: 25.12.2005
-modified: 11.11.2015 */
+c: 25.12.2005
+m: 30.03.2017 */
 
 $title_=$title=$_GET["title"];
 if ( strlen( $title_ )<=1 ) $title_=$php_mm["_06_oper_inserted_list"]."&nbsp;$inserted_opername:";
@@ -82,7 +82,8 @@ if ( $coo!=-1 ) {
 if ( $dbt_ext=="_o" ) include( "../".$hDir['reps']."f_jselo.php" ); else include( "../".$hDir['reps']."f_jselm.php" );
 
 if ( $error==0 ) while ( $row=mysql_fetch_row( $res )) {
-	RepTr();
+	echo "
+<tr ".RepTrCol().">";
 	if ( $dbt_ext=="_o" ) $oper_id=$row[18]*1; else $oper_id=1;
 	$nick1=StrCutLen1( $row[5], 59, $contentCharset );
 	if ( $coo!=-1 ) {
@@ -93,17 +94,16 @@ if ( $error==0 ) while ( $row=mysql_fetch_row( $res )) {
 	<td $cjust>".Date_FromDb2Scr( $row[21], "." )."<br>".$row[24]."</td>
 	<td $rjust><b>".$cownum_div.$row[4].$cownum_div1."</b></td>
 	<td $cjust>".$nick1."&nbsp;</td>
-</tr>";
-		RepTr();
-		echo "
+</tr>
+<tr ".RepTrCol().">
 	<td colspan='3'>".$descr."</td>";
 		if ( $dbt_ext=="_o" ) {
 			$comm1=StrCutLen1( $row[17], 110, $contentCharset );
 //			$comm1=PhraseCarry1( $row[17], "<br>", 50, $contentCharset );
 			echo "
 </tr>";
-		RepTr();
 		echo "
+<tr ".RepTrCol().">
 	<td colspan='3'>".$comm1."&nbsp;</td>";
 		}
 	} else {
@@ -113,8 +113,8 @@ if ( $error==0 ) while ( $row=mysql_fetch_row( $res )) {
 	<td $rjust style='background:#cec0c0'><b>".$cownum_div.$row[4].$cownum_div1."</b></td>
 	<td $cjust style='background:#deb0b0'>".$nick1."&nbsp;</td>
 </tr>";
-		RepTr();
 		echo "
+<tr ".RepTrCol().">
 	<td $cjust colspan='4'>".$co1."&nbsp;</td>";
 	}
 	echo "

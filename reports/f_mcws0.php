@@ -1,8 +1,8 @@
-<?php
+7<?php
 /* DF_2: reports/f_mcws0.php
 report: extracting by cows & days
 c: 25.12.2005
-m: 19.03.2017 */
+m: 30.03.2017 */
 
 ob_start();//lock output to set cookies properly!
 $noCSS=$_GET["noCSS"]*1;
@@ -123,8 +123,8 @@ while ( $yc<=$yl+1 ) {
 				$mtotal_[31]=$mtotal_[31]+$m_sess[31];
 
 				if ( $graph<1 ) {
-					RepTr( $rownum );
 					echo "
+<tr ".RepTrCol().">
 	<td $rjust onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1' target='w1'>$rnum</td>
 	<td title='$rnick' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1' target='w1'>".$rnick_."&nbsp;</td>";
 					if ( $sess_q==3 ) echo "

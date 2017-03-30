@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_rect.php
 oper --512 (110) [rectal condition]
 c: 09.01.2006
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -124,15 +124,16 @@ if ( $add_oper!="" ) {
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) { if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
-			GrTr();
+			echo "
+	<tr ".GrTrCol().">";
 			if ( $div_hide!=1 ) echo "
 		<td $cjust rowspan='2' width='$td1w'>".$j."</td>
 		<td $cjust height='22px' rowspan='2' title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
 		<td $rjust rowspan='2' title='".$cownum_div.$row[1].$cownum_div1."' width='$td3w'><b>".$cownum_div.StrCutLen1( $row[1], 9, $contentCharset ).$cownum_div1."</b></td>
 		<td $cjust rowspan='2' title='".StrCutLen1( $row[2], 59, $contentCharset ) ."' width='$td4w'>".StrCutLen1( $row[2], 11, $contentCharset )."</td>
-		<td width='$td5w'><input style='$rr_style; height:18px' type='text' value='$pre_desc[$d7]' onkeypress='return false'></td>
-		<td width='$td6w'><input style='$rr_style; height:18px' type='text' value='$sta_desc[$d8]' onkeypress='return false'></td>
-		<td width='$td7w'><input style='$rr_style; height:18px' type='text' value='$d16_[3]' onkeypress='return false'></td>
+		<td width='$td5w'><input style='$rr_style; height:18px' type='text' value='".$pre_desc[$d7]."' onkeypress='return false'></td>
+		<td width='$td6w'><input style='$rr_style; height:18px' type='text' value='".$sta_desc[$d8]."' onkeypress='return false'></td>
+		<td width='$td7w'><input style='$rr_style; height:18px' type='text' value='".$d16_[3]."' onkeypress='return false'></td>
 		<td width='$tddw'><input style='$rr_style; height:18px' type='text' value='$co' onkeypress='return false'></td>
 		<td height='22px' width='$tdew'><input style='$rr_style; height:18px' type='text' value='$dmY' onkeypress='return false'></td>
 	</tr>
@@ -141,20 +142,20 @@ if ( $add_oper!="" ) {
 		<td style='background:#fff' width='$td5w'><select name='d7_1_[".$i."]' style='$li_style; height:18px'>";
 			$d=mysql_query( "SELECT id, descr FROM $pregnant", $db );
 			while ($row1=mysql_fetch_row( $d )) {
-				$val="value='$row1[0]'";
+				$val="value='".$row1[0]."'";
 				if ( $nosession==1 & $row1[1]==$pre_desc[$d7] ) $val.=" selected";
-				echo "<option $val>$row1[1]</option>";
+				echo "<option $val>".$row1[1]."</option>";
 			}
 			echo "</select></td>
 		<td style='background:#fff' width='$td6w'><select name='d7_2_[".$i."]' style='$li_style; height:18px'>";
 			$d=mysql_query( "SELECT id, descr FROM $states", $db );
 			while ($row1=mysql_fetch_row( $d )) {
-				$val="value='$row1[0]'";
+				$val="value='".$row1[0]."'";
 				if ( $nosession==1 & $row1[1]==$sta_desc[$d8] ) $val.=" selected";
-				echo "<option $val>$row1[1]</option>";
+				echo "<option $val>".$row1[1]."</option>";
 			}
 			echo "</select></td>
-		<td style='background:#fff' width='$td7w'><input maxlength='55' name='d7_[".$i."]' style='$rw_style; height:18px' type='text' value='$d16_[3]'></td>
+		<td style='background:#fff' width='$td7w'><input maxlength='55' name='d7_[".$i."]' style='$rw_style; height:18px' type='text' value='".$d16_[3]."'></td>
 		<td style='background:#fff' width='$tddw'><input id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$rw_style; height:18px' type='text' value='$co'></td>
 		<td style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$li_style; height:18px' type='text' value='$dmY' onkeypress='return false'></a></td>
 	</tr>";

@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_insm.php
 oper --128/--256 (108/109) [insemination]
 c: 09.01.2006
-m: 24.03.2017 */
+m: 30.03.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -119,7 +119,8 @@ if ( $add_oper!="" ) {
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) { if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
-			GrTr();
+			echo "
+	<tr ".GrTrCol().">";
 			if ( $div_hide!=1 ) echo "
 		<td $cjust rowspan='2' width='$td1w'>".$j."</td>
 		<td $cjust height='22px' rowspan='2' title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
@@ -134,9 +135,9 @@ if ( $add_oper!="" ) {
 			echo "
 		<td style='background:#fff' width='$td5w'><select name='oxs_[".$i."]' style='$li_style; height:18px'>";
 			for ( $ox=0; $ox<$oxs; $ox++ ) {
-				$val="value='$oxs_id[$ox]'";
+				$val="value='".$oxs_id[$ox]."'";
 				if ( $nosession==1 && $oxs_nick[$ox]==$ox_nick ) $val.=" selected";
-				echo "<option $val>$oxs_nick[$ox]</option>";
+				echo "<option $val>".$oxs_nick[$ox]."</option>";
 			}
 			echo "</select></td>
 		<td style='background:#fff' width='$tddw'><input id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$rw_style; height:18px' type='text' value='$co'></td>

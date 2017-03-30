@@ -2,7 +2,7 @@
 /* DF_2: reports/f_ofore4.php
 report: extracting
 c: 16.05.2011
-m: 23.03.2017 */
+m: 30.03.2017 */
 
 $skip_clichk=1;
 
@@ -160,7 +160,6 @@ while ( $yc*100+$mc<=$yl*100+$ml ) {
 	$m=$m_mm[$dbt];
 	$mcows=$mcows_mm[$dbt];
 	if ( $mcows>0 ) $m_avg=round( $m/$mcows, 1 ); else $m_avg="&nbsp;";
-	RepTr1( $rownum, $rjust );
 	$total_m=$total_m+$m;
 	for ( $i=1; $i<=3; $i++ ) {
 		$cnt_anims__mm[$dbt][$i]=$cnt_telyci_mm[$dbt][$i]+$cnt_neteli_mm[$dbt][$i]+$cnt_cows___mm[$dbt][$i];
@@ -171,6 +170,7 @@ while ( $yc*100+$mc<=$yl*100+$ml ) {
 		if ( $cnt_anims__mm[$dbt][$i]==0 ) $cnt_anims__mm[$dbt][$i]="";
 	}
 	echo "
+<tr $rjust ".RepTrCol().">
 	<td $cjust>".$mm."&nbsp;</td>
 	<td>".$m."&nbsp;</td>
 	<td>".$m_avg."&nbsp;</td>

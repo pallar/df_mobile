@@ -19,7 +19,7 @@ ob_end_flush();
 echo "
 <html>
 <head>
-<meta content='0;url=forms/index.php?demo=".$demo."' http-equiv='refresh'>
+<meta content='0;url=_view/index.php?demo=".$demo."' http-equiv='refresh'>
 <meta content='text/html;charset=utf-8' http-equiv='content-type'>
 </head>
 </html>";

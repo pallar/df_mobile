@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mlactz.php
 report: total milk by lactation (ONLY CALCULATION)
 c: 09.06.2005
-m: 14.03.2017 */
+m: 30.03.2017 */
 
 function DateDiff( $start, $end ) {
 	$start_ts=strtotime( $start );
@@ -171,7 +171,6 @@ if ( $graph!=1 | ( $filt_cowid==-1 & $graph==1 )) {
 					if ( $n>1 ) $predict=round(( $p-$ppp )/( $n-1 ));
 				}
 //prediction() end
-				if ( $skip_echo!=1 ) RepTr();
 				if ( $milkcnt[$cowid]>0 ) $average_=floor( $milk[$cowid]/$milkcnt[$cowid]*100 )/100;
 				else $average_=0;
 				$lact_beg_=$lact_beg[$lact[$cowid]][$cowid];
@@ -187,6 +186,7 @@ if ( $graph!=1 | ( $filt_cowid==-1 & $graph==1 )) {
 				}
 				if ( $skip_echo!=1 ) {
 					echo "
+<tr ".RepTrCol().">
 	<td $rjust><a href='../".$hFrm['0520']."?cow_id=".$cowid."&ret0=00' target='w1'>".$cownum_div.$cownum.$cownum_div1."</td>
 	<td>$cownick</td>
 	<td>$lact_beg_</td>

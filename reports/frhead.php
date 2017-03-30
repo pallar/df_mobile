@@ -2,7 +2,7 @@
 /* DF_2: reports/frhead.php
 report head
 c: 08.08.2007
-m: 15.03.2017 */
+m: 30.03.2017 */
 
 $_filtsXmode="r";
 include( "ffilt1.php" );
@@ -12,8 +12,6 @@ echo "
 <script language='JavaScript' src='fmcontxt.js'></script>
 -->
 <style>
-html, body { background:#ffffff; font:8pt Tahoma,sans-serif; height:100%; margin:0; padding:0; }
-body { margin:0 5px 0 5px; }
 table { border-collapse:collapse; width:100%; }
 .no_border td { border:0; }
 #rep_thead th { background:#e4efdb; border:1px solid #ddd; }
