@@ -4,6 +4,14 @@ $HTML_COMMENT="<!-- DF_ajs: Opers Form -->";
 $HTML_TAG="<html ng-app='f_ops'>";
 
 include( "../f_vars.php" );
+include( "../locales/$lang/f_prep._$lang" );
+include( "../locales/$lang/f_php._$lang" );
+include( "../locales/$lang/f_sel._$lang" );
+include( "../locales/$lang/f_cows._$lang" );
+include( "../locales/$lang/f_06._$lang" );//for jquery operations
+include( "../dflib/f_func.php" );
+include( "../dflib/f_lib1.php" );
+include( "../dflib/f_librep.php" );
 
 $title="Операції - Інтернет-Ферма";
 $curr_app_tab=5; include "f_menu.php";
@@ -36,35 +44,11 @@ window.onresize=function() {
 
 <!--<div ng-controller="x"></div>-->
 <div class="container wrapper" ng-controller="DbController">
-<!--	<h1 class="text-center">Opers</h1>-->
-	<nav class="navbar navbar-default">
-		<div class="alert alert-default input-group search-box">
-			<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." ng-model="search_query"></span>
-		</div>
-	</nav>
-	<div class="clearfix"></div>
-<!-- Cows List -->
-	<div class="table-responsive" id="cws_list">
-		<table class="table table-hover">
-		<tr>
-			<th width='70px'>#</th>
-			<th>Nick</th>
-			<th width='100px'>Date of Birth</th>
-			<th>Birth #</th>
-		</tr>
-		<tr ng-repeat="detail in details | filter:search_query">
-			<td>{{detail.cow_num}}</td>
-			<td>{{detail.nick}}</td>
-			<td>{{detail.b_date}}</td>
-			<td>{{detail.b_num}}</td>
-		</tr>
-		</table>
-	</div>
-	<nav class="navbar navbar-default" ng-if="hasMoreData">
-		<div class="alert alert-default navbar-brand">
-			<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
-		</div>
-	</nav>
+
+<?php
+include( "../oper/f_chcws.php" );
+?>
+
 </div>
 <!-- Controller -->
 <script src="../js/f_ops.js"></script>

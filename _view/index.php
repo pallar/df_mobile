@@ -47,7 +47,7 @@ function do_nav() {
 							cur_rule=document.styleSheets[css_file].cssRules[css_menu_rule].cssText;
 							if ( cur_rule.indexOf( "nav::before" )>0 ) {
 								content_rule=cur_rule;
-								alert( cur_rule );
+//								alert( cur_rule );
 //								document.styleSheets[css_file].deleteRule( css_menu_rule );
 //								document.styleSheets[css_file].insertRule( 'nav:before { content:"||"; }' );
 							}

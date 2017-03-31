@@ -1,5 +1,5 @@
-html,body {background:#ffffff; font:8pt Tahoma,sans-serif; height:100%; margin:0; padding:0;}
-body {margin:0; padding:0;}
+html, body {background:#ffffff; font:8pt Tahoma,sans-serif; height:100%; margin:0; padding:0;}
+body {margin:0 0 0 0;}
 table {border-collapse:collapse; font:8pt Tahoma,sans-serif;}
 table td {padding:0;}
 
@@ -82,19 +82,17 @@ div.column {float:left; width:49%;}
 p.left_floating {float:left; border:solid 2px #5671b1; margin-right:1em; margin-left:1em; padding:0.5em;}
 p.right_floating {float:right; border:solid 2px #5671b1; margin-right:1em; margin-left:1em; padding:0.5em;}
 
-.rC,.rCG {cursor:pointer; color:#003366; float:right; line-height:19px; margin-left:0; margin-right:4px; margin-top:0; outline:none; position:relative; text-align:center; top:4px; white-space:nowrap;}
+.rC, .rCG {cursor:pointer; color:#003366; float:right; line-height:19px; margin-left:0; margin-right:4px; margin-top:0; outline:none; position:relative; text-align:center; top:4px; white-space:nowrap;}
 .rC {background-color:#e4efdb; border:0 solid #909ba2; border-bottom:1px solid #ffffff; padding-bottom:5px;}
 .rCG {background-color:#f4ffeb; border:0 solid #d0d8dd; border-bottom:1px solid #f4ffeb; padding-bottom:0;}
 .rCG:hover {text-decoration:none;}
 
-.rC,#box input,.i,.sel,.sel_MO {background-color:#ffffff;}
-
-.rCm,.rCGm {background-color:#e4efdb; cursor:pointer; color:#003366; float:right; line-height:18px; margin-left:4px; margin-right:0; margin-top:0; outline:none; padding:2px; position:relative; text-align:center; top:4px; white-space:nowrap;}
+.rCm, .rCGm {background-color:#e4efdb; cursor:pointer; color:#003366; float:right; line-height:18px; margin-left:4px; margin-right:0; margin-top:0; outline:none; padding:2px; position:relative; text-align:center; top:4px; white-space:nowrap;}
 .rCm {border:1px solid #909ba2; border-bottom:1px solid #ffffff; margin-top:3px; top:1px; padding-bottom:5px;}
 .rCGm {border:1px solid #d0d8dd; border-bottom:1px solid #e7ebee; margin-top:0; top:4px; padding-bottom:1px;}
 .rCGm:hover {text-decoration:none;}
 
-.rCm,#box input,.i,.sel,.sel_MO {background-color:#ffffff;}
+.rC, .rCm, #box input, .i, .sel, .sel_MO {background-color:#ffffff;}
 
 a {color:#003366; text-decoration:none;}
 a:hover {text-decoration:none;}
@@ -104,9 +102,9 @@ a:hover {text-decoration:none;}
 .o {border-top:1px solid #909ba2; padding:2px; z-index:100;}
 .o1 {border-top:1px solid #cccccc;}
 
-.b_h,.b_h1 {background:#dfeedf;}
+.b_h, .b_h1 {background:#dfeedf;}
 .b_h {border-bottom:2px solid #daeeda; height:26px; line-height:28px; position:relative; width:100%;}
-.b_hc,.b_hc_w,.caption {color:#005a92; height:26px; font-size:100%; font-weight:bolder; overflow:hidden; padding-left:4px;}
+.b_hc, .b_hc_w, .caption {color:#005a92; height:26px; font-size:100%; font-weight:bolder; overflow:hidden; padding-left:4px;}
 
 .rbs {float:right; left:-15px; line-height:17px; padding-bottom:2px; position:relative; top:1px; z-index:90;}
 

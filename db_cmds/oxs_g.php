@@ -5,7 +5,7 @@ $arr = array();
 $__query = "SELECT
  id, num, b_date, b_num, nick
  FROM f_oxes
- ORDER BY num*1 ASC";
+ ORDER BY num*1 ASC LIMIT 50";
 $__res = mysqli_query($conn, $__query);
 if(mysqli_num_rows($__res) != 0)
 	while($__row = mysqli_fetch_assoc($__res)) $arr[] = $__row;

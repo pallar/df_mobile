@@ -10,7 +10,7 @@ $__id="$__data->__id"; $__id=$__id*1;
 if ($__id!=0) $__query=$__query."
  WHERE id!=$__id";
 $__query=$__query."
- ORDER BY cow_num*1 ASC";
+ ORDER BY cow_num*1 ASC LIMIT 50";
 $__res = mysqli_query($conn, $__query);
 if(mysqli_num_rows($__res) != 0)
 	while($__row = mysqli_fetch_assoc($__res)) $arr[] = $__row;

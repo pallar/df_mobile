@@ -62,8 +62,8 @@ while ( $row=mysql_fetch_row( $res )) {
 $submit1=$_POST["submit1"];
 
 if ( $submit1!="" ) {
-	$cows_checkboxes=$_POST[cows_checkboxes];
-	$opertype=$_POST[opertype]*1;
+	$cows_checkboxes=$_POST["cows_checkboxes"];
+	$opertype=$_POST["opertype"]*1;
 	$fo_scnt=count( $cows_checkboxes );//checked cows quantity
 	if ( $fo_scnt<=0 )
 		Res_Draw( 3, $PHP_SELF."?opertype=$opertype", "", $php_mm["_com_no_selected_animals_"], $php_mm_tip[0] );
@@ -73,7 +73,7 @@ if ( $submit1!="" ) {
 		$cows_arr=array_keys( $cows_checkboxes );
 		for ( $i=0; $i<count( $cows_arr ); $i++ )
 			$sess_str=$sess_str.$cows_arr[$i].",";
-		$_SESSION['sess_cows.txt']=$sess_str;
+		$_SESSION["sess_cows.txt"]=$sess_str;
 		if ( $opertype==1 ) $url_='mlk';
 		else if ( $opertype==2 ) $url_="mlkt";
 		else if ( $opertype==4 ) $url_="meas";
@@ -123,7 +123,7 @@ if ( $submit1!="" ) {
 				$expl=explode( " ", $opermydescr[$j] ); $expl1=$expl[0];
 				if ( strlen( $expl[1] )!=0 ) $expl1=$expl1."&nbsp;".substr( $expl[1], 0, 1).".";
 				echo "
-				<option value='$opermyid[$j]'>$opermydescr[$j]</option>";
+				<option value='".$opermyid[$j]."'>".$opermydescr[$j]."</option>";
 //			}
 		}
 		mysql_free_result( $oper );
@@ -200,7 +200,7 @@ if ( $submit1!="" ) {
 	 $cows.id, $cows.cow_num, $cows.nick,
 	 $cows.z_dates
 	 FROM $cows, $groups
-	 WHERE $cows.gr_id=$groups_arr[$i] AND $cows.gr_id=$groups.id";
+	 WHERE $cows.gr_id=".$groups_arr[$i]." AND $cows.gr_id=$groups.id";
 	if ( $filts0_3=="checked" & $filts0_6=="" )
 		$query=$query." AND $cows.z_dates<>''";
 	if ( $filts0_3=="" & $filts0_6=="checked" )
@@ -214,7 +214,7 @@ if ( $submit1!="" ) {
 			echo "
 		<tr ".GrTrCol().">";
 		$kk=$k+1;
-		$z_col='black'; if ( strlen( $row[3] )>0 ) $z_col='red';
+		$z_col="black"; if ( strlen( $row[3] )>0 ) $z_col="red";
 		echo "
 			<td $cjust style='height:24px' width='20px'>";
 		if ( $userCoo>0 & $userCoo!=9 ) echo "
@@ -230,7 +230,7 @@ if ( $submit1!="" ) {
 	echo "
 			</table><br>
 		</td>
-		<td $cjust $vtjust></td>
+		<td $cjust $vtjust>$_height</td>
 	</tr>
 	</table>";
 	}
