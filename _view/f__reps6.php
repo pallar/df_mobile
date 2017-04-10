@@ -10,7 +10,7 @@ $curr_app_tab=3; include "f_menu.php";
 ?>
 
 <nav1>
-	<div id='cssmenu'>
+	<div id='cssmenu1'>
 		<ul>
 			<li><a href='f__reps1.php'><span>Молоко</span></a></li>
 			<li><a href='f__reps2.php'><span>Управління стадом</span></a></li>
@@ -34,23 +34,21 @@ function do_nav() {
 		childs1=nav1[0].children[0].children[0].childElementCount;
 		nav[0].onclick=function( event ) {
 			event=event || window.event;
-			var t=event.target || event.srcElement;
+//			var t=event.target || event.srcElement;
 //			if (t!=this) return true;
-			for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
-			for ( var i=0; i<childs1; i++ ) nav1[0].children[0].children[0].children[i].style.display=nav1[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+			if ( event.clientY<=nav[0].offsetHeight ) {
+				for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+				for ( var i=0; i<childs1; i++ ) nav1[0].children[0].children[0].children[i].style.display=nav1[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+			}
 		}
 	}
 }
 
 window.onresize=function() {
 	do_nav();
-	childs=nav[0].children[0].children[0].childElementCount;
-	childs1=nav1[0].children[0].children[0].childElementCount;
-	if ( width>800 ) menu_li_style='inline-block'; else menu_li_style='none';
-	for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=menu_li_style;
-	for ( var i=0; i<childs1; i++ ) nav1[0].children[0].children[0].children[i].style.display=menu_li_style;
 }
 </script>
+
 <div class='section group'>
 	<div class='col span_1_of_2'>
 		<div id='list'>

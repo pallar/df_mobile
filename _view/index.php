@@ -33,8 +33,11 @@ function do_nav() {
 		childs=nav[0].children[0].children[0].childElementCount;
 		nav[0].onclick=function( event ) {
 			event=event || window.event;
-			var t=event.target || event.srcElement;
-			for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none' ? 'block' : 'none';
+//			var t=event.target || event.srcElement;
+//			if (t!=this) return true;
+			if ( event.clientY<=nav[0].offsetHeight ) {
+				for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+			}
 			css_files=document.styleSheets.length;
 //			alert( css_files );
 			for ( css_file=1; css_file<css_files; css_file++ ) {
@@ -61,9 +64,6 @@ function do_nav() {
 
 window.onresize=function() {
 	do_nav();
-	childs=nav[0].children[0].children[0].childElementCount;
-	if ( width>800 ) menu_li_style='inline-block'; else menu_li_style='none';
-	for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=menu_li_style;
 }
 </script>
 

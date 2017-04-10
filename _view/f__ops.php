@@ -27,23 +27,22 @@ function do_nav() {
 		childs=nav[0].children[0].children[0].childElementCount;
 		nav[0].onclick=function( event ) {
 			event=event || window.event;
-			var t=event.target || event.srcElement;
+//			var t=event.target || event.srcElement;
 //			if (t!=this) return true;
-			for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+			if ( event.clientY<=nav[0].offsetHeight ) {
+				for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+			}
 		}
 	}
 }
 
 window.onresize=function() {
 	do_nav();
-	childs=nav[0].children[0].children[0].childElementCount;
-	if ( width>800 ) menu_li_style='inline-block'; else menu_li_style='none';
-	for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=menu_li_style;
 }
 </script>
 
 <!--<div ng-controller="x"></div>-->
-<div class="container wrapper" ng-controller="DbController">
+<div ng-controller="DbController" style="height:0">
 
 <?php
 include( "../oper/f_chcws.php" );

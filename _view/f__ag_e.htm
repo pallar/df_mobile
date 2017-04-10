@@ -1,6 +1,6 @@
 <!-- DF_2 Edit Group Form -->
-<form class="form-horizontal alert alert-warning" id="g_edit_form" name="g_edit" hidden>
-	<h3 class="text-center">Group Card</h3>
+<form class="alert alert-warning" id="g_edit_form" name="g_edit" hidden>
+	<h3 class="text-center">Group' Card</h3>
 	<div class="form-group">
 		<label for="Num">#:<span class="text-danger" ng-show="g_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
 		<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="width:100px" type="text" value="{{cur_g.num}}" ng-disabled="cur_g.id==1" ng-model="cur_g.num" required>
@@ -19,7 +19,7 @@
 	</div>
 	<div class="form-group">
 		<button class="btn btn-success" ng-disabled="g_edit.$invalid || cur_g.id==1" ng-click="db_G_update(cur_g)">Update</button>
-		<button class="btn btn-warning" ng-disabled="g_edit.$invalid || cur_g.id==1" ng-click="db_G_update(cur_g); G_form_close('cancel',cur_g.id)">List</button>
+		<button class="btn btn-warning" ng-disabled="g_edit.$invalid || cur_g.id==1" ng-click="db_G_update(cur_g); G_form_close('cancel',cur_g.id)">Update & List</button>
 		<button class="btn btn-danger" ng-click="G_form_close('cancel',cur_g.id)">Cancel</button>
 	</div>
 </form>

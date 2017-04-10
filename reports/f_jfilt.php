@@ -2,15 +2,15 @@
 /* DF_2: reports/f_jfilt.php
 report: input filter for any report
 c: 20.02.2007
-m: 30.03.2017 */
+m: 07.04.2017 */
 
 //TEMPORARY
-$yf=2016; $mf=01; $df=15;
-$yl=2016; $ml=01; $dl=15;
-SetCookie( "_dt1", "2016-01-15" );
-SetCookie( "_dt2", "2016-01-15" );
-SetCookie( "_filts0", "59" );
-SetCookie( "_filts9", "63" );
+$yf="2016"; $mf="01"; $df="15";
+$yl="2016"; $ml="01"; $dl="15";
+setcookie( "_dt1", "$yf-$mf-$df", 0, "/" );
+setcookie( "_dt2", "$yl-$ml-$dl", 0, "/" );
+setcookie( "_filts0", "59", 0, "/" );
+setcookie( "_filts9", "63", 0, "/" );
 //
 
 if ( $stop_f_jfilt==0 ) {

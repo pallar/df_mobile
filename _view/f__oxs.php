@@ -7,17 +7,22 @@ include( "../f_vars.php" );
 
 $title="Картотека - Інтернет-Ферма";
 $curr_app_tab=4; include "f_menu.php";
+
+if ( CookieGet( "_mobile" )*1==0 ) {
+	$_list_height=CookieGet( "_height" )*1-230;
+	$_content_style="style='height:".$_list_height."px'";
+} else $_content_style="";
 ?>
 
 <nav1>
-	<div id='cssmenu'>
+	<div id='cssmenu1'>
 		<ul>
 			<li><a href='f__als.php'><span>Ферми</span></a></li>
 			<li><a href='f__ags.php'><span>Секції</span></a></li>
 			<li><a href='f__asgs.php'><span>Підгрупи</span></a></li>
 			<li><a href='f__abs.php'><span>Породи</span></a></li>
 			<li><a href='f__cws.php'><span>Корови</span></a></li>
-<!--			<li><a href='f__tags.php'><span>RFIDs</span></a></li>-->
+			<li><a href='f__atags.php'><span>TAGs</span></a></li>
 			<li class='active last'><a href='f__oxs.php'><span>Бики</span></a></li>
 		</ul>
 	</div>
@@ -35,35 +40,30 @@ function do_nav() {
 		childs1=nav1[0].children[0].children[0].childElementCount;
 		nav[0].onclick=function( event ) {
 			event=event || window.event;
-			var t=event.target || event.srcElement;
+//			var t=event.target || event.srcElement;
 //			if (t!=this) return true;
-			for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
-			for ( var i=0; i<childs1; i++ ) nav1[0].children[0].children[0].children[i].style.display=nav1[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+			if ( event.clientY<=nav[0].offsetHeight ) {
+				for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=nav[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+				for ( var i=0; i<childs1; i++ ) nav1[0].children[0].children[0].children[i].style.display=nav1[0].children[0].children[0].children[i].style.display==='none'?'block':'none';
+			}
 		}
 	}
 }
 
 window.onresize=function() {
 	do_nav();
-	childs=nav[0].children[0].children[0].childElementCount;
-	childs1=nav1[0].children[0].children[0].childElementCount;
-	if ( width>800 ) menu_li_style='inline-block'; else menu_li_style='none';
-	for ( var i=0; i<childs; i++ ) nav[0].children[0].children[0].children[i].style.display=menu_li_style;
-	for ( var i=0; i<childs1; i++ ) nav1[0].children[0].children[0].children[i].style.display=menu_li_style;
 }
 </script>
 
 <!--<div ng-controller="x"></div>-->
-<div class="container wrapper" ng-controller="DbController">
-<!--	<h1 class="text-center">Oxes</h1>-->
-	<nav class="navbar navbar-default">
-		<div class="alert alert-default navbar-brand search-box">
-			<button class="btn btn-primary" ng-show="show_form" ng-click="Ox_add_form_show()">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-		</div>
-		<div class="alert alert-default input-group search-box">
-			<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." ng-model="search_query"></span>
-		</div>
-	</nav>
+<div ng-controller="DbController" style="height:0">
+<!--	<h3 class="text-center">Oxes</h3>-->
+	<div class="alert navbar-brand">
+		<button class="btn btn-primary" ng-show="show_form" ng-click="Ox_add_form_show()">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+	</div>
+	<div class="alert input-group search-box">
+		<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." ng-model="search_query"></span>
+	</div>
 	<div class="col-md-6 col-md-offset-3">
 <!-- Form template which is used to insert data -->
 		<div ng-include src="'f__ox_a.htm'"></div>
@@ -72,14 +72,14 @@ window.onresize=function() {
 	</div>
 	<div class="clearfix"></div>
 <!-- Oxes List -->
-	<div class="table-responsive" id="oxs_list">
+	<div class="table-responsive" id="oxs_list" <?php echo $_content_style;?>>
 		<table class="table table-hover">
 		<tr>
-			<th width='60px'></th>
-			<th width='60px'></th>
-			<th width='70px'>#</th>
+			<th width="80px"></th>
+			<th width="80px"></th>
+			<th width="80px">#</th>
 			<th>Nick</th>
-			<th width='100px'>Date of Birth</th>
+			<th width="100px">Date of Birth</th>
 			<th>Birth #</th>
 		</tr>
 		<tr ng-repeat="detail in details | filter:search_query">
@@ -93,10 +93,8 @@ window.onresize=function() {
 		</table>
 	</div>
 	<nav class="navbar navbar-default" ng-if="hasMoreData">
-		<div class="navbar-header">
-			<div class="alert alert-default navbar-brand">
-				<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
-			</div>
+		<div class="alert alert-default navbar-brand">
+			<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
 		</div>
 	</nav>
 </div>

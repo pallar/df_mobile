@@ -2,7 +2,7 @@
 /* DF_2: f_vars0.php
 init: main vars
 c: 14.10.2008
-m: 28.03.2017 */
+m: 07.04.2017 */
 
 ob_start();
 
@@ -259,6 +259,4 @@ if ( $lang=="" ) {
 		$lr=mysql_fetch_row( $res ); $lang=$lr[0];
 	} else $lang="ru";
 }
-
-ob_end_flush();
 ?>

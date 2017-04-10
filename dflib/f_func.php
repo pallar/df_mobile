@@ -2,7 +2,7 @@
 /* DF_2: dflib/f_func.php
 common functions
 c: 01.02.2006
-m: 03.03.2017 */
+m: 07.04.2017 */
 
 include( "f_dbnew3.php" );
 
@@ -189,7 +189,7 @@ function Tmilk_create( $dbt ) {
 //valid journal date
 function Is_YmdValid( $Ymd ) {
 	$res=1;
-	$$Ymd=trim( $Ymd );
+	$Ymd=trim( $Ymd );
 	if ( strlen( $Ymd )==10 ) {
 		list( $Y, $m, $d )=split( '[/.-]', $Ymd );
 		if ( checkdate( $m, $d, $Y )) {
@@ -477,7 +477,7 @@ if ( $uuid>0 ) {
 } else {
 	$logindiv__onload_show=0;
 }
-$_width=CookieGet( "_width" );
+$_width=CookieGet( "_width" )*1;
 $_height=CookieGet( "_height" )*1;
 $userCoo=CookieGet( "userCoo" );
 $guest_from_wan=( CookieGet( "_intranet" )!="1" ) & $deny_from_wan;

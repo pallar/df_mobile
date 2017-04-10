@@ -1,47 +1,58 @@
 <!-- DF_2 Edit Cow Form -->
-<form class="form-horizontal alert alert-warning" id="cw_edit_form" name="cw_edit" hidden>
-	<h3 class="text-center">Cow Card</h3>
+	<h3 class="text-center">Cow' Card</h3>
 	<div class="form-group">
-		<label for="B_Date">Birth Date:<span class="text-danger" ng-show="cw_edit.b_date.$invalid">&nbsp;REQUIRED!</span></label>
-		<input class="form-control" name="b_date" style="width:200px" type="text" value="{{cur_cw.b_date}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_date" required>
+		<div class="form-group row">
+			<div class="col-md-4 form-group">
+				<label for="B_Date">Birth Date:<span class="text-danger" ng-show="cw_edit.b_date.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" name="b_date" style="width:200px" type="text" value="{{cur_cw.b_date}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_date" required>
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="B_Num">Birth #:</label>
+				<input class="form-control" name="b_num" style="width:100px" type="text" value="{{cur_cw.b_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_num">
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="N_Descr">National #:</label>
+				<input class="form-control" name="national_descr" style="width:200px" type="text" value="{{cur_cw.national_descr}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw_national_descr">
+			</div>
+		</div>
 	</div>
 	<div class="form-group">
-		<label for="B_Num">Birth #:</label>
-		<input class="form-control" name="b_num" style="width:100px" type="text" value="{{cur_cw.b_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_num">
+		<div class="form-group row">
+			<div class="col-md-4 form-group">
+				<label for="Num">#:<span class="text-danger" ng-show="cw_edit.cow_num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" name="cow_num" style="width:100px" type="text" value="{{cur_cw.cow_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.cow_num" required>
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="Nick">Nick:</label>
+				<input class="form-control" name="nick" style="width:200px" type="text" value="{{cur_cw.nick}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.nick">
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="RFID">TAG:</label>
+				<input class="form-control" name="rfid_num" style="width:200px" type="text" value="{{cur_cw.rfid_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw_rfid_num">
+			</div>
+		</div>
 	</div>
 	<div class="form-group">
-		<label for="N_Descr">National #:</label>
-		<input class="form-control" name="national_descr" style="width:200px" type="text" value="{{cur_cw.national_descr}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw_national_descr">
-	</div>
-	<div class="form-group">
-		<label for="Num">#:<span class="text-danger" ng-show="cw_edit.cow_num.$invalid">&nbsp;REQUIRED!</span></label>
-		<input class="form-control" name="cow_num" style="width:100px" type="text" value="{{cur_cw.cow_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.cow_num" required>
-	</div>
-	<div class="form-group">
-		<label for="Nick">Nick:</label>
-		<input class="form-control" name="nick" style="width:200px" type="text" value="{{cur_cw.nick}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.nick">
-	</div>
-	<div class="form-group">
-		<label for="RFID">RFID:</label>
-		<input class="form-control" name="rfid_num" style="width:200px" type="text" value="{{cur_cw.rfid_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw_rfid_num">
-	</div>
-	<div class="form-group">
-		<label for="Lot">Lot:</label>
-		<select class="form-control" name="lot" style="width:200px" type="select" ng-disabled="cur_cw.id==1" ng-model="lot_det">
-			<option class="form-control" ng-repeat="lots in lots_details" value="{{lots.id}}">{{lots.nick}}</option>
-		</select>
-	</div>
-	<div class="form-group">
-		<label for="Group">Group:</label>
-		<select class="form-control" name="gr" style="width:200px" type="select" ng-disabled="cur_cw.id==1" ng-model="gr_det">
-			<option class="form-control" ng-repeat="grs in grs_details" value="{{grs.id}}">{{grs.nick}}</option>
-		</select>
-	</div>
-	<div class="form-group">
-		<label for="Subgroup">Subgroup:</label>
-		<select class="form-control" name="subgr" style="width:200px" type="select" ng-disabled="cur_cw.id==1" ng-model="subgr_det">
-			<option class="form-control" ng-repeat="subgrs in subgrs_details" value="{{subgrs.id}}">{{subgrs.nick}}</option>
-		</select>
+		<div class="form-group row">
+			<div class="col-md-4 form-group">
+				<label for="Lot">Lot:</label>
+				<select class="form-control" name="lot" style="width:200px" type="select" ng-disabled="cur_cw.id==1" ng-model="lot_det">
+					<option class="form-control" ng-repeat="lots in lots_details" value="{{lots.id}}">{{lots.nick}}</option>
+				</select>
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="Group">Group:</label>
+				<select class="form-control" name="gr" style="width:200px" type="select" ng-disabled="cur_cw.id==1" ng-model="gr_det">
+					<option class="form-control" ng-repeat="grs in grs_details" value="{{grs.id}}">{{grs.nick}}</option>
+				</select>
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="Subgroup">Subgroup:</label>
+				<select class="form-control" name="subgr" style="width:200px" type="select" ng-disabled="cur_cw.id==1" ng-model="subgr_det">
+					<option class="form-control" ng-repeat="subgrs in subgrs_details" value="{{subgrs.id}}">{{subgrs.nick}}</option>
+				</select>
+			</div>
+		</div>
 	</div>
 	<div class="form-group">
 		<label for="Breed">Breed:</label>
@@ -50,24 +61,31 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<label for="Mom">Mom:</label>
-		<input class="form-control" name="mom_data" style="width:200px" type="text" value="{{cur_cw_mom_data}}" ng-disabled="cur_cw.id==1">
+		<div class="form-group row">
+			<div class="col-md-4 form-group">
+				<label for="Mom">Mom:</label>
+				<input class="form-control" name="mom_data" style="width:200px" type="text" value="{{cur_cw_mom_data}}" ng-disabled="cur_cw.id==1">
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="Dad">Dad:</label>
+				<input class="form-control" name="dad_data" style="width:200px" type="text" value="{{cur_cw_dad_data}}" ng-disabled="cur_cw.id==1">
+			</div>
+		</div>
 	</div>
 	<div class="form-group">
-		<label for="Dad">Dad:</label>
-		<input class="form-control" name="dad_data" style="width:200px" type="text" value="{{cur_cw_dad_data}}" ng-disabled="cur_cw.id==1">
-	</div>
-	<div class="form-group">
-		<label for="Exterior Defects">Exterior Defects:</label>
-		<input class="form-control" name="defects" style="width:200px" type="text" value="{{cur_cw.defects}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.defects">
-	</div>
-	<div class="form-group">
-		<label for="Comments">Comments:</label>
-		<input class="form-control" name="comments" style="width:200px" type="text" value="{{cur_cw.comments}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.comments">
+		<div class="form-group row">
+			<div class="col-md-4 form-group">
+				<label for="Exterior Defects">Exterior Defects:</label>
+				<input class="form-control" name="defects" style="width:200px" type="text" value="{{cur_cw.defects}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.defects">
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="Comments">Comments:</label>
+				<input class="form-control" name="comments" style="width:200px" type="text" value="{{cur_cw.comments}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.comments">
+			</div>
+		</div>
 	</div>
 	<div class="form-group">
 		<button class="btn btn-success" ng-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw)">Update</button>
-		<button class="btn btn-warning" ng-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw); Cw_form_close('cancel',cur_ox.id)">List</button>
+		<button class="btn btn-warning" ng-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw); Cw_form_close('cancel',cur_ox.id)">Update & List</button>
 		<button class="btn btn-danger" ng-click="Cw_form_close('cancel',cur_cw.id)">Cancel</button>
 	</div>
-</form>

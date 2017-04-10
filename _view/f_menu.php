@@ -168,5 +168,7 @@ function get_window_prop() {
 	window.height=window.innerHeight;
 	window.document.cookie='_width='+width+';path=/';
 	window.document.cookie='_height='+height+';path=/';
+	if ( window.width<=800 ) window.document.cookie='_mobile=1;path=/';
+	else window.document.cookie='_mobile=0;path=/';
 }
 </script>

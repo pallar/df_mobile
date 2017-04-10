@@ -1,6 +1,5 @@
 <!-- DF_ajs: Add Cow Form -->
-<form class="form-horizontal alert alert-warning" id="cw_add_form" name="cw_add" hidden>
-	<h3 class="text-center">New Cow Card</h3>
+	<h3 class="text-center">New Cow' Card</h3>
 	<div class="form-group">
 		<label for="Cow_Num">#:<span class="text-danger" ng-show="cw_add.cow_num.$invalid">&nbsp;REQUIRED!</span></label>
 		<input class="form-control" maxlength="6" name="cow_num" placeholder="Enter Number" style="width:100px" type="text" value="" ng-model="new_cw.cow_num" required>
@@ -21,4 +20,3 @@
 		<button class="btn btn-success" ng-disabled="cw_add.$invalid" ng-click="db_Cw_insert(new_cw); Cw_form_close('cancel')">Add</button>
 		<button class="btn btn-danger" ng-click="Cw_form_close('cancel')">Cancel</button>
 	</div>
-</form>
