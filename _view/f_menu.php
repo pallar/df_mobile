@@ -40,10 +40,10 @@ function $$( id ) {
 }
 
 function ok_keyp( i_, ok_ ) {
-	var el=$$( String( i_ ));
-	if ( null!=typeof( el )) {
-		el.onkeypress=function( e ) {
-			var keyCode=( window.event ) ?window.event.keyCode:e.which;
+	var eid=$$( String( i_ ));
+	if ( null!=typeof( eid )) {
+		eid.onkeypress=function( e ) {
+			var keyCode=( window.event ) ? window.event.keyCode : e.which;
 			if ( keyCode=='13' ) $$( String( ok_ )).click();//enter pressed
 			return true;
 		}
