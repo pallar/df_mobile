@@ -1,6 +1,6 @@
 //DF_2: dflib/f_first.js
 //c: 17.07.2006
-//m: 29.03.2017
+//m: 12.04.2017
 
 function $$( id ) {
 	return document.getElementById( id );
@@ -68,26 +68,23 @@ function App_OnStart() {
 
 //Application.Login+RTC
 function App_Login() {
-	el=document.getElementById( "rtc_div" );
-	now=new Date();
-	hh=now.getHours(); mm=now.getMinutes(); ss=now.getSeconds();
-	timeStr=(( hh<10)?"0":"" )+hh;
-	timeStr+=(( mm<10)?":0":":" )+mm;
-	timeStr+=(( ss<10)?":0":":" )+ss;
-	date=now.getDate();
-	month=now.getMonth()+1;
-	if ( navigator.appName!="Netscape" & navigator.appName!="Opera" )
-		year=now.getYear();
-	else
-		year=now.getYear()+1900;
-	dateStr=(( date<10 )?"0":"" )+date; dateStr+=(( month<10 )?"/0":"/" )+month; dateStr+="/"+year;
-	if ( Trim( String( el ))!="null" ) {
-		el.innerHTML=dateStr+"&nbsp;&nbsp;"+timeStr;
+	eid=$$( "rtc_div" );
+	if ( Trim( String( eid ))!="null" ) {
+		now=new Date();
+		hh=now.getHours(); mm=now.getMinutes(); ss=now.getSeconds();
+		timeStr=(( hh<10)?"0":"" )+hh; timeStr+=(( mm<10)?":0":":" )+mm; timeStr+=(( ss<10)?":0":":" )+ss;
+		d=now.getDate(); m=now.getMonth()+1;
+		if ( navigator.appName!="Netscape" & navigator.appName!="Opera" )
+			Y=now.getYear();
+		else
+			Y=now.getYear()+1900;
+		dateStr=(( d<10 )?"0":"" )+d; dateStr+=(( m<10 )?"/0":"/" )+m; dateStr+="/"+Y;
+		eid.innerHTML=dateStr+"&nbsp;&nbsp;"+timeStr;
 	}
-	userStr=UserNick_Get();
-	el=document.getElementById( "uname_div" );
-	if ( Trim( String( el ))!="null" ) {
-		el.innerHTML=userStr;
+	eid=$$( "uname_div" );
+	if ( Trim( String( eid ))!="null" ) {
+		userStr=UserNick_Get();
+		eid.innerHTML=userStr;
 		Timer=setTimeout( "App_Login()", 1000 );
 	}
 }

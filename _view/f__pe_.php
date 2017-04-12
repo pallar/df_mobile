@@ -17,11 +17,36 @@ include( "../dflib/f_func.php" );
 
 require_once "../dflib/ajax/jshttprq.php";
 $JsHttpRequest=& new JsHttpRequest( $contentCharset );
-$event=$_REQUEST['event'];
+$event=$_REQUEST["event"];
 
 ob_start();
 
-echo "
+switch ( $event ) {
+	case "":
+		$buttn=$_REQUEST["buttn"]*1;
+		if ( $buttn==1 ) {
+			ob_end_flush();
+			$HUA="_".$_SERVER["HTTP_USER_AGENT"];
+			echo "
+<html>
+<head>
+<link href='".$hcss["f_0.css"]."' rel='stylesheet' type='text/css'>
+<link href='../oper/f_opcss.css' rel='stylesheet' type='text/css'>";
+			if ( strpos( $HUA, "Firefox" )!=0 ) echo "
+<link href='".$hcss["f_1ff036.css"]."' rel='stylesheet' type='text/css'>";
+			else if ( strpos( $HUA, "MSIE 6.0" )!=0 ) echo "
+<link href='".$hcss["f_1ie060.css"]."' rel='stylesheet' type='text/css'>";
+			else if ( strpos( $HUA, "Chrome" )!=0 ) echo "
+<link href='".$hcss["f_1ch100.css"]."' rel='stylesheet' type='text/css'>";
+			else if ( strpos( $HUA, "Opera" )!=0 ) echo "
+<link href='".$hcss["f_1op110.css"]."' rel='stylesheet' type='text/css'>";
+			else if ( strpos( $HUA, "Safari" )!=0 ) echo "
+<link href='".$hcss["f_1ch100.css"]."' rel='stylesheet' type='text/css'>";
+			echo "
+</head>
+
+<body>
+
 <center>
 <table width='90%'>
 <tr>
@@ -30,7 +55,7 @@ echo "
 		<tr height='13px'><td></td></tr>
 		<tr>
 			<td style='color:#666666'>
-				<select class='sel sel_h0' id='per_d1' style='width:43px' onchange='Per_d1()'></select>";
+				<select class='sel sel_h0' id='per_d1' style='width:43px' onchange='Per_d1()'><option value='1'>1</option></select>";
 Date_MonthsList( "<select class='sel sel_h0' id='per_m1' style='width:140px' onclick='Per_m1()' onchange='Per_m1(); Per_d1list()'>" );
 Date_YearsList( "<select class='sel sel_h0' id='per_y1' style='width:60px' onclick='Per_y1()' onchange='Per_y1(); Per_d1list()'>" );
 echo "
@@ -39,7 +64,7 @@ echo "
 		<tr height='3px'><td></td></tr>
 		<tr>
 			<td style='color:#666666'>
-				<select class='sel sel_h0' id='per_d2' style='width:43px' onchange='Per_d2();'></select>";
+				<select class='sel sel_h0' id='per_d2' style='width:43px' onchange='Per_d2()'><option value='1'>1</option></select>";
 Date_MonthsList( "<select class='sel sel_h0' id='per_m2' style='width:140px' onclick='Per_m2()' onchange='Per_m2(); Per_d2list()'>" );
 Date_YearsList( "<select class='sel sel_h0' id='per_y2' style='width:60px' onclick='Per_y2()' onchange='Per_y2(); Per_d2list()'>" );
 echo "
@@ -55,5 +80,19 @@ echo "
 		</table>
 	</td>
 </table>
-</center>";
+</center>
+
+</body>
+</html>";
+			$row=ob_get_contents();
+		} else {
+			$row="!!!";
+		}
+		$_RESULT=array( "text"=>$row );
+		break;
+	case "period_set":
+		break;
+	case "period_cancel":
+		break;
+	}
 ?>

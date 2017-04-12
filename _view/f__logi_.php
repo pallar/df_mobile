@@ -2,7 +2,7 @@
 /* DF_ajs: _view/f__logi_.php
 form: login ([LOGI]n)
 c: 15.05.2006
-m: 24.03.2017 */
+m: 12.04.2017 */
 
 $skip_W3C_DOCTYPE=1;
 
@@ -78,7 +78,7 @@ switch ( $event ) {
 				<input class='txt txt_h0' id='pass' maxlength='100' name='pass' style='width:145px' type='password' onkeydown='ok_keyp( \"pass\", \"login_button\" )'>
 			</td>
 		</tr>
-		<tr height='13px'><td></td></tr>
+		<tr height='13px'><td colspan='2'></td></tr>
 		<tr>
 			<td colspan='2'>
 				<input class='btn gradient_0f0 btn_h0' id='login_button' style='width:159px' type='button' value='".$php_mm["_com_reg_btn_"]."' onclick='Login_OnOk()'>

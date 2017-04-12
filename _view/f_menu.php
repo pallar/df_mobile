@@ -50,85 +50,87 @@ function ok_keyp( i_, ok_ ) {
 	}
 }
 
+function Shadow_Close() {
+	eid=$$( "__shadow__" );
+	eid.style.visibility="hidden";
+	eid.style.display="none";
+}
+
+function Shadow_Show() {
+	eid=$$( "__shadow__" );
+	eid.style.visibility="visible";
+	eid.style.display="block";
+}
+
+function Login_Close() {
+	eid=$$( "login_div" );
+	eid.style.visibility="hidden";
+	eid.style.display="none";
+	Shadow_Close();
+}
+
 function Login_Show() {
 	Period_Close();
-	JsHttpRequest.query( '../_view/f__logi_.php',
-		{ buttn:'1' },
-		function( responseJS, responseText ) {
-			el=$$( '__shadow__' );
-			el.style.visibility='visible';
-			el.style.display='block';
-			el=$$( 'login_div' );
-			el.innerHTML=responseJS.text;
-			el.style.left='-5px';
-			el.style.top='35px';
-			el.style.visibility='visible';
-			el.style.display='block';
-		},
-		false );
+	JsHttpRequest.query( "../_view/f__logi_.php",
+	 { buttn:"1" },
+	 function( responseJS, responseText ) {
+		Shadow_Show();
+		eid=$$( "login_div" );
+		eid.innerHTML=responseJS.text;
+		eid.style.left="-5px";
+		eid.style.top="35px";
+		eid.style.visibility="visible";
+		eid.style.display="block";
+	 },	false );
 }
 
 function Login_OnOk() {
-	var user=$$( 'user' ).value;
-	var passwd=$$( 'pass' ).value;
-	JsHttpRequest.query( '../_view/f__logi_.php',
-		{ event:'login_checkpassw', user:user, passwd:passwd },
-		function( responseJS, responseText ) {
-			if ( responseJS==null | responseJS=='' ) {
-			} else {
-				window.document.cookie='userCoo='+responseJS.user+';path=/';
-				window.document.cookie='unickCoo='+encodeURI( responseJS.usernick )+';path=/';
-				el=document.getElementById( 'login_div' );
-				el.style.visibility='hidden';
-				el.style.display='none';
-				window.location.href='';
-			}
-		},
-		false );
+	var user=$$( "user" ).value;
+	var passwd=$$( "pass" ).value;
+	JsHttpRequest.query( "../_view/f__logi_.php",
+	 { event:"login_checkpassw", user:user, passwd:passwd },
+	 function( responseJS, responseText ) {
+		if ( responseJS==null | responseJS=="");
+		else {
+			window.document.cookie="userCoo="+responseJS.user+";path=/";
+			window.document.cookie="unickCoo="+encodeURI( responseJS.usernick )+";path=/";
+			Login_Close();
+		}
+	 }, false );
 }
 
 function Login_OnCancel() {
-	var user='not_changed';
-	var passwd='not_required';
-	JsHttpRequest.query( '../_view/f__logi_.php',
-		{ event:'login_cancel', user:user, passwd:passwd },
-		function( responseJS, responseText ) {
-			if ( responseJS==null | responseJS=='' ) {
-			} else {
-				el=document.getElementById( 'login_div' );
-				el.style.visibility='hidden';
-				el.style.display='none';
-				window.location.href='';
-			}
-		},
-		false );
-}
-
-function Period_Show() {
-	el=$$( 'login_div' );
-	el.style.visibility='hidden';
-	el.style.display='none';
-	el=$$( 'filt_div' );
-	el.style.visibility='hidden';
-	el.style.display='none';
-	el=$$( '__shadow__' );
-	el.style.visibility='visible';
-	el.style.display='block';
-	el=$$( 'period_div' );
-	el.style.left=( document.body.scrollWidth-287 )+'px';
-	el.style.top='35px';
-	el.style.visibility='visible';
-	el.style.display='block';
+	var user="not_changed";
+	var passwd="not_required";
+	JsHttpRequest.query( "../_view/f__logi_.php",
+	 { event:"login_cancel", user:user, passwd:passwd },
+	 function( responseJS, responseText ) {
+		if ( responseJS==null | responseJS=="");
+		else Login_Close();
+	 }, false );
 }
 
 function Period_Close() {
-	el=$$( 'period_div' );
-	el.style.visibility='hidden';
-	el.style.display='none';
-	el=$$( '__shadow__' );
-	el.style.visibility='hidden';
-	el.style.display='none';
+	eid=$$( "period_div" );
+	eid.style.visibility="hidden";
+	eid.style.display="none";
+	Shadow_Close();
 }
+
+function Period_Show() {
+	Login_Close();
+	JsHttpRequest.query( "../_view/f__pe_.php",
+	 { buttn:"1" },
+	 function( responseJS, responseText ) {
+		Shadow_Show();
+		eid=$$( "period_div" );
+		eid.style.left=( document.body.scrollWidth-287 )+"px";
+		eid.style.top="35px";
+		eid.style.visibility="visible";
+		eid.style.display="block";
+	 }, false );
+}
+
 </script>
 <script language='JavaScript' src='../dflib/f_date.js'></script>
 <script language='JavaScript' src='../dflib/f_per.js'></script>
@@ -136,7 +138,7 @@ function Period_Close() {
 </head>
 
 <body onload='Is_CookiesOn(); App_Login(); App_OnStart();' onkeypress='App_HotKeys();' oncontextmenu='return false;'>
-	
+
 <div class='mk' id='login_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:270px; z-index:10;' onmouseover='in_menu=true;'>
 </div>
 <div class='mk' id='period_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:270px; z-index:10;' onmouseover='in_menu=true;'>
@@ -156,7 +158,7 @@ echo"
 			".$app_tabs[5]."<a href='../_view/f__ops.php'><span>ОПЕРАЦІЇ</span></a></li>
 			".$app_tabs[6]."<a href='../_view/f__conf.php'><span>НАЛАШТУВАННЯ</span></a></li>
 			".$app_tabs[7]."<a href='../man/?lang=uk' target='w1'><span>?</span></a></li>
-			".$app_tabs[8]."<a onclick='Per_FromCoo(); Period_Show(); return false;'><span>ПЕРІОД</span></a></li>
+			".$app_tabs[8]."<a onclick='Period_Show(); return false;'><span>ПЕРІОД</span></a></li>
 		</ul>
 	</div>
 </nav>";

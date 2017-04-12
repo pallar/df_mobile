@@ -2,7 +2,7 @@
 /* DF_2: dflib/f_perset.php
 put period to database
 c: 01.02.2006
-m: 25.08.2015 */
+m: 12.04.2017 */
 
 $uuid=$userCoo;
 if ( $uuid<1 ) return;
@@ -18,7 +18,7 @@ if ( strlen( $dt1 )<strlen( $dt1_db ) | strlen( $dt2 )<strlen( $dt2_db )) {
 //echo "perset.php | $dt1 | $dt1_db |<br>";
 //echo "perset.php | $dt2 | $dt2_db |<br>";
 }
-if ( strlen( $dt1 )==strlen( $dt1_db ) | strlen( $dt2 )==strlen( $dt2_db )) {
+if ( strlen( $dt1 )==strlen( $dt1_db ) & strlen( $dt2 )==strlen( $dt2_db )) {
 	$local_id=CookieGet( "_id" );
 	if ( !empty( $local_id )) {
 		Date_ToDb( $uuid, $vars, $local_id.".rep__.fdate", $dt1 );

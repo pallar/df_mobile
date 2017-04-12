@@ -7,6 +7,11 @@ include( "../f_vars.php" );
 
 $title="По залу - Інтернет-Ферма";
 $curr_app_tab=2; include "f_menu.php";
+
+if ( CookieGet( "_mobile" )*1==0 ) {
+	$_list_height=CookieGet( "_height" )*1-100;
+	$_content_style="style=\"height:".$_list_height."px; margin:0; padding:15px; overflow-y:auto;\"";
+} else $_content_style="style=\"margin:0; padding:15px;\"";
 ?>
 
 <script language='JavaScript' type='text/javascript'>
@@ -39,8 +44,12 @@ $graph=0;
 $btnToPrn=1;
 
 //include( "../f__jfilt.php" );
+echo "
+	<div $_content_style>";
 include( "../reports/f_m.php" );
 ?>
+
+</div>
 
 </body>
 </html>

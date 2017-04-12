@@ -2,7 +2,7 @@
 /* DF_2: dflib/f_func.php
 common functions
 c: 01.02.2006
-m: 07.04.2017 */
+m: 12.04.2017 */
 
 include( "f_dbnew3.php" );
 
@@ -35,6 +35,12 @@ function Date_FromScr2Db( $from_scr ) {
 	return $res;
 }
 
+function Int2StrZ( $s, $len ) {
+	$res=strval( $s );
+	while ( strlen( $res )<$len ) $res="0".$res;
+	return $res;
+}
+
 function Str2Int( $s ) {
 	return $s*1;
 }
@@ -60,10 +66,10 @@ function StrCh2Ch( $s, $c_in, $c_out ) {
 }
 
 function StrCutLen1( $s, $s_len, $charset ) {
-	$s=trim( $s ); if ( strlen( $s )==0 ) $res='&nbsp;';
+	$s=trim( $s ); if ( strlen( $s )==0 ) $res="&nbsp;";
 	else {
 		$res=mb_substr( $s, 0, $s_len, $charset );
-		if ( $res!=$s ) $res=$res.'...';
+		if ( $res!=$s ) $res=$res."...";
 	}
 	return $res;
 }
@@ -206,8 +212,8 @@ function Is_YmdValid( $Ymd ) {
 //common file string writing
 function File_StrTo( $fname, $s, $mode, $mode_msg ) {
 	global $php_m;
-	if ( file_exists( $fname )) {
-	} else {
+	if ( file_exists( $fname ));
+	else {
 		$handle=fopen( $fname, $mode ); fclose( $handle );
 	}
 	if ( is_writable( $fname )) {
@@ -218,21 +224,19 @@ function File_StrTo( $fname, $s, $mode, $mode_msg ) {
 			echo "ERROR! CANT $mode_msg '$s' TO FILE '$fname'<br>";
 		} else {
 			fwrite( $handle, chr( 13 )); fwrite( $handle, chr( 10 ));
-//echo "$mode_msg '$s' to file '$fname'<br>";
 			fclose( $handle );
 		}
 	} else echo "ERROR! FILE '$fname' IS NOT WRITABLE.<br>";
 }
 
 function File_StrWriteTo( $fname, $s ) {
-	File_StrTo( $fname, $s, 'w', 'write' );
+	File_StrTo( $fname, $s, "w", "write" );
 }
 
 function File_StrAppendTo( $fname, $s ) {
-	File_StrTo( $fname, $s, 'a', 'append' );
+	File_StrTo( $fname, $s, "a", "append" );
 }
 
-//read value from file
 function File_ValueReadFrom( $fname, $s, $idx, $v_default ) {
 	if ( file_exists( $fname )) {
 		$row=file( $fname );
@@ -257,35 +261,35 @@ function File_ValueAppendTo( $filename, $var, $var_value ) {
 
 //sort dates in dates string
 function DatesStr_Sort( $dates_str ) {
-	$dates_arr=split( ';', $dates_str );
+	$dates_arr=split( ";", $dates_str );
 	sort( $dates_arr );
 	reset( $dates_arr );
 	while ( list( $key, $res )=each( $dates_arr )) {
-		$newdates_str="$newdates_str;$res";
+		$res_str="$res_str;$res";
 	}
-	$newdates_str=substr( $newdates_str, 2, strlen( $newdates_str ));
-	return $newdates_str;
+	$res_str=substr( $res_str, 2, strlen( $res_str ));
+	return $res_str;
 }
 
 //date in words
 function DateDdMmmYyyy( $dmY ) {
-	list( $day_, $month_, $year_ )=split( '[/.-]', $dmY );
-	$day_=$day_*1; $month_=$month_*1; $year_=$year_*1;
-	if ( $month_==1 ) $month_="Jan";
-	else if ( $month_==2 ) $month_="Feb";
-	else if ( $month_==3 ) $month_="Mar";
-	else if ( $month_==4 ) $month_="Apr";
-	else if ( $month_==5 ) $month_="May";
-	else if ( $month_==6 ) $month_="Jun";
-	else if ( $month_==7 ) $month_="Jul";
-	else if ( $month_==8 ) $month_="Aug";
-	else if ( $month_==9 ) $month_="Sep";
-	else if ( $month_==10 ) $month_="Oct";
-	else if ( $month_==11 ) $month_="Nov";
-	else if ( $month_==12 ) $month_="Dec";
+	list( $d_, $m_, $Y_ )=split( "[/.-]", $dmY );
+	$d_=$d_*1; $m_=$m_*1; $Y_=$Y_*1;
+	if ( $m_==1 ) $m_="Jan";
+	else if ( $m_==2 ) $m_="Feb";
+	else if ( $m_==3 ) $m_="Mar";
+	else if ( $m_==4 ) $m_="Apr";
+	else if ( $m_==5 ) $m_="May";
+	else if ( $m_==6 ) $m_="Jun";
+	else if ( $m_==7 ) $m_="Jul";
+	else if ( $m_==8 ) $m_="Aug";
+	else if ( $m_==9 ) $m_="Sep";
+	else if ( $m_==10 ) $m_="Oct";
+	else if ( $m_==11 ) $m_="Nov";
+	else if ( $m_==12 ) $m_="Dec";
 //NEXT ONE DOES NOT WORK WHEN FIRST AND SECOND DATE ARE IN ONE MONTH!
-	$dmYgmt=$day_." ".$month_." ".$year_." 00:00:00 GMT";
-	return $dmYgmt;
+	$res=$d_." ".$m_." ".$Y_." 00:00:00 GMT";
+	return $res;
 }
 
 function DaysBetween( $dmY1, $dmY2 ) {
@@ -329,12 +333,10 @@ function Var_ToDb( $uid, $vars, $v_type, $v_name, $v_value ) {
 }
 
 function Date_ToDb( $uid, $vars, $v_name, $v_value ) {
-//echo "Date_ToDb() | $uid | $vars | $v_name | $v_value |<br>";
 	Var_ToDb( $uid, $vars, "date", $v_name, $v_value );
 }
 
 function Var_FromDb( $uid, $vars, $v_name, $v_default ) {
-//echo "Var_FromDb() | $uid | $vars | $v_name | $v_default |<br>";
 	$sqlerr=0;
 	$query="SELECT var_name, var_value, var_uid FROM $vars WHERE var_name='$v_name' AND var_uid='$uid'";
 	$res=mysql_query( $query ); $sqlerr=mysql_errno();
@@ -346,7 +348,6 @@ function Var_FromDb( $uid, $vars, $v_name, $v_default ) {
 	} else {
 		$row=mysql_fetch_row( $res ); $res1=$row[1];
 		mysql_free_result( $res );
-//echo "Var_FromDb() | $query | $res1 |<br>";
 		if ( strlen( $res1 )<strlen( $v_default )) $res1=$v_default;
 	}
 	return $res1;
@@ -354,7 +355,6 @@ function Var_FromDb( $uid, $vars, $v_name, $v_default ) {
 
 function Date_FromDb( $uid, $vars, $v_name ) {
 	$v_default=date( "Y-m-d" );
-//echo "Date_FromDb() | $uid | $vars | $v_name | $v_default |<br>";
 	$res1=Var_FromDb( $uid, $vars, $v_name, $v_default );
 	$res2=Is_YmdValid( $res1 );
 	if ( $res2!=1 ) {
@@ -365,21 +365,18 @@ function Date_FromDb( $uid, $vars, $v_name ) {
 }
 
 function PeriodBeg_FromDb( $uid, $vars ) {
-//echo "PeriodBeg_FromDb() | $uid | $vars |<br>";
 	$local_id=CookieGet( "_id" );
-	$res1=Date_FromDb( $uid, $vars, $local_id.".rep__.fdate" );
-	return $res1;
+	$res=Date_FromDb( $uid, $vars, $local_id.".rep__.fdate" );
+	return $res;
 }
 
 function PeriodEnd_FromDb( $uid, $vars ) {
-//echo "PeriodEnd_FromDb() | $uid | $vars |<br>";
 	$local_id=CookieGet( "_id" );
-	$res1=Date_FromDb( $uid, $vars, $local_id.".rep__.ldate" );
-	return $res1;
+	$res=Date_FromDb( $uid, $vars, $local_id.".rep__.ldate" );
+	return $res;
 }
 
 function Period_FromDb( $uid, $vars ) {
-//echo "Period_FromDb() | $uid | $vars |<br>";
 	$local_id=CookieGet( "_id" );
 	$dt1_db=PeriodBeg_FromDb( $uid, $vars ); $dt2_db=PeriodEnd_FromDb( $uid, $vars );
 	if ( $dt1_db>$dt2_db ) {
@@ -387,12 +384,6 @@ function Period_FromDb( $uid, $vars ) {
 		Date_ToDb( $uid, $vars, $local_id.".rep__.fdate", $dt2_db );
 	}
 	CookieSet( "_dt1", "$dt1_db" ); CookieSet( "_dt2", "$dt2_db" );
-}
-
-function Int2StrZ( $s, $length ) {
-	$res=strval( $s );
-	while ( strlen( $res )<$length ) $res="0".$res;
-	return $res;
 }
 
 function PhraseCarry1( $s, $ch, $len, $charset ) {
@@ -449,7 +440,7 @@ function Date_MonthsList( $select_ ) {
     }
 
 function Date_YearsList( $select_ ) {
-	$i=Date( "Y" )*1-10;
+	$i=1991;
 	$yl=Date( "Y" )*1+1;
 	echo $select_;
 	while ( $i<=$yl ) {
