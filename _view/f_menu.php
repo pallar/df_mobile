@@ -72,7 +72,7 @@ function Login_Close() {
 function Login_Show() {
 	Period_Close();
 	JsHttpRequest.query( "../_view/f__logi_.php",
-	 { buttn:"1" },
+	 { init:"1" },
 	 function( responseJS, responseText ) {
 		Shadow_Show();
 		eid=$$( "login_div" );
@@ -120,11 +120,12 @@ function Period_Close() {
 function Period_Show() {
 	Login_Close();
 	JsHttpRequest.query( "../_view/f__pe_.php",
-	 { buttn:"1" },
+	 { init:"1" },
 	 function( responseJS, responseText ) {
 		Shadow_Show();
 		eid=$$( "period_div" );
-		eid.style.left=( document.body.scrollWidth-287 )+"px";
+		eid.innerHTML=responseJS.text;
+		eid.style.left=( document.body.scrollWidth-289 )+"px";
 		eid.style.top="35px";
 		eid.style.visibility="visible";
 		eid.style.display="block";
@@ -141,7 +142,7 @@ function Period_Show() {
 
 <div class='mk' id='login_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:270px; z-index:10;' onmouseover='in_menu=true;'>
 </div>
-<div class='mk' id='period_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:270px; z-index:10;' onmouseover='in_menu=true;'>
+<div class='mk' id='period_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:272px; z-index:10;' onmouseover='in_menu=true;'>
 </div>
 <div class='shadow' id='__shadow__' name='__shadow__'></div>
 <?php

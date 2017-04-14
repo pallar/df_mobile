@@ -2,7 +2,7 @@
 /* DF_ajs: _view/f__pe_.php
 form: set period
 c: 01.02.2006
-m: 24.03.2017 */
+m: 14.04.2017 */
 
 $skip_W3C_DOCTYPE=1;
 
@@ -23,8 +23,8 @@ ob_start();
 
 switch ( $event ) {
 	case "":
-		$buttn=$_REQUEST["buttn"]*1;
-		if ( $buttn==1 ) {
+		$init=$_REQUEST["init"]*1;
+		if ( $init==1 ) {
 			ob_end_flush();
 			$HUA="_".$_SERVER["HTTP_USER_AGENT"];
 			echo "
@@ -58,7 +58,7 @@ switch ( $event ) {
 				<select class='sel sel_h0' id='per_d1' style='width:43px' onchange='Per_d1()'><option value='1'>1</option></select>";
 Date_MonthsList( "<select class='sel sel_h0' id='per_m1' style='width:140px' onclick='Per_m1()' onchange='Per_m1(); Per_d1list()'>" );
 Date_YearsList( "<select class='sel sel_h0' id='per_y1' style='width:60px' onclick='Per_y1()' onchange='Per_y1(); Per_d1list()'>" );
-echo "
+			echo "
 			</td>
 		</tr>
 		<tr height='3px'><td></td></tr>
@@ -67,14 +67,14 @@ echo "
 				<select class='sel sel_h0' id='per_d2' style='width:43px' onchange='Per_d2()'><option value='1'>1</option></select>";
 Date_MonthsList( "<select class='sel sel_h0' id='per_m2' style='width:140px' onclick='Per_m2()' onchange='Per_m2(); Per_d2list()'>" );
 Date_YearsList( "<select class='sel sel_h0' id='per_y2' style='width:60px' onclick='Per_y2()' onchange='Per_y2(); Per_d2list()'>" );
-echo "
+			echo "
 			</td>
 		</tr>
 		<tr height='13px'><td></td></tr>
 		<tr>
 			<td>
 				<input class='btn gradient_0f0 btn_h0' style='width:159px' type='button' value='".$php_mm["_com_accept_btn_"]."' onclick='Per_ToCoo(); Period_Close()'>
-				<input class='btn gradient_f00 btn_h0' style='width:80px' type='button' value='"."X"."' onclick='Period_Close()'><br>
+				<input class='btn gradient_f00 btn_h0' style='width:81px' type='button' value='"."X"."' onclick='Period_Close()'><br>
 			</td>
 		</tr>
 		</table>

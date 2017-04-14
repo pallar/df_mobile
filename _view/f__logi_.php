@@ -23,8 +23,8 @@ ob_start();
 
 switch ( $event ) {
 	case "":
-		$buttn=$_REQUEST["buttn"]*1;
-		if ( $buttn==1 ) {
+		$init=$_REQUEST["init"]*1;
+		if ( $init==1 ) {
 			ob_end_flush();
 			$HUA="_".$_SERVER["HTTP_USER_AGENT"];
 			echo "
