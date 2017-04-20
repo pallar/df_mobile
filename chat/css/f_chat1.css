@@ -1,0 +1,9 @@
+.gradient_0f0 {
+  background-color: #cfdbef;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cfefdb), color-stop(55%, #6b8b77))
+  /* chrome, safari4+ */ }
+
+.gradient_f00 {
+  background-color: #b20000;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9c9c9), color-stop(55%, #b20000))
+  /* chrome, safari4+ */ }

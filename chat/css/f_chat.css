@@ -1,0 +1,48 @@
+html, body {
+  background: #ecf2e7;
+  font: 8pt Tahoma, sans-serif;
+  height: 100%; }
+
+body {
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0; }
+
+table {
+  border: 0;
+  border-collapse: collapse;
+  font: 8pt Tahoma, sans-serif; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.chat {
+  border: solid #818181 1px;
+  height: 380px;
+  overflow: auto;
+  position: relative;
+  text-align: left; }
+
+.chat div {
+  background: #fefefe;
+  font: 12pt Tahoma, sans-serif;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  width: 100%; }
+
+.chat span {
+  display: block; }
+
+input[type=text], textarea {
+  border: solid #818181 1px;
+  font: normal normal normal 16px Arial,Times;
+  width: 100%; }
+
+.r4 {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px; }
