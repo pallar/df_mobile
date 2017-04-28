@@ -4,15 +4,6 @@ report: input filter for any report
 c: 20.02.2007
 m: 07.04.2017 */
 
-//TEMPORARY
-$yf="2016"; $mf="01"; $df="15";
-$yl="2016"; $ml="01"; $dl="15";
-setcookie( "_dt1", "$yf-$mf-$df", 0, "/" );
-setcookie( "_dt2", "$yl-$ml-$dl", 0, "/" );
-setcookie( "_filts0", "59", 0, "/" );
-setcookie( "_filts9", "63", 0, "/" );
-//
-
 if ( $stop_f_jfilt==0 ) {
 	function PHP3_cal_days_in_month( $CAL_TYPE, $mm, $yyyy ) {
 		$days_in_month=31;
