@@ -2,6 +2,9 @@
 //c: 17.07.2006
 //m: 12.04.2017
 
+function App_HotKeys() {
+}
+
 function $$( id ) {
 	return document.getElementById( id );
 }

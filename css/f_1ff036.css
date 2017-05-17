@@ -8,6 +8,7 @@
 	background-image:-moz-linear-gradient(top, rgba(201,201,201,1) 0%, rgba(178,0,0,1) 55%); /* ff3.6+ */
 }
 
+.btn {-moz-border-radius:0;}
 .btn_h0 {height:25px;}
 .sel_h0 {padding:0 5px 0 5px;}
 .tbl_h0 {height:25px; width:100%;}

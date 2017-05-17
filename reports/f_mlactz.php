@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mlactz.php
 report: total milk by lactation (ONLY CALCULATION)
 c: 09.06.2005
-m: 30.03.2017 */
+m: 16.05.2017 */
 
 function DateDiff( $start, $end ) {
 	$start_ts=strtotime( $start );
@@ -64,26 +64,29 @@ if ( $lact_restr==0 ) $lact_restr=1;
 
 if ( $graph!=1 | ( $filt_cowid==-1 & $graph==1 )) {
 	if ( $skip_echo!=1 ) echo "
-<table cellspacing='1' class='st2'>
-<tr $cjust class='st_title2' style='height:28px'>
-	<td width='7%'><b>".$ged['Number']."</b></td>
-	<td><b>".$ged['Nick']."</b></td>
-	<td width='10%'><b>".$ged['Starting']."</b></td>
-	<td width='10%'><b>".$ged['Ending']."</b></td>
-	<td width='3%'><b>".$ged['Lact._days']."</b></td>
-	<td title='".$ged['Avg._tip']."' width='4%'><b>".$ged['Avg.']."</b></td>
-	<td width='4%'><b>".$ged['Total']."</b></td>
-	<td width='4%'><b>1..305</b></td>
-	<td width='4%'><b>1..50</b></td>
-	<td width='4%'><b>51..100</b></td>
-	<td width='4%'><b>101..150</b></td>
-	<td width='4%'><b>151..200</b></td>
-	<td width='4%'><b>201..250</b></td>
-	<td width='4%'><b>251..300</b></td>
-	<td width='4%'><b>301..350</b></td>
-	<td width='4%'><b>351..</b></td>
-	<td title='".$ged['Predict~_tip']."' width='4%'><b>".$ged['Predict~']."</b></td>
-</tr>";
+<table>
+<thead id='rep_thead'>
+<tr $cjust style='height:28px'>
+	<th width='7%'><b>".$th1."</b></td>
+	<th><b>".$th2."</b></td>
+	<th width='10%'><b>".$th3."</b></td>
+	<th width='10%'><b>".$th4."</b></td>
+	<th width='3%'><b>".$th5."</b></td>
+	<th title='".$ged["Avg._tip"]."' width='4%'><b>".$th6."</b></td>
+	<th width='4%'><b>".$th7."</b></td>
+	<th width='4%'><b>".$th8."</b></td>
+	<th width='4%'><b>".$th9."</b></td>
+	<th width='4%'><b>".$tha."</b></td>
+	<th width='4%'><b>".$thb."</b></td>
+	<th width='4%'><b>".$thc."</b></td>
+	<th width='4%'><b>".$thd."</b></td>
+	<th width='4%'><b>".$the."</b></td>
+	<th width='4%'><b>".$thf."</b></td>
+	<th width='4%'><b>".$thg."</b></td>
+	<th title='".$ged["Predict~_tip"]."' width='4%'><b>".$thh."</b></td>
+</tr>
+</thead>
+<tbody id='rep_tbody'>";
 }
 
 $x_query="SELECT id FROM $cows";
@@ -186,20 +189,20 @@ if ( $graph!=1 | ( $filt_cowid==-1 & $graph==1 )) {
 				}
 				if ( $skip_echo!=1 ) {
 					echo "
-<tr ".RepTrCol().">
-	<td $rjust><a href='../".$hFrm['0520']."?cow_id=".$cowid."&ret0=00' target='w1'>".$cownum_div.$cownum.$cownum_div1."</td>
-	<td>$cownick</td>
-	<td>$lact_beg_</td>
-	<td>$lact_end_</td>
-	<td $rjust>".$href_cow.$lact_days_."</td>
-	<td $rjust>$average_</td>
-	<td $rjust>".$milk[$cowid]."</td>
-	<td $rjust>".$milka[305][$cowid]."</td>";
+<tr $rjust>
+	<td><a href='../".$hFrm["0520"]."?cow_id=".$cowid."&ret0=00' target='w1'>".$cownum_div.$cownum.$cownum_div1."</td>
+	<td $ljust>$cownick&nbsp;</td>
+	<td $ljust>$lact_beg_&nbsp;</td>
+	<td $ljust>$lact_end_&nbsp;</td>
+	<td>".$href_cow.$lact_days_."&nbsp;</td>
+	<td>$average_&nbsp;</td>
+	<td>".$milk[$cowid]."&nbsp;</td>
+	<td>".$milka[305][$cowid]."&nbsp;</td>";
 					for ( $pp=50; $pp<=350; $pp+=50 ) echo "
-	<td $rjust>".$milka[$pp][$cowid]."</td>";
+	<td>".$milka[$pp][$cowid]."&nbsp;</td>";
 					echo "
-	<td $rjust>".$milka[351][$cowid]."</td>
-	<td $rjust><font color='#778899'>$predict</font></td>
+	<td>".$milka[351][$cowid]."&nbsp;</td>
+	<td><font color='#778899'>$predict</font>&nbsp;</td>
 </tr>";
 				}
 			}
@@ -209,6 +212,7 @@ if ( $graph!=1 | ( $filt_cowid==-1 & $graph==1 )) {
 		if ( $skip_echo!=1 ) echo "<h3>".$php_mm["TABLE"]." '$cows': ".$php_mm["ERROR"]." MySQL $sqlerr.</h3>";
 	}
 	if ( $skip_echo!=1 ) echo "
+</tbody>
 </table><br>";
 
 } else if ( $graph==1 & $skip_echo!=1 ) {
@@ -249,8 +253,8 @@ if ( $graph!=1 | ( $filt_cowid==-1 & $graph==1 )) {
 	<td><b>351..</b></td>
 	<td>".$milka[351][$cowid]."</td>
 <tr $cjust class='st_title2' style='height:18px'>
-	<td><b>".$ged['Total']."</b></td>
-	<td>$milk[$cowid]</td>
+	<td><b>".$ged["Total"]."</b></td>
+	<td>".$milk[$cowid]."</td>
 </tr>
 </table>
 </td>
@@ -263,7 +267,7 @@ if ( $graph!=1 | ( $filt_cowid==-1 & $graph==1 )) {
 	<td $cjust width='5px'></td>
 	<td $cjust width='120px'>
 <table cellspacing='1' class='st2'>
-<th colspan='2' class='st_title2' style='height:28px'>".$ged['Milk_growing'].",&nbsp;".$ged[kg]."
+<th colspan='2' class='st_title2' style='height:28px'>".$ged["Milk_growing"].",&nbsp;".$ged["kg"]."
 </th>";
 		for ( $pp=50; $pp<=350; $pp+=50 ) echo "
 <tr $cjust class='st_title2' style='height:18px'>
@@ -273,11 +277,11 @@ if ( $graph!=1 | ( $filt_cowid==-1 & $graph==1 )) {
 		echo "
 <tr $cjust class='st_title2' style='height:18px'>
 	<td><b>1..</b></td>
-	<td>$a[7]</td>
+	<td>".$a[7]."</td>
 </tr>
 <tr $cjust class='st_title2' style='height:18px'>
-	<td><b>".$ged['Total']."</b></td>
-	<td>$milk[$cowid]</td>
+	<td><b>".$ged["Total"]."</b></td>
+	<td>".$milk[$cowid]."</td>
 </tr>
 </table>
 </td>

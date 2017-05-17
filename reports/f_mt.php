@@ -177,23 +177,23 @@ while ( $yc<=$yl+1 ) {
 	<td $ljust title='".$nick1."' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1'>&nbsp;".$nick_."</td>";
 					else echo "
 	<td>$num</td>
-	<td $ljust title='".$nick."'>&nbsp;".$nick_."</td>";
+	<td $ljust title='".$nick."'>&nbsp;".$nick_."&nbsp;</td>";
 					if ( $noCSS ) echo "
 	<td>".$r_m[$r]."</td>"; else echo "
 	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep["m"]."?restrict_id=$r&restrict_field=$restrict_field&restrict_by_field=1&title=$title_next_'>".$r_m[$r]."</td>";
 					echo "
-	<td>".$r_m1."</td>
-	<td>".$r_m2."</td>
-	<td>".$r_m3."</td>
-	<td>".$r_mmast[$r]."</td>
-	<td>".$r_mq[$r]."</td>
-	<td>".$r_m0q[$r]."</td>";
+	<td>".$r_m1."&nbsp;</td>
+	<td>".$r_m2."&nbsp;</td>
+	<td>".$r_m3."&nbsp;</td>
+	<td>".$r_mmast[$r]."&nbsp;</td>
+	<td>".$r_mq[$r]."&nbsp;</td>
+	<td>".$r_m0q[$r]."&nbsp;</td>";
 	if ( $restrict_field!="c.id" ) echo "
-	<td>".$r_cows[$r]."</td>";
+	<td>".$r_cows[$r]."&nbsp;</td>";
 	echo "
-	<td $cjust>".$r_beg[$r]."</td>
-	<td $cjust>".$r_end[$r]."</td>
-	<td $cjust>".$t_hh.":".$t_mm.":".$t_ss."</td>
+	<td $cjust>".$r_beg[$r]."&nbsp;</td>
+	<td $cjust>".$r_end[$r]."&nbsp;</td>
+	<td $cjust>".$t_hh.":".$t_mm.":".$t_ss."&nbsp;</td>
 </tr>";
 				} else {//show diagram
 					$dots[$dots_cnt]=$mrow[$r];

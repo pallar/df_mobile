@@ -2,7 +2,7 @@
 /* DF_2: reports/f_m.php
 report: extracting
 c: 25.12.2005
-m: 15.03.2017 */
+m: 16.05.2017 */
 
 $skip_clichk=1;
 
@@ -86,11 +86,16 @@ $_mod_rep_CSS_content="
 	#rep_tbody td:nth-of-type(16):before { content:\"".$th16."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(17):before { content:\"".$th17."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(18):before { content:\"".$th18."\"; text-align:left; top:0; }
-	#rep_tbody td:nth-of-type(19):before { content:\"".$th19."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(19):before { content:\"".$th19."\"; text-align:left; top:0; }";
+if ( $conductiv_vis==1 ) $_mod_rep_CSS_content.="
 	#rep_tbody td:nth-of-type(20):before { content:\"".$th20."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(21):before { content:\"".$th21."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(22):before { content:\"".$th22."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(23):before { content:\"".$th23."\"; text-align:left; top:0; }";
+else $_mod_rep_CSS_content.="
+	#rep_tbody td:nth-of-type(20):before { content:\"".$th21."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(21):before { content:\"".$th22."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(22):before { content:\"".$th23."\"; text-align:left; top:0; }";
 
 include( "frhead.php" );
 include( "../dflib/f_filt1.php" );
@@ -251,7 +256,7 @@ while ( $yc<=$yl+1 ) {
 						}
 						echo "
 <tr $rjust>
-	<td>".$dd.".".$mm.".".$yyyy."</td>";
+	<td>".$dd.".".$mm.".".$yyyy."&nbsp;</td>";
 						if ( $noCSS ) echo "
 	<td>".$cwnum."</td>"; else echo "
 	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm["0520"]."?cow_id=".$row[0]."&ret0=-1' target='w1'>".$cwnum."</td>";
@@ -282,7 +287,7 @@ while ( $yc<=$yl+1 ) {
 						echo "
 	<td $cjust>".$tr."&nbsp;</td>
 	<td $cjust>".$ov."&nbsp;</td>
-	<td title='".$rfid_res."'>#".$dev_num."</td>
+	<td title='".$rfid_res."'>#".$dev_num."&nbsp;</td>
 </tr>";
 					}
 					$t_rows++;
