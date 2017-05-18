@@ -140,5 +140,5 @@ for ( $op=10; $op<=20; $op++ ) {
 echo "
 </div>";
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

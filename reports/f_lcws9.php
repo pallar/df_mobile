@@ -26,5 +26,5 @@ if ( $sele_byAge_to==0 ) $sele_byAge_to=99999;
 $nocardsfilt=1; $nocardsctrls=1;//dont show cards filter, ctrls
 include( "f_lcws0.php" );
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

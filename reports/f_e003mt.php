@@ -13,11 +13,11 @@ $outsele_field__=$outsele_field_;//ERROR!!!
 
 include( "f_jfilt.php" );
 
-if ( $title_==$ged['RR2102'] ) $title_next=$ged['RR2102-'];
-if ( $title_==$ged['RR2103'] ) $title_next=$ged['RR2103-'];
-if ( $title_==$ged['RR2103.A'] ) $title_next=$ged['RR2103.A-'];
-if ( $title_==$ged['RR2104'] ) $title_next=$ged['RR2104-'];
-if ( $title_==$ged['RR0301'] ) $title_next=$ged['RR0301-'];
+if ( $title_==$ged["RR2102"] ) $title_next=$ged["RR2102-"];
+if ( $title_==$ged["RR2103"] ) $title_next=$ged["RR2103-"];
+if ( $title_==$ged["RR2103.A"] ) $title_next=$ged["RR2103.A-"];
+if ( $title_==$ged["RR2104"] ) $title_next=$ged["RR2104-"];
+if ( $title_==$ged["RR0301"] ) $title_next=$ged["RR0301-"];
 
 $outsele_=$outsele__;//ERROR!!!
 $outsele_field_=$outsele_field__;//ERROR!!!
@@ -37,11 +37,6 @@ if ( $error==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 	$cws_s[$cws_cnt]=$row[1]*1;//sorted
 	$cws_ns[$row[0]*1]=$cws_cnt;//not sorted
 }}
-
-if ( $graph<1 ) {
-	echo "
-Номер корови;Надій,кг;;;<br>";
-}
 
 $yc_prv=$yc;
 $mc_prv=$mc;
@@ -101,5 +96,5 @@ $num;$mcws1;;;<br>";
 	}
 }
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

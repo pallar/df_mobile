@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mlact.php
 report: total milk by lactation
 c: 09.06.2005
-m: 16.05.2017 */
+m: 17.05.2017 */
 
 ob_start();//lock output to set cookies properly!
 $noCSS=$_GET["noCSS"]*1;
@@ -75,5 +75,5 @@ include( "f_mlactc.php" );
 
 include( "f_mlactz.php" );
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

@@ -174,13 +174,13 @@ while ( $yc<=$yl+1 ) {
 <tr $rjust>";
 					if ( $db_id+$noCSS<1 ) echo "
 	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm["0520"]."?cow_id=$r&ret0=-1'><b>".$num."</b></td>
-	<td $ljust title='".$nick1."' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1'>&nbsp;".$nick_."</td>";
+	<td $ljust title='".$nick1."' onmouseover='style.cursor=\"pointer\"'><a href='../".$hFrm['0520']."?cow_id=".$row[0]."&ret0=-1'>&nbsp;".$nick_."&nbsp;</td>";
 					else echo "
 	<td>$num</td>
 	<td $ljust title='".$nick."'>&nbsp;".$nick_."&nbsp;</td>";
 					if ( $noCSS ) echo "
-	<td>".$r_m[$r]."</td>"; else echo "
-	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep["m"]."?restrict_id=$r&restrict_field=$restrict_field&restrict_by_field=1&title=$title_next_'>".$r_m[$r]."</td>";
+	<td>".$r_m[$r]."&nbsp;</td>"; else echo "
+	<td onmouseover='style.cursor=\"pointer\"'><a href='../".$hRep["m"]."?restrict_id=$r&restrict_field=$restrict_field&restrict_by_field=1&title=$title_next_'>".$r_m[$r]."&nbsp;</td>";
 					echo "
 	<td>".$r_m1."&nbsp;</td>
 	<td>".$r_m2."&nbsp;</td>
@@ -213,17 +213,17 @@ if ( $graph<1 ) {
 </tbody>
 <tfoot id='rep_tfoot'>
 <tr $rjust height='28px'>
-	<td $cjust><b>".$ged["TOTAL"].":</b></td>
-	<td><b>".$t_ids."</b></td>
-	<td><b>".$t_m."</b></td>
-	<td><b>".$t_m1."</b></td>
-	<td><b>".$t_m2."</b></td>
+	<td $cjust><b>".$ged["TOTAL"].":</b>&nbsp;</td>
+	<td><b>".$t_ids."</b>&nbsp;</td>
+	<td><b>".$t_m."</b>&nbsp;</td>
+	<td><b>".$t_m1."</b>&nbsp;</td>
+	<td><b>".$t_m2."</b>&nbsp;</td>
 	<td>&nbsp;</td>
-	<td><b>".$t_mmast."</b></td>
-	<td><b>".$t_mq."</b></td>
-	<td><b>".$t_m0q."</b></td>";
+	<td><b>".$t_mmast."</b>&nbsp;</td>
+	<td><b>".$t_mq."</b>&nbsp;</td>
+	<td><b>".$t_m0q."</b>&nbsp;</td>";
 	if ( $restrict_field!="c.id" ) echo "
-	<td><b>".$t_cows."</b></td>";
+	<td><b>".$t_cows."</b>&nbsp;</td>";
 	echo "
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
@@ -246,6 +246,4 @@ if ( $graph<1 ) {
 }
 
 include( "frfoot.php" );
-
-ob_end_flush();
 ?>

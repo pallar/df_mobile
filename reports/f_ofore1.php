@@ -79,5 +79,5 @@ while ( $row=mysql_fetch_array( $res )) {
 echo "
 </table><br>";
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

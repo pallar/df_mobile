@@ -2,7 +2,7 @@
 /* DF_2: reports/f_lcws.php
 report: cows
 c: 05.05.2005
-m: 15.03.2017 */
+m: 17.05.2017 */
 
 ob_start();//lock output to set cookies properly!
 $noCSS=$_GET["noCSS"]*1;
@@ -28,7 +28,8 @@ $th[10]=$ged["Comment."];
 
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="
-	/* Label the data */";
+	/* Label the data */;
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }";
 for ( $i=1; $i<=10; $i++ ) $_mod_rep_CSS_content=$_mod_rep_CSS_content."
 	#rep_tbody td:nth-of-type(".$i."):before { content:\"".$th[$i]."\"; text-align:left; top:0; }";
 $_mod_rep_CSS_content=$_mod_rep_CSS_content."
@@ -48,5 +49,5 @@ if ( $sele_byAge_to==0 ) $sele_byAge_to=99999;
 $nocardsfilt=1; $nocardsctrls=1;//dont show cards filter, ctrls
 include( "../dflib/f_tcws.php" );
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

@@ -2,7 +2,7 @@
 /* DF_2: reports/f_o.php
 report: operations other than extracting
 c: 25.12.2005
-m: 30.03.2017 */
+m: 17.05.2017 */
 
 $dbt_ext="_o";
 
@@ -41,7 +41,8 @@ if ( $dbt_ext=="_o" ) { $th_cnt++; $th[$th_cnt]=$th7; }
 
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="
-	/* Label the data */";
+	/* Label the data */
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }";
 for ( $i=1; $i<=$th_cnt; $i++ ) $_mod_rep_CSS_content=$_mod_rep_CSS_content."
 	#rep_tbody td:nth-of-type(".$i."):before { content:\"".$th[$i]."\"; text-align:left; top:0; }";
 
@@ -175,6 +176,4 @@ echo "
 </table><br>";
 
 include( "frfoot.php" );
-
-ob_end_flush();
 ?>

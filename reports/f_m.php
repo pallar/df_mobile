@@ -68,6 +68,7 @@ $th23=$ged["Dev."]; $th23_=$ged["Dev.~"];
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="
 	/* Label the data */
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }
 	#rep_tbody td:nth-of-type(1):before { content:\"".$th1."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(2):before { content:\"".$th2."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(3):before { content:\"".$th3."\"; text-align:left; top:0; }
@@ -132,7 +133,7 @@ if ( DaysBetween( $date1, $date2 )>7 ) {
 <center><h2><blink>".$ged["Period_restricted_007"]."</blink></h2></center>";
 
 	include( "frfoot.php" );
-	ob_end_flush();
+
 	return;
 }
 
@@ -371,5 +372,4 @@ if ( $graph<1 ) {
 }
 
 include( "frfoot.php" );
-ob_end_flush();
 ?>

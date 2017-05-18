@@ -2,7 +2,7 @@
 /* DF_2: reports/frhead.php
 report head
 c: 08.08.2007
-m: 30.03.2017 */
+m: 16.05.2017 */
 
 $_filtsXmode="r";
 include( "ffilt1.php" );
@@ -30,11 +30,11 @@ a:hover { text-decoration:none; }
 	#rep_tbody tr { border:0; }
 	#rep_tfoot tr { border:0; }
 	/* Behave like a row */
-	#rep_tbody td { border:0; border-bottom:1px solid #ddd; font:10pt Tahoma,sans-serif; padding-left:50%; position:relative; text-align:right; }
-	#rep_tfoot td { background:#eee; border:0; border-bottom:1px solid #ddd; font:12pt Tahoma,sans-serif; position:relative; }
+	#rep_tbody td { border:0; border-bottom:1px solid #ddd; font:10pt Tahoma,sans-serif; padding-left:50%; padding-right:3px; position:relative; text-align:right; }
+	#rep_tfoot td { background:#eee; border:0; border-bottom:1px solid #ddd; font:12pt Tahoma,sans-serif; padding-right:3px; position:relative; }
 	/* Now like a table header */
-	#rep_tbody td:before { left:6px; padding-right:10px; position:absolute; top:6px; white-space:nowrap; width:45%; }
-	#rep_tfoot td:before { left:6px; padding-right:10px; position:absolute; top:6px; white-space:nowrap; width:45%; }";
+	#rep_tbody td:before { left:5px; padding-right:10px; position:absolute; top:6px; white-space:nowrap; width:45%; }
+	#rep_tfoot td:before { left:5px; padding-right:10px; position:absolute; top:6px; white-space:nowrap; width:45%; }";
 if ( $_mod_rep_CSS==1 ) echo $_mod_rep_CSS_content;
 echo "
 }

@@ -2,7 +2,7 @@
 /* DF_2: reports/f_oratio.php
 report: herd current quantitative ratio
 c: 21.04.2011
-m: 30.03.2017 */
+m: 17.05.2017 */
 
 ob_start();//lock output to set cookies properly!
 $noCSS=$_GET["noCSS"]*1;
@@ -21,13 +21,14 @@ $th3=$_02_h_["Percent"];
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="
 	/* Label the data */
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }
 	#rep_tbody td:nth-of-type(1):before { content:\"".$th1."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(2):before { content:\"".$th2."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(3):before { content:\"".$th3."\"; text-align:left; top:0; }";
 
 include( "frhead.php" );
 
-$all=0;
+$total=0;
 $insem=0;
 $insem1=0;
 $insem2=0;
@@ -44,7 +45,7 @@ $others=0;
 $qr1="SELECT id, a_dates, b_dates, b_dates_res, c_dates, c_dates_res FROM $cows WHERE z_dates=''";
 $res1=mysql_query( $qr1, $db );
 while( $row=mysql_fetch_array( $res1 )) {
-	$all++;
+	$total++;
 	if( $row[a_dates]>$row[b_dates] && $row[a_dates]>$row[c_dates] ) {
 		$insem++; $cid=$row[id];
 		$plus=0;
@@ -165,13 +166,11 @@ echo "
 <tfoot id='rep_tfoot'>
 <tr $rjust height='28px'>
 	<td $cjust><b>".$ged["TOTAL"]."</b>:</td>
-	<td><b>$all</b></td>
+	<td $cjust><b>$total</b></td>
 	<td>&nbsp;</td>
 </tr>
 </tfoot>
 </table><br>";
 
 include( "frfoot.php" );
-
-ob_end_flush();
 ?>

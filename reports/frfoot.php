@@ -7,4 +7,6 @@ m: 17.07.2015 */
 echo "
 </body>
 </html>";
+
+ob_end_flush();
 ?>

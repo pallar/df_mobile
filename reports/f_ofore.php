@@ -2,11 +2,12 @@
 /* DF_2: reports/f_ofore[CAST]1.php
 report: forecast for all cows (moving from group to group)
 c: 24.09.2008
-m: 30.03.2017 */
+m: 17.05.2017 */
 
 $dbt_ext="_o";
 
 ob_start();//lock output to set cookies properly!
+$noCSS=$_GET["noCSS"]*1;
 
 $graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 
@@ -17,6 +18,45 @@ $cows_cnt=0;
 $dontuse_period=2;//ONLY IN THIS REPORT, PERIOD_BEGIN=PERIOD_END MINUS 7 DAYS
 
 include( "f_mt1c.php" );
+
+$th1=$ged["Number"];
+$th2=$ged["Nick"];
+$th3=$ged["Age_tip"]; $th3_=$ged["Age"];
+$th4=$ged["Lot"];
+$th5=$ged["Group"];
+$th6=$ged["Subgroup"];
+$th7=$ged["Days_Before_Insem"]." / ".$ged["Insem_Date"]; $th7_=$ged["Insem_Date~"];
+$th8=$ged["Days_Before_Rectal"]." / ".$ged["Rectal_Date"]; $th8_=$ged["Rectal_Date~"];
+$th9=$ged["Days_Before_Prep_Zapusk"]." / ".$ged["Prep_Zapusk_Date"]; $th9_=$ged["Prep_Zapusk_Date~"];
+$tha=$ged["Days_Before_Zapusk"]." / ".$ged["Zapusk_Date"]; $tha_=$ged["Zapusk_Date~"];
+$thb=$ged["Days_Before_Abort"]." / ".$ged["Abort_Date"]; $thb_=$ged["Abort_Date~"];
+$thc=$ged["Phis._State"]; $thc_=$ged["Last_Data"];
+$thd=$ged["Yesterday_Milk"]; $thd_=$ged["Yesterday_Milk~"];
+$the=$ged["Today_Milk"]; $the_=$ged["Today_Milk~"];
+$thf=$ged["Average_7"]; $thf_=$ged["Average_7~"];
+$thg=$ged["Lact_Days"]; $thg_=$ged["Lact_Days~"];
+
+$_mod_rep_CSS=1;
+$_mod_rep_CSS_content="
+	/* Label the data */
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }
+	#rep_tbody td:nth-of-type(1):before { content:".$th1."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(2):before { content:".$th2."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(3):before { content:".$th3."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(4):before { content:".$th4."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(5):before { content:".$th5."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(6):before { content:".$th6."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(7):before { content:".$th7."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(8):before { content:".$th8."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(9):before { content:".$th9."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(10):before { content:".$tha."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(11):before { content:".$thb."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(12):before { content:".$thc."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(13):before { content:".$thd."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(14):before { content:".$the."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(15):before { content:".$thf."; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(16):before { content:".$thg."; text-align:left; top:0; }";
+
 include( "frhead.php" );
 
 $yf=1991; $mf=1; $df=1;
@@ -32,26 +72,29 @@ $y0z=$date0z[0]; $m0z=$date0z[1]; $d0z=$date0z[2];
 $db_id=0;
 
 if ( $graph<1 ) {
-	echo $ged['days_relative_to']."&nbsp;".$end1."
-<table cellspacing='1' class='st2'>
-<tr $cjust class='st_title2' style='height:28px'>
-	<td width='55px'><b>".$ged['Number']."</b></td>
-	<td><b>".$ged['Nick']."</b></td>
-	<td title='".$ged['Age_tip']."' width='30px'><b>".$ged['Age']."</b></td>
-	<td width='70px'><b>".$ged['Lot']."</b></td>
-	<td width='70px'><b>".$ged['Group']."</b></td>
-	<td width='70px'><b>".$ged['Subgroup']."</b></td>
-	<td title='".$ged['Days_Before_Insem']."&nbsp;/&nbsp;".$ged['Insem_Date']."' width='70px'><b>".$ged['Insem_Date~']."</b></td>
-	<td title='".$ged['Days_Before_Rectal']."&nbsp;/&nbsp;".$ged['Rectal_Date']."' width='70px'><b>".$ged['Rectal_Date~']."</b></td>
-	<td title='".$ged['Days_Before_Prep_Zapusk']."&nbsp;/&nbsp;".$ged['Prep_Zapusk_Date']."' width='70px'><b>".$ged['Prep_Zapusk_Date~']."</b></td>
-	<td title='".$ged['Days_Before_Zapusk']."&nbsp;/&nbsp;".$ged['Zapusk_Date']."' width='70px'><b>".$ged['Zapusk_Date~']."</b></td>
-	<td title='".$ged['Days_Before_Abort']."&nbsp;/&nbsp;".$ged['Abort_Date']."' width='70px'><b>".$ged['Abort_Date~']."</b></td>
-	<td title='".$ged['Last_Data']."' width='200px'><b>".$ged['Phis._State']."</b></td>
-	<td title='".$ged['Yesterday_Milk']."' width='40px'><b>".$ged['Yesterday_Milk~']."</b></td>
-	<td title='".$ged['Today_Milk']."' width='40px'><b>".$ged['Today_Milk~']."</b></td>
-	<td title='".$ged['Average_7']."' width='40px'><b>".$ged['Average_7~']."</b></td>
-	<td title='".$ged['Lact_Days']."' width='40px'><b>".$ged['Lact_Days~']."</b></td>
-</tr>";
+	echo $ged["days_relative_to"]."&nbsp;".$end1."
+<table>
+<thead id='rep_thead'>
+<tr $cjust style='height:28px'>
+	<th width='55px'><b>".$th1."</b></td>
+	<th><b>".$th2."</b></td>
+	<th title='".$th3."' width='30px'><b>".$th3_."</b></td>
+	<th width='70px'><b>".$th4."</b></td>
+	<th width='70px'><b>".$th5."</b></td>
+	<th width='70px'><b>".$th6."</b></td>
+	<th title='".$th7."' width='70px'><b>".$th7_."</b></td>
+	<th title='".$th8."' width='70px'><b>".$th8_."</b></td>
+	<th title='".$th9."' width='70px'><b>".$th9_."</b></td>
+	<th title='".$tha."' width='70px'><b>".$tha_."</b></td>
+	<th title='".$thb."' width='70px'><b>".$thb_."</b></td>
+	<th title='".$thc."' width='200px'><b>".$thc_."</b></td>
+	<th title='".$thd."' width='40px'><b>".$thd_."</b></td>
+	<th title='".$the."' width='40px'><b>".$the_."</b></td>
+	<th title='".$thf."' width='40px'><b>".$thf_."</b></td>
+	<th title='".$thg."' width='40px'><b>".$thg_."</b></td>
+</tr>
+</thead>
+<tbody id='rep_tbody'>";
 }
 
 $xxs_c=0;
@@ -254,13 +297,13 @@ if ( $sqlerr==0 ) { while ( $row=mysql_fetch_row( $res1 )) {
 		$mrow1=floor( $mrowt[$r][0]/7*10 )/10;
 	}
 	echo "
-<tr ".RepTrCol().">
-	<td $rjust><b><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=-1'>".$cwnum."</a></b></td>
-	<td title='$cwnick'><a href='../".$hFrm['0520']."?cow_id=".$r."&ret0=-1'>".$orow[cwnick]."</a>&nbsp;</td>
+<tr>
+	<td $rjust><b><a href='../".$hFrm["0520"]."?cow_id=".$r."&ret0=-1'>".$cwnum."</a></b></td>
+	<td title='$cwnick'><a href='../".$hFrm["0520"]."?cow_id=".$r."&ret0=-1'>".$orow["cwnick"]."</a>&nbsp;</td>
 	<td $rjust>$age_days&nbsp;</td>
-	<td title='$ltname'>".$orow[ltname]."&nbsp;</td>
-	<td title='$grname'>".$orow[grname]."&nbsp;</td>
-	<td title='$sgname'>".$orow[sgname]."&nbsp;</td>
+	<td title='$ltname'>".$orow["ltname"]."&nbsp;</td>
+	<td title='$grname'>".$orow["grname"]."&nbsp;</td>
+	<td title='$sgname'>".$orow["sgname"]."&nbsp;</td>
 	<td $rjust>$insem_days&nbsp;</td>
 	<td $rjust>$rectal_days&nbsp;</td>
 	<td $rjust>$prep_zapusk_days&nbsp;</td>
@@ -283,7 +326,9 @@ if ( $graph<1 ) {
 		$mt1=floor( $mtotal/$mq*10 )/10;
 	}
 	echo "
-<tr $cjust class='st_title2' style='height:28px'>
+</tbody>
+<tfoot id='rep_tfoot'>
+<tr style='height:28px'>
 	<td $cjust><b>".$ged['TOTAL'].":</b></td>
 	<td $rjust><b>$cows_cnt&nbsp;</b></td>
 	<td>&nbsp;</td>
@@ -301,6 +346,7 @@ if ( $graph<1 ) {
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 </tr>
+</tfoot>
 </table><br>";
 
 } else {
@@ -314,5 +360,5 @@ if ( $graph<1 ) {
 	} else;
 }
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

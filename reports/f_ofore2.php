@@ -310,5 +310,5 @@ if ( $graph<1 ) {
 	} else;
 }
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

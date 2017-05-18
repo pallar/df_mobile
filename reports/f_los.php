@@ -19,5 +19,5 @@ include( "frhead.php" );
 $nocardsfilt=1; $nocardsctrls=1;//dont show cards filter, ctrls
 include( "../dflib/f_tos.php" );
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

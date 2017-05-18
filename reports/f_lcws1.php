@@ -2,7 +2,7 @@
 /* DF_2: reports/f_lcws1.php
 report: cows last measuring results
 c: 27.02.2007
-m: 15.03.2017 */
+m: 17.05.2017 */
 
 ob_start();//lock output to set cookies properly!
 $noCSS=$_GET["noCSS"]*1;
@@ -28,6 +28,7 @@ $th11=$ged["Exter._Defects"];
 $_mod_rep_CSS=1;
 $_mod_rep_CSS_content="
 	/* Label the data */
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }
 	#rep_tbody td:nth-of-type(1):before { content:\"".$th1."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(2):before { content:\"".$th2."\"; text-align:left; top:0; }
 	#rep_tbody td:nth-of-type(3):before { content:\"".$th3."\"; text-align:left; top:0; }
@@ -134,5 +135,5 @@ echo "
 </tfoot>
 </table><br>";
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>

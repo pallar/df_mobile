@@ -257,6 +257,4 @@ if ( $graph<1 ) {
 }
 
 include( "frfoot.php" );
-
-ob_end_flush();
 ?>

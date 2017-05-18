@@ -2,7 +2,7 @@
 /* DF_2: reports/f_debug.php
 report: log
 c: 17.07.2015
-m: 23.07.2015 */
+m: 17.05.2017 */
 
 $skip_clichk=1;
 
@@ -20,8 +20,8 @@ $trows=0;
 echo "
 <table>
 <tr $cjust style='height:28px'>
-	<td width='80px'><b>".$ged['Date']."</b></td>
-	<td width='80px'><b>".$ged['Time']."</b></td>
+	<td width='80px'><b>".$ged["Date"]."</b></td>
+	<td width='80px'><b>".$ged["Time"]."</b></td>
 	<td width='35px'><b>Dev.</b></td>
 	<td width='35px'><b>Cmd</b></td>
 	<td><b>Data</b></td>";
@@ -55,9 +55,8 @@ if ( mysql_errno()<1 ) { while ( $row=mysql_fetch_row( $res )) {
 </tr>";
 }}
 
-echo "</table>
-</body>
-</html>";
+echo "
+</table><br>";
 
-ob_end_flush();
+include( "frfoot.php" );
 ?>
