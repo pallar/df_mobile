@@ -2,6 +2,11 @@
 <form class="alert alert-warning" id="b_edit_form" name="b_edit" hidden>
 	<h3 class="text-center">Breed' Card</h3>
 	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="b_edit.$invalid || cur_b.id==1" ng-click="db_B_update(cur_b)">Update</button>
+		<button class="btn btn-warning" ng-disabled="b_edit.$invalid || cur_b.id==1" ng-click="db_B_update(cur_b); B_form_close('cancel',cur_b.id)">Update & List</button>
+		<button class="btn btn-danger" ng-click="B_form_close('cancel',cur_b.id)">Cancel</button>
+	</div>
+	<div class="form-group">
 		<label for="Num">#:<span class="text-danger" ng-show="b_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
 		<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="width:100px" type="text" value="{{cur_b.num}}" ng-disabled="cur_b.id==1" ng-model="cur_b.num" required>
 	</div>
@@ -16,10 +21,5 @@
 	<div class="form-group">
 		<label for="Nick">Nick:</label>
 		<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="width:200px" type="text" value="{{cur_b.nick}}" ng-disabled="cur_b.id==1" ng-model="cur_b.nick">
-	</div>
-	<div class="form-group">
-		<button class="btn btn-success" ng-disabled="b_edit.$invalid || cur_b.id==1" ng-click="db_B_update(cur_b)">Update</button>
-		<button class="btn btn-warning" ng-disabled="b_edit.$invalid || cur_b.id==1" ng-click="db_B_update(cur_b); B_form_close('cancel',cur_b.id)">Update & List</button>
-		<button class="btn btn-danger" ng-click="B_form_close('cancel',cur_b.id)">Cancel</button>
 	</div>
 </form>

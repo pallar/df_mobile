@@ -4,7 +4,7 @@
 }
 
 #conf_form,
-#b_add_form, #b_edit_form, #l_add_form, #l_edit_form, #sg_add_form, #sg_edit_form,
+#b_add_form, #b_edit_form, #g_add_form, #g_edit_form, #l_add_form, #l_edit_form, #sg_add_form, #sg_edit_form,
 #cw_add_form, #cw_edit_form, #ox_add_form, #ox_edit_form {
 	padding:0 30px 0 30px;
 }

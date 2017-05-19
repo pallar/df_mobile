@@ -16,25 +16,25 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	$scope.show_form=true;
 
 	function db_Breeds_get() {
-		$http.post('../db_cmds/abrs_g.php').success(function(__data) {
+		$http.post('../db_cmds/abs_g.php').success(function(__data) {
 			$scope.breeds_details=__data;
 		});
 	}
 
 	function db_Lots_get() {
-		$http.post('../db_cmds/alots_g.php').success(function(__data) {
+		$http.post('../db_cmds/als_g.php').success(function(__data) {
 			$scope.lots_details=__data;
 		});
 	}
 
 	function db_Groups_get() {
-		$http.post('../db_cmds/agrs_g.php').success(function(__data) {
+		$http.post('../db_cmds/ags_g.php').success(function(__data) {
 			$scope.grs_details=__data;
 		});
 	}
 
 	function db_Subgrs_get() {
-		$http.post('../db_cmds/asgrs_g.php').success(function(__data) {
+		$http.post('../db_cmds/asgs_g.php').success(function(__data) {
 			$scope.subgrs_details=__data;
 		});
 	}

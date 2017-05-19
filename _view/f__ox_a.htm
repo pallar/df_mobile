@@ -2,6 +2,10 @@
 <form class="alert alert-warning" id="ox_add_form" name="ox_add" hidden>
 	<h3 class="text-center">New Ox' Card</h3>
 	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="ox_add.$invalid" ng-click="db_Ox_insert(new_ox); Ox_form_close('cancel')">Add</button>
+		<button class="btn btn-danger" ng-click="Ox_form_close('cancel')">Cancel</button>
+	</div>
+	<div class="form-group">
 		<label for="Num">#:<span class="text-danger" ng-show="ox_add.num.$invalid">&nbsp;REQUIRED!</span></label>
 		<input class="form-control" maxlength="6" name="num" placeholder="Enter Number" style="width:100px" type="text" ng-model="new_ox.num" required>
 	</div>
@@ -16,9 +20,5 @@
 	<div class="form-group">
 		<label for="Nick">Nick:</label>
 		<input class="form-control" name="nick" placeholder="Enter Nick" style="width:200px" type="text" ng-model="new_ox.nick">
-	</div>
-	<div class="form-group">
-		<button class="btn btn-success" ng-disabled="ox_add.$invalid" ng-click="db_Ox_insert(new_ox); Ox_form_close('cancel')">Add</button>
-		<button class="btn btn-danger" ng-click="Ox_form_close('cancel')">Cancel</button>
 	</div>
 </form>

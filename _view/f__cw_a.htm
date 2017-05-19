@@ -1,6 +1,10 @@
 <!-- DF_ajs: Add Cow Form -->
 	<h3 class="text-center">New Cow' Card</h3>
 	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="cw_add.$invalid" ng-click="db_Cw_insert(new_cw); Cw_form_close('cancel')">Add</button>
+		<button class="btn btn-danger" ng-click="Cw_form_close('cancel')">Cancel</button>
+	</div>
+	<div class="form-group">
 		<label for="Cow_Num">#:<span class="text-danger" ng-show="cw_add.cow_num.$invalid">&nbsp;REQUIRED!</span></label>
 		<input class="form-control" maxlength="6" name="cow_num" placeholder="Enter Number" style="width:100px" type="text" value="" ng-model="new_cw.cow_num" required>
 	</div>
@@ -15,8 +19,4 @@
 	<div class="form-group">
 		<label for="Nick">Nick:</label>
 		<input class="form-control" name="nick" placeholder="Enter Nick" style="width:200px" type="text" ng-model="new_cw.nick">
-	</div>
-	<div class="form-group">
-		<button class="btn btn-success" ng-disabled="cw_add.$invalid" ng-click="db_Cw_insert(new_cw); Cw_form_close('cancel')">Add</button>
-		<button class="btn btn-danger" ng-click="Cw_form_close('cancel')">Cancel</button>
 	</div>

@@ -1,6 +1,11 @@
 <!-- DF_2 Edit Cow Form -->
 	<h3 class="text-center">Cow' Card</h3>
 	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw)">Update</button>
+		<button class="btn btn-warning" ng-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw); Cw_form_close('cancel',cur_ox.id)">Update & List</button>
+		<button class="btn btn-danger" ng-click="Cw_form_close('cancel',cur_cw.id)">Cancel</button>
+	</div>
+	<div class="form-group">
 		<div class="form-group row">
 			<div class="col-md-4 form-group">
 				<label for="B_Date">Birth Date:<span class="text-danger" ng-show="cw_edit.b_date.$invalid">&nbsp;REQUIRED!</span></label>
@@ -83,9 +88,4 @@
 				<input class="form-control" name="comments" style="width:200px" type="text" value="{{cur_cw.comments}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.comments">
 			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<button class="btn btn-success" ng-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw)">Update</button>
-		<button class="btn btn-warning" ng-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw); Cw_form_close('cancel',cur_ox.id)">Update & List</button>
-		<button class="btn btn-danger" ng-click="Cw_form_close('cancel',cur_cw.id)">Cancel</button>
 	</div>

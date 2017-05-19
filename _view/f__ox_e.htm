@@ -2,6 +2,11 @@
 <form class="alert alert-warning" id="ox_edit_form" name="ox_edit" hidden>
 	<h3 class="text-center">Ox' Card</h3>
 	<div class="form-group">
+		<button class="btn btn-success" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox)">Update</button>
+		<button class="btn btn-warning" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox); Ox_form_close('cancel',cur_ox.id)">Update & List</button>
+		<button class="btn btn-danger" ng-click="Ox_form_close('cancel',cur_ox.id)">Cancel</button>
+	</div>
+	<div class="form-group">
 		<label for="Num">#:<span class="text-danger" ng-show="ox_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
 		<input class="form-control" maxlength="6" name="num" placeholder="Enter Number" style="width:100px" type="text" value="{{cur_ox.num}}" ng-disabled="cur_ox.id==1" ng-model="cur_ox.num" required>
 	</div>
@@ -16,10 +21,5 @@
 	<div class="form-group">
 		<label for="Nick">Nick:</label>
 		<input class="form-control" name="nick" placeholder="Enter Nick" style="width:200px" type="text" value="{{cur_ox.nick}}" ng-disabled="cur_ox.id==1" ng-model="cur_ox.nick">
-	</div>
-	<div class="form-group">
-		<button class="btn btn-success" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox)">Update</button>
-		<button class="btn btn-warning" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox); Ox_form_close('cancel',cur_ox.id)">Update & List</button>
-		<button class="btn btn-danger" ng-click="Ox_form_close('cancel',cur_ox.id)">Cancel</button>
 	</div>
 </form>
