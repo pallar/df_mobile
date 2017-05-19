@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_meas.php
 oper ----4 (103) [measurings]
 c: 09.01.2006
-m: 30.03.2017 */
+m: 19.05.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -90,12 +90,12 @@ if ( $add_oper!="" ) {
 	else if ( $varsession!=1 & $userCoo!=9 ) echo "
 &nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";
 	echo "
-<center>".$ged['mm'].":&nbsp;".
-"(<b>1</b>&nbsp;-".$ged['Depth,Chest'].")&nbsp;(<b>2</b>&nbsp;-".$ged['Width,Chest'].
-")&nbsp;(<b>3</b>&nbsp;-".$ged['Diam.,Chest'].")&nbsp;(<b>4</b>&nbsp;-".$ged['Height'].
-")&nbsp;(<b>5</b>&nbsp;-".$ged['Width,Shoulder-blade'].")&nbsp;(<b>6</b>&nbsp;-".$ged['Slant._Len.'].
-")&nbsp;(<b>7</b>&nbsp;-".$ged['Diam.,Wrist.'].
-")&nbsp;&nbsp;<b>8</b>&nbsp;-".$ged['Brutto'].", ".$ged['kg']."</center>";
+<center>".$ged["mm"].":&nbsp;".
+"(<b>1</b>&nbsp;-".$ged["Depth,Chest"].")&nbsp;(<b>2</b>&nbsp;-".$ged["Width,Chest"].
+")&nbsp;(<b>3</b>&nbsp;-".$ged["Diam.,Chest"].")&nbsp;(<b>4</b>&nbsp;-".$ged["Height"].
+")&nbsp;(<b>5</b>&nbsp;-".$ged["Width,Shoulder-blade"].")&nbsp;(<b>6</b>&nbsp;-".$ged["Slant._Len."].
+")&nbsp;(<b>7</b>&nbsp;-".$ged["Diam.,Wrist."].
+")&nbsp;&nbsp;<b>8</b>&nbsp;-".$ged["Brutto"].", ".$ged["kg"]."</center>";
 	if ( $div_hide!=1 ) echo "
 <div style='height:59px; $thead_style'>";
 	echo "
@@ -104,9 +104,9 @@ if ( $add_oper!="" ) {
 	if ( $div_hide!=1 ) echo "
 		<td rowspan='2' width='$td1w'>&nbsp;</td>";
 	echo "
-		<td rowspan='2' width='$td2w'>".$ged['Group']."</td>
-		<td rowspan='2' width='$td3w'>".$ged['Number']."</td>
-		<td rowspan='2' width='$td4w'>".$ged['Nick']."</td>
+		<td rowspan='2' width='$td2w'>".$ged["Group"]."</td>
+		<td rowspan='2' width='$td3w'>".$ged["Number"]."</td>
+		<td rowspan='2' width='$td4w'>".$ged["Nick"]."</td>
 		<td rowspan='2' width='$td5w'>1</td>
 		<td rowspan='2' width='$td6w'>2</td>
 		<td rowspan='2' width='$td7w'>3</td>
@@ -115,8 +115,8 @@ if ( $add_oper!="" ) {
 		<td rowspan='2' width='$tdaw'>6</td>
 		<td rowspan='2' width='$tdbw'>7</td>
 		<td rowspan='2' width='$tdcw'>8</td>
-		<td width='$tddw'>".$ged['Comment.']."</td>
-		<td rowspan='2' width='$tdew'>".$ged['Date']."</td>
+		<td width='$tddw'>".$ged["Comment."]."</td>
+		<td rowspan='2' width='$tdew'>".$ged["Date"]."</td>
 	</tr>
 	<tr $cjust class='st_title2' style='font-weight:bold; height:27px'>
 		<td width='$tddw'>";

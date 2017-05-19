@@ -2,7 +2,7 @@
 /* DF_2: oper/f_oprwdp.php
 group operations rewind menu preparing ([OP]erations [R]e[W]in[D] menu)
 c: 25.05.2006
-m: 11.11.2015 */
+m: 19.05.2017 */
 
 include( "../f_vars.php" );
 include( "../locales/$lang/f_prep._$lang" );
@@ -13,7 +13,6 @@ include( "../dflib/f_func.php" );
 include( "../dflib/f_lib1.php" );
 include( "../dflib/f_librep.php" );
 
-$f_chcws_php=$_GET["f_chcws_php"];
 $opertype=$_GET["opertype"];
 include( "../oper/f_opname.php" );
 

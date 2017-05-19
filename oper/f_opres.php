@@ -2,7 +2,7 @@
 /* DF_2: oper/f_opres.php
 report: operations other than extracting (special edition)
 c: 25.12.2005
-m: 30.03.2017 */
+m: 19.05.2017 */
 
 $title_=$title=$_GET["title"];
 if ( strlen( $title_ )<=1 ) $title_=$php_mm["_06_oper_inserted_list"]."&nbsp;$inserted_opername:";
@@ -13,15 +13,15 @@ $outsele5=-1; $outsele6=-1; $outsele7=-1; $outsele8=-1;
 
 $rows_cnt=0; $cows_cnt=0; $rowspan_=1;
 
-if ( $key==-1 ) $ret_url="../".$hFrm['0500'];
+if ( $key==-1 ) $ret_url="../".$hFrm["0500"];
 else {
-	if ( strlen( $key )>8 ) $ret_url="../".$hRep['o'];
-	else $ret_url="../".$hFrm['0600'];
+	if ( strlen( $key )>8 ) $ret_url="../".$hRep["o"];
+	else $ret_url="../".$hFrm["0600"];
 }
 $ret0=$_POST["ret0"];
 if ( $ret0=="05" ) {
 	$cow_id=$_POST["cow_id"];
-	$ret_url="../".$hFrm['0520']."?cow_id=".$cow_id."&ret0=05";
+	$ret_url="../".$hFrm["0520"]."?cow_id=".$cow_id."&ret0=05";
 }
 
 echo "
@@ -51,18 +51,18 @@ if ( $coo!=-1 ) echo "
 echo "
 <table cellspacing='1' class='st2'>
 <tr $cjust class='st_title2' style='font-weight:bold; height:28px'>
-	<td rowspan='$rowspan_' width='60px'>".$ged['Date']."</td>
-	<td width='60px'>".$ged['Modif._Time']."</td>
-	<td width='60px'>".$ged['Number']."</td>
-	<td>".$ged['Nick']."</td>";
+	<td rowspan='$rowspan_' width='60px'>".$ged["Date"]."</td>
+	<td width='60px'>".$ged["Modif._Time"]."</td>
+	<td width='60px'>".$ged["Number"]."</td>
+	<td>".$ged["Nick"]."</td>";
 if ( $coo!=-1 ) echo "
 </tr>
 <tr $cjust class='st_title2' style='font-weight:bold'>
-	<td colspan='3' width='700px'>".$ged['Detailed_Content']."</td>";
+	<td colspan='3' width='700px'>".$ged["Detailed_Content"]."</td>";
 if ( $dbt_ext=="_o" ) echo "
 </tr>
 <tr $cjust class='st_title2' style='font-weight:bold'>
-	<td colspan='3'>".$ged['Comment.']."</td>";
+	<td colspan='3'>".$ged["Comment."]."</td>";
 echo "
 </tr>";
 
@@ -79,7 +79,7 @@ if ( $coo!=-1 ) {
 	$res=mysql_query( $query, $db ); while ( $row=mysql_fetch_row( $res )) $ox[$row[1]]=$row[0];
 }
 
-if ( $dbt_ext=="_o" ) include( "../".$hDir['reps']."f_jselo.php" ); else include( "../".$hDir['reps']."f_jselm.php" );
+if ( $dbt_ext=="_o" ) include( "../".$hDir["reps"]."f_jselo.php" ); else include( "../".$hDir["reps"]."f_jselm.php" );
 
 if ( $error==0 ) while ( $row=mysql_fetch_row( $res )) {
 	echo "
@@ -87,7 +87,7 @@ if ( $error==0 ) while ( $row=mysql_fetch_row( $res )) {
 	if ( $dbt_ext=="_o" ) $oper_id=$row[18]*1; else $oper_id=1;
 	$nick1=StrCutLen1( $row[5], 59, $contentCharset );
 	if ( $coo!=-1 ) {
-		include( "../".$hDir['reps']."f_odecod.php" );
+		include( "../".$hDir["reps"]."f_odecod.php" );
 		$desc1=StrCutLen1( $descr, 110, $contentCharset );
 		echo "
 	<td rowspan='$rowspan_' $cjust>".$row[1].".".$row[2].".".$row[3]."</td>
@@ -124,9 +124,9 @@ if ( $error==0 ) while ( $row=mysql_fetch_row( $res )) {
 
 echo "
 <tr $cjust class='st_title2' style='height:28px'>
-	<td><b>".$ged['TOTAL'].":</b></td>
-	<td $rjust><center>".$ged['rows'].":</center><b>".$rows_cnt."</b></td>
-	<td $rjust><center>".$ged['animals'].":</center><b>".$cows_cnt."</b></td>
+	<td><b>".$ged["TOTAL"].":</b></td>
+	<td $rjust><center>".$ged["rows"].":</center><b>".$rows_cnt."</b></td>
+	<td $rjust><center>".$ged["animals"].":</center><b>".$cows_cnt."</b></td>
 	<td $rjust>&nbsp;</td>
 </tr>
 </table>";

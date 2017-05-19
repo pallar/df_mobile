@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_jagg.php
 oper -8192 (114) [jagging and "disable milking"]
 c: 10.08.2009
-m: 30.03.2017 */
+m: 19.05.2017 */
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -24,9 +24,9 @@ if ( $varsession==1 ) {
 $add_oper=$_POST["add_oper"];
 if ( $add_oper!="" ) {
 	include( "../oper/f_o__114.php" );
-	if ( strlen( $key )>8 ) $ret_url="../".$hRep['o'];
-	else $ret_url="../".$hFrm['0600'];
-	if ( strlen( $key )==8 ) $ret_url="../".$hFrm['0500'];
+	if ( strlen( $key )>8 ) $ret_url="../".$hRep["o"];
+	else $ret_url="../".$hFrm["0600"];
+	if ( strlen( $key )==8 ) $ret_url="../".$hFrm["0500"];
 	Res_Draw( 1, $ret_url, "", "", $php_mm_tip[0] );
 } else {
 	include_once( "../oper/f_dtdiv.php" );//<tr>'s date
@@ -70,15 +70,15 @@ function reset_all_keyp( i_ ) {
 	if ( $div_hide!=1 ) echo "
 		<td width='$td1w'>&nbsp;</td>";
 	echo "
-		<td width='$td2w'>".$ged['Group']."</td>
-		<td width='$td3w'>".$ged['Number']."</td>
-		<td width='$td4w'>".$ged['Nick']."</td>
-		<td width='$td5w'>".$ged['Interval']." 1"."</td>
-		<td width='$td5w'>".$ged['Interval']." 2"."</td>
-		<td width='$td5w'>".$ged['Interval']." 3"."</td>
-		<td width='$td5w'>".$ged['Interval']." 4"."</td>
-		<td width='$td5w'>".$ged['Interval']." 5"."</td>
-		<td width='$tdew'>".$ged['Date']."</td>
+		<td width='$td2w'>".$ged["Group"]."</td>
+		<td width='$td3w'>".$ged["Number"]."</td>
+		<td width='$td4w'>".$ged["Nick"]."</td>
+		<td width='$td5w'>".$ged["Interval"]." 1"."</td>
+		<td width='$td5w'>".$ged["Interval"]." 2"."</td>
+		<td width='$td5w'>".$ged["Interval"]." 3"."</td>
+		<td width='$td5w'>".$ged["Interval"]." 4"."</td>
+		<td width='$td5w'>".$ged["Interval"]." 5"."</td>
+		<td width='$tdew'>".$ged["Date"]."</td>
 	</tr>";
 	if ( $div_hide!=1 ) echo "
 	</table>

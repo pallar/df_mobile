@@ -50,5 +50,5 @@ case 8192:
 }
 include_once( "../oper/f_o_".$url_.".php" );
 
-ob_end_flush();//unlock output!
+ob_end_flush();
 ?>

@@ -2,7 +2,7 @@
 /* DF_2: oper/oper_abrt.php
 oper -1024/-2048 (111/112) [parturition & abort]
 c: 09.01.2006
-m: 30.03.2017 */
+m: 19.05.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -79,20 +79,20 @@ if ( $add_oper!="" ) {
 	if ( $div_hide!=1 ) {
 		echo "
 		<td rowspan='2' width='$td1w'>&nbsp;</td>
-		<td rowspan='2' width='$td2w'>".$ged['Group']."</td>
-		<td rowspan='2' width='$td3w'>".$ged['Number']."</td>
-		<td rowspan='2' width='$td4w'>".$ged['Nick']."</td>";
+		<td rowspan='2' width='$td2w'>".$ged["Group"]."</td>
+		<td rowspan='2' width='$td3w'>".$ged["Number"]."</td>
+		<td rowspan='2' width='$td4w'>".$ged["Nick"]."</td>";
 		$rowspan_="rowspan='2'";
 	} else {
 		$row=mysql_fetch_row( $res );
 		echo "
-		<td $ljust colspan='2'><font color='#0'>".$ged['Group'].":&nbsp;</font><font color='#aaa'>".$row[3]."</font><br><font color='#0'>".$ged['Number'].":&nbsp;</font><font color='#aaa'>".$row[1]."</font><br><font color='#0'>".$ged['Nick'].":&nbsp;</font><font color='#aaa'>".StrCutLen1( $row[2], 59, $contentCharset )."</font></td>
+		<td $ljust colspan='2'><font color='#0'>".$ged["Group"].":&nbsp;</font><font color='#aaa'>".$row[3]."</font><br><font color='#0'>".$ged["Number"].":&nbsp;</font><font color='#aaa'>".$row[1]."</font><br><font color='#0'>".$ged["Nick"].":&nbsp;</font><font color='#aaa'>".StrCutLen1( $row[2], 59, $contentCharset )."</font></td>
 	</tr>
 	<tr $cjust class='st_title2' style='height:27px'>";
 	}
 	echo "
-		<td width='$tddw'>".$ged['Comment.']."</td>
-		<td $rowspan_ width='$tdew'>".$ged['Date']."</td>
+		<td width='$tddw'>".$ged["Comment."]."</td>
+		<td $rowspan_ width='$tdew'>".$ged["Date"]."</td>
 	</tr>";
 	if ( $div_hide!=1 ) echo "
 	<tr $cjust class='st_title2' style='font-weight:bold; height:27px'>

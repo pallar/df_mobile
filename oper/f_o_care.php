@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_care.php
 oper ----8 (104) [care]
 c: 09.01.2006
-m: 30.03.2017 */
+m: 19.05.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -107,17 +107,17 @@ if ( $add_oper!="" ) {
 	if ( $div_hide!=1 ) echo "
 		<td rowspan='2' width='$td1w'>&nbsp;</td>";
 	echo "
-		<td rowspan='2' width='$td2w'>".$ged['Group']."</td>
-		<td rowspan='2' width='$td3w'>".$ged['Number']."</td>
-		<td rowspan='2' width='$td4w'>".$ged['Nick']."</td>
-		<td rowspan='2' width='$td5w'>".PhraseCarry( $ged['Cond.,Udder'], ' ', 1 )."</td>
-		<td rowspan='2' width='$td6w'>".PhraseCarry( $ged['Cond.,Womb'], ' ', 1 )."</td>
-		<td rowspan='2' width='$td7w'>".PhraseCarry( $ged['Cond.,Hornes'], ' ', 1 )."</td>
-		<td rowspan='2' width='$td8w'>".PhraseCarry( $ged['Cond.,Hoof'], ' ', 1 )."</td>
-		<td rowspan='2' width='$td9w'>".PhraseCarry( $ged['Cond.,Common'], ' ', 1 )."</td>
-		<td rowspan='2' width='$tdaw'>".PhraseCarry(  $ged['Conclusion_Common'], ' ', 1 )."</td>
-		<td width='$tddw'>".$ged['Comment.']."</td>
-		<td rowspan='2' width='$tdew'>".$ged['Date']."</td>
+		<td rowspan='2' width='$td2w'>".$ged["Group"]."</td>
+		<td rowspan='2' width='$td3w'>".$ged["Number"]."</td>
+		<td rowspan='2' width='$td4w'>".$ged["Nick"]."</td>
+		<td rowspan='2' width='$td5w'>".PhraseCarry( $ged["Cond.,Udder"], ' ', 1 )."</td>
+		<td rowspan='2' width='$td6w'>".PhraseCarry( $ged["Cond.,Womb"], ' ', 1 )."</td>
+		<td rowspan='2' width='$td7w'>".PhraseCarry( $ged["Cond.,Hornes"], ' ', 1 )."</td>
+		<td rowspan='2' width='$td8w'>".PhraseCarry( $ged["Cond.,Hoof"], ' ', 1 )."</td>
+		<td rowspan='2' width='$td9w'>".PhraseCarry( $ged["Cond.,Common"], ' ', 1 )."</td>
+		<td rowspan='2' width='$tdaw'>".PhraseCarry(  $ged["Conclusion_Common"], ' ', 1 )."</td>
+		<td width='$tddw'>".$ged["Comment."]."</td>
+		<td rowspan='2' width='$tdew'>".$ged["Date"]."</td>
 	</tr>
 	<tr $cjust class='st_title2' style='font-weight:bold; height:27px'>
 		<td width='$tddw'>";

@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_rect.php
 oper --512 (110) [rectal condition]
 c: 09.01.2006
-m: 30.03.2017 */
+m: 19.05.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -97,19 +97,19 @@ if ( $add_oper!="" ) {
 	<tr $cjust class='st_title2' style='height:27px'>";
 	if ( $div_hide!=1 ) echo "
 		<td rowspan='2' width='$td1w'>&nbsp;</td>
-		<td rowspan='2' width='$td2w'>".$ged['Group']."</td>
-		<td rowspan='2' width='$td3w'>".$ged['Number']."</td>
-		<td rowspan='2' width='$td4w'>".$ged['Nick']."</td>";
+		<td rowspan='2' width='$td2w'>".$ged["Group"]."</td>
+		<td rowspan='2' width='$td3w'>".$ged["Number"]."</td>
+		<td rowspan='2' width='$td4w'>".$ged["Nick"]."</td>";
 	else $rowspan_="rowspan='2'";
 	echo "
-		<td colspan='3' width='$td567w'>".$ged['Cond._Pregn.']."</td>
-		<td $rowspan_ width='$tddw'>".$ged['Comment.']."</td>
-		<td rowspan='2' width='$tdew'>".$ged['Date']."</td>
+		<td colspan='3' width='$td567w'>".$ged["Cond._Pregn."]."</td>
+		<td $rowspan_ width='$tddw'>".$ged["Comment."]."</td>
+		<td rowspan='2' width='$tdew'>".$ged["Date"]."</td>
 	</tr>
 	<tr $cjust class='st_title2' style='height:27px'>
-		<td width='$td5w'>".$ged['cond.']."</td>
-		<td width='$td6w'>".$ged['cond.']."</td>
-		<td width='$td7w'>".$ged['comment.']."</td>";
+		<td width='$td5w'>".$ged["cond."]."</td>
+		<td width='$td6w'>".$ged["cond."]."</td>
+		<td width='$td7w'>".$ged["comment."]."</td>";
 	if ( $div_hide!=1 ) echo "
 		<td width='$tddw'><input id='comments1' maxlength='255' name='comments1' style='$rw_style; height:23px' type='text' onkeyup='table_edits( \"comments1\", \"co1\" )'></td>";
 	echo "

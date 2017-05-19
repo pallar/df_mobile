@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_mlk.php
 oper ----1 (101) [milking]
 c: 09.01.2006
-m: 30.03.2017 */
+m: 19.05.2017 */
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -124,17 +124,17 @@ function milksess_keyp( i_ ) {
 		$row=mysql_fetch_row( $res );
 		echo "
 	<tr class='st_title2' style='font-weight:bold; height:27px'>
-		<td colspan='17'>".$ged['Group'].":&nbsp;<font color='red'>".$row[3]."</font><br>".$ged['Number'].":&nbsp;<font color='red'>".$row[1]."</font><br>".$ged['Nick'].":&nbsp;<font color='red'>".StrCutLen1( $row[2], 59, $contentCharset )."</font></td>
+		<td colspan='17'>".$ged["Group"].":&nbsp;<font color='red'>".$row[3]."</font><br>".$ged["Number"].":&nbsp;<font color='red'>".$row[1]."</font><br>".$ged["Nick"].":&nbsp;<font color='red'>".StrCutLen1( $row[2], 59, $contentCharset )."</font></td>
 	</tr>
 	<tr $cjust class='st_title2' style='font-weight:bold; height:27px'>";
 	} else echo "
 	<tr $cjust class='st_title2' style='font-weight:bold; height:27px'>
 		<td rowspan='2' width='$td1w'>&nbsp;</td>
-		<td rowspan='2' width='$td3w'>".$ged['Group']."</td>
-		<td rowspan='2' width='$td3w'>".$ged['Number']."</td>";
+		<td rowspan='2' width='$td3w'>".$ged["Group"]."</td>
+		<td rowspan='2' width='$td3w'>".$ged["Number"]."</td>";
 	echo "
-		<td colspan='4'>".$ged['Milk'].",".$ged['kg']."</td>
-		<td colspan='3'>".$ged['Time']."</td>
+		<td colspan='4'>".$ged["Milk"].",".$ged["kg"]."</td>
+		<td colspan='3'>".$ged["Time"]."</td>
 		<td rowspan='2' title='".$ged["Dev."]."' width='$td5w'>".$ged["Dev.~"]."</td>
 		<td rowspan='2' title='".$ged["Start_manual"]."' width='$td5w'>".$ged["Start_manual~"]."</td>
 		<td rowspan='2' title='".$ged["Start_retr."]."' width='$td5w'>".$ged["Start_retr.~"]."</td>
@@ -143,15 +143,15 @@ function milksess_keyp( i_ ) {
 		<td colspan='2' title='".$ged["M."]."' width='$td5w'>".$ged["M.~"]."</td>
 		<td rowspan='2' title='".$ged["T."]."' width='$td5w'>".$ged["T.~"]."</td>
 		<td rowspan='2' title='".$ged["O."]."' width='$td5w'>".$ged["O.~"]."</td>
-		<td rowspan='2' width='$tdew'>".$ged['Date']."</td>
+		<td rowspan='2' width='$tdew'>".$ged["Date"]."</td>
 	</tr>
 	<tr $cjust class='st_title2' style='font-weight:bold; height:27px'>
 		<td width='$td5w'>&nbsp;</td>
 		<td title='".$ged["00-30s,kg_tip"]."' width='$td9w'>".PhraseCarry( $ged["00-30s,kg"], ",", 1 )."</td>
 		<td title='".$ged["31-60s,kg_tip"]."' width='$td9w'>".PhraseCarry( $ged["31-60s,kg"], ",", 1 )."</td>
 		<td title='".$ged["61-90s,kg_tip"]."' width='$td9w'>".PhraseCarry( $ged["61-90s,kg"], ",", 1 )."</td>
-		<td width='$td2w'>".$ged['beg.t']."</td>
-		<td width='$td2w'>".$ged['duration']."</td>
+		<td width='$td2w'>".$ged["beg.t"]."</td>
+		<td width='$td2w'>".$ged["duration"]."</td>
 		<td width='$td9w'>&nbsp;</td>
 		<td width='$td5w'>&nbsp;</td>
 		<td title='".$ged["M.d/~"]."' width='$td5w'>1..</td>
