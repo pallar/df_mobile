@@ -13,6 +13,13 @@ include( "../dflib/f_func.php" );
 include( "../dflib/f_lib1.php" );
 include( "../dflib/f_librep.php" );
 
+$div_hide=$_GET["div_hide"];
+$add_oper=$_POST["add_oper"];
+if ( $add_oper!="" ) $body_onload_add="";
+else {
+	if ( $div_hide!=1 ) $body_onload_add="cal_nowdayslist(); cal_fromcoo(); table_dates();";
+}
+
 $title="Операції - Інтернет-Ферма";
 $curr_app_tab=5; include "f_menu.php";
 ?>

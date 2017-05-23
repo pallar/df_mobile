@@ -8,7 +8,7 @@
 	background-image:-o-linear-gradient(top, rgba(201,201,201,1) 0%, rgba(178,0,0,1) 55%); /* opera 11.10+ */
 }
 
-.btn {border-radius:0;}
+.btn {-webkit-border-radius:0;}
 .btn_h0 {height:25px;}
 .sel_h0 {height:25px; padding:0 5px 0 5px;}
 .tbl_h0 {height:25px; width:100%;}

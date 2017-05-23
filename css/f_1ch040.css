@@ -9,7 +9,8 @@
 }
 
 .btn {-webkit-border-radius:0;}
-.btn_h0 {-webkit-appearance:none; height:25px;}
-.sel_h0 {-webkit-appearance:none; height:25px; line-height:25px; padding:0 5px 0 5px;}
+.btn, .sel, .txt {-webkit-appearance:none;}
+.btn_h0 {height:25px;}
+.sel_h0 {background:#fefefe; height:25px; line-height:25px; padding:0 5px 0 5px;}
 .tbl_h0 {height:25px; width:100%;}
-.txt_h0 {-webkit-appearance:none; -webkit-box-sizing:border-box; height:25px; padding:0 5px 0 5px;}
+.txt_h0 {-webkit-box-sizing:border-box; height:25px; padding:0 5px 0 5px;}

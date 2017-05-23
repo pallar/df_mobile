@@ -2,7 +2,7 @@
 /* DF_2: oper/f_opres.php
 report: operations other than extracting (special edition)
 c: 25.12.2005
-m: 19.05.2017 */
+m: 23.05.2017 */
 
 $title_=$title=$_GET["title"];
 if ( strlen( $title_ )<=1 ) $title_=$php_mm["_06_oper_inserted_list"]."&nbsp;$inserted_opername:";
@@ -37,7 +37,7 @@ echo "
 	</td>
 </tr>
 </table><br>
-<input class='btn gradient_0f0 btn_h0' style='width:200px' type='button' value='".$php_mm["_com_forward_btn_"]."' onclick='window.location.href=\"$ret_url\"'><br><br>";
+<input class='btn btn_h0 gradient_0f0' style='width:200px' type='button' value='".$php_mm["_com_forward_btn_"]."' onclick='window.location.href=\"$ret_url\"'><br><br>";
 
 $opertype=$_GET["opertype"]*1;
 if ( $opertype>1 ) $db_ext="_o";

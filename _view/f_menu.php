@@ -18,6 +18,9 @@ if($curr_app_tab!=8) {
 $title=$app_rel."&nbsp;".$title;
 echo "
 <title>$title</title>";
+
+$body_onload="Is_CookiesOn(); App_Login(); App_OnStart();";
+if ( $body_onload_add."."!="." ) $body_onload=$body_onload." ".$body_onload_add;
 ?>
 
 <link href='../css/f_.css' rel='stylesheet' type='text/css'>
@@ -138,15 +141,16 @@ function Period_Show() {
 <script language='JavaScript' src='../dflib/f_input.js'></script>
 </head>
 
-<body onload='Is_CookiesOn(); App_Login(); App_OnStart();' onkeypress='App_HotKeys();' oncontextmenu='return false;'>
+<?php
+echo "
+<body onload='$body_onload' onkeypress='App_HotKeys();' oncontextmenu='return false;'>
 
 <div class='mk' id='login_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:270px; z-index:10;' onmouseover='in_menu=true;'>
 </div>
 <div class='mk' id='period_div' style='border-color:#66a0a0 #66a0a0 #66a0a0 #66a0a0; border-style:solid; border-width:1px; display:none; font-size:12; height:126px; line-height:16px; position:absolute; text-align:center; visibility:hidden; width:272px; z-index:10;' onmouseover='in_menu=true;'>
 </div>
 <div class='shadow' id='__shadow__' name='__shadow__'></div>
-<?php
-echo"
+
 <nav>
 	<div id='cssmenu'>
 		<ul>

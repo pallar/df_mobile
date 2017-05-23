@@ -2,7 +2,7 @@
 /* DF_2: oper/f_chcws.php
 form: cows operations: get cows from list
 c: 09.01.2006
-m: 19.05.2017 */
+m: 23.05.2017 */
 
 $_list_height=$_height-200;
 
@@ -25,8 +25,6 @@ function visibility_chg( text, i ) {
 
 <?php
 include( "../oper/f_opname.php" );
-
-//$sess_path=session_save_path(); echo "$sess_path<br>";
 
 //Show group table title
 function CwsGroupTableTitle_Show( $i, $ii ) {
@@ -53,6 +51,12 @@ $filts0=CookieGet( "_filts0" )*1;
 if (( $filts0&4 )==4 ) $filts0_3="checked"; else $filts0_3="";
 if (( $filts0&32 )==32 ) $filts0_6="checked"; else $filts0_6="";
 
+$op_php=$_GET["include"];
+if ( $op_php."."!="." ) {
+	include( "$op_php" );
+	return;
+}
+
 $res=mysql_query( "SELECT id, nick FROM $groups" );
 while ( $row=mysql_fetch_row( $res )) {
 	$gr_nick[$row[0]*1]=$row[1];
@@ -60,20 +64,12 @@ while ( $row=mysql_fetch_row( $res )) {
 }
 
 $submit1=$_POST["submit1"];
-$ci=$_GET["include"];
-
-if ( $ci."."!="." ) {
-echo "$ci";
-	include_once( "../oper/$ci" );
-ob_end_flush();
-	return;
-}
 
 if ( $submit1!="" ) {
 	$cows_checkboxes=$_POST["cows_checkboxes"];
 	$opertype=$_POST["opertype"]*1;
 	$fo_scnt=count( $cows_checkboxes );//checked cows quantity
-	if ( $fo_scnt<=0 )
+	if ( $fo_scnt<1 )
 		Res_Draw( 3, $tmp_phpself."?opertype=$opertype", "", $php_mm["_com_no_selected_animals_"], $php_mm_tip[0] );
 	else {
 		$sess_str="";
@@ -95,11 +91,10 @@ if ( $submit1!="" ) {
 		else if ( $opertype==2048 ) $url_="abrt";
 		else if ( $opertype==4096 ) $url_="abrt";
 		else if ( $opertype==8192 ) $url_="jagg";
-		Res_Draw( 1, $tmp_phpself."?include=f_o_".$url_.".php&opertype=$opertype&sess_id=$sess_id", "", "", $php_mm_tip[0] );
+		Res_Draw( 1, $tmp_phpself."?include=f_o_".$url_.".php&div_hide=1&opertype=$opertype&sess_id=$sess_id", "", "", $php_mm_tip[0] );
 	}
 } else {
-	$operid_=$_GET["opertype"];
-	if ( $operid_."."<>"." ) $opertype=$operid_*1; else $opertype=64;
+	$opertype=$_GET["opertype"]*1; if ( $opertype<1 ) $opertype=64;
 	echo "
 
 <form method='post' action='$tmp_phpself'>";
@@ -120,7 +115,7 @@ if ( $submit1!="" ) {
 		$arr_menu[0]["name"]="&nbsp;$title_&nbsp;";
 		ArrMenu( $arr_menu );
 		echo "
-			<select class='sel' name='opertype' style='width:100px'>";
+			<select class='sel sel_h0' name='opertype' style='width:200px'>";
 		for ( $i=0; $i<count( $operspriv ); $i++ ) for ( $j=0; $j<count( $opermyid ); $j++ )
 		if ( $opermyid[$j]==$operspriv[$i] ) {
 //			if (( $userCoo==9 ) | (( $userCoo==3 ) & ( $opermyid[$j]*1<2 )));//oper #2 only for root
@@ -226,7 +221,7 @@ if ( $submit1!="" ) {
 		echo "
 			<td $cjust style='height:24px' width='20px'>";
 		if ( $userCoo>0 & $userCoo!=9 ) echo "
-			<input class='y_chk' id='cw_cb$iii$k' name='cows_checkboxes[$row[0]]' type='checkbox' onclick='test0( \"$iii\", \"cw_cb\" )'></td>";
+			<input class='y_chk' id='cw_cb$iii$k' name='cows_checkboxes[".$row[0]."]' type='checkbox' onclick='test0( \"$iii\", \"cw_cb\" )'></td>";
 		echo "
 			<td $rjust width='7%'>".$kk."</td>
 			<td $rjust width='60px' style='color:$z_col'><b>".$cownum_div.$row[1].$cownum_div1."</b></td>
