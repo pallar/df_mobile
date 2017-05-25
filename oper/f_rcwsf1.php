@@ -1,10 +1,8 @@
 <?php
-/*
-DF_2: oper/f_rcwsf1.php
+/* DF_2: oper/f_rcwsf1.php
 group operations clear session
-created: 25.05.2006
-modified: 11.09.2012
-*/
+c: 25.05.2006
+m: 11.09.2012 */
 
 //destroy current session data [BEGIN]
 //delete the session cookie

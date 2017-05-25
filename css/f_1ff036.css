@@ -10,7 +10,7 @@
 
 .btn {-moz-border-radius:0; border-radius:0;}
 .btn, .sel, .txt {-moz-appearance:none;}
-.btn_h0 {height:25px;}
-.sel_h0 {height:25px; padding:0 5px 0 5px;}
-.tbl_h0 {height:25px; width:100%;}
-.txt_h0 {-moz-box-sizing:border-box; height:25px; padding:0 5px 0 5px;}
+.btn_h0 {height:29px;}
+.sel_h0 {height:29px; padding:0 5px 0 5px;}
+.tbl_h0 {height:29px; width:100%;}
+.txt_h0 {-moz-box-sizing:border-box; height:29px; padding:0 5px 0 5px;}
