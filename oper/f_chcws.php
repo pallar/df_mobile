@@ -2,7 +2,7 @@
 /* DF_2: oper/f_chcws.php
 form: cows operations: get cows from list
 c: 09.01.2006
-m: 23.05.2017 */
+m: 26.05.2017 */
 
 $_list_height=$_height-200;
 
@@ -51,7 +51,24 @@ if (( $filts0&4 )==4 ) $filts0_3="checked"; else $filts0_3="";
 if (( $filts0&32 )==32 ) $filts0_6="checked"; else $filts0_6="";
 
 $op_php=$_GET["include"];
-if ( $op_php."."!="." ) {
+if ( $op_php."."!="." | $add_oper."."!="." ) {
+	if ( $add_oper."."!="." ) {
+		$opertype=$_GET["opertype"]*1;
+		if ( $opertype==1 ) $url_='mlk';
+		else if ( $opertype==2 ) $url_="mlkt";
+		else if ( $opertype==4 ) $url_="meas";
+		else if ( $opertype==8 ) $url_="care";
+		else if ( $opertype==16 ) $url_="cond";
+		else if ( $opertype==32 ) $url_="vacc";
+		else if ( $opertype==64 ) $url_="mov";
+		else if ( $opertype==128 | $opertype==256 ) $url_="insm";
+		else if ( $opertype==512 ) $url_="rect";
+		else if ( $opertype==1024 ) $url_="abrt";
+		else if ( $opertype==2048 ) $url_="abrt";
+		else if ( $opertype==4096 ) $url_="abrt";
+		else if ( $opertype==8192 ) $url_="jagg";
+		$op_php="f_o_".$url_.".php";
+	}
 	include( "$op_php" );
 	return;
 }
