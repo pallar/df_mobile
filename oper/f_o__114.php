@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_jagg.php
 INSERT oper -8192 (114) [jagging and "disable milking"]
 c: 10.08.2009
-m: 23.03.2017 */
+m: 02.06.2017 */
 
 function Date_Decode( $dates__ ) {
 	$dt=split( "-", $dates__ ); $dd=$dt[0]; $mm=$dt[1]; $yy=$dt[2];
@@ -16,9 +16,6 @@ function Arr_s_Pack( $arr_s1, $arr_s2, $arr_s3, $arr_s9 ) {
 }
 
 	include_once( "f_o__000.php" );
-
-	$dbt_ext="_o";
-
 	$ik=count( $cows_arr ); if ( $ik>1 ) $ik--;
 	if ( $cows_arr[0]=="" ) { $cows_arr[0]=CookieGet( "ccwi" )*1; CookieSet( "ccwi", "" ); $key="11111111"; }
 	for ( $i=0; $i<$ik; $i++ ) {
@@ -26,7 +23,6 @@ function Arr_s_Pack( $arr_s1, $arr_s2, $arr_s3, $arr_s9 ) {
 		$c2_=$_POST["c2_"];
 		$c3_=$_POST["c3_"];
 		$c9_=$_POST["c9_"];
-//
 		$i1=10000+$i*1; $i2=20000+$i*1; $i3=30000+$i*1; $i4=40000+$i*1; $i5=50000+$i*1;
 		$cow_id=$cows_arr[$i]*1;
 		$opdate=split( "-", $dates_[$i] ); $d1=$opdate[0]; $m1=$opdate[1]; $y1=$opdate[2];

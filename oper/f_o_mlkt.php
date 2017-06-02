@@ -2,51 +2,21 @@
 /* DF_2: oper/f_o_mlkt.php
 oper ----2 (102) [milk testing]
 c: 09.01.2006
-m: 19.05.2017 */
+m: 02.06.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
-$t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
-if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
-
 if ( strlen( $key )>8 ) {
-	$keys=split( ":", $key ); $cow_id=$keys[2];
-	$nosession=1;
-	$dmY=$_GET["row_date"];
-	$co=$_GET["row17"];
 	$somop=$_GET["row8"];
 	$somo1=$_GET["row9"];
 	$fatp=$_GET["row10"];
 	$albp=$_GET["row11"];
-	$div_hide=1;
 } else {
-	$nosession=-1;
-	$dmY="";
-	$co="";
 	$somop="";
 	$somo1="";
 	$fatp="";
 	$albp="";
-	$key="";
-	$div_hide=-1;
 }
-if ( $varsession==1 ) {
-	$div_hide=1;
-	$add_oper_type="button";
-	$op_d1=date( d ); $op_m1=date( m ); $op_y1=date( Y );
-	$modif_Ymd=$op_y1."-".$op_m1."-".$op_d1; $modif_His=date( "H:i:s" );
-	$dmY=$op_d1."-".$op_m1."-".$op_y1;
-} else {
-	$add_oper_type="submit";
-	include( "../oper/f_rcwsf.php" );
-	include( "../oper/f_oprwdp.php" );
-}
-if ( strlen( $key )>8 ) $add_oper_tip=$php_mm["_06_forward_update_btn_tip"];
-else $add_oper_tip=$php_mm["_06_forward_btn_tip"];
-
-$dbt=$opers; Toper_create( $dbt );
-
-$_list_height=$_height-200;
 
 $add_oper=$_POST["add_oper"];
 if ( $add_oper!="" ) {
@@ -82,7 +52,7 @@ if ( $add_oper!="" ) {
 	$query="SELECT $cows.id, $cows.cow_num, $cows.nick, $groups.nick FROM $cows, $groups WHERE $groups.id=$cows.gr_id";
 	if ( $div_hide!=1 ) $query.=" ORDER BY gr_id, cow_num*1"; else $query.=" AND $cows.id=$cow_id";
 	if ( $userCoo!=9 ) echo "
-<input class='btn gradient_0f0 btn_h0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype*1].")...'>&nbsp;";
+<input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype].")...'>&nbsp;";
 	if ( $div_hide!=1 ) include_once( "../oper/f_dt.php" );//page's date
 	else if ( $varsession!=1 & $userCoo!=9 ) echo "
 &nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";

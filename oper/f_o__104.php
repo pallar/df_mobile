@@ -2,12 +2,8 @@
 /* DF_2: oper/f_o_care.php
 INSERT oper ----8 (104) [care]
 c: 09.01.2006
-m: 10.11.2015 */
+m: 02.06.2017 */
 	include_once( "f_o__000.php" );
-
-	$dbt_ext="_o";
-	$dbt=$opers; Toper_create( $dbt );
-
 	$dont_recalc=-1;
 	$ik=count( $cows_arr ); if ( $ik>1 ) $ik--;
 	for ( $i=0; $i<$ik; $i++ ) {
@@ -23,7 +19,6 @@ m: 10.11.2015 */
 		$d4_=$_POST["d4_"];
 		$d7_=$_POST["d7_"];
 		$d8_=$_POST["d8_"];
-//
 		$co=trim( $co_[$i] );
 		$cow_id=$cows_arr[$i]*1;
 		$opdate=split( "-", $dates_[$i] ); $d1=$opdate[0]; $m1=$opdate[1]; $y1=$opdate[2];

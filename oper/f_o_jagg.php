@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_jagg.php
 oper -8192 (114) [jagging and "disable milking"]
 c: 10.08.2009
-m: 19.05.2017 */
+m: 02.06.2017 */
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -48,7 +48,7 @@ if ( $add_oper!="" ) {
 	}
 	if ( $varsession!=1 ) include_once( "../oper/f_oprwd.php" );
 	if ( $userCoo!=9 ) echo "
-<input class='btn gradient_0f0 btn_h0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype*1].")...'>&nbsp;";
+<input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype].")...'>&nbsp;";
 	if ( $div_hide!=1 ) include_once( "../oper/f_dt.php" );//page's date
 	if ( $varsession!=1 ) echo "<br><br>";
 	echo "

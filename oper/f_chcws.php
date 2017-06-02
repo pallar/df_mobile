@@ -2,7 +2,7 @@
 /* DF_2: oper/f_chcws.php
 form: cows operations: get cows from list
 c: 09.01.2006
-m: 26.05.2017 */
+m: 02.06.2017 */
 
 $_list_height=$_height-200;
 
@@ -69,6 +69,7 @@ if ( $op_php."."!="." | $add_oper."."!="." ) {
 		else if ( $opertype==8192 ) $url_="jagg";
 		$op_php="f_o_".$url_.".php";
 	}
+	include( "f_opvars.php" );
 	include( "$op_php" );
 	return;
 }
@@ -197,7 +198,7 @@ if ( $submit1!="" ) {
 		<td colspan='3'></td>
 	</tr>
 	</table>";
-	$groups_arr=split( ',', $sess_str );
+	$groups_arr=split( ",", $sess_str );
 	for ( $i=0; $i<count( $groups_arr )-1; $i++ ) {
 		$grnick=$gr_nick[$groups_arr[$i]];
 		$iii=$i; while ( strlen( $iii )<4 ) $iii="0".$iii;

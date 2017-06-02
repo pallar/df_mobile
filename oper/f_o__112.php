@@ -2,12 +2,8 @@
 /* DF_2: oper/f_o_abrt.php
 INSERT oper -1024/-2048 (111/112) [parturition & abort]
 c: 09.01.2006
-m: 10.11.2015 */
+m: 02.06.2017 */
 	include_once( "f_o__000.php" );
-
-	$dbt_ext="_o";
-	$dbt=$opers; Toper_create( $dbt );
-
 	$dont_recalc=-1;
 	$ik=count( $cows_arr ); if ( $ik>1 ) $ik--;
 	for ( $i=0; $i<$ik; $i++ ) {
@@ -90,5 +86,5 @@ m: 10.11.2015 */
 		 '$co',
 		 '$opertype', '$cow_id', '$userCoo', '$modif_Ymd', '$modif_His' )" );
 	}
-//	include_once( "../oper/f_o__z01.php" );//auto_prep_zapusk
+//	include_once( "f_o__z01.php" );//auto_prep_zapusk
 ?>

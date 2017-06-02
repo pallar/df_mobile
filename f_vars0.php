@@ -2,7 +2,7 @@
 /* DF_2: f_vars0.php
 init: main vars
 c: 14.10.2008
-m: 07.04.2017 */
+m: 02.06.2017 */
 
 ob_start();
 
@@ -28,54 +28,55 @@ if ( $grs_colors==1 ) include( "f_vars1.php" );
 $devs_onmnemo=8;//devices on mnemo
 $devs_onmnem1=32;//devices on normalization mnemo
 
-$hDir['cache']="cache/";
-$hDir['forms']="forms/";
-$hDir['locales']="locales/";
-$hDir['man']="help/";
-$hDir['oper']="oper/";
-$hDir['reps']="reports/";
-$hDir['themes']="themes/";
-$hDir['gd']="lib/jpgraph-1.21b/src/";
+$hDir["cache"]="cache/";
+if ( $ANGULAR_IS_USED!=0 ) $hDir["forms"]="_view/";
+else $hDir["forms"]="forms/";
+$hDir["locales"]="locales/";
+$hDir["man"]="help/";
+$hDir["oper"]="oper/";
+$hDir["reps"]="reports/";
+$hDir["themes"]="themes/";
+$hDir["gd"]="lib/jpgraph-1.21b/src/";
 
-$hFrm['0000']="index.php";
-$hFrm['0010']="f__mnem0.php";
-$hFrm['9900']="index1.php";
-$hFrm['9910']="f__mnem1.php";
+$hFrm["0000"]="index.php";
+$hFrm["0010"]="f__mnem0.php";
+$hFrm["9900"]="index1.php";
+$hFrm["9910"]="f__mnem1.php";
 
-$hFrm['0100']=$hDir['forms']."f__parl.php";
-$hFrm['0200']=$hDir['forms']."f__todo.php";
-$hFrm['0300']=$hDir['forms']."f__reps.php";
-$hFrm['0310']=$hDir['forms']."f__rep.php";
-$hFrm['0311']=$hDir['forms']."f__rep1.php";
-$hFrm['0500']=$hDir['forms']."f__cards.php";
-$hFrm['0600']=$hDir['forms']."f__ops.php";
-$hFrm['0700']=$hDir['forms']."f__conf.php";
+$hFrm["0100"]=$hDir["forms"]."f__parl.php";
+$hFrm["0200"]=$hDir["forms"]."f__todo.php";
+$hFrm["0300"]=$hDir["forms"]."f__reps.php";
+$hFrm["0310"]=$hDir["forms"]."f__rep.php";
+$hFrm["0311"]=$hDir["forms"]."f__rep1.php";
+$hFrm["0500"]=$hDir["forms"]."f__cards.php";
+$hFrm["0600"]=$hDir["forms"]."f__ops.php";
+$hFrm["0700"]=$hDir["forms"]."f__conf.php";
 
-$hFrm['0011']=$hDir['forms']."f__login.php";
-$hFrm['0012']=$hDir['forms']."f__per.php";
+$hFrm["0011"]=$hDir["forms"]."f__login.php";
+$hFrm["0012"]=$hDir["forms"]."f__per.php";
 
-$hFrm['0013']=$hDir['forms']."f__dfexp.php";
-$hFrm['0014']=$hDir['forms']."f__dfimp.php";
+$hFrm["0013"]=$hDir["forms"]."f__dfexp.php";
+$hFrm["0014"]=$hDir["forms"]."f__dfimp.php";
 
-$hFrm['0610']=$hDir['oper']."f_chcws.php";
+$hFrm["0610"]=$hDir["oper"]."f_chcws.php";
 
-$hFrm['0510']=$hDir['forms']."f__ccw_l.php";
-$hFrm['0520']=$hDir['forms']."f__ccw.php";
-$hFrm['0521']=$hDir['forms']."f__ccw11.php";
-$hFrm['0522']=$hDir['forms']."f__ccw12.php";
-$hFrm['0530']=$hDir['forms']."f__cox.php";
-$hFrm['0540']=$hDir['forms']."f__cusr.php";
+$hFrm["0510"]=$hDir["forms"]."f__ccw_l.php";
+$hFrm["0520"]=$hDir["forms"]."f__ccw.php";
+$hFrm["0521"]=$hDir["forms"]."f__ccw11.php";
+$hFrm["0522"]=$hDir["forms"]."f__ccw12.php";
+$hFrm["0530"]=$hDir["forms"]."f__cox.php";
+$hFrm["0540"]=$hDir["forms"]."f__cusr.php";
 
-$hRep['ccw1']=$hDir['reps']."f_ccw1.php";
-$hRep['m']=$hDir['reps']."f_m.php";
-$hRep['mcw_gs']=$hDir['reps']."f_mcw_gs.php";
-$hRep['mcws0']=$hDir['reps']."f_mcws0.php";
-$hRep['mcws1']=$hDir['reps']."f_mcws1.php";
-$hRep['mcws1']=$hDir['reps']."f_mcws1.php";
-$hRep['mlact']=$hDir['reps']."f_mlact.php";
-$hRep['o']=$hDir['reps']."f_o.php";
-$hRep['ofore2']=$hDir['reps']."f_ofore2.php";
-$hRep['ofore3']=$hDir['reps']."f_ofore3.php";
+$hRep["ccw1"]=$hDir["reps"]."f_ccw1.php";
+$hRep["m"]=$hDir["reps"]."f_m.php";
+$hRep["mcw_gs"]=$hDir["reps"]."f_mcw_gs.php";
+$hRep["mcws0"]=$hDir["reps"]."f_mcws0.php";
+$hRep["mcws1"]=$hDir["reps"]."f_mcws1.php";
+$hRep["mcws1"]=$hDir["reps"]."f_mcws1.php";
+$hRep["mlact"]=$hDir["reps"]."f_mlact.php";
+$hRep["o"]=$hDir["reps"]."f_o.php";
+$hRep["ofore2"]=$hDir["reps"]."f_ofore2.php";
+$hRep["ofore3"]=$hDir["reps"]."f_ofore3.php";
 
 $hcss["f_0.css"]="f_0.css";
 $hcss["f_1ff036.css"]="f_1ff036.css";

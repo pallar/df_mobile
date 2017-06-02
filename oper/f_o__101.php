@@ -3,10 +3,8 @@
 INSERT oper ----1 (101) [milking]
 c: 09.01.2006
 m: 23.03.2017 */
-	include_once( "../f_o__000.php" );
-
 	$dbt_ext="_m";
-
+	include_once( "../f_o__000.php" );
 	$dont_recalc=-1;
 	$ik=count( $cows_arr ); if ( $ik>1 ) $ik--;
 	for ( $i=0; $i<count( $cows_arr )-1; $i++ ) {

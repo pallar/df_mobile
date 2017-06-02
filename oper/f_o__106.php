@@ -2,12 +2,8 @@
 /* DF_2: oper/f_o_vacc.php
 INSERT oper ---32 (106) [vaccination]
 c: 09.01.2006
-m: 10.11.2015 */
+m: 02.06.2017 */
 	include_once( "f_o__000.php" );
-
-	$dbt_ext="_o";
-	$dbt=$opers; Toper_create( $dbt );
-
 	$dont_recalc=-1;
 	$ik=count( $cows_arr ); if ( $ik>1 ) $ik--;
 	for ( $i=0; $i<$ik; $i++ ) {

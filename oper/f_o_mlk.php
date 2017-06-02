@@ -67,9 +67,6 @@ if ( $varsession==1 ) {
 	include( "../locales/$lang/f_060001._$lang" );
 }
 
-if ( strlen( $key )>8 ) $add_oper_tip=$php_mm["_06_forward_update_btn_tip"];
-else $add_oper_tip=$php_mm["_06_forward_btn_tip"];
-
 $add_oper=$_POST["add_oper"];
 if ( $add_oper!="" ) {
 	include( "../oper/f_o__101.php" );
@@ -96,20 +93,20 @@ function milksess_keyp( i_ ) {
 	echo "
 <script language='JavaScript' src='../dflib/f_input.js'></script>";
 	include_once( "../oper/f_dtdiv.php" );//<tr>'s date
-	$td1w='10px';
-	$td2w='40px';
-	$td3w='60px';
-	$td4w='60px';
-	$td5w='20px';
-	$td9w='30px';
-	$tdew='60px';
+	$td1w="10px";
+	$td2w="40px";
+	$td3w="60px";
+	$td4w="60px";
+	$td5w="20px";
+	$td9w="30px";
+	$tdew="60px";
 	if ( $div_hide!=1 ) {
-		if ( count( $cows_arr )>99 ) $td1w='20px';
-		if ( count( $cows_arr )>999 ) $td1w='30px';
+		if ( count( $cows_arr )>99 ) $td1w="20px";
+		if ( count( $cows_arr )>999 ) $td1w="30px";
 	}
 	if ( $varsession!=1 ) include_once( "../oper/f_oprwd.php" );
 	if ( $userCoo!=9 ) echo "
-<input class='btn gradient_0f0 btn_h0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype*1].")...'>&nbsp;";
+<input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype].")...'>&nbsp;";
 	if ( $div_hide!=1 ) include_once( "../oper/f_dt.php" );//page's date
 	else if ( $varsession!=1 & $userCoo!=9 ) echo "
 &nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";

@@ -2,23 +2,18 @@
 /* DF_2: oper/f_o_insm.php
 INSERT oper --128/--256 (108/109) [insemination]
 c: 09.01.2006
-m: 10.11.2015 */
+m: 02.06.2017 */
 	include_once( "f_o__000.php" );
-
-	$dbt_ext="_o";
-	$dbt=$opers; Toper_create( $dbt );
-
 	$dont_recalc=-1;
 	$ik=count( $cows_arr ); if ( $ik>1 ) $ik--;
 	for ( $i=0; $i<$ik; $i++ ) {
 		$oxs_=$_POST["oxs_"];
-//
+		$ox_id=$oxs_[$i]*1;
 		$co=trim( $co_[$i] );
 		$cow_id=$cows_arr[$i]*1;
 		$opdate=split( "-", $dates_[$i] ); $d1=$opdate[0]; $m1=$opdate[1]; $y1=$opdate[2];
 		$op_Ymd=$y1."-".$m1."-".$d1;
 		$old_dmY=$z00;
-		$ox_id=$oxs_[$i]*1;
 		include_once( "f_o__zzz.php" );
 		if ( $old_dmY!=$dates_[0] ) {
 			if ( $co*1!=523041 & $cow_id>1 ) {
