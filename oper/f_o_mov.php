@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_mov.php
 oper ---64 (107) [moving & death]
 c: 09.01.2006
-m: 02.06.2017 */
+m: 06.06.2017 */
 
 $dbt_ext="_o";//DON'T MOVE THIS BELOW!
 
@@ -28,38 +28,51 @@ if ( $add_oper!="" ) {
 	mysql_query( "DROP TABLE IF EXISTS $tmpdbt" );
 	include( "../oper/f_rcwsf1.php" );
 } else {
+	$th[1]=$ged["Group"];
+	$th[2]=$ged["Number"];
+	$th[3]=$ged["Nick"];
+	$th[4]=$ged["Departm."];
+	$th[5]=$ged["Comment."];
+	$th[6]=$ged["Date"];
+	$_mod_rep_CSS=1;
+	$_mod_rep_CSS_content="
+	/* Label the data */
+	#rep_tbody td:nth-of-type(1) { background:#ddd; }
+	#rep_tbody td:nth-of-type(1):before { content:\"".$th[1]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(2):before { content:\"".$th[2]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(3):before { content:\"".$th[3]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(4):before { content:\"".$th[4]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(5):before { content:\"".$th[5]."\"; text-align:left; top:0; }
+	#rep_tbody td:nth-of-type(6):before { content:\"".$th[6]."\"; text-align:left; top:0; }";
 	include_once( "../oper/f_dtdiv.php" );//<tr>'s date
-	$td1w="10px";
 	$td2w="60px";
 	$td3w="60px";
 	$td4w="170px";
 	$td5w="70px";
 	$tddw="60px";
 	$tdew="60px";
-	if ( $div_hide!=1 ) {
-		if ( count( $cows_arr )>99 ) $td1w="20px";
-		if ( count( $cows_arr )>999 ) $td1w="30px";
-	} else {
-		$td5w="200px";
-		$tddw="300px";
-	}
 	if ( $varsession!=1 ) include_once( "../oper/f_oprwd.php" );
 	$query="SELECT $cows.id, $cows.cow_num, $cows.nick, $groups.nick FROM $cows, $groups WHERE $groups.id=$cows.gr_id";
 	if ( $div_hide!=1 ) $query.=" ORDER BY gr_id, cow_num*1"; else $query.=" AND $cows.id=$cow_id";
 	$res=mysql_query( $query, $db );
+	echo "
+<table><tr><td height='3px'></td></tr></table>
+
+<div class='mk' style='border:0; height:90px; margin:0; overflow-x:hidden; overflow-y:scroll'>";
 	if ( $userCoo!=9 ) echo "
-<input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype].")...'>&nbsp;";
+	<input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:91px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype].")...'>&nbsp;";
 	if ( $div_hide!=1 ) include_once( "../oper/f_dt.php" );//page's date
 	else if ( $varsession!=1 & $userCoo!=9 ) echo "&nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";
+	echo "
+</div>";
 	if ( $div_hide!=1 ) echo "
-
-<div style='height:59px; $thead_style'>"; else if ( $nosession==1 ) echo "<br><br>";
+<div style='height:59px; $thead_style'>";
+	else if ( $nosession==1 ) echo "<br><br>";
 	echo "
 	<table id='OPER_TABLE' class='st2'>
 	<tr $cjust class='st_title2' style='height:27px'>";
 	if ( $div_hide!=1 ) {
 		echo "
-		<td rowspan='2' width='$td1w'>&nbsp;</td>
 		<td rowspan='2' width='$td2w'>".$ged["Group"]."</td>
 		<td rowspan='2' width='$td3w'>".$ged["Number"]."</td>
 		<td rowspan='2' width='$td4w'>".$ged["Nick"]."</td>";
@@ -92,7 +105,6 @@ if ( $add_oper!="" ) {
 			echo "
 	<tr ".GrTrCol().">";
 			if ( $div_hide!=1 ) echo "
-		<td $cjust rowspan='2' width='$td1w'>".$j."</td>
 		<td $cjust rowspan='2' title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
 		<td $rjust rowspan='2' title='".$cownum_div.$row[1].$cownum_div1."' width='$td3w'><b>".$cownum_div.StrCutLen1( $row[1], 9, $contentCharset ).$cownum_div1."</b></td>
 		<td $cjust rowspan='2' title='".StrCutLen1( $row[2], 59, $contentCharset ) ."' width='$td4w'>".StrCutLen1( $row[2], 11, $contentCharset )."</td>";

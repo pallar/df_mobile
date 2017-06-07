@@ -2,7 +2,7 @@
 /* DF_2: dflib/f_func.php
 common functions
 c: 01.02.2006
-m: 12.04.2017 */
+m: 06.06.2017 */
 
 include( "f_dbnew3.php" );
 
@@ -415,14 +415,13 @@ function CookieSetSs( $cname, $cvalue, $ss ) {
 	setcookie( $cname, $cvalue, time()+$ss, "/" );
 }
 
-function ArrMenu( $arr_menu ) {
-	$s="<font style='color:#666666; font:10pt Tahoma,sans-serif; font-weight:bold; line-height:28px'>";
-	for ( $i=0; $i<count( $arr_menu ); $i++ ) {
-		if ( $arr_menu[$i]["url"]=="" ) {
-			$s=$s.$arr_menu[$i]['name']."<font style='color:#000000; font:10pt Tahoma,sans-serif'>&nbsp;&lt;&#8226;&#8226;&nbsp;</font>";
-		} else {
-			$s=$s."<a href=".$arr_menu[$i]['url'].">".$arr_menu[$i]['name']."</a><font style='color:#000000; font:10pt sans-serif'>&nbsp;&lt;&#8226;&#8226;&nbsp;</font>";
-		}
+function ArrMenu( $menuArr ) {
+	$s="<font style='color:#666666; font:10pt Tahoma,sans-serif; font-weight:bold; line-height:28px;'>";
+	$cnt=count( $menuArr );
+	for ( $i=0; $i<$cnt; $i++ ) {
+		if ( $menuArr[$i]["url"]=="" ) $s=$s.$menuArr[$i]["name"];
+		else $s=$s."<a href=".$menuArr[$i]["url"].">".$menuArr[$i]["name"]."</a>";
+		if ( $cnt>1 ) $s=$s."<font style='color:#0; font:10pt sans-serif'>&nbsp;&lt;&lt;&nbsp;</font>";
 	}
 	$s=$s."</font>";
 	echo $s;

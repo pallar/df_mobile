@@ -1,7 +1,7 @@
 <?php
 /* DF_2: oper/f_opvars.php
 c: 02.06.2017
-m: 02.06.2017 */
+m: 06.06.2017 */
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -35,5 +35,5 @@ else $add_oper_tip=$php_mm["_06_forward_btn_tip"];
 
 $dbt=$opers; Toper_create( $dbt );
 
-$_list_height=$_height-200;
+$_list_height=$_height-300;
 ?>

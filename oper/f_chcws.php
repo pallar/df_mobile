@@ -157,77 +157,50 @@ if ( $submit1!="" ) {
 </table>
 <table><tr><td height='3px'></td></tr></table>
 
-<div class='mk' style='border:0; height:90px; margin:0; overflow-x:hidden; overflow-y:scroll'>
+<div class='mk' style='border:0; height:90px; margin:0; overflow-x:hidden; overflow-y:scroll; padding:10px 10px 0 10px;'>
 	<table width='100%'>
-	<tr height='10px'>
-		<td colspan='5'></td>
-	</tr>
 	<tr $cjust>
-		<td width='10px' $vtjust></td>
 		<td $ljust $vtjust>";
 	if ( $userCoo!=9 ) echo "
 			<input class='btn btn_h0 gradient_f00' style='width:91px' type='submit' name='submit1' value='".$php_mm["_com_forward_btn_"]."...'>";
 	echo "
 		</td>
-		<td width='31px' title='".$ged["filts0_3"]."'>&nbsp;<input class='y_chk' type='checkbox' $filts0_3 id='f3' onclick='Checkboxes_ToCoo( \"_filts0\", \"f\", 1, 6 )'>".$ged["filts0_3~"]."</td>
-		<td width='31px' title='".$ged["filts0_6"]."'>&nbsp;<input class='y_chk' type='checkbox' $filts0_6 id='f6' onclick='Checkboxes_ToCoo( \"_filts0\", \"f\", 1, 6 )'>".$ged["filts0_6~"]."</td>
-		<td width='10px' $vtjust></td>
+		<td title='".$ged["filts0_3"]."' width='31px'>&nbsp;<input class='y_chk' type='checkbox' $filts0_3 id='f3' onclick='Checkboxes_ToCoo( \"_filts0\", \"f\", 1, 6 )'>".$ged["filts0_3~"]."</td>
+		<td title='".$ged["filts0_6"]."' width='31px'>&nbsp;<input class='y_chk' type='checkbox' $filts0_6 id='f6' onclick='Checkboxes_ToCoo( \"_filts0\", \"f\", 1, 6 )'>".$ged["filts0_6~"]."</td>
 	</tr>
-	<tr height='10px'>
-		<td colspan='5'></td>
-	</tr>
+	<tr height='10px'><td colspan='3'></td></tr>
 	<tr>
-		<td width='10px' $vtjust></td>
 		<td colspan='3' $vtjust>
 			<table cellspacing='1' class='st2'>";
 	CwsGroupTableTitle_Show( -1, 0 );
 	echo "
 			</table>
 		</td>
-		<td width='10px' $vtjust></td>
 	</tr>
 	</table>
 </div>
 <table><tr><td height='3px'></td></tr></table>
 
-<div class='mk' style='border:0; height:".$_list_height."px; margin:0; overflow-x:hidden; overflow-y:scroll'>";
+<div class='mk' style='border:0; height:".$_list_height."px; margin:0; overflow-x:hidden; overflow-y:scroll; padding:10px 10px 0 10px;'>";
 	include( "../dflib/f_setcbs.js" );
-	echo "
-	<table width='100%'>
-	<tr height='10px'>
-		<td colspan='3'></td>
-	</tr>
-	</table>";
 	$groups_arr=split( ",", $sess_str );
 	for ( $i=0; $i<count( $groups_arr )-1; $i++ ) {
 		$grnick=$gr_nick[$groups_arr[$i]];
 		$iii=$i; while ( strlen( $iii )<4 ) $iii="0".$iii;
 		echo "
-    <table width='100%'>
-    <tr>
-		<td width='10px'></td>
-		<td>
-			<table cellspacing='1' class='st2'>
-			<tr $cjust>
-				<td width='31px' title='".$php_mm["_com_select_all_in_group_"]." \"$grnick\""."' $vtjust>";
+	<table cellspacing='1' class='st2' style='width:100%'>
+	<tr $cjust>
+		<td width='31px' title='".$php_mm["_com_select_all_in_group_"]." \"$grnick\""."' $vtjust>";
 		if ( $userCoo>0 & $userCoo!=9 ) echo "
-					<input class='y_chk' id='gr_cb".$iii."0' type='checkbox' onclick='gr_set0( \"$iii\", 0, \"cw_cb\" )'>";
+			<input class='y_chk' id='gr_cb".$iii."0' type='checkbox' onclick='gr_set0( \"$iii\", 0, \"cw_cb\" )'>";
 		echo "
-				</td>
-				<td $ljust $vtjust title='".$ged["Group"]." \"$grnick\"'>
-					<input class='btn btn_h0 gradient_0f0' style='width:55px' type='button' onclick='visibility_chg( \"group\", $i )' value='+/-'>&nbsp;&nbsp;".$ged["Group"]." \"<b>$grnick</b>\"
-				</td>
-			</tr>
-			</table>
 		</td>
-		<td width='10px'></td>
-    </tr>
-    </table>
-    <table id='group$i' width='100%'>
-    <tr>
-		<td width='10px'></td>
-		<td>
-			<table cellspacing='1' class='st2'>";
+		<td $ljust $vtjust title='".$ged["Group"]." \"$grnick\"'>
+			<input class='btn btn_h0 gradient_0f0' style='width:55px' type='button' onclick='visibility_chg( \"group\", $i )' value='+/-'>&nbsp;&nbsp;".$ged["Group"]." \"<b>$grnick</b>\"
+		</td>
+	</tr>
+	</table>
+	<table cellspacing='1' class='st2' id='group$i' style='width:100%;'>";
 	$query="SELECT
 	 $cows.id, $cows.cow_num, $cows.nick,
 	 $cows.z_dates
@@ -244,32 +217,24 @@ if ( $submit1!="" ) {
 	$k=0;
 	while ( $row=mysql_fetch_row( $res )) {
 			echo "
-			<tr ".GrTrCol().">";
+	<tr ".GrTrCol().">";
 		$kk=$k+1;
 		$z_col="black"; if ( strlen( $row[3] )>0 ) $z_col="red";
 		echo "
-				<td $cjust style='height:28px; width:31px'>";
+		<td $cjust style='height:28px; width:31px'>";
 		if ( $userCoo>0 & $userCoo!=9 ) echo "
-					<input class='y_chk' id='cw_cb$iii$k' name='cows_checkboxes[".$row[0]."]' type='checkbox' onclick='test0( \"$iii\", \"cw_cb\" )'>";
+			<input class='y_chk' id='cw_cb$iii$k' name='cows_checkboxes[".$row[0]."]' type='checkbox' onclick='test0( \"$iii\", \"cw_cb\" )'>";
 		echo "
-				</td>
-				<td $rjust style='color:$z_col; width:60px'><b>".$cownum_div.$row[1].$cownum_div1."</b></td>
-				<td title='".$row[2]."'>".StrCutLen1( $row[2], 47, $contentCharset )."&nbsp;</td>
-			</tr>";
+		</td>
+		<td $rjust style='color:$z_col; width:60px'><b>".$cownum_div.$row[1].$cownum_div1."</b></td>
+		<td title='".$row[2]."'>".StrCutLen1( $row[2], 47, $contentCharset )."&nbsp;</td>
+	</tr>";
 		$k++;
 	}
 	$groups_arr_cnt[$i]=$k;
 	echo "
-			</table>
-		</td>
-		<td width='10px'></td>
-	</tr>
 	</table>
-	<table width='100%'>
-	<tr height='10px'>
-		<td colspan='4'></td>
-	</tr>
-	</table>";
+	<table><tr height='10px'><td></td></tr></table>";
 	}
 }
 echo "

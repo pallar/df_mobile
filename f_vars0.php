@@ -29,7 +29,7 @@ $devs_onmnemo=8;//devices on mnemo
 $devs_onmnem1=32;//devices on normalization mnemo
 
 $hDir["cache"]="cache/";
-if ( $ANGULAR_IS_USED!=0 ) $hDir["forms"]="_view/";
+if ( $ANGULAR_IS_USED>0 ) $hDir["forms"]="_view/";
 else $hDir["forms"]="forms/";
 $hDir["locales"]="locales/";
 $hDir["man"]="help/";
@@ -85,7 +85,7 @@ $hcss["f_1ch100.css"]="f_1ch100.css";
 $hcss["f_1op110.css"]="f_1op110.css";
 $hcss["f_1ch100.css"]="f_1ch100.css";
 
-if ( $ANGULAR_IS_USED!=0 ) {
+if ( $ANGULAR_IS_USED>0 ) {
 	$hcss["f_0.css"]="../css/".$hcss["f_0.css"];
 	$hcss["f_1ff036.css"]="../css/".$hcss["f_1ff036.css"];
 	$hcss["f_1ie060.css"]="../css/".$hcss["f_1ie060.css"];
