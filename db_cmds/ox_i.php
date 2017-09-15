@@ -2,7 +2,7 @@
 // DF_ajs: Insert Ox
 require_once "_db_conn.php";
 $__data = json_decode(file_get_contents("php://input"));
-// Escaping special characters from submitting data & storing in new variables
+// Zap special characters from submitting data
 $num = mysqli_real_escape_string($conn, $__data->num);
 $b_date = mysqli_real_escape_string($conn, $__data->b_date);
 $b_num = mysqli_real_escape_string($conn, $__data->b_num);

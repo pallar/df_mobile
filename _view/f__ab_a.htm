@@ -6,19 +6,19 @@
 		<button class="btn btn-danger" ng-click="B_form_close('cancel')">Cancel</button>
 	</div>
 	<div class="form-group">
-		<label for="Num">#:<span class="text-danger" ng-show="b_add.num.$invalid">&nbsp;REQUIRED!</span></label>
-		<input class="form-control" maxlength="6" name="num" placeholder="Enter Number" style="width:100px" type="text" ng-model="new_b.num" required>
+		<label for="Num">Number:<span class="text-danger" ng-show="b_add.num.$invalid">&nbsp;REQUIRED!</span></label>
+		<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="width:100px" type="text" ng-model="new_b.num" required>
 	</div>
 	<div class="form-group">
-		<label for="Comments">Comments:</label>
-		<input class="form-control" maxlength="10" name="comments" placeholder="Enter Comments" style="width:200px" type="text" ng-model="new_b.comments">
-	</div>
-	<div class="form-group">
-		<label for="National_Descr">National Description:</label>
-		<input class="form-control" name="national_descr" placeholder="Enter National Description" style="width:200px" type="text" ng-model="new_b.national_descr">
+		<label for="National_Descr">National Number:</label>
+		<input class="form-control" maxlength="30" name="national_descr" placeholder="Enter National Number" style="width:200px" type="text" ng-model="new_b.national_descr">
 	</div>
 	<div class="form-group">
 		<label for="Nick">Nick:</label>
-		<input class="form-control" name="nick" placeholder="Enter Nick" style="width:200px" type="text" ng-model="new_b.nick">
+		<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="width:200px" type="text" ng-model="new_b.nick">
+	</div>
+	<div class="form-group">
+		<label for="Comments">Comments:</label>
+		<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="width:200px" type="text" ng-model="new_b.comments">
 	</div>
 </form>

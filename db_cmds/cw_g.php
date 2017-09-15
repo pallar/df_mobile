@@ -4,12 +4,11 @@ require_once "_db_conn.php";
 $arr = array();
 $__data = json_decode(file_get_contents("php://input"));
 $__query = "SELECT
- id,
- b_date, b_num, national_descr,
- cow_num, nick,
- rfid_num,
+ id, b_date, b_num, national_descr,
+ cow_num, nick, rfid_num,
  breed_id, lot_id, gr_id, subgr_id,
- mth_id, fth_id
+ mth_id, fth_id,
+ comments, defects
  FROM f_cows
  WHERE id=$__data->id";
 $__res = mysqli_query($conn, $__query);

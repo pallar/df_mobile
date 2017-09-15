@@ -2,7 +2,7 @@
 /* DF_2: oper/f_oprwdp.php
 group operations rewind menu preparing ([OP]erations [R]e[W]in[D] menu)
 c: 25.05.2006
-m: 19.05.2017 */
+m: 04.09.2017 */
 
 $opertype=$_GET["opertype"];
 include( "../oper/f_opname.php" );

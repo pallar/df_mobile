@@ -91,10 +91,10 @@ include( "f__cw_e.htm" );
 		<tr>
 			<th width="80px"></th>
 			<th width="80px"></th>
-			<th width="80px">#</th>
+			<th width="80px">Num.</th>
 			<th>Nick</th>
 			<th width="100px">Date of Birth</th>
-			<th>Birth #</th>
+			<th>Birth Num.</th>
 		</tr>
 		<tr ng-repeat="detail in details | filter:search_query">
 			<td><button class="btn btn-warning" title="Edit Cow" ng-click="Cw_edit_form_show(detail)"><span class="glyphicon glyphicon-edit"></span></button></td>
@@ -114,6 +114,7 @@ include( "f__cw_e.htm" );
 </div>
 <!-- Controller -->
 <script src="../js/f_cws.js"></script>
+<script src="../dflib/ajax/jsql.js"></script>
 
 </body>
 </html>

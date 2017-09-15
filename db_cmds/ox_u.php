@@ -2,7 +2,7 @@
 // DF_ajs: Update Ox
 require_once "_db_conn.php";
 $__data = json_decode(file_get_contents("php://input"));
-// Escaping special characters from updated data
+// Zap special characters from updated data
 $id = mysqli_real_escape_string($conn, $__data->id);
 $num = mysqli_real_escape_string($conn, $__data->num);
 $b_date = mysqli_real_escape_string($conn, $__data->b_date);

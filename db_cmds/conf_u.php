@@ -2,7 +2,7 @@
 // DF_ajs: Update Conf
 require_once "_db_conn.php";
 $__data = json_decode(file_get_contents("php://input"));
-// Escaping special characters from updated data
+// Zap special characters from updated data
 $state = mysqli_real_escape_string($conn, $__data->state);
 $region = mysqli_real_escape_string($conn, $__data->region);
 $subregion = mysqli_real_escape_string($conn, $__data->subregion);

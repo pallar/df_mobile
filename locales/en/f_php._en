@@ -2,7 +2,7 @@
 /* DF: locales/en/f_php._en
 english locale
 c: 25.12.2005
-m: 03.05.2015 */
+m: 04.09.2017 */
 
 //DESCRIPTION=DF Ukraine, EN locale (409), utf-8
 //*****************************************************************************
@@ -194,19 +194,19 @@ $php_mm["_05_b_card_"]=$php_mm["_com_app_"].": Breed Card";
 $php_mm["_05_c_card_"]=$php_mm["_com_app_"].": Cow (heifer) Card";
 $php_mm["_05_o_card_"]=$php_mm["_com_app_"].": Bull Card";
 //form:06
-$php_mm["_06_"]="Operations - ".$php_mm["_com_app_"];
-$php_mm["_06_tip"]="Operation input";
-$php_mm["_06_level1_"]="change oper. type, change cows at group and press \"Next\"";
-$php_mm["_06_level1_tip"]="change oper. type, change cows at group and press \"Next\"";
-$php_mm["_06_ret_to_level1_"]="change type of operation and cows";
-$php_mm["_06_ret_to_level1_tip"]="ATTANTION! This will activate the clearing data in the table below!";
-$php_mm["_06_edit_"]=$php_mm["_com_app_"].": Edit the operation";
-$php_mm["_06_edit_tip"]="Edit the operation";
-$php_mm["_06_forward_btn_tip"]="Add the operation(s) to the database";
-$php_mm["_06_forward_update_btn_tip"]="Change the operation(s)";
-$php_mm["_06_forward_delete_btn_tip"]="Delete the operation(s)";
+$php_mm["_06_"]="Add Events - ".$php_mm["_com_app_"];
+$php_mm["_06_tip"]="New events";
+$php_mm["_06_level1_"]="choose events' type, choose cows and press \"Next\"";
+$php_mm["_06_level1_tip"]="choose events' type, choose cows and press \"Next\"";
+$php_mm["_06_ret_to_level1_"]="change events' type and cows";
+$php_mm["_06_ret_to_level1_tip"]="WARNING! Data in the table below will be erased!";
+$php_mm["_06_edit_"]="Edit Events - ".$php_mm["_com_app_"];
+$php_mm["_06_edit_tip"]="Edit events";
+$php_mm["_06_forward_btn_tip"]="Add events";
+$php_mm["_06_forward_update_btn_tip"]="Update events";
+$php_mm["_06_forward_delete_btn_tip"]="Delete events";
 $php_mm["_06_oper_deleted_"]="DELETED";
-$php_mm["_06_oper_inserted_list"]="List of added operations";
+$php_mm["_06_oper_inserted_list"]="Events that were added right now";
 //form:09
 $php_mm["_09_"]="User - ".$php_mm["_com_app_"];
 $php_mm["_09_user_"]="User:";
