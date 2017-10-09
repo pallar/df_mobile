@@ -133,6 +133,7 @@ function Period_Show() {
 		eid.style.visibility="visible";
 		eid.style.display="block";
 	 }, false );
+	Per_FromCoo();
 }
 
 </script>

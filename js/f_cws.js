@@ -1,5 +1,5 @@
 // DF_ajs: f_cws module
-var f_cws=angular.module('f_cws',['ngProgress']);
+var f_cws=angular.module('f_cws',[]);
 
 //var x=function($scope,$timeout,ngProgressFactory) {
 //	$scope.progressbar=ngProgressFactory.createInstance();
@@ -61,15 +61,25 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	$scope.cws_list_fill=function($event,el_class) {
 		var val=String($event.target.value); var dval=Number(val); var el=String("."+el_class);
 		var sqlWHERE="";
-		if(dval/1==dval) sqlWHERE="f_cows.cow_num>="+val+" ORDER BY f_cows.cow_num*1 LIMIT 100"; else sqlWHERE="f_cows.nick LIKE '%"+val+"%' ORDER BY f_cows.nick";
+		if(dval/1==dval) sqlWHERE="f_cows.cow_num*1>="+val+" ORDER BY f_cows.cow_num*1 LIMIT 100"; else sqlWHERE="f_cows.nick LIKE '%"+val+"%' ORDER BY f_cows.nick";
 		if(val.length===0) { $(el).empty(); return; }
 		var sqlQuery="SELECT f_cows.id,f_cows.cow_num,f_cows.nick,f__grs.nick FROM f_cows,f__grs WHERE f_cows.gr_id=f__grs.id AND "+sqlWHERE;
 		var lst=jsql(sqlQuery);
+//		var lst=[["241","1","11","111"],["242","2","22","222"]];
+//		alert(lst.length);
 		$(el).empty(); $(el).fadeOut(300);
 		if(lst!==null) {
-			$(el).append("<option></option>");
+			$(el).append("<option>Choose New Mom</option>");
 			for(i=0;i<lst.length;i++) $(el).append("<option value='"+lst[i][1]+".&nbsp;|&nbsp;"+lst[i][2]+"'>"+lst[i][1]+".&nbsp;|&nbsp;"+lst[i][2]+"&nbsp;|&nbsp;"+lst[i][3]+"</option>");
 			$(el).slideToggle(300);
+		}
+		var x=$(el).css("background-color");
+		if(x=="rgb(255, 255, 255)") {
+			$(el).css("background-color", "rgb(200, 255, 255)");
+			$(".mom-search").css("background-color", "rgb(200, 255, 255)");
+		} else {
+			$(el).css("background-color", "rgb(255, 255, 255)");
+			$(".mom-search").css("background-color", "rgb(255, 255, 255)");
 		}
 	}
 	
@@ -89,15 +99,23 @@ f_cws.controller('DbController',['$scope','$http',function($scope,$http) {
 	$scope.oxs_list_fill=function($event,el_class) {
 		var val=String($event.target.value); var dval=Number(val); var el=String("."+el_class);
 		var sqlWHERE="";
-		if(dval/1==dval) sqlWHERE="f_oxes.num>="+val+" ORDER BY f_oxes.num*1 LIMIT 100"; else sqlWHERE="f_oxes.nick LIKE '%"+val+"%' ORDER BY f_oxes.nick";
+		if(dval/1==dval) sqlWHERE="f_oxes.num*1>="+val+" ORDER BY f_oxes.num*1 LIMIT 100"; else sqlWHERE="f_oxes.nick LIKE '%"+val+"%' ORDER BY f_oxes.nick";
 		if(val.length===0) { $(el).empty(); return; }
 		var sqlQuery="SELECT f_oxes.id,f_oxes.num,f_oxes.nick,f__grs.nick FROM f_oxes,f__grs WHERE f_oxes.gr_id=f__grs.id AND "+sqlWHERE;
 		var lst=jsql(sqlQuery);
 		$(el).empty(); $(el).fadeOut(300);
 		if(lst!==null) {
-			$(el).append("<option></option>");
+			$(el).append("<option>Choose New Dad</option>");
 			for(i=0;i<lst.length;i++) $(el).append("<option value='"+lst[i][1]+".&nbsp;|&nbsp;"+lst[i][2]+"'>"+lst[i][1]+".&nbsp;|&nbsp;"+lst[i][2]+"&nbsp;|&nbsp;"+lst[i][3]+"</option>");
 			$(el).slideToggle(300);
+		}
+		var x=$(el).css("background-color");
+		if(x=="rgb(255, 255, 255)") {
+			$(el).css("background-color", "rgb(200, 255, 255)");
+			$(".dad-search").css("background-color", "rgb(200, 255, 255)");
+		} else {
+			$(el).css("background-color", "rgb(255, 255, 255)");
+			$(".dad-search").css("background-color", "rgb(255, 255, 255)");
 		}
 	}
 

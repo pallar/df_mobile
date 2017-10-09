@@ -12,6 +12,9 @@ if ( CookieGet( "_mobile" )*1==0 ) {
 	$_list_height=CookieGet( "_height" )*1-230;
 	$_content_style="style='height:".$_list_height."px'";
 } else $_content_style="";
+
+if ( CookieGet( "_mobile" )*1==0 ) $_card_content_style="style=\"height:".$_list_height."px; margin:0; padding:15px; overflow-y:auto;\"";
+else $_card_content_style="style=\"margin:0; padding:15px;\"";
 ?>
 
 <nav1>
@@ -59,17 +62,27 @@ window.onresize=function() {
 <div ng-controller="DbController" style="height:0">
 <!--	<h3 class="text-center">Oxes</h3>-->
 	<div class="alert navbar-brand">
-		<button class="btn btn-primary" ng-show="show_form" ng-click="Ox_add_form_show()">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+		<button class="btn btn-primary" style="border-radius:0;" ng-show="show_form" ng-click="Ox_add_form_show();">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
 	</div>
 	<div class="alert input-group search-box">
-		<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." ng-model="search_query"></span>
+		<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." style="border-radius:0;" ng-model="search_query"></span>
 	</div>
-	<div class="col-md-6 col-md-offset-3">
 <!-- Form template which is used to insert data -->
-		<div ng-include src="'f__ox_a.htm'"></div>
+	<form class="alert alert-warning" id="ox_add_form" name="ox_add" style="margin:0; padding:0;" hidden>
+		<div <?php echo $_card_content_style;?>>
+<?php
+include( "f__ox_a.htm" );
+?>
+		</div>
+	</form>
 <!-- Form template which is used to edit and update data -->
-		<div ng-include src="'f__ox_e.htm'"></div>
-	</div>
+	<form class="alert alert-warning" id="ox_edit_form" name="ox_edit" style="margin:0; padding:0;" hidden>
+		<div <?php echo $_card_content_style;?>>
+<?php
+include( "f__ox_e.htm" );
+?>
+		</div>
+	</form>
 	<div class="clearfix"></div>
 <!-- Oxes List -->
 	<div class="table-responsive" id="oxs_list" <?php echo $_content_style;?>>
@@ -77,14 +90,14 @@ window.onresize=function() {
 		<tr>
 			<th width="80px"></th>
 			<th width="80px"></th>
-			<th width="80px">#</th>
+			<th width="80px">Num.</th>
 			<th>Nick</th>
 			<th width="100px">Date of Birth</th>
-			<th>Birth #</th>
+			<th>Birth Num.</th>
 		</tr>
 		<tr ng-repeat="detail in details | filter:search_query">
-			<td><button class="btn btn-warning" title="Edit Ox" ng-click="Ox_edit_form_show(detail)"><span class="glyphicon glyphicon-edit"></span></button></td>
-			<td><button class="btn btn-danger" title="Delete Ox" ng-disabled="detail.id==1" ng-click="db_Ox_delete(detail)"><span class="glyphicon glyphicon-trash"></span></button></td>
+			<td style="padding-left:16px;"><button class="btn btn-warning" style="border-radius:0;" title="Edit Ox" ng-click="Ox_edit_form_show(detail);"><span class="glyphicon glyphicon-edit"></span></button></td>
+			<td><button class="btn btn-danger" style="border-radius:0;" title="Delete Ox" ng-disabled="detail.id==1" ng-click="db_Ox_delete(detail);"><span class="glyphicon glyphicon-trash"></span></button></td>
 			<td>{{detail.num}}</td>
 			<td>{{detail.nick}}</td>
 			<td>{{detail.b_date}}</td>
@@ -94,7 +107,7 @@ window.onresize=function() {
 	</div>
 	<nav class="navbar navbar-default" ng-if="hasMoreData">
 		<div class="alert alert-default navbar-brand">
-			<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
+			<a class="btn btn-primary" role="button" ng-click="paginateResultSet();">Load More</a>
 		</div>
 	</nav>
 </div>

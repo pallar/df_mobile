@@ -1,25 +1,29 @@
-<!-- DF_2 Edit Subgroup Form -->
-<form class="alert alert-warning" id="sg_edit_form" name="sg_edit" hidden>
-	<h3 class="text-center">Subgroup' Card</h3>
-	<div class="form-group">
-		<button class="btn btn-success" ng-disabled="sg_edit.$invalid || cur_sg.id==1" ng-click="db_Sg_update(cur_sg)">Update</button>
-		<button class="btn btn-warning" ng-disabled="sg_edit.$invalid || cur_sg.id==1" ng-click="db_Sg_update(cur_sg); Sg_form_close('cancel',cur_sg.id)">Update & List</button>
-		<button class="btn btn-danger" ng-click="Sg_form_close('cancel',cur_sg.id)">Cancel</button>
-	</div>
-	<div class="form-group">
-		<label for="Num">Number:<span class="text-danger" ng-show="sg_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
-		<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="width:100px" type="text" value="{{cur_sg.num}}" ng-disabled="cur_sg.id==1" ng-model="cur_sg.num" required>
-	</div>
-	<div class="form-group">
-		<label for="National_Descr">National Number:</label>
-		<input class="form-control" maxlength="30" name="national_descr" placeholder="Enter National Number" style="width:200px" type="text" value="{{cur_sg.national_descr}}" ng-disabled="cur_sg.id==1" ng-model="cur_sg.national_descr">
-	</div>
-	<div class="form-group">
-		<label for="Nick">Nick:</label>
-		<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="width:200px" type="text" value="{{cur_sg.nick}}" ng-disabled="cur_sg.id==1" ng-model="cur_sg.nick">
-	</div>
-	<div class="form-group">
-		<label for="Comments">Comments:</label>
-		<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="width:200px" type="text" ng-disabled="cur_sg.id==1" ng-model="cur_sg.comments">
-	</div>
-</form>
+<!-- DF_ajs: Edit Subgroup Form -->
+		<div class="form-group row">
+			<div class="col-md-8">
+				<button class="btn btn-success" style="border-radius:0;" ng-disabled="sg_edit.$invalid || cur_sg.id==1" ng-click="db_Sg_update(cur_sg);">Update</button>
+				<button class="btn btn-warning" style="border-radius:0;" ng-disabled="sg_edit.$invalid || cur_sg.id==1" ng-click="db_Sg_update(cur_sg); Sg_form_close('cancel',cur_sg.id);">Update & List</button>
+				<button class="btn btn-danger" style="border-radius:0;" ng-click="Sg_form_close('cancel',cur_sg.id);">Cancel</button>
+			</div>
+			<div class="col-md-4 has-warning">
+				<label>Subgroup' Card</label>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-md-4">
+				<label>Number:<span class="text-danger" ng-show="sg_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="border-radius:0; width:100px;" type="text" value="{{cur_sg.num}}" ng-disabled="cur_sg.id==1" ng-model="cur_sg.num" required>
+			</div>
+			<div class="col-md-4">
+				<label>National Number:</label>
+				<input class="form-control" maxlength="30" name="national_descr" placeholder="Enter National Number" style="border-radius:0; width:200px;" type="text" value="{{cur_sg.national_descr}}" ng-disabled="cur_sg.id==1" ng-model="cur_sg.national_descr">
+			</div>
+			<div class="col-md-4">
+				<label>Nick:</label>
+				<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="border-radius:0; width:200px;" type="text" value="{{cur_sg.nick}}" ng-disabled="cur_sg.id==1" ng-model="cur_sg.nick">
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Comments:</label>
+			<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="border-radius:0; width:200px;" type="text" ng-disabled="cur_sg.id==1" ng-model="cur_sg.comments">
+		</div>

@@ -1,5 +1,5 @@
 // DF_ajs: f_ops module
-var f_ops=angular.module('f_ops',['ngProgress']);
+var f_ops=angular.module('f_ops',[]);
 
 //var x=function($scope,$timeout,ngProgressFactory) {
 //	$scope.progressbar=ngProgressFactory.createInstance();

@@ -40,7 +40,7 @@ window.onresize=function() {
 
 <div ng-controller="DbController" style="height:0">
 
-<form class="alert alert-warning" id="conf_form" name="conf" ng-submit="db_Conf_update(details)" style="margin:0; padding:0;">
+<form class="alert alert-warning" id="conf_form" name="conf" ng-submit="db_Conf_update(details);" style="margin:0; padding:0;">
 	<!-- Form template -->
 	<div <?php echo $_content_style;?>>
 <?php

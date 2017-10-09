@@ -2,7 +2,7 @@
 /* DF_2: f_vars0.php
 init: main vars
 c: 14.10.2008
-m: 02.06.2017 */
+m: 04.10.2017 */
 
 ob_start();
 
@@ -151,10 +151,10 @@ $f_j="f_j.txt";
 $cjust="align='center'"; $ljust="align='left'"; $rjust="align='right'";
 $vcjust="valign='center'"; $vtjust="valign='top'"; $vbjust="valign='bottom'";
 
-$rw_style="border:0; color:#003366; width:100%";
-$rw_sty_0="border:0; color:#af33af; width:100%";
-$rr_style="background:#f0f0f0; border:0; color:#003366; cursor:crosshair; width:100%";
-$li_style="border:0; color:#003366; cursor:pointer; width:99%";
+$rwS0="color:#003366; width:100%";
+$rwS1="color:#af33af; width:100%";
+$rrS0="background:#f0f0f0; color:#003366; cursor:crosshair; width:100%";
+$liS0="color:#003366; cursor:pointer; width:99%";
 
 $view_class="class='cards_title'"; $edit_class="class='cards_title1'";
 
@@ -227,11 +227,16 @@ $HTML_TAG";
 	else echo "
 <html>";
 	echo "
-<head>
-<meta content='text/html;charset=".$contentCharset."' http-equiv='content-type'>
-<meta name='generator' content='Dairy_Farm:php'>
-<meta name='author' content='PALLAR LTD., 2008-2017'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
+<head>";
+	if ( $ANGULAR_IS_USED>0 ) echo "
+<meta content='no-cache, must-revalidate' http-equiv='cache-control'>
+<meta content='no-cache' http-equiv='pragma'>
+<meta content='0' http-equiv='expires'>";
+	echo "
+<meta content='text/html; charset=".$contentCharset."' http-equiv='content-type'>
+<meta content='Dairy_Farm:php' name='generator'>
+<meta content='PALLAR LTD., 2008-2017' name='author'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>";
 	if ( $skip_CSS!=1 ) echo "
 <link href='".$hcss["f_0.css"]."' rel='stylesheet' type='text/css'>
 <link href='../oper/f_opcss.css' rel='stylesheet' type='text/css'>

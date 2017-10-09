@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_mlk.php
 oper ----1 (101) [milking]
 c: 09.01.2006
-m: 19.05.2017 */
+m: 06.10.2017 */
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -114,7 +114,7 @@ function milksess_keyp( i_ ) {
 	if ( $varsession!=1 ) { $query.=" ORDER BY gr_id, cow_num*1"; } else $query.=" AND $cows.id=$cow_id";
 	$res=mysql_query( $query, $db );
 	if ( $div_hide!=1 ) echo "
-<div style='height:59px; $thead_style'>";
+<div style='$theadS0; height:59px;'>";
 	echo "
 	<table id='OPER_TABLE' class='st2'>";
 	if ( $div_hide==1 ) {
@@ -156,7 +156,7 @@ function milksess_keyp( i_ ) {
 	if ( $div_hide!=1 ) echo "
 	</table>
 </div>
-<div style='height:".$_list_height."px; $tbody_style'>
+<div style='height:".$_list_height."px;'>
 	<table class='st2'>";
 	$j=0;
 	$res=mysql_query( $query, $db );
@@ -170,26 +170,26 @@ function milksess_keyp( i_ ) {
 		<td $cjust title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td3w'>".StrCutLen1( $row[3], 5, $contentCharset )."</td>
 		<td $rjust title='".$cownum_div.$row[1].$cownum_div1."' width='$td3w'><b>".$cownum_div.StrCutLen1( $row[1], 9, $contentCharset ).$cownum_div1."</b></td>";
 			echo "
-		<td height='22px' width='$td5w'><input id='kg".$i."' maxlength='4' name='arr_kg[".$i."]' size='1' style='$rw_style; height:100%' type='text' value='$old_kg' onclick='real_keyp( \"kg$i\", 0, 30, 4, 1 )' onfocus='real_keyp( \"kg$i\", 0, 30, 4, 1 )' onkeypress='real_keyp( \"kg$i\", 0, 30, 4, 1 )'></td>
-		<td width='$td9w'><input id='kg0".$i."' maxlength='4' name='arr_kg0[".$i."]' size='1' style='$rw_style; height:100%' type='text' value='$old_kg0' onclick='real_keyp( \"kg0$i\", 0, 15, 4, 1 )' onfocus='real_keyp( \"kg0$i\", 0, 15, 4, 1 )' onkeypress='real_keyp( \"kg0$i\", 0, 15, 4, 1 )'></td>
-		<td width='$td9w'><input id='kg1".$i."' maxlength='4' name='arr_kg1[".$i."]' size='1' style='$rw_style; height:100%' type='text' value='$old_kg1' onclick='real_keyp( \"kg1$i\", 0, 15, 4, 1 )' onfocus='real_keyp( \"kg1$i\", 0, 15, 4, 1 )' onkeypress='real_keyp( \"kg1$i\", 0, 15, 4, 1 )'></td>
-		<td width='$td9w'><input id='kg2".$i."' maxlength='4' name='arr_kg2[".$i."]' size='1' style='$rw_style; height:100%' type='text' value='$old_kg2' onclick='real_keyp( \"kg2$i\", 0, 15, 4, 1 )' onfocus='real_keyp( \"kg2$i\", 0, 15, 4, 1 )' onkeypress='real_keyp( \"kg2$i\", 0, 15, 4, 1 )'></td>
-		<td width='$td2w'><input id='_beg".$i."' maxlength='8' name='arr_beg[".$i."]' size='3' style='$rw_style; height:100%' type='text' value='$old_beg' onclick='time_keyp( \"_beg".$i."\", \"His\" )' onfocus='time_keyp( \"_beg".$i."\", \"His\" )' onkeypress='time_keyp( \"_beg".$i."\", \"His\" )'></td>
-		<td width='$td2w'><input id='_dur".$i."' maxlength='5' name='arr_dur[".$i."]' size='3' style='$rw_style; height:100%' type='text' value='$old_dur' onclick='time_keyp( \"_time".$i."\", \"is\" )' onfocus='time_keyp( \"_time".$i."\", \"is\" )' onkeypress='time_keyp( \"_dur".$i."\", \"is\" )'></td>
-		<td width='$td9w'><select id='_sess".$i."' name='arr_sess[".$i."]' style='$li_style; height:100%'>";
+		<td height='22px' width='$td5w'><input id='kg".$i."' maxlength='4' name='arr_kg[".$i."]' size='1' style='$rwS0; height:100%;' type='text' value='$old_kg' onclick='real_keyp( \"kg$i\", 0, 30, 4, 1 )' onfocus='real_keyp( \"kg$i\", 0, 30, 4, 1 )' onkeypress='real_keyp( \"kg$i\", 0, 30, 4, 1 )'></td>
+		<td width='$td9w'><input id='kg0".$i."' maxlength='4' name='arr_kg0[".$i."]' size='1' style='$rwS0; height:100%;' type='text' value='$old_kg0' onclick='real_keyp( \"kg0$i\", 0, 15, 4, 1 )' onfocus='real_keyp( \"kg0$i\", 0, 15, 4, 1 )' onkeypress='real_keyp( \"kg0$i\", 0, 15, 4, 1 )'></td>
+		<td width='$td9w'><input id='kg1".$i."' maxlength='4' name='arr_kg1[".$i."]' size='1' style='$rwS0; height:100%;' type='text' value='$old_kg1' onclick='real_keyp( \"kg1$i\", 0, 15, 4, 1 )' onfocus='real_keyp( \"kg1$i\", 0, 15, 4, 1 )' onkeypress='real_keyp( \"kg1$i\", 0, 15, 4, 1 )'></td>
+		<td width='$td9w'><input id='kg2".$i."' maxlength='4' name='arr_kg2[".$i."]' size='1' style='$rwS0; height:100%;' type='text' value='$old_kg2' onclick='real_keyp( \"kg2$i\", 0, 15, 4, 1 )' onfocus='real_keyp( \"kg2$i\", 0, 15, 4, 1 )' onkeypress='real_keyp( \"kg2$i\", 0, 15, 4, 1 )'></td>
+		<td width='$td2w'><input id='_beg".$i."' maxlength='8' name='arr_beg[".$i."]' size='3' style='$rwS0; height:100%;' type='text' value='$old_beg' onclick='time_keyp( \"_beg".$i."\", \"His\" )' onfocus='time_keyp( \"_beg".$i."\", \"His\" )' onkeypress='time_keyp( \"_beg".$i."\", \"His\" )'></td>
+		<td width='$td2w'><input id='_dur".$i."' maxlength='5' name='arr_dur[".$i."]' size='3' style='$rwS0; height:100%;' type='text' value='$old_dur' onclick='time_keyp( \"_time".$i."\", \"is\" )' onfocus='time_keyp( \"_time".$i."\", \"is\" )' onkeypress='time_keyp( \"_dur".$i."\", \"is\" )'></td>
+		<td width='$td9w'><select id='_sess".$i."' name='arr_sess[".$i."]' style='$liS0; height:100%;'>";
 			$res1=mysql_query( "SELECT id, name FROM $sessions", $db );
 			while ( $row1=mysql_fetch_row( $res1 )) echo "<option value='".$row1[0]."'>".$row1[1]."</option>";
 			echo "</select></td>
-		<td width='$td5w'><input id='bd".$i."' maxlength='2' name='arr_bd[".$i."]' size='1' style='$rw_style; height:100%' type='text' value='$old_dev' onclick='int_keyp( \"bd$i\", 0, 96, 2 )' onfocus='int_keyp( \"bd$i\", 0, 96, 2 )' onkeypress='int_keyp( \"bd$i\", 0, 96, 2 )'></td>
+		<td width='$td5w'><input id='bd".$i."' maxlength='2' name='arr_bd[".$i."]' size='1' style='$rwS0; height:100%;' type='text' value='$old_dev' onclick='int_keyp( \"bd$i\", 0, 96, 2 )' onfocus='int_keyp( \"bd$i\", 0, 96, 2 )' onkeypress='int_keyp( \"bd$i\", 0, 96, 2 )'></td>
 		<td width='$td5w'><input class='y_chk' id='notag".$i."' name='arr_notag[".$i."]' type='checkbox'></td>
-		<td width='$td5w'><input id='retr".$i."' maxlength='1' name='arr_retr[".$i."]' size='1' style='$rw_style; height:100%' type='text' value='$old_retries' onclick='retries_keyp( ".$i." )' onfocus='retries_keyp( ".$i." )' onkeypress='retries_keyp( ".$i." )'></td>
+		<td width='$td5w'><input id='retr".$i."' maxlength='1' name='arr_retr[".$i."]' size='1' style='$rwS0; height:100%;' type='text' value='$old_retries' onclick='retries_keyp( ".$i." )' onfocus='retries_keyp( ".$i." )' onkeypress='retries_keyp( ".$i." )'></td>
 		<td width='$td5w'><input class='y_chk' id='stopped".$i."' name='arr_stopped[".$i."]' type='checkbox'></td>
 		<td width='$td5w'><input class='y_chk' id='exhaust".$i."' name='arr_exhaust[".$i."]' type='checkbox'></td>
 		<td width='$td5w'><input class='y_chk' id='mast".$i."' name='arr_m[".$i."]' type='checkbox'></td>
-		<td width='$td5w'><input id='mast4".$i."' maxlength='4' name='arr_m4[".$i."]' size='2' style='$rw_style; height:100%' type='text' onfocus='mastitus_keyp( \"mast4$i\" )' onclick='mastitus_keyp( \"mast4$i\" )' onkeypress='mastitus_keyp( \"mast4$i\" )'></td>
+		<td width='$td5w'><input id='mast4".$i."' maxlength='4' name='arr_m4[".$i."]' size='2' style='$rwS0; height:100%;' type='text' onfocus='mastitus_keyp( \"mast4$i\" )' onclick='mastitus_keyp( \"mast4$i\" )' onkeypress='mastitus_keyp( \"mast4$i\" )'></td>
 		<td width='$td5w'><input class='y_chk' id='tr".$i."' name='arr_t[".$i."]' type='checkbox'></td>
 		<td width='$td5w'><input class='y_chk' id='ov".$i."' name='arr_o[".$i."]' type='checkbox'></td>
-		<td style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$li_style; height:18px' type='text' value='$dmY' onkeypress='return false'></a></td>
+		<td style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$liS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></a></td>
 	</tr>";
 		}}
 	}

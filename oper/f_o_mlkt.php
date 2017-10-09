@@ -2,9 +2,9 @@
 /* DF_2: oper/f_o_mlkt.php
 oper ----2 (102) [milk testing]
 c: 09.01.2006
-m: 02.06.2017 */
+m: 06.10.2017 */
 
-$dbt_ext="_o";//DON'T MOVE THIS BELOW!
+$dbt_ext="_o";//DONT MOVE THIS BELOW!
 
 if ( strlen( $key )>8 ) {
 	$somop=$_GET["row8"];
@@ -60,7 +60,7 @@ if ( $add_oper!="" ) {
 	if ( $div_hide!=1 ) $query.=" ORDER BY gr_id, cow_num*1"; else $query.=" AND $cows.id=$cow_id";
 	$res=mysql_query( $query, $db );
 	if ( $div_hide!=1 ) echo "
-<div style='height:59px; $thead_style'>"; else echo "<br><br>";
+<div style='$theadS0; height:59px;'>"; else echo "<br><br>";
 	echo "
 	<table id='OPER_TABLE' class='st2'>
 	<tr $cjust class='st_title2' style='height:27px'>";
@@ -85,23 +85,23 @@ if ( $add_oper!="" ) {
 	</tr>
 	<tr $cjust class='st_title2' style='height:27px'>
 		<td width='$tddw'>";
-	if ( $div_hide!=1 ) echo "<input id='comments1' maxlength='255' name='comments1' style='$rw_style; height:23px' type='text' onkeyup='table_edits( \"comments1\", \"co1\" )'>"; else echo "&nbsp;";
+	if ( $div_hide!=1 ) echo "<input id='comments1' maxlength='255' name='comments1' style='$rwS0; height:23px;' type='text' onkeyup='fill_tds( \"comments1\", \"co1\" )'>"; else echo "&nbsp;";
 	echo "</td>
 	</tr>
 	</tr>";
 	if ( $div_hide!=1 ) echo "
 	</table>
 </div>
-<div style='height:".$_list_height."px; $tbody_style'>
+<div style='height:".$_list_height."px;'>
 	<table cellspacing='1' class='st2'>";
 	else if ( $varsession!=1 ) echo "
 	<tr ".GrTrCol().">
-		<td width='$td5w'><input style='$rr_style' type='text' value='$somop' onkeypress='return false'></td>
-		<td width='$td6w'><input style='$rr_style' type='text' value='$somo1' onkeypress='return false'></td>
-		<td width='$td7w'><input style='$rr_style' type='text' value='$fatp' onkeypress='return false'></td>
-		<td width='$td8w'><input style='$rr_style' type='text' value='$albp' onkeypress='return false'></td>
-		<td width='$tddw'><input style='$rr_style' type='text' value='$co' onkeypress='return false'></td>
-		<td width='$tdew'><input style='$rr_style' type='text' value='$dmY' onkeypress='return false'></td>
+		<td width='$td5w'><input style='$rrS0; height:18px;' type='text' value='$somop' onkeypress='return false'></td>
+		<td width='$td6w'><input style='$rrS0; height:18px;' type='text' value='$somo1' onkeypress='return false'></td>
+		<td width='$td7w'><input style='$rrS0; height:18px;' type='text' value='$fatp' onkeypress='return false'></td>
+		<td width='$td8w'><input style='$rrS0; height:18px;' type='text' value='$albp' onkeypress='return false'></td>
+		<td width='$tddw'><input style='$rrS0; height:18px;' type='text' value='$co' onkeypress='return false'></td>
+		<td width='$tdew'><input style='$rrS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></td>
 	</tr>";
 	$j=0;
 	$res=mysql_query( $query, $db );
@@ -116,12 +116,12 @@ if ( $add_oper!="" ) {
 		<td $rjust title='".$cownum_div.$row[1].$cownum_div1."' width='$td3w'><b>".$cownum_div.StrCutLen1( $row[1], 9, $contentCharset ).$cownum_div1."</b></td>
 		<td $cjust title='".StrCutLen1( $row[2], 59, $contentCharset ) ."' width='$td4w'>".StrCutLen1( $row[2], 11, $contentCharset )."</td>";
 			echo "
-		<td style='background:#fff' width='$td5w'><input id='d2".$i."' name='d2_[".$i."]' style='$rw_style; height:18px' type='text' value='$somop' onclick='real_keyp( \"d2$i\", 0, 15, 6, 3 )' onfocus='real_keyp( \"d2$i\", 0, 15, 6, 3 )' onkeypress='real_keyp( \"d2$i\", 0, 15, 6, 3 )'></td>
-		<td style='background:#fff' width='$td6w'><input id='d3".$i."' name='d3_[".$i."]' style='$rw_style; height:18px' type='text' value='$somo1' onfocus='int_keyp( \"d3$i\", 0, 9999998, 7 )' onclick='int_keyp( \"d3$i\", 0, 9999998, 7 )' onkeypress='int_keyp( \"d3$i\", 0, 9999998, 7 )'></td>
-		<td style='background:#fff' width='$td7w'><input id='d4".$i."' name='d4_[".$i."]' style='$rw_style; height:18px' type='text' value='$fatp' onclick='real_keyp( \"d4$i\", 0, 15, 6, 3 )' onfocus='real_keyp( \"d4$i\", 0, 15, 6, 3 )' onkeypress='real_keyp( \"d4$i\", 0, 15, 6, 3 )'></td>
-		<td style='background:#fff' width='$td8w'><input id='d5".$i."' name='d5_[".$i."]' style='$rw_style; height:18px' type='text' value='$albp' onclick='real_keyp( \"d5$i\", 0, 15, 6, 3 )' onfocus='real_keyp( \"d5$i\", 0, 15, 6, 3 )' onkeypress='real_keyp( \"d5$i\", 0, 15, 6, 3 )'></td>
-		<td style='background:#fff' width='$tddw'><input id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$rw_style; height:18px' type='text' value='$co'></td>
-		<td style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$li_style; height:18px' type='text' value='$dmY' onkeypress='return false'></a></td>
+		<td style='background:#fff' width='$td5w'><input id='d2".$i."' name='d2_[".$i."]' style='$rwS0; height:18px;' type='text' value='$somop' onclick='real_keyp( \"d2$i\", 0, 15, 6, 3 )' onfocus='real_keyp( \"d2$i\", 0, 15, 6, 3 )' onkeypress='real_keyp( \"d2$i\", 0, 15, 6, 3 )'></td>
+		<td style='background:#fff' width='$td6w'><input id='d3".$i."' name='d3_[".$i."]' style='$rwS0; height:18px;' type='text' value='$somo1' onfocus='int_keyp( \"d3$i\", 0, 9999998, 7 )' onclick='int_keyp( \"d3$i\", 0, 9999998, 7 )' onkeypress='int_keyp( \"d3$i\", 0, 9999998, 7 )'></td>
+		<td style='background:#fff' width='$td7w'><input id='d4".$i."' name='d4_[".$i."]' style='$rwS0; height:18px;' type='text' value='$fatp' onclick='real_keyp( \"d4$i\", 0, 15, 6, 3 )' onfocus='real_keyp( \"d4$i\", 0, 15, 6, 3 )' onkeypress='real_keyp( \"d4$i\", 0, 15, 6, 3 )'></td>
+		<td style='background:#fff' width='$td8w'><input id='d5".$i."' name='d5_[".$i."]' style='$rwS0; height:18px;' type='text' value='$albp' onclick='real_keyp( \"d5$i\", 0, 15, 6, 3 )' onfocus='real_keyp( \"d5$i\", 0, 15, 6, 3 )' onkeypress='real_keyp( \"d5$i\", 0, 15, 6, 3 )'></td>
+		<td style='background:#fff' width='$tddw'><input id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$rwS0; height:18px;' type='text' value='$co'></td>
+		<td style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$liS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></a></td>
 	</tr>";
 		}
 	}

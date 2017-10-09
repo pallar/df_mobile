@@ -12,6 +12,9 @@ if ( CookieGet( "_mobile" )*1==0 ) {
 	$_list_height=CookieGet( "_height" )*1-230;
 	$_content_style="style='height:".$_list_height."px'";
 } else $_content_style="";
+
+if ( CookieGet( "_mobile" )*1==0 ) $_card_content_style="style=\"height:".$_list_height."px; margin:0; padding:15px; overflow-y:auto;\"";
+else $_card_content_style="style=\"margin:0; padding:15px;\"";
 ?>
 
 <nav1>
@@ -58,25 +61,16 @@ window.onresize=function() {
 <!--<div ng-controller="x"></div>-->
 <div ng-controller="DbController" style="height:0">
 <!--	<h3 class="text-center">TAGs</h3>-->
-	<div class="alert navbar-brand">
-		<button class="btn btn-primary" ng-show="show_form" ng-click="Cw_add_form_show()">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-	</div>
 	<div class="alert input-group search-box">
-		<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." ng-model="search_query"></span>
-	</div>
-	<div class="col-md-6 col-md-offset-3">
-<!-- Form template which is used to insert data -->
-		<div ng-include src="'f__ox_a.htm'"></div>
-<!-- Form template which is used to edit and update data -->
-		<div ng-include src="'f__ox_e.htm'"></div>
+		<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." style="border-radius:0;" ng-model="search_query"></span>
 	</div>
 	<div class="clearfix"></div>
-<!-- Oxes List -->
+<!-- TAGs List -->
 	<div class="table-responsive" id="atags_list" <?php echo $_content_style;?>>
 	</div>
 	<nav class="navbar navbar-default" ng-if="hasMoreData">
 		<div class="alert alert-default navbar-brand">
-			<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
+			<a class="btn btn-primary" role="button" ng-click="paginateResultSet();">Load More</a>
 		</div>
 	</nav>
 </div>

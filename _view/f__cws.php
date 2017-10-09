@@ -13,9 +13,8 @@ if ( CookieGet( "_mobile" )*1==0 ) {
 	$_content_style="style='height:".$_list_height."px'";
 } else $_content_style="";
 
-if ( CookieGet( "_mobile" )*1==0 ) {
-	$_card_content_style="style=\"height:".$_list_height."px; margin:0; padding:15px; overflow-y:auto;\"";
-} else $_card_content_style="style=\"margin:0; padding:15px;\"";
+if ( CookieGet( "_mobile" )*1==0 ) $_card_content_style="style=\"height:".$_list_height."px; margin:0; padding:15px; overflow-y:auto;\"";
+else $_card_content_style="style=\"margin:0; padding:15px;\"";
 ?>
 
 <nav1>
@@ -63,10 +62,10 @@ window.onresize=function() {
 <div ng-controller="DbController" style="height:0">
 <!--	<h3 class="text-center">Cows</h3>-->
 	<div class="alert navbar-brand">
-		<button class="btn btn-primary" ng-show="show_form" ng-click="Cw_add_form_show()">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+		<button class="btn btn-primary" style="border-radius:0;" ng-show="show_form" ng-click="Cw_add_form_show();">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
 	</div>
 	<div class="alert input-group search-box">
-		<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." ng-model="search_query"></span>
+		<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." style="border-radius:0;" ng-model="search_query"></span>
 	</div>
 <!-- Form template which is used to insert data -->
 	<form class="alert alert-warning" id="cw_add_form" name="cw_add" style="margin:0; padding:0;" hidden>
@@ -97,8 +96,8 @@ include( "f__cw_e.htm" );
 			<th>Birth Num.</th>
 		</tr>
 		<tr ng-repeat="detail in details | filter:search_query">
-			<td><button class="btn btn-warning" title="Edit Cow" ng-click="Cw_edit_form_show(detail)"><span class="glyphicon glyphicon-edit"></span></button></td>
-			<td><button class="btn btn-danger" title="Delete Cow" ng-disabled="detail.id==1" ng-click="db_Cw_delete(detail)"><span class="glyphicon glyphicon-trash"></span></button></td>
+			<td style="padding-left:16px;"><button class="btn btn-warning" style="border-radius:0;" title="Edit Cow" ng-click="Cw_edit_form_show(detail);"><span class="glyphicon glyphicon-edit"></span></button></td>
+			<td><button class="btn btn-danger" style="border-radius:0;" title="Delete Cow" ng-disabled="detail.id==1" ng-click="db_Cw_delete(detail);"><span class="glyphicon glyphicon-trash"></span></button></td>
 			<td>{{detail.cow_num}}</td>
 			<td>{{detail.nick}}</td>
 			<td>{{detail.b_date}}</td>
@@ -108,7 +107,7 @@ include( "f__cw_e.htm" );
 	</div>
 	<nav class="navbar navbar-default" ng-if="hasMoreData">
 		<div class="alert navbar-brand">
-			<a class="btn btn-primary" role="button" ng-click="paginateResultSet()">Load More</a>
+			<a class="btn btn-primary" role="button" ng-click="paginateResultSet();">Load More</a>
 		</div>
 	</nav>
 </div>

@@ -2,7 +2,7 @@
 /* DF_2: oper/f_opres.php
 report: operations other than extracting (special edition)
 c: 25.12.2005
-m: 23.05.2017 */
+m: 06.10.2017 */
 
 $title_=$title=$_GET["title"];
 if ( strlen( $title_ )<=1 ) $title_=$php_mm["_06_oper_inserted_list"]."&nbsp;$inserted_opername:";
@@ -46,7 +46,7 @@ if ( $db_ext=="_o" ) $rowspan_++;
 if ( $rowspan_==1 ) $rowspan_=0;
 
 if ( $coo!=-1 ) echo "
-<div style='height:323px; $tbody_style'>";
+<div style='height:323px;'>";
 
 echo "
 <table cellspacing='1' class='st2'>

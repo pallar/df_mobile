@@ -1,24 +1,28 @@
 <!-- DF_ajs: Add Subgroup Form -->
-<form class="alert alert-warning" id="sg_add_form" name="sg_add" hidden>
-	<h3 class="text-center">New Subgroup' Card</h3>
-	<div class="form-group">
-		<button class="btn btn-success" ng-disabled="sg_add.$invalid" ng-click="db_Sg_insert(new_sg); Sg_form_close('cancel')">Add</button>
-		<button class="btn btn-danger" ng-click="Sg_form_close('cancel')">Cancel</button>
-	</div>
-	<div class="form-group">
-		<label for="Num">Number:<span class="text-danger" ng-show="sg_add.num.$invalid">&nbsp;REQUIRED!</span></label>
-		<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="width:100px" type="text" ng-model="new_sg.num" required>
-	</div>
-	<div class="form-group">
-		<label for="National_Descr">National Number:</label>
-		<input class="form-control" maxlength="30" name="national_descr" placeholder="Enter National Number" style="width:200px" type="text" ng-model="new_sg.national_descr">
-	</div>
-	<div class="form-group">
-		<label for="Nick">Nick:</label>
-		<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="width:200px" type="text" ng-model="new_sg.nick">
-	</div>
-	<div class="form-group">
-		<label for="Comments">Comments:</label>
-		<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="width:200px" type="text" ng-model="new_sg.comments">
-	</div>
-</form>
+		<div class="form-group row">
+			<div class="col-md-8">
+				<button class="btn btn-success" style="border-radius:0;" ng-disabled="sg_add.$invalid" ng-click="db_Sg_insert(new_sg); Sg_form_close('cancel');">Add</button>
+				<button class="btn btn-danger" style="border-radius:0;" ng-click="Sg_form_close('cancel');">Cancel</button>
+			</div>
+			<div class="col-md-4 has-warning">
+				<label>New Subgroup' Card</label>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-md-4">
+				<label>Number:<span class="text-danger" ng-show="sg_add.num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="border-radius:0; width:100px;" type="text" ng-model="new_sg.num" required>
+			</div>
+			<div class="col-md-4">
+				<label>National Number:</label>
+				<input class="form-control" maxlength="30" name="national_descr" placeholder="Enter National Number" style="border-radius:0; width:200px;" type="text" ng-model="new_sg.national_descr">
+			</div>
+			<div class="col-md-4">
+				<label>Nick:</label>
+				<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="border-radius:0; width:200px;" type="text" ng-model="new_sg.nick">
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Comments:</label>
+			<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="border-radius:0; width:200px;" type="text" ng-model="new_sg.comments">
+		</div>

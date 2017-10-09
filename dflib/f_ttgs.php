@@ -2,7 +2,7 @@
 /* DF_2: dflib/f_ttgs.php
 tags list
 c: 30.12.2011
-m: 15.03.2017 */
+m: 03.10.2017 */
 
 echo "
 <script language='JavaScript' src='../dflib/f_input.js'></script>
@@ -146,7 +146,7 @@ if ( $send_buf!="" ) {
 	<td id='hilight[$jj]' style='height:28px; width:60px'><input id='n$jj' maxlength='$n_len' name='n$jj' size='$n_len' style='background-color:white; border:none; color:$el_col; font:9pt Tahoma,sans-serif; width:100%; height:18px' type='text' value='$cownum' onfocus='int_keyp( \"n$jj\", 1, 999999, $n_len )' onclick='int_keyp( \"n$jj\", 1, 999999, $n_len )' onkeypress='int_keyp( \"n$jj\", 1, 999999, $n_len )'";
 		if ( $userCoo!=9 ) echo "onkeyup='Ttgs__cow_num__Update( \"$row[1]\", this.value )'>";
 		echo "</td>
-	<td><input id='t$jj' maxlength='0' name='t$jj' size='0' style='$rw_style; height:18px' type='text' value='$row[1]' onkeypress='return false'></td>";
+	<td><input id='t$jj' maxlength='0' name='t$jj' size='0' style='$rwS0; height:18px;' type='text' value='$row[1]' onkeypress='return false'></td>";
 		if ( $rfid_mode==3 ) {
 			echo "
 	<td id='hilight[$jj]' style='height:28px; width:60px'><input id='s$jj' maxlength='$s_len' name='s$jj' size='$s_len' style='background-color:white; border:none; font:9pt Tahoma,sans-serif; width:100%; height:18px' type='text' value='$row[5]' onkeypress='return false'";

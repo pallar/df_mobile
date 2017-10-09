@@ -2,7 +2,7 @@
 /* DF_2: oper/f_dt.php
 group operations table row calendar
 c: 25.05.2006
-m: 29.03.2017 */
+m: 09.10.2017 */
 ?>
 
 <script language='JavaScript' src='../dflib/f_date.js'></script>
@@ -23,7 +23,7 @@ function cal_nowdayslist() {
 	Date_NowDaysList( "d1" );
 }
 
-function table_dates() {
+function fill_tdsDates() {
 <?php
 for ( $i=0; $i<count( $cows_arr )-1; $i++ ) {
 ?>
@@ -37,7 +37,7 @@ for ( $i=0; $i<count( $cows_arr )-1; $i++ ) {
 ?>
 }
 
-function table_edits( el, jj ) {
+function fill_tds( el, jj ) {
 	el_=document.getElementById( el );
 <?php
 for ( $i=0; $i<count( $cows_arr )-1; $i++ ) {
@@ -51,10 +51,3 @@ for ( $i=0; $i<count( $cows_arr )-1; $i++ ) {
 
 }
 </script>
-
-<?php
-echo "<select class='cards_title1' id='d1' name='d1' style='cursor:pointer; height:20px' onchange='cal_tocoo(); table_dates();'></select>";
-Date_MonthsList( "<select class='cards_title1' id='m1' name='m1' style='cursor:pointer; height:20px' onchange='cal_dayslist(); table_dates();'>" );
-Date_YearsList( "<select class='cards_title1' id='y1' name='y1' style='cursor:pointer; height:20px' onchange='cal_dayslist(); table_dates();'>" );
-echo "<br><br>";
-?>

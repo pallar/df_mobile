@@ -1,19 +1,18 @@
 <?php
 /* DF_2 | DF_ajs: forms/index0.php | _view/index0.php
 c: 25.12.2005
-m: 24.03.2017 */
+m: 26.09.2017 */
 
-$dev_1st=trim( CookieGet( "dev_1st" ))*1; if ( $dev_1st==0 ) $dev_1st=1;
+$dev_1st=CookieGet( "dev_1st" )*1; if ( $dev_1st<1 ) $dev_1st=1;
 if ( CookieGet( "devs_prev" )*1==1 ) {
 	$devs=CookieGet( "devs" )*1;
-	if ( $dev_1st<$devs-$devs_onmnem1 ) $dev_1st=$dev_1st+$devs_onmnem1; else $dev_1st=1;
+	if ( $dev_1st<$devs-$devs_onmnemo ) $dev_1st=$dev_1st+$devs_onmnemo; else $dev_1st=1;
 	CookieSet( "devs_prev", "" ); CookieSet( "dev_1st", "$dev_1st" );
 }
 
-if ( $userCoo*1==0 ) {
+if ( $userCoo*1<1 ) {
 	$_id=CookieGet( "_id" );
-	if ( strlen( $_id )<10 ) $local_id=md5( uniqid( rand(), true ));
-	else $local_id=$_id;
+	if ( strlen( $_id )<10 ) $local_id=md5( uniqid( rand(), true )); else $local_id=$_id;
 	CookieSetSs( "_id", "$local_id", 60*60*24*3650 );
 	$res=mysql_query( "SELECT language FROM $globals" ); $sqlerr=mysql_errno()*1;
 	if ( $sqlerr==0 ) {

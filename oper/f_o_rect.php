@@ -2,9 +2,9 @@
 /* DF_2: oper/f_o_rect.php
 oper --512 (110) [rectal condition]
 c: 09.01.2006
-m: 02.06.2017 */
+m: 06.10.2017 */
 
-$dbt_ext="_o";//DON'T MOVE THIS BELOW!
+$dbt_ext="_o";//DONT MOVE THIS BELOW!
 
 if ( strlen( $key )>8 ) {
 	$d7=$_GET["row13"];
@@ -16,12 +16,12 @@ if ( strlen( $key )>8 ) {
 	$d16="@@@@"; $d16_=split( "@", $d16 );
 }
 
-$res=mysql_query( "SELECT id, descr FROM $states", $db );
+$res=mysql_query( "SELECT id, descr FROM $states" );
 while ( $row=mysql_fetch_row( $res )) {
 	$sta_id[$row[0]]=$row[0];
 	$sta_desc[$row[0]]=$row[1];
 }
-$res=mysql_query( "SELECT id, descr FROM $pregnant", $db );
+$res=mysql_query( "SELECT id, descr FROM $pregnant" );
 while ( $row=mysql_fetch_row( $res )) {
 	$pre_id[$row[0]]=$row[0];
 	$pre_desc[$row[0]]=$row[1];
@@ -61,7 +61,7 @@ if ( $add_oper!="" ) {
 	else if ( $varsession!=1 & $userCoo!=9 ) echo "&nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";
 	if ( $div_hide!=1 ) echo "
 
-<div style='height:59px; $thead_style'>"; else if ( $nosession==1 ) echo "<br><br>";
+<div style='$theadS0; height:59px;'>"; else if ( $nosession==1 ) echo "<br><br>";
 	echo "
 	<table id='OPER_TABLE' class='st2'>
 	<tr $cjust class='st_title2' style='height:27px'>";
@@ -81,13 +81,13 @@ if ( $add_oper!="" ) {
 		<td width='$td6w'>".$ged["cond."]."</td>
 		<td width='$td7w'>".$ged["comment."]."</td>";
 	if ( $div_hide!=1 ) echo "
-		<td width='$tddw'><input id='comments1' maxlength='255' name='comments1' style='$rw_style; height:23px' type='text' onkeyup='table_edits( \"comments1\", \"co1\" )'></td>";
+		<td width='$tddw'><input id='comments1' maxlength='255' name='comments1' style='$rwS0; height:23px;' type='text' onkeyup='fill_tds( \"comments1\", \"co1\" )'></td>";
 	echo "
 	</tr>";
 	if ( $div_hide!=1 ) echo "
 	</table>
 </div>
-<div style='height:".$_list_height."px; $tbody_style'>
+<div style='height:".$_list_height."px;'>
 	<table class='st2'>";
 	$j=0;
 	$res=mysql_query( $query, $db );
@@ -101,15 +101,15 @@ if ( $add_oper!="" ) {
 		<td $cjust height='22px' rowspan='2' title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
 		<td $rjust rowspan='2' title='".$cownum_div.$row[1].$cownum_div1."' width='$td3w'><b>".$cownum_div.StrCutLen1( $row[1], 9, $contentCharset ).$cownum_div1."</b></td>
 		<td $cjust rowspan='2' title='".StrCutLen1( $row[2], 59, $contentCharset ) ."' width='$td4w'>".StrCutLen1( $row[2], 11, $contentCharset )."</td>
-		<td width='$td5w'><input style='$rr_style; height:18px' type='text' value='".$pre_desc[$d7]."' onkeypress='return false'></td>
-		<td width='$td6w'><input style='$rr_style; height:18px' type='text' value='".$sta_desc[$d8]."' onkeypress='return false'></td>
-		<td width='$td7w'><input style='$rr_style; height:18px' type='text' value='".$d16_[3]."' onkeypress='return false'></td>
-		<td width='$tddw'><input style='$rr_style; height:18px' type='text' value='$co' onkeypress='return false'></td>
-		<td height='22px' width='$tdew'><input style='$rr_style; height:18px' type='text' value='$dmY' onkeypress='return false'></td>
+		<td width='$td5w'><input style='$rrS0; height:18px;' type='text' value='".$pre_desc[$d7]."' onkeypress='return false'></td>
+		<td width='$td6w'><input style='$rrS0; height:18px;' type='text' value='".$sta_desc[$d8]."' onkeypress='return false'></td>
+		<td width='$td7w'><input style='$rrS0; height:18px;' type='text' value='".$d16_[3]."' onkeypress='return false'></td>
+		<td width='$tddw'><input style='$rrS0; height:18px;' type='text' value='$co' onkeypress='return false'></td>
+		<td width='$tdew'><input style='$rrS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></td>
 	</tr>
 	<tr>";
 			echo "
-		<td style='background:#fff' width='$td5w'><select name='d7_1_[".$i."]' style='$li_style; height:18px'>";
+		<td style='background:#fff' width='$td5w'><select name='d7_1_[".$i."]' style='$liS0; height:18px;'>";
 			$d=mysql_query( "SELECT id, descr FROM $pregnant", $db );
 			while ($row1=mysql_fetch_row( $d )) {
 				$val="value='".$row1[0]."'";
@@ -117,7 +117,7 @@ if ( $add_oper!="" ) {
 				echo "<option $val>".$row1[1]."</option>";
 			}
 			echo "</select></td>
-		<td style='background:#fff' width='$td6w'><select name='d7_2_[".$i."]' style='$li_style; height:18px'>";
+		<td style='background:#fff' width='$td6w'><select name='d7_2_[".$i."]' style='$liS0; height:18px;'>";
 			$d=mysql_query( "SELECT id, descr FROM $states", $db );
 			while ($row1=mysql_fetch_row( $d )) {
 				$val="value='".$row1[0]."'";
@@ -125,9 +125,9 @@ if ( $add_oper!="" ) {
 				echo "<option $val>".$row1[1]."</option>";
 			}
 			echo "</select></td>
-		<td style='background:#fff' width='$td7w'><input maxlength='55' name='d7_[".$i."]' style='$rw_style; height:18px' type='text' value='".$d16_[3]."'></td>
-		<td style='background:#fff' width='$tddw'><input id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$rw_style; height:18px' type='text' value='$co'></td>
-		<td style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$li_style; height:18px' type='text' value='$dmY' onkeypress='return false'></a></td>
+		<td width='$td7w'><input maxlength='55' name='d7_[".$i."]' style='$inpS0;' type='text' value='".$d16_[3]."'></td>
+		<td width='$tddw'><input id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$inpS1;' type='text' value='$co'></td>
+		<td width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input class='' id='date1".$i."' name='dates_[".$i."]' size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false'></a></td>
 	</tr>";
 		}}
 	}

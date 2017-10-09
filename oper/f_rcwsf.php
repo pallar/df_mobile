@@ -2,7 +2,7 @@
 /* DF_2: oper/f_rcwsf.php
 group operations start session
 c: 25.05.2006
-m: 19.05.2017 */
+m: 03.10.2017 */
 
 if ( $varsession!=1 ) {
 	if ( $nosession!=1 ) {
@@ -23,6 +23,10 @@ if ( $varsession!=1 ) {
 		$cows_arr=split( ",", $sess_str );
 	}
 }
-$thead_style="margin:0 0 0 0; overflow-x:hidden; overflow-y:scroll";
-$tbody_style="margin:0 0 0 0; overflow-x:hidden; overflow-y:scroll";
+$theadS0="margin:0 0 0 0; overflow-x:hidden; overflow-y:scroll";
+$tbodyS0="margin:0 0 0 0; overflow-x:hidden; overflow-y:scroll";
+$disS0="background-color:#e0e0e0";
+$disS1="background-color:#eeeeee";
+$inpS0="background-color:#ccffff";
+$inpS1="background-color:#ddffff";
 ?>
