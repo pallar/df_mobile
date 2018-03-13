@@ -25,6 +25,7 @@ if ( $stop_f_jfilt==0 ) {
 		include( "../locales/$lang/f_php._$lang" );
 		include( "../locales/$lang/f_sel._$lang" );
 		include( "../locales/$lang/f_02._$lang" );
+		include( "../locales/$lang/f_rroerr._$lang" );
 		include( "../dflib/f_librep.php" );
 	}
 

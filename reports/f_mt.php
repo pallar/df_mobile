@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mt.php
 report: extracting by table
 c: 25.12.2005
-m: 15.03.2017 */
+m: 07.03.2018 */
 
 $graph=$_GET["graph"]*1; $title_=$title=$_GET["title"];
 
@@ -63,7 +63,7 @@ if ( $title_==$ged["RR0301"] ) $title_next=$ged["RR0301-"];
 $outsele_=$outsele__;//ERROR!!!
 $outsele_field_=$outsele_field__;//ERROR!!!
 
-$t_cows=$t_m=$t_mq=$t_m0q=$t_mmast=$t_ids=$dots_cnt=0;
+$t_rows=$dots_cnt=$t_cows=$t_m=$t_mq=$t_m0q=$t_mmast=$t_ids=0;
 $repbeg=$yf.$mf.$df; $repend=$yl.$ml.$dl;
 
 if ( $outsele_*1==-1 ) $db_id=0; else $db_id=21;
@@ -195,6 +195,8 @@ while ( $yc<=$yl+1 ) {
 	<td $cjust>".$r_end[$r]."&nbsp;</td>
 	<td $cjust>".$t_hh.":".$t_mm.":".$t_ss."&nbsp;</td>
 </tr>";
+					$t_rows++;
+					$dots_cnt++;
 				} else {//show diagram
 					$dots[$dots_cnt]=$mrow[$r];
 					$dots_cnt++;
@@ -209,7 +211,13 @@ while ( $yc<=$yl+1 ) {
 if ( $graph<1 ) {
 	if ( $t_mq>0 ) $t_m1=round( $t_m/$t_mq, 1 ); else $t_m1="&nbsp;";
 	if ( $t_cows>0 ) $t_m2=round( $t_m/$t_cows, 1 ); else $t_m2="&nbsp;";
-	echo "
+	if ( $t_rows==0 ) {
+		echo "
+</tbody>
+</table><br>
+<center><b>".$ged["No_data_for_period"]."</b></center><br>";
+	} else {
+		echo "
 </tbody>
 <tfoot id='rep_tfoot'>
 <tr $rjust height='28px'>
@@ -222,15 +230,16 @@ if ( $graph<1 ) {
 	<td><b>".$t_mmast."</b>&nbsp;</td>
 	<td><b>".$t_mq."</b>&nbsp;</td>
 	<td><b>".$t_m0q."</b>&nbsp;</td>";
-	if ( $restrict_field!="c.id" ) echo "
+		if ( $restrict_field!="c.id" ) echo "
 	<td><b>".$t_cows."</b>&nbsp;</td>";
-	echo "
+		echo "
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 </tr>
 </tfoot>
 </table><br>";
+	}
 
 } else {
 	$dots_set=$dots[0];

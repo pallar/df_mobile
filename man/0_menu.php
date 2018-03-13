@@ -1,5 +1,5 @@
 <?php
-// Modified: 06.03.2017
+// m: 30.03.2017
 echo "
 <script type='text/javascript'>
 function menudiv_show() {
@@ -12,7 +12,7 @@ function menudiv_hide() {
 </script>
 
 <style type='text/css'>
-html,body {
+html, body {
 	height:100%;
 	margin:0;
 	padding:0;

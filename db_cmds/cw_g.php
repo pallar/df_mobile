@@ -11,7 +11,7 @@ $__query = "SELECT
  comments, defects
  FROM f_cows
  WHERE id=$__data->id";
-$__res = mysqli_query($conn, $__query);
+$__res = Sqli_query($__query);
 if(mysqli_num_rows($__res) != 0)
 	while($__row = mysqli_fetch_assoc($__res)) $arr[] = $__row;
 // Return json array containing data from the database

@@ -16,8 +16,27 @@ include( "../dflib/f_librep.php" );
 $div_hide=$_GET["div_hide"];
 $add_oper=$_POST["add_oper"];
 if ( $add_oper!="" ) $body_onload_add="";
-else {
-	if ( $div_hide!=1 ) $body_onload_add="cal_nowdayslist(); cal_fromcoo(); table_dates();";
+if ( $div_hide!=1 ) $body_onload_add="cal_nowdayslist(); cal_fromcoo(); fill_tdsDates();";
+
+$op0_php=$_GET["include"];
+if ( $op0_php."."!="." ) {
+	$include_tag_style=1; $included_tag_style_php="../oper/fohead.php";
+	$opertype=$_GET["opertype"]*1;
+	if ( $opertype==1 ) $url_="mlk";
+	else if ( $opertype==2 ) $url_="mlkt";
+	else if ( $opertype==4 ) $url_="meas";
+	else if ( $opertype==8 ) $url_="care";
+	else if ( $opertype==16 ) $url_="cond";
+	else if ( $opertype==32 ) $url_="vacc";
+	else if ( $opertype==64 ) $url_="mov";
+	else if ( $opertype==128 | $opertype==256 ) $url_="insm";
+	else if ( $opertype==512 ) $url_="rect";
+	else if ( $opertype==1024 ) $url_="abrt";
+	else if ( $opertype==2048 ) $url_="abrt";
+	else if ( $opertype==4096 ) $url_="abrt";
+	else if ( $opertype==8192 ) $url_="jagg";
+	$op0_php="../oper/f_o_".$url_."0.php";
+	include( "$op0_php" );
 }
 
 $title="Операції - Інтернет-Ферма";
@@ -49,7 +68,7 @@ window.onresize=function() {
 </script>
 
 <!--<div ng-controller="x"></div>-->
-<div ng-controller="DbController" style="height:0">
+<div ng-controller='DbController' style='height:0;'>
 
 <?php
 include( "../oper/f_chcws.php" );
@@ -57,7 +76,7 @@ include( "../oper/f_chcws.php" );
 
 </div>
 <!-- Controller -->
-<script src="../js/f_ops.js"></script>
+<script src='../js/f_ops.js'></script>
 
 </body>
 </html>

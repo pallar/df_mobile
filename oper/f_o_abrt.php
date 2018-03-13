@@ -1,8 +1,8 @@
 <?php
-/* DF_2: oper/oper_abrt.php
+/* DF_2: oper/f_o_abrt.php
 oper -1024/-2048 (111/112) [parturition & abort]
 c: 09.01.2006
-m: 09.10.2017 */
+m: 11.10.2017 */
 
 $dbt_ext="_o";//DONT MOVE THIS BELOW!
 $_list_height=$_list_height+80;
@@ -14,7 +14,6 @@ if ( $add_oper!="" ) {
 	mysql_query( "DROP TABLE IF EXISTS $tmpdbt" );
 	include( "../oper/f_rcwsf1.php" );
 } else {
-	include_once( "../oper/f_dtdiv.php" );//<tr>'s date
 	$tdw[2]="60px";
 	$tdw[3]="60px";
 	$tdw[4]="170px";
@@ -25,13 +24,11 @@ if ( $add_oper!="" ) {
 //		if ( count( $cows_arr )>99 ) $tdw[1]="20px";
 //		if ( count( $cows_arr )>999 ) $tdw[1]="30px";
 //	}
-	if ( $varsession!=1 ) include_once( "../oper/f_oprwd.php" );
+	include_once( "../oper/f_oprwd.php" );
 	echo "
-<table><tr><td height='3px'></td></tr></table>
 <div class='mk' style='border:0; height:50px; margin:0; overflow-x:hidden; overflow-y:scroll; padding:10px 10px 0 10px;'>";
 	if ( $userCoo!=9 ) echo "
 	<input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:91px;' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype].")...'>&nbsp;";
-	if ( $div_hide!=1 ) include_once( "../oper/f_dt.php" );//page's date
 	else if ( $varsession!=1 & $userCoo!=9 ) echo "&nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";
 	echo "
 </div>";
@@ -40,20 +37,21 @@ if ( $add_oper!="" ) {
 	else if ( $nosession==1 ) echo "<br><br>";
 	echo "
 	<table id='OPER_TABLE' style='width:100%;'>
+	<tbody id='rep_tbody'>
 	<tr $cjust style='height:27px;'>";
 	if ( $div_hide!=1 ) {
 		echo "
-		<td width='".$tdw[2]."'>".$ged["Group"]."</td>
-		<td width='".$tdw[3]."'>".$ged["Number"]."</td>
-		<td>".$ged["Nick"]."</td>
-		<td width='$tddw'>".$ged["Comment."]."</td>
-		<td $rowspan_ width='$tdew'>".$ged["Date"]."</td>
+		<td width='".$tdw[2]."'>".$th[2]."</td>
+		<td width='".$tdw[3]."'>".$th[3]."</td>
+		<td>".$th[4]."</td>
+		<td width='".$tdw[5]."'>".$th[5]."</td>
+		<td width='".$tdw[6]."'>".$th[6]."</td>
 	</tr>
 	<tr $cjust style='height:27px;'>
 		<td width='".$tdw[2]."'>&nbsp;</td>
 		<td width='".$tdw[3]."'>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td width='".$tdw[6]."'><input class='txt txt_h0' id='comments1' maxlength='255' name='comments1' style='$inpS1; width:100%;' type='text' onkeyup='fill_tds( \"comments1\", \"co1\" )'></t>
+		<td width='".$tdw[6]."'><input class='txt txt_h0' id='comments1' maxlength='255' name='comments1' style='$inpS1; width:100%;' type='text' onkeyup='fill_tds( \"comments1\", \"co1\" );'></t>
 		<td width='".$tdw[7]."'>";
 		include_once( "../oper/f_dt1.php" );//page's date
 		echo "
@@ -65,10 +63,12 @@ if ( $add_oper!="" ) {
 	}
 	echo "
 	</tr>
+	</tbody>
 	</table>
 </div>
 <div class='mk' style='border:0; $tbodyS0; height:".$_list_height."px;'>
-	<table style='width:100%;'>";
+	<table style='width:100%;'>
+	<tbody id='rep_tbody'>";
 	$j=0;
 	$query="SELECT $cows.id, $cows.cow_num, $cows.nick, $groups.nick FROM $cows, $groups WHERE $groups.id=$cows.gr_id";
 	if ( $div_hide!=1 ) $query.=" ORDER BY gr_id, cow_num*1"; else $query.=" AND $cows.id=$cow_id";
@@ -78,6 +78,8 @@ if ( $add_oper!="" ) {
 			$j++;
 			echo "
 	<tr ".GrTrCol().">";
+//			if ( $div_hide!=1 ) echo "
+//		<td $cjust width='".$tdw[1]."'>".$j."</td>
 			if ( $div_hide!=1 ) echo "
 		<td $cjust title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='".$tdw[2]."'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
 		<td $rjust title='".$cownum_div.$row[1].$cownum_div1."' width='".$tdw[3]."'><b>".$cownum_div.StrCutLen1( $row[1], 9, $contentCharset ).$cownum_div1."</b></td>
@@ -87,6 +89,8 @@ if ( $add_oper!="" ) {
 		<td width='".$tdw[6]."'><input class='txt txt_h0' style='$disS0; width:100%;' value='$dmY' onkeypress='return false;'></td>
 	</tr>
 	<tr>";
+//			if ( $div_hide!=1 ) echo "
+//		<td $cjust width='".$tdw[1]."'>&nbsp;</td>
 			if ( $div_hide!=1 ) echo "
 		<td $cjust width='".$tdw[2]."'>&nbsp;</td>
 		<td $rjust width='".$tdw[3]."'>&nbsp;</td>
@@ -98,6 +102,7 @@ if ( $add_oper!="" ) {
 		}
 	}
 	echo "
+	</tbody>
 	</table>";
 	if ( $div_hide!=1 ) echo "
 </div>";

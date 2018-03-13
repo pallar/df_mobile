@@ -1,8 +1,8 @@
 <!-- DF_ajs: Add Cow Form -->
 		<div class="form-group row">
 			<div class="col-md-4">
-				<button class="btn btn-success" style="border-radius:0;" ng-disabled="cw_add.$invalid" ng-click="db_Cw_insert(new_cw); Cw_form_close('cancel');">Add</button>
-				<button class="btn btn-danger" style="border-radius:0;" ng-click="Cw_form_close('cancel');">Cancel</button>
+				<button class="btn btn-success" style="<?php echo $_btn_style;?>" ng-disabled="cw_add.$invalid" ng-click="db_Cw_insert(new_cw); Cws_form_close('cancel');">Застосувати</button>
+				<button class="btn btn-danger" style="<?php echo $_btn_style;?>" ng-click="Cws_form_close('cancel');">X</button>
 			</div>
 			<div class="col-md-4">
 				<label></label>
@@ -13,25 +13,25 @@
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Birth Date:<span class="text-danger" ng-show="cw_add.b_date.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="10" name="b_date" placeholder="Enter Birth Date" style="border-radius:0; width:200px;" type="text" ng-model="new_cw.b_date" required>
+				<label>Дата народж.<span class="text-danger" ng-show="cw_add.b_date.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="10" placeholder="Enter Birth Date" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_cw.b_date" required>
 			</div>
 			<div class="col-md-4">
-				<label>Birth Number:</label>
-				<input class="form-control" maxlength="30" name="b_num" placeholder="Enter Birth Number" style="border-radius:0; width:200px;" type="text" ng-model="new_cw.b_num">
+				<label>№ новонародж.</label>
+				<input class="form-control" maxlength="30" placeholder="Enter Birth Number" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_cw.b_num">
 			</div>
 			<div class="col-md-4">
-				<label>National Number:</label>
-				<input class="form-control" maxlength="30" name="cur_cw_n_descr" placeholder="Enter National Number" style="border-radius:0; width:200px;" type="text" value="{{cur_cw.national_descr}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.national_descr">
+				<label>Нац. №</label>
+				<input class="form-control" maxlength="30" placeholder="Enter National Number" style="<?php echo $_inp_style;?> width:200px;" type="text" value="{{cur_cw.national_descr}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.national_descr">
 			</div>
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Number:<span class="text-danger" ng-show="cw_add.cow_num.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="6" name="cow_num" placeholder="Enter Number" style="border-radius:0; width:100px;" type="text" value="" ng-model="new_cw.cow_num" required>
+				<label>№<span class="text-danger" ng-show="cw_add.cow_num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="6" placeholder="Enter Number" style="<?php echo $_inp_style;?> width:100px;" type="text" ng-model="new_cw.cow_num" required>
 			</div>
 			<div class="col-md-4">
-				<label>Nick:</label>
-				<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="border-radius:0; width:200px;" type="text" ng-model="new_cw.nick">
+				<label>Прізв.</label>
+				<input class="form-control" maxlength="100" placeholder="Enter Nick" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_cw.nick">
 			</div>
 		</div>

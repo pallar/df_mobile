@@ -1,36 +1,36 @@
 <!-- DF_ajs: Configurator Form -->
 	<div class="form-group">
-		<button class="btn btn-warning" ng-disabled="conf_form.$invalid" ng-click="msg_Update();">Update</button>
+		<button class="btn btn-warning" style="border-radius:0;" ng-disabled="conf_form.$invalid" ng-click="msg_Update();">Update</button>
 	</div>
 	<div class="form-group">
 		<label>State:</label>
-		<input class="form-control" name="state" type="text" value="{{details[0].state}}" ng-model="details[0].state">
+		<input class="form-control" maxlength="249" style="<?php echo $_inp_style;?>" type="text" value="{{details[0].state}}" ng-model="details[0].state">
 	</div>
 	<div class="form-group">
 		<div class="form-group row">
 			<div class="col-md-6 form-group">
 				<label>Region:</label>
-				<input class="form-control" name="region" type="text" value="{{details[0].region}}" ng-model="details[0].region">
+				<input class="form-control" maxlength="249" style="<?php echo $_inp_style;?>" type="text" value="{{details[0].region}}" ng-model="details[0].region">
 			</div>
 			<div class="col-md-6 form-group">
 				<label>Subregion:</label>
-				<input class="form-control" name="subregion" type="text" value="{{details[0].subregion}}" ng-model="details[0].subregion">
+				<input class="form-control" maxlength="249" style="<?php echo $_inp_style;?>" type="text" value="{{details[0].subregion}}" ng-model="details[0].subregion">
 			</div>
 		</div>
 	</div>
 	<div class="form-group">
 		<label>Org:</label>
-		<input class="form-control" name="enterprise" type="text" value="{{details[0].enterprise}}" ng-model="details[0].enterprise">
+		<input class="form-control" maxlength="249" style="<?php echo $_inp_style;?>" type="text" value="{{details[0].enterprise}}" ng-model="details[0].enterprise">
 	</div>
 	<div class="form-group">
 		<div class="form-group row">
 			<div class="col-md-6 form-group">
 				<label>Farm:</label>
-				<input class="form-control" name="farm" type="text" value="{{details[0].farm}}" ng-model="details[0].farm">
+				<input class="form-control" maxlength="99" style="<?php echo $_inp_style;?>" type="text" value="{{details[0].farm}}" ng-model="details[0].farm">
 			</div>
 			<div class="col-md-6 form-group">
 				<label>Phone:</label>
-				<input class="form-control" name="phone" type="text" value="{{details[0].phone}}" ng-model="details[0].phone">
+				<input class="form-control" maxlength="99" style="<?php echo $_inp_style;?>" type="text" value="{{details[0].phone}}" ng-model="details[0].phone">
 			</div>
 		</div>
 	</div>
@@ -38,11 +38,11 @@
 		<div class="form-group row">
 			<div class="col-md-6 form-group">
 				<label>Chief:</label>
-				<input class="form-control" name="chief" type="text" value="{{details[0].chief}}" ng-model="details[0].chief">
+				<input class="form-control" maxlength="99" style="<?php echo $_inp_style;?>" type="text" value="{{details[0].chief}}" ng-model="details[0].chief">
 			</div>
 			<div class="col-md-6 form-group">
-				<label">Chief Animal Tech:</label>
-				<input class="form-control" name="chief_animal_technician" type="text" value="{{details[0].chief_animal_technician}}" ng-model="details[0].chief_animal_technician">
+				<label>Chief Animal Tech:</label>
+				<input class="form-control" maxlength="99" style="<?php echo $_inp_style;?>" type="text" value="{{details[0].chief_animal_technician}}" ng-model="details[0].chief_animal_technician">
 			</div>
 		</div>
 	</div>
@@ -50,15 +50,15 @@
 		<div class="form-group row">
 			<div class="col-md-3 form-group">
 				<label>Pits:</label>
-				<input class="form-control" name="pits" type="text" value="{{details[1].pits}}" ng-model="details[1].pits" autofocus required style="width:100px;"/>
+				<input class="form-control" maxlength="1" style="<?php echo $_inp_style;?> width:100px;" type="text" value="{{details[1].pits}}" ng-model="details[1].pits" autofocus required/>
 			</div>
 			<div class="col-md-3 form-group">
 				<label>Devices By Pit:</label>
-				<input class="form-control" name="devs_by_pit" type="text" value="{{details[1].devs_by_pit}}" ng-model="details[1].devs_by_pit" autofocus required style="width:100px;"/>
+				<input class="form-control" maxlength="2" style="<?php echo $_inp_style;?> width:100px;" type="text" value="{{details[1].devs_by_pit}}" ng-model="details[1].devs_by_pit" autofocus required/>
 			</div>
 			<div class="col-md-3 form-group">
 				<label>Data Wires By Pit:</label>
-				<input class="form-control" name="data_wires_by_pit" type="text" value="{{details[1].data_wires_by_pit}}" ng-model="details[1].data_wires_by_pit" autofocus required style="width:100px;"/>
+				<input class="form-control" maxlength="1" style="<?php echo $_inp_style;?> width:100px;" type="text" value="{{details[1].data_wires_by_pit}}" ng-model="details[1].data_wires_by_pit" autofocus required/>
 			</div>
 		</div>
 	</div>
@@ -66,14 +66,14 @@
 		<div class="form-group row">
 			<div class="col-md-3 form-group">
 				<label>Ports's Type:</label>
-				<select class="form-control" name="ports_type" type="select" ng-model="details[1].ports_type" style="width:150px;">
+				<select class="form-control" style="<?php echo $_sel_style;?> width:150px;" type="select" ng-model="details[1].ports_type">
 					<option class="form-control" value="COM">COM</option>
 					<option class="form-control" value="USBCOM">USBCOM</option>
 				</select>
 			</div>
 			<div class="col-md-3 form-group">
 				<label>First Port:</label>
-				<select class="form-control" name="port_first" type="select" ng-model="details[1].port_first" style="width:100px;">
+				<select class="form-control" style="<?php echo $_sel_style;?> width:100px;" type="select" ng-model="details[1].port_first">
 					<option class="form-control" value="1">1</option>
 					<option class="form-control" value="2">2</option>
 					<option class="form-control" value="3">3</option>
@@ -83,7 +83,7 @@
 			</div>
 			<div class="col-md-3 form-group">
 				<label>Timeout Between Devices:</label>
-				<input class="form-control" name="waitstate_between_devs" type="text" value="{{details[1].waitstate_between_devs}}" ng-model="details[1].waitstate_between_devs" autofocus required style="width:100px;"/>
+				<input class="form-control" maxlength="3" style="<?php echo $_inp_style;?> width:100px;" type="text" value="{{details[1].waitstate_between_devs}}" ng-model="details[1].waitstate_between_devs" autofocus required/>
 			</div>
 		</div>
 	</div>

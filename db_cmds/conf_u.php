@@ -23,11 +23,11 @@ $__query = "UPDATE f_consts
  enterprise='$enterprise', farm='$farm', address='$address', phone='$phone',
  chief='$chief',
  chief_animal_technician='$chief_animal_technician'";
-Sql_query($__query);
+Sqli_query($__query);
 $__query1 = "UPDATE f_hardw
  SET pits='$pits', devs_by_pit='$devs_by_pit', data_wires_by_pit='$data_wires_by_pit',
  waitstate_between_devs='$waitstate_between_devs',
  ports_type='$ports_type', port_first='$port_first'";
-Sql_query($__query1);
+Sqli_query($__query1);
 echo true;
 ?>

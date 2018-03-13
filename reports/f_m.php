@@ -2,7 +2,7 @@
 /* DF_2: reports/f_m.php
 report: extracting
 c: 25.12.2005
-m: 16.05.2017 */
+m: 07.03.2018 */
 
 $skip_clichk=1;
 
@@ -40,6 +40,7 @@ if ( $rep_order=="kg" ) {
 
 include( "f_jfilt.php" );
 include( "../locales/$lang/f_rrm._$lang" );
+include( "../locales/$lang/f_rroerr._$lang" );
 
 $th1=$ged["Date"];
 $th2=$ged["Number"];
@@ -116,7 +117,7 @@ if ( $restrict_id<1 ) {
 	}
 }
 
-$dots_cnt=$t_cows=$t_m=$t_rows=$t_sec=0;
+$t_rows=$dots_cnt=$t_cows=$t_m=$t_sec=0;
 
 $yf1=$yf*10000; $mf1=$mf*100;
 $yl1=$yl*10000; $ml1=$ml*100;
@@ -325,7 +326,13 @@ if ( $t_mm<10 ) $t_mm="0".$t_mm;
 if ( $t_ss<10 ) $t_ss="0".$t_ss;
 
 if ( $graph<1 ) {
-	echo "
+	if ( $t_rows==0 ) {
+		echo "
+</tbody>
+</table><br>
+<center><b>".$ged["No_data_for_period"]."</b></center><br>";
+	} else {
+		echo "
 </tbody>
 <tfoot id='rep_tfoot'>
 <tr $rjust height='28px'>
@@ -348,15 +355,16 @@ if ( $graph<1 ) {
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>";
-	if ( $conductiv_vis==1 ) echo "
+		if ( $conductiv_vis==1 ) echo "
 	<td>&nbsp;</td>";
-	echo "
+		echo "
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
 </tr>
 </tfoot>
 </table><br>";
+	}
 
 } else {
 	$dots_set=$dots[0];

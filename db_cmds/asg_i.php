@@ -10,6 +10,6 @@ $nick = mysqli_real_escape_string($conn, $__data->nick);
 $__query = "INSERT INTO f__sgrs
  (num, national_descr, nick, comments)
  VALUES ('$num', '$national_descr', '$nick', '$comments')";
-mysqli_query($conn, $__query);
+Sqli_query($__query);
 echo true;
 ?>

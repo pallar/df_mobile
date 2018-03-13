@@ -1,29 +1,29 @@
-<!-- DF_2 Edit Group Form -->
+<!-- DF_ajs: Edit Group Form -->
 		<div class="form-group row">
 			<div class="col-md-8">
-				<button class="btn btn-success" style="border-radius:0;" ng-disabled="g_edit.$invalid || cur_g.id==1" ng-click="db_G_update(cur_g);">Update</button>
-				<button class="btn btn-warning" style="border-radius:0;" ng-disabled="g_edit.$invalid || cur_g.id==1" ng-click="db_G_update(cur_g); G_form_close('cancel',cur_g.id);">Update & List</button>
-				<button class="btn btn-danger" style="border-radius:0;" ng-click="G_form_close('cancel',cur_g.id);">Cancel</button>
-			</div>				
+				<button class="btn btn-success" style="<?php echo $_btn_style;?>" ng-disabled="g_edit.$invalid || cur_g.id==1 || cur_g.locked.length>0" ng-click="db_G_update(cur_g);">Update</button>
+				<button class="btn btn-warning" style="<?php echo $_btn_style;?>" ng-disabled="g_edit.$invalid || cur_g.id==1 || cur_g.locked.length>0" ng-click="db_G_update(cur_g); Gs_form_close('cancel',cur_g.id);">Update & List</button>
+				<button class="btn btn-danger" style="<?php echo $_btn_style;?>" ng-click="Gs_form_close('cancel',cur_g.id);">X</button>
+			</div>
 			<div class="col-md-4 has-warning">
 				<label>Group' Card</label>
 			</div>
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Number:<span class="text-danger" ng-show="g_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="border-radius:0; width:100px;" type="text" value="{{cur_g.num}}" ng-disabled="cur_g.id==1" ng-model="cur_g.num" required>
+				<label>№<span class="text-danger" ng-show="l_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="4" placeholder="Enter Number" style="<?php echo $_inp_style;?> width:100px;" type="text" ng-disabled="cur_g.id==1 || cur_g.locked.length>0" ng-model="cur_g.num" required>
 			</div>
 			<div class="col-md-4">
-				<label>National Number:</label>
-				<input class="form-control" maxlength="30" name="national_descr" placeholder="Enter National Number" style="border-radius:0; width:200px;" type="text" value="{{cur_g.national_descr}}" ng-disabled="cur_g.id==1" ng-model="cur_g.national_descr">
+				<label>National №</label>
+				<input class="form-control" maxlength="30" placeholder="Enter National Number" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_g.id==1 || cur_g.locked.length>0" ng-model="cur_g.national_descr">
 			</div>
 			<div class="col-md-4">
-				<label>Nick:</label>
-				<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="border-radius:0; width:200px;" type="text" value="{{cur_g.nick}}" ng-disabled="cur_g.id==1" ng-model="cur_g.nick">
+				<label>Name</label>
+				<input class="form-control" maxlength="100" placeholder="Enter Name" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_g.id==1 || cur_g.locked.length>0" ng-model="cur_g.nick">
 			</div>
 		</div>
 		<div class="form-group">
-			<label>Comments:</label>
-			<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="border-radius:0; width:200px;" type="text" ng-disabled="cur_g.id==1" ng-model="cur_g.comments">
+			<label>Comments</label>
+			<input class="form-control" maxlength="100" placeholder="Enter Comments" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_g.id==1 || cur_g.locked.length>0" ng-model="cur_g.comments">
 		</div>

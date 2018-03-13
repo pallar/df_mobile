@@ -4,31 +4,29 @@ require_once "_db_conn.php";
 $__data = json_decode(file_get_contents("php://input"));
 // Zap special characters from updated data
 $id = mysqli_real_escape_string($conn, $__data->id);
-$b_date = mysqli_real_escape_string($conn, $__data->cur_cw_b_date);
-$b_num = mysqli_real_escape_string($conn, $__data->cur_cw_b_num);
-$national_descr = mysqli_real_escape_string($conn, $__data->cur_cw_national_descr);
-$cow_num = mysqli_real_escape_string($conn, $__data->cur_cw_cow_num);
-$nick = mysqli_real_escape_string($conn, $__data->cur_cw_nick);
-$rfid_num = mysqli_real_escape_string($conn, $__data->cur_cw_rfid_num);
-$breed_id = mysqli_real_escape_string($conn, $__data->cur_cw_breed_id);
-$lot_id = mysqli_real_escape_string($conn, $__data->cur_cw_lot_id);
-$gr_id = mysqli_real_escape_string($conn, $__data->cur_cw_gr_id);
-$subgr_id = mysqli_real_escape_string($conn, $__data->cur_cw_subgr_id);
-$mom_id = mysqli_real_escape_string($conn, $__data->cur_cw_mom_id);
-$dad_id = mysqli_real_escape_string($conn, $__data->cur_cw_dad_id);
-$comments = mysqli_real_escape_string($conn, $__data->cur_cw_comments);
-$defects = mysqli_real_escape_string($conn, $__data->cur_cw_defects);
+$b_date = mysqli_real_escape_string($conn, $__data->b_date);
+$b_num = mysqli_real_escape_string($conn, $__data->b_num);
+$national_descr = mysqli_real_escape_string($conn, $__data->n_descr);
+$cow_num = mysqli_real_escape_string($conn, $__data->cow_num);
+$nick = mysqli_real_escape_string($conn, $__data->nick);
+$rfid_num = mysqli_real_escape_string($conn, $__data->tag_num);
+$breed_id = mysqli_real_escape_string($conn, $__data->bid);
+$lot_id = mysqli_real_escape_string($conn, $__data->lid);
+$gr_id = mysqli_real_escape_string($conn, $__data->gid);
+$subgr_id = mysqli_real_escape_string($conn, $__data->sgid);
+$mom_id = mysqli_real_escape_string($conn, $__data->momid);
+$dad_id = mysqli_real_escape_string($conn, $__data->dadid);
+$comments = mysqli_real_escape_string($conn, $__data->comments);
+$defects = mysqli_real_escape_string($conn, $__data->defects);
+if($mom_id*1==0) $mom_id=1;
+if($dad_id*1==0) $dad_id=1;
 $__query = "UPDATE f_cows SET
  cow_num='$cow_num', nick='$nick', rfid_num='$rfid_num', rfid_native='$rfid_num',
  comments='$comments', defects='$defects',
- b_date='$b_date', b_num='$b_num', national_descr='$national_descr'
- WHERE id=$id";
-//$__query = "UPDATE f_cows SET
-// cow_num='$cow_num', nick='$nick', rfid_num='$rfid_num', rfid_native='$rfid_num',
-// mth_id='$mom_id', fth_id='$dad_id',
-// comments='$comments', defects='$defects',
-// b_date='$b_date', b_num='$b_num', national_descr='$national_descr'
-// WHERE id=$id";
-Sql_query($__query);
+ b_date='$b_date', b_num='$b_num', national_descr='$national_descr',
+ breed_id='$breed_id', gr_id='$gr_id', subgr_id='$subgr_id', lot_id='$lot_id',
+ mth_id='$mom_id', fth_id='$dad_id'
+ WHERE id=$id AND locked=''";
+Sqli_query($__query);
 echo $__data;
 ?>

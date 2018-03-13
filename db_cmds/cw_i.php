@@ -10,6 +10,6 @@ $nick = mysqli_real_escape_string($conn, $__data->nick);
 $__query = "INSERT INTO f_cows
  (cow_num, b_date, b_num, nick)
  VALUES ('$cow_num', '$b_date', '$b_num', '$nick')";
-mysqli_query($conn, $__query);
+Sqli_query($__query);
 echo true;
 ?>

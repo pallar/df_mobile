@@ -17,8 +17,8 @@ $_filtsXmode="r";
 
 $dontuse_period=2;//ONLY IN THIS REPORT, PERIOD_BEGIN=PERIOD_END MINUS 7 DAYS
 
-$i=0; $dots_cnt=0;
-$mtt=0; $mttq=0; $mtm=0; $mtmq=0; $mt0=0; $mt0q=0;
+$i=0;
+$t_rows=$dots_cnt=$mtt=$mttq=$mtm=$mtmq=$mt0=$mt0q=0;
 
 if ( $outsele_*1==-1 ) $db_id=0; else $db_id=21;
 

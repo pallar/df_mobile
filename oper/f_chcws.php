@@ -108,7 +108,7 @@ if ( $submit1!="" ) {
 		else if ( $opertype==2048 ) $url_="abrt";
 		else if ( $opertype==4096 ) $url_="abrt";
 		else if ( $opertype==8192 ) $url_="jagg";
-		Res_Draw( 1, $tmp_phpself."?include=f_o_".$url_.".php&div_hide=1&opertype=$opertype&sess_id=$sess_id", "", "", $php_mm_tip[0] );
+		Res_Draw( 1, $tmp_phpself."?include=f_o_".$url_.".php&div_hide=-1&opertype=$opertype&sess_id=$sess_id", "", "", $php_mm_tip[0] );
 	}
 } else {
 	$opertype=$_GET["opertype"]*1; if ( $opertype<1 ) $opertype=64;

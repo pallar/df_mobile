@@ -10,7 +10,7 @@ $b_num = mysqli_real_escape_string($conn, $__data->b_num);
 $nick = mysqli_real_escape_string($conn, $__data->nick);
 $__query = "UPDATE f_oxes
  SET num='$num', b_date='$b_date', b_num='$b_num', nick='$nick'
- WHERE id=$id";
-mysqli_query($conn, $__query);
+ WHERE id=$id AND locked=''";
+Sqli_query($__query);
 echo $__data;
 ?>

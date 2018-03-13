@@ -11,7 +11,7 @@ function Split_( $x, $y ) {
 	return preg_split( $x, $y );
 }
 
-function DbRelease( $globals, $db ) {
+function DbRelease( $globals ) {
 	$res=mysql_query( "SELECT db_rel FROM $globals" ); $row=mysql_fetch_row( $res );
 	$db_rel=Split_( ":", trim( $row[0] ));
 	$x=strpos( "=".$db_rel[0], "[" );
@@ -98,27 +98,10 @@ function Is_BitOn( $var, $bit ) {
 	return (( $var & bit ) / bit);
 }
 
-//mysql_query with error reporting
-function Sql_query( $query ) {
-	mysql_query( $query );
-	$sqlerr=mysql_errno()*1;
-	if ( $sqlerr!=0 ) {
-		$sqlerr=$sqlerr.": ".mysql_error();
-		echo "<h1>MySQL ERROR $sqlerr.</h1>";
-		echo "<h3>$query</h3>";
-	}
-	return $sqlerr;
-}
-
 //create query for any table in current database
 function T_create( $query, $dbt_, $dbt_struc ) {
 	$query=$query." ".$dbt_." ".$dbt_struc;
-	mysql_query( $query );
-	$sqlerr=mysql_errno();
-	if ( $sqlerr!=0 ) {
-		$sqlerr=$sqlerr.": ".mysql_error();
-		echo "<h3>TABLE '$dbt_': MySQL ERROR $sqlerr.</h3>";
-	}
+	Sql_query( $query );
 }
 
 //add value to table
@@ -127,7 +110,7 @@ function T_addvalue( $uid, $persontable, $table, $varname_column, $varname_value
 	$res=mysql_query( "SELECT id FROM $persontable WHERE id='$uid'" );
 	while ( $row=mysql_fetch_row( $res )) $res1=$row[0];
 	mysql_free_result( $res ); $sqlerr=mysql_errno();
-	if ( $error!=0 ) {
+	if ( $sqlerr!=0 ) {
 //$persontable not found
 		$error=$error.": ".mysql_error();
 		$error1=2;
@@ -409,10 +392,6 @@ function PhraseCarry( $s, $ch, $pos ) {
 	}
 	if ( $s==$s2 ) $s1=$s1.$ch;
 	return $s1;
-}
-
-function CookieSetSs( $cname, $cvalue, $ss ) {
-	setcookie( $cname, $cvalue, time()+$ss, "/" );
 }
 
 function ArrMenu( $menuArr ) {

@@ -2,9 +2,10 @@
 /* DF_2: oper/f_o_meas.php
 oper ----4 (103) [measurings]
 c: 09.01.2006
-m: 06.10.2017 */
+m: 20.02.2018 */
 
 $dbt_ext="_o";//DONT MOVE THIS BELOW!
+$_list_height=$_list_height+80;
 
 if ( strlen( $key )>8 ) {
 	$d1=$_GET["row7"];
@@ -35,8 +36,6 @@ if ( $add_oper!="" ) {
 } else {
 	echo "
 <script language='JavaScript' src='../dflib/f_input.js'></script>";
-	include_once( "../oper/f_dtdiv.php" );//<tr>'s date
-	$td1w="10px";
 	$td2w="60px";
 	$td3w="60px";
 	$td4w="60px";
@@ -48,16 +47,16 @@ if ( $add_oper!="" ) {
 	$tdaw="20px";
 	$tdbw="20px";
 	$tdcw="20px";
-	$tddw="60px";
-	$tdew="60px";
-	if ( $div_hide!=1 ) {
-		if ( count( $cows_arr )>99 ) $td1w="20px";
-		if ( count( $cows_arr )>999 ) $td1w="30px";
-	}
-	if ( $varsession!=1 ) include_once( "../oper/f_oprwd.php" );
+	$tdw[20]="100px";
+	$tdw[21]="170px";
+//	$tdw[1]="10px";
+//	if ( $div_hide!=1 ) {
+//		if ( count( $cows_arr )>99 ) $td1w="20px";
+//		if ( count( $cows_arr )>999 ) $td1w="30px";
+//	}
+	include_once( "../oper/f_oprwd.php" );
 	if ( $userCoo!=9 ) echo "
 <input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype*1].")...'>&nbsp;";
-	if ( $div_hide!=1 ) include_once( "../oper/f_dt.php" );//page's date
 	else if ( $varsession!=1 & $userCoo!=9 ) echo "
 &nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";
 	echo "
@@ -70,24 +69,24 @@ if ( $add_oper!="" ) {
 	if ( $div_hide!=1 ) echo "
 <div style='$theadS0; height:59px;'>";
 	echo "
-	<table id='OPER_TABLE' cellspacing='1' class='st2'>
+	<table id='OPER_TABLE'>
 	<tr $cjust class='st_title2' style='font-weight:bold; height:27px'>";
-	if ( $div_hide!=1 ) echo "
-		<td rowspan='2' width='$td1w'>&nbsp;</td>";
+//	if ( $div_hide!=1 ) echo "
+//		<td width='".$tdw[1]."'>&nbsp;</td>";
 	echo "
-		<td rowspan='2' width='$td2w'>".$ged["Group"]."</td>
-		<td rowspan='2' width='$td3w'>".$ged["Number"]."</td>
-		<td rowspan='2' width='$td4w'>".$ged["Nick"]."</td>
-		<td rowspan='2' width='$td5w'>1</td>
-		<td rowspan='2' width='$td6w'>2</td>
-		<td rowspan='2' width='$td7w'>3</td>
-		<td rowspan='2' width='$td8w'>4</td>
-		<td rowspan='2' width='$td9w'>5</td>
-		<td rowspan='2' width='$tdaw'>6</td>
-		<td rowspan='2' width='$tdbw'>7</td>
-		<td rowspan='2' width='$tdcw'>8</td>
-		<td width='$tddw'>".$ged["Comment."]."</td>
-		<td rowspan='2' width='$tdew'>".$ged["Date"]."</td>
+		<td width='$td2w'>".$ged["Group"]."</td>
+		<td width='$td3w'>".$ged["Number"]."</td>
+		<td width='$td4w'>".$ged["Nick"]."</td>
+		<td width='$td5w'>1</td>
+		<td width='$td6w'>2</td>
+		<td width='$td7w'>3</td>
+		<td width='$td8w'>4</td>
+		<td width='$td9w'>5</td>
+		<td width='$tdaw'>6</td>
+		<td width='$tdbw'>7</td>
+		<td width='$tdcw'>8</td>
+		<td width='".$tdw[20]."'>".$ged["Comment."]."</td>
+		<td width='".$tdw[21]."'>".$ged["Date"]."</td>
 	</tr>
 	<tr $cjust class='st_title2' style='font-weight:bold; height:27px'>
 		<td width='$tddw'>";
@@ -98,57 +97,57 @@ if ( $add_oper!="" ) {
 	</table>
 </div>
 <div style='height:".$_list_height."px;'>
-	<table cellspacing='1' class='st2'>";
+	<table>";
 	else if ( $varsession!=1 ) echo "
 	<tr ".GrTrCol().">
 		<td width='$td2w'>&nbsp;</td>
 		<td width='$td3w'>&nbsp;</td>
 		<td width='$td4w'>&nbsp;</td>
-		<td width='$td5w'><input style='$rrS0; height:18px;' type='text' value='$d1' onkeypress='return false'></td>
-		<td width='$td6w'><input style='$rrS0; height:18px;' type='text' value='$d2' onkeypress='return false'></td>
-		<td width='$td7w'><input style='$rrS0; height:18px;' type='text' value='$d3' onkeypress='return false'></td>
-		<td width='$td8w'><input style='$rrS0; height:18px;' type='text' value='$d4' onkeypress='return false'></td>
-		<td width='$td9w'><input style='$rrS0; height:18px;' type='text' value='$d5' onkeypress='return false'></td>
-		<td width='$tdaw'><input style='$rrS0; height:18px;' type='text' value='$d6' onkeypress='return false'></td>
-		<td width='$tdbw'><input style='$rrS0; height:18px;' type='text' value='$d7' onkeypress='return false'></td>
-		<td width='$tdcw'><input style='$rrS0; height:18px;' type='text' value='$d8' onkeypress='return false'></td>
-		<td width='$tddw'><input style='$rrS0; height:18px;' type='text' value='$co' onkeypress='return false'></td>
-		<td width='$tdew'><input style='$rrS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></td>
+		<td width='$td5w'><input style='' type='text' value='$d1' onkeypress='return false;'></td>
+		<td width='$td6w'><input style='' type='text' value='$d2' onkeypress='return false;'></td>
+		<td width='$td7w'><input style='' type='text' value='$d3' onkeypress='return false;'></td>
+		<td width='$td8w'><input style='' type='text' value='$d4' onkeypress='return false;'></td>
+		<td width='$td9w'><input style='' type='text' value='$d5' onkeypress='return false;'></td>
+		<td width='$tdaw'><input style='' type='text' value='$d6' onkeypress='return false;'></td>
+		<td width='$tdbw'><input style='' type='text' value='$d7' onkeypress='return false;'></td>
+		<td width='$tdcw'><input style='' type='text' value='$d8' onkeypress='return false;'></td>
+		<td width='".$tdw[20]."'><input style='' type='text' value='$co' onkeypress='return false;'></td>
+		<td width='".$tdw[21]."'><input style='' type='text' value='$dmY' onkeypress='return false;'></td>
 	</tr>";
 	$res=mysql_query( "SELECT $cows.id, $cows.cow_num, $cows.nick, $groups.nick
 	 FROM $cows, $groups
 	 WHERE $groups.id=$cows.gr_id
-	 ORDER BY gr_id, cow_num*1", $db );
+	 ORDER BY gr_id, cow_num*1" );
 	$j=0;
 	while ( $row=mysql_fetch_row( $res )) {
 		for ( $i=0; $i<count( $cows_arr ); $i++ ) { if ( $row[0]-$cows_arr[$i]==0 ) {
 			$j++;
 			echo "
 	<tr ".GrTrCol().">";
-			if ( $div_hide!=1 ) echo "
-		<td $cjust width='$td1w'>".$j."</td>";
+//			if ( $div_hide!=1 ) echo "
+//		<td $cjust width='".$tdw[1]."'>".$j."</td>";
 			echo "
-		<td $cjust height='22px' title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
+		<td $cjust title='".StrCutLen1( $row[3], 59, $contentCharset )."' width='$td2w'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
 		<td $rjust title='".$cownum_div.$row[1].$cownum_div1."' width='$td3w'><b>".$cownum_div.StrCutLen1( $row[1], 9, $contentCharset ).$cownum_div1."</b></td>
 		<td $cjust title='".StrCutLen1( $row[2], 59, $contentCharset ) ."' width='$td4w'>".StrCutLen1( $row[2], 3, $contentCharset )."</td>
-		<td style='background:#fff' width='$td5w'><input id='data1".$i."' maxlength='4' name='d1_[".$i."]' style='$rwS0; height:18px;' type='text' value='$d1' onfocus='int_keyp( \"data1$i\", 1, 2500, 4 )' onclick='int_keyp( \"data1$i\", 1, 2500, 4 )' onkeypress='int_keyp( \"data1$i\", 1, 2500, 4 )'></td>
-		<td style='background:#fff' width='$td6w'><input id='data2".$i."' maxlength='3' name='d2_[".$i."]' style='$rwS0; height:18px;' type='text' value='$d2' onfocus='int_keyp( \"data2$i\", 1, 800, 3 )' onclick='int_keyp( \"data2$i\", 1, 800, 3 )' onkeypress='int_keyp( \"data2$i\", 1, 800, 3 )'></td>
-		<td style='background:#fff' width='$td7w'><input id='data3".$i."' maxlength='4' name='d3_[".$i."]' style='$rwS0; height:18px;' type='text' value='$d3' onfocus='int_keyp( \"data3$i\", 1, 1000, 4 )' onclick='int_keyp( \"data3$i\", 1, 1000, 4 )' onkeypress='int_keyp( \"data3$i\", 1, 1000, 4 )'></td>
-		<td style='background:#fff' width='$td8w'><input id='data4".$i."' maxlength='4' name='d4_[".$i."]' style='$rwS0; height:18px;' type='text' value='$d4' onfocus='int_keyp( \"data4$i\", 1, 2000, 4 )' onclick='int_keyp( \"data4$i\", 1, 2000, 4 )' onkeypress='int_keyp( \"data4$i\", 1, 2000, 4 )'></td>
-		<td style='background:#fff' width='$td9w'><input id='data5".$i."' maxlength='4' name='d5_[".$i."]' style='$rwS0; height:18px;' type='text' value='$d5' onfocus='int_keyp( \"data5$i\", 1, 1000, 4 )' onclick='int_keyp( \"data5$i\", 1, 1000, 4 )' onkeypress='int_keyp( \"data5$i\", 1, 1000, 4 )'></td>
-		<td style='background:#fff' width='$tdaw'><input id='data6".$i."' maxlength='4' name='d6_[".$i."]' style='$rwS0; height:18px;' type='text' value='$d6' onfocus='int_keyp( \"data6$i\", 1, 2500, 4 )' onclick='int_keyp( \"data6$i\", 1, 2500, 4 )' onkeypress='int_keyp( \"data6$i\", 1, 2500, 4 )'></td>
-		<td style='background:#fff' width='$tdbw'><input id='data7".$i."' maxlength='3' name='d7_[".$i."]' style='$rwS0; height:18px;' type='text' value='$d7' onfocus='int_keyp( \"data7$i\", 1, 200, 3 )' onclick='int_keyp( \"data7$i\", 1, 200, 3 )' onkeypress='int_keyp( \"data7$i\", 1, 200, 3 )'></td>
-		<td style='background:#fff' width='$tdcw'><input id='data8".$i."' maxlength='4' name='d8_[".$i."]' style='$rwS0; height:18px;' type='text' value='$d8' onfocus='int_keyp( \"data8$i\", 1, 2000, 4 )' onclick='int_keyp( \"data8$i\", 1, 2000, 4 )' onkeypress='int_keyp( \"data8$i\", 1, 2000, 4 )'></td>
-		<td style='background:#fff' width='$tddw'><input id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$rwS0; height:18px;' type='text' value='$co'></td>
-		<td style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$liS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></a></td>
+		<td width='$td5w'><input id='data1".$i."' maxlength='4' name='d1_[".$i."]' style='' type='text' value='$d1' onfocus='int_keyp( \"data1$i\", 1, 2500, 4 );' onclick='int_keyp( \"data1$i\", 1, 2500, 4 );' onkeypress='int_keyp( \"data1$i\", 1, 2500, 4 );'></td>
+		<td width='$td6w'><input id='data2".$i."' maxlength='3' name='d2_[".$i."]' style='' type='text' value='$d2' onfocus='int_keyp( \"data2$i\", 1, 800, 3 );' onclick='int_keyp( \"data2$i\", 1, 800, 3 );' onkeypress='int_keyp( \"data2$i\", 1, 800, 3 );'></td>
+		<td width='$td7w'><input id='data3".$i."' maxlength='4' name='d3_[".$i."]' style='' type='text' value='$d3' onfocus='int_keyp( \"data3$i\", 1, 1000, 4 );' onclick='int_keyp( \"data3$i\", 1, 1000, 4 );' onkeypress='int_keyp( \"data3$i\", 1, 1000, 4 );'></td>
+		<td width='$td8w'><input id='data4".$i."' maxlength='4' name='d4_[".$i."]' style='' type='text' value='$d4' onfocus='int_keyp( \"data4$i\", 1, 2000, 4 );' onclick='int_keyp( \"data4$i\", 1, 2000, 4 );' onkeypress='int_keyp( \"data4$i\", 1, 2000, 4 );'></td>
+		<td width='$td9w'><input id='data5".$i."' maxlength='4' name='d5_[".$i."]' style='' type='text' value='$d5' onfocus='int_keyp( \"data5$i\", 1, 1000, 4 );' onclick='int_keyp( \"data5$i\", 1, 1000, 4 );' onkeypress='int_keyp( \"data5$i\", 1, 1000, 4 );'></td>
+		<td width='$tdaw'><input id='data6".$i."' maxlength='4' name='d6_[".$i."]' style='' type='text' value='$d6' onfocus='int_keyp( \"data6$i\", 1, 2500, 4 );' onclick='int_keyp( \"data6$i\", 1, 2500, 4 );' onkeypress='int_keyp( \"data6$i\", 1, 2500, 4 );'></td>
+		<td width='$tdbw'><input id='data7".$i."' maxlength='3' name='d7_[".$i."]' style='' type='text' value='$d7' onfocus='int_keyp( \"data7$i\", 1, 200, 3 );' onclick='int_keyp( \"data7$i\", 1, 200, 3 );' onkeypress='int_keyp( \"data7$i\", 1, 200, 3 );'></td>
+		<td width='$tdcw'><input id='data8".$i."' maxlength='4' name='d8_[".$i."]' style='' type='text' value='$d8' onfocus='int_keyp( \"data8$i\", 1, 2000, 4 );' onclick='int_keyp( \"data8$i\", 1, 2000, 4 );' onkeypress='int_keyp( \"data8$i\", 1, 2000, 4 );'></td>
+		<td width='".$tdw[20]."'><input class='txt txt_h0' id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$inpS1; width:100%;' type='text' value='$co'></td>
+		<td width='".$tdw[21]."'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;' href=''><input class='txt txt_h0' id='date1".$i."' name='dates_[".$i."]' size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
 	</tr>";
 		}}
 	}
 	echo "
 	</table>";
 	if ( $div_hide!=1 ) echo "
-</div>"; else echo "
-	<table id='div' width='760px'></table><br>";
+</div>";
 	echo "
 </form>";
 }
+?>

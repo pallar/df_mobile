@@ -1,5 +1,5 @@
 <?php
-// Modified: 06.03.2017
+// m: 13.03.2018
 include "../../f_vars0.php";
 ?>
 
@@ -8,18 +8,18 @@ include "../../f_vars0.php";
 <?php
 include "0_menuen.php";
 ?>
-			<tr style='background:#f0ffff' height='40'>
+			<tr style='background:#f0ffff;' height='40'>
 				<td colspan='6'>
-					<div style='margin-left:7; margin-right:7'><font size='+2'><b>Работа программы</b></font></div>
+					<div style='margin-left:7; margin-right:7;'><font size='+2'><b>Работа программы</b></font></div>
 				</td>
 			</tr>
 			</table>
 		</div></div>
-		<div id='content' style='background:#f0ffff; height:60%; overflow-y:auto'><div style='margin-left:7; margin-right:7'>
+		<div id='content' style='background:#f0ffff; height:60%; overflow-y:auto;'><div style='margin-left:7; margin-right:7;'>
 <p></p>
 <b>Описание программного обеспечения:</b><br>
 <p>Основной целью работы «Интернет-Ферма» является автоматизация управления хозяйством. Программа предоставляет достаточное количество разноплановых справок, отчётов и графиков для получения оперативной информации по всему хозяйству и отдельным животным. Информация из «Интернет-Ферма» базируется на автоматических расчётах биологических циклов животных, данных, вносимых оператором компьютера, и данных из доильного зала и от автоматики селекционных ворот, отправляемых в автоматическом режиме.</p>
-			<div style='float:right; margin:7'><img border='0' src='files/501_00en.jpg'></div>
+			<div style='float:right; margin:7;'><img border='0' src='files/501_00en.jpg'></div>
 <p>Программа имеет простое меню, позволяет одновременно работать неограниченному количеству пользователей по сети (в том числе через Интернет).</p>
 <p>Пользователи имеют разные права доступа к данным программы. Например, гость может только просматривать данные, а оператор имеет право вносить новые и изменять существующие данные.</p>
 <b>Перед работой с программой необходимо:</b><br>
@@ -33,7 +33,7 @@ include "0_menuen.php";
 Система автоматически получает детальные данные о каждом доении, в системе регистрируются интенсивности молокоотдачи в течение трёх первых 30-секундных интервалов времени. Эти данные позволяют эффективно оценивать молочную продуктивность каждого животного, прогнозировать его надои и своевременно принимать необходимые меры.</p>
 <b>Видеонаблюдение:</b><br>
 <p>Система в реальном времени обеспечивает удалённое визуальное наблюдение доильного зала через web-камеру, позволяет просматривать детальную информацию о текущем состоянии электронного оборудования в зале. Процесс работы отображается на мнемосхеме доильного зала.</p>
-			<div style='float:right; margin:7'><img border='0' src='files/501_10en.jpg' width='800px'></div>
+			<div style='float:right; margin:7;'><img border='0' src='files/501_10en.jpg' width='800px'></div>
 <p>Собственно мнемосхема - это таблица из восьми строк, каждая из которых соответствует определённому доильному аппарату, и кнопка для перехода к следующим доильным аппаратам. Содержание каждой строки изменяется в следующих случаях:</p>
 <ul>
 <li>если животное идентифицировано системой распознавания;</li>
@@ -46,7 +46,7 @@ include "0_menuen.php";
 <p>Просмотреть детальные данные можно не только по тем животным, которые находятся в зале на данный момент, но и за всё предыдущее время работы в разделе меню `По залу`. Например, отдельно можно просмотреть данные по утреннему, дневному или вечернему доению.</p>
 <b>Детальная информация по работе доильного зала:</b><br>
 <p>В разделе меню `По залу` отображается вся информация по каждому проведённому доению. Тут указываются:
-			<div style='float:right; margin:7'><img border='0' src='files/501_20en.jpg' width='800px'></div>
+			<div style='float:right; margin:7;'><img border='0' src='files/501_20en.jpg' width='800px'></div>
 <ul>
 <li>дата доения;</li>
 <li>номер животного;</li>
@@ -68,30 +68,30 @@ include "0_menuen.php";
 <li>номер блока доения.</li>
 </ul>
 </p>
-<p>Специальные <a href='javascript:{object=window.open("files/501_01en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>"фильтры"</a> позволяют отобрать группу операций доения с необходимыми признаками.</p>
+<p>Специальные <a href='javascript:{object=window.open("files/501_01en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>"фильтры"</a> позволяют отобрать группу операций доения с необходимыми признаками.</p>
 <b>Уход за животными:</b><br>
-<p>Важной частью работы на ферме является уход за животными. «Интернет-Ферма» позволяет планировать те или иные мероприятия по уходу в стаде. Также программа автоматически подсчитывает биологические циклы каждого животного и предоставляет информацию (<a href='javascript:{object=window.open("files/501_30en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>раздел меню `Ежедневник`</a>) о необходимых на сегодня мероприятиях. Например, в этом разделе приводится список животных, которых можно осеменять. Соответственно, персонал фермы имеет оперативную информацию по всему стаду.</p>
+<p>Важной частью работы на ферме является уход за животными. «Интернет-Ферма» позволяет планировать те или иные мероприятия по уходу в стаде. Также программа автоматически подсчитывает биологические циклы каждого животного и предоставляет информацию (<a href='javascript:{object=window.open("files/501_30en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>раздел меню `Ежедневник`</a>) о необходимых на сегодня мероприятиях. Например, в этом разделе приводится список животных, которых можно осеменять. Соответственно, персонал фермы имеет оперативную информацию по всему стаду.</p>
 <b>Отчёты:</b><br>
 <p>В разделе меню `Отчёты` собраны различные отчёты по разделам:
 <ul>
-<li><a href='javascript:{object=window.open("files/501_41en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Молоко</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_42en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Селекция</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_43en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Общие;</li>
-<li><a href='javascript:{object=window.open("files/501_44en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Здоровье</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_45en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Графики</a>.</li>
+<li><a href='javascript:{object=window.open("files/501_41en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Молоко</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_42en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Селекция</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_43en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Общие;</li>
+<li><a href='javascript:{object=window.open("files/501_44en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Здоровье</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_45en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Графики</a>.</li>
 </ul>
 </p>
-<p><a href='javascript:{object=window.open("files/501_01en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>"Фильтры"</a> можно использовать и в этом разделе.</p>
-				<div style='float:right; margin:7'><img border='0' src='files/501_40en.jpg'></div>
+<p><a href='javascript:{object=window.open("files/501_01en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>"Фильтры"</a> можно использовать и в этом разделе.</p>
+				<div style='float:right; margin:7;'><img border='0' src='files/501_40en.jpg'></div>
 <b>Период:</b><br>
 <p>Вся отчётная информация из базы данных может быть ограничена указанным пользователем периодом (раздел меню `Период`).</p>
 <b>Раздел меню `Картотека`:</b><br>
-<p>Каждое животное имеет собственную электронную <a href='javascript:{object=window.open("files/101_03en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>карточку</a>, в которую можно внести паспортную часть данных, а именно: номер животного, дату рождения, код транспондера, дату регистрации транспондера, кличку, информацию про надои вне доильного зала, данные предков, принадлежность к определённой <a href='javascript:{object=window.open("files/501_61en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>ферме</a> (<a href='javascript:{object=window.open("files/501_62en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>секции</a>, подгруппе, <a href='javascript:{object=window.open("files/501_64en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>породе</a>).</p>
+<p>Каждое животное имеет собственную электронную <a href='javascript:{object=window.open("files/101_03en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>карточку</a>, в которую можно внести паспортную часть данных, а именно: номер животного, дату рождения, код транспондера, дату регистрации транспондера, кличку, информацию про надои вне доильного зала, данные предков, принадлежность к определённой <a href='javascript:{object=window.open("files/501_61en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>ферме</a> (<a href='javascript:{object=window.open("files/501_62en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>секции</a>, подгруппе, <a href='javascript:{object=window.open("files/501_64en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>породе</a>).</p>
 <p>Картотека содержит следующие категории:
 <ul>
-<li><a href='javascript:{object=window.open("files/501_66en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>карточки быков</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_65en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>карточки коров (тёлок)</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_61en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>карточки групп животных</a>.</li>
+<li><a href='javascript:{object=window.open("files/501_66en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>карточки быков</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_65en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>карточки коров (тёлок)</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_61en.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>карточки групп животных</a>.</li>
 </ul>
 </p>
 <p>Каждая категория содержит сокращённые данные. Для просмотра детальной информации по конкретному животному (корове/тёлке, быку, группе) необходимо навести указатель "мыши" на соответствующий номер в таблице и щелкнуть один раз левой кнопкой "мыши". Откроется окно карточки, детализация которой регулируется специальными переключателями в верхней части.</p>
@@ -102,7 +102,7 @@ include "0_menuen.php";
 		</div></div>
 		<div id='page-clear'></div>
 	</div>
-	<div id='footer'><div style='margin-left:0; margin-right:0'>
+	<div id='footer'><div style='margin-left:0; margin-right:0;'>
 		<table align='center' border='0' cellpadding='0' cellspacing='0' height='100%' width='100%'>
 		<tr background='files/menu.jpg'>
 			<td></td>

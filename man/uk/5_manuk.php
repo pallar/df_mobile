@@ -1,5 +1,5 @@
 <?php
-// Modified: 06.03.2017
+// m: 13.03.2018
 include "../../f_vars0.php";
 ?>
 
@@ -8,18 +8,18 @@ include "../../f_vars0.php";
 <?php
 include "0_menuuk.php";
 ?>
-			<tr style='background:#f0ffff' height='40'>
+			<tr style='background:#f0ffff;' height='40'>
 				<td colspan='6'>
-					<div style='margin-left:7; margin-right:7'><font size='+2'><b>Робота програми</b></font></div>
+					<div style='margin-left:7px; margin-right:7px;'><font size='+2'><b>Робота програми</b></font></div>
 				</td>
 			</tr>
 			</table>
 		</div></div>
-		<div id='content' style='background:#f0ffff; height:60%; overflow-y:auto'><div style='margin-left:7; margin-right:7'>
+		<div id='content' style='background:#f0ffff; height:60%; overflow-y:auto;'><div style='margin-left:7px; margin-right:7px;'>
 <p></p>
 <b>Опис програмного забезпечення:</b><br>
-<p>Основною метою роботи «Интернет-Ферма» є автоматизацiя управлiння господарством. Програма надає велику кiлькiсть рiзноманiтних довiдок, звiтiв i графiкiв для одержання оперативної iнформацiї щодо господарства та окремих тварин. Iнформацiя з «Интернет-Ферма» базується на автоматичних обрахунках бiологiчних циклiв тварин, даних, що вносяться оператором комп'ютера, та даних, що надходять в автоматичному режимi з доїльного залу та селекцiйних ворiт.</p>
-			<div style='float:right; margin:7'><img border='0' src='files/501_00uk.jpg'></div>
+<p>Основною метою роботи «Інтернет-Ферма» є автоматизацiя управлiння господарством. Програма надає велику кiлькiсть рiзноманiтних довiдок, звiтiв i графiкiв для одержання оперативної iнформацiї щодо господарства та окремих тварин. Iнформацiя з «Інтернет-Ферма» базується на автоматичних обрахунках бiологiчних циклiв тварин, даних, що вносяться оператором комп’ютера, та даних, що надходять в автоматичному режимi з доїльного залу та селекцiйних ворiт.</p>
+			<div style='float:right; margin:7px;'><img border='0' src='files/501_00uk.jpg'></div>
 <p>Програма має просте меню, дозволяє одночасно працювати необмеженiй кiлькостi користувачiв по мережi (включно через Iнтернет).</p>
 <p>Кожному окремому користувачу призначенi рiзнi права доступу до даних програми. Наприклад, гiсть може лише переглядати данi, а оператор має право вносити новi та змiнювати iснуючi данi.</p>
 <b>Перед роботою з програмою необхiдно:</b><br>
@@ -68,41 +68,41 @@ include "0_menuuk.php";
 <li>номер блока доїння.</li>
 </ul>
 </p>
-<p>Спеціальні <a href='javascript:{object=window.open("files/501_01uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>фільтри</a> дозволяють користувачу відібрати групу операцій доїння із потрібними ознаками.</p>
+<p>Спеціальні <a href='javascript:{object=window.open("files/501_01uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>фільтри</a> дозволяють користувачу відібрати групу операцій доїння із потрібними ознаками.</p>
 <b>Догляд за тваринами:</b><br>
-<p>Важливою частиною роботи на фермі є догляд за тваринами. «Интернет-Ферма» дозволяє планувати ті чи інші заходи по догляду за стадом. Також програма обраховує біологічні цикли кожної тварини та надає інформацію (<a href='javascript:{object=window.open("files/501_30uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>розділ меню `Щоденник`</a>) про міроприємства, що потрібно проводити з тваринами станом на поточний день. Наприклад, в ньому відтворюється перелік тварин, яких можна запліднювати. Таким чином, персонал ферми має оперативну інформацію про стан всього стада.</p>
+<p>Важливою частиною роботи на фермі є догляд за тваринами. «Інтернет-Ферма» дозволяє планувати ті чи інші заходи по догляду за стадом. Також програма обраховує біологічні цикли кожної тварини та надає інформацію (<a href='javascript:{object=window.open("files/501_30uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>розділ меню `Щоденник`</a>) про міроприємства, що потрібно проводити з тваринами станом на поточний день. Наприклад, в ньому відтворюється перелік тварин, яких можна запліднювати. Таким чином, персонал ферми має оперативну інформацію про стан всього стада.</p>
 <b>Звіти:</b><br>
 <p>В розділі меню `Звіти` розташовані різноманітні звіти по розділах:
 <ul>
-<li><a href='javascript:{object=window.open("files/501_41uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Молоко</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_42uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Селекція</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_43uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Загальні;</li>
-<li><a href='javascript:{object=window.open("files/501_44uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Здоров’я</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_45uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Графіки</a>.</li>
+<li><a href='javascript:{object=window.open("files/501_41uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Молоко</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_42uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Селекція</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_43uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Загальні;</li>
+<li><a href='javascript:{object=window.open("files/501_44uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Здоров’я</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_45uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Графіки</a>.</li>
 </ul>
 </p>
-<p><a href='javascript:{object=window.open("files/501_01uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>Фільтри</a> можна використовувати і в цьому розділі.</p>
+<p><a href='javascript:{object=window.open("files/501_01uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>Фільтри</a> можна використовувати і в цьому розділі.</p>
 			<div style='float:right; margin:7'><img border='0' src='files/501_40uk.jpg'></div>
 <b>Період:</b><br>
 <p>Уся звітна інформація, що наявна в базі, виводиться за вказаний користувачем період, тривалість якого регулюється в розділі меню `Період`.</p>
 <b>Розділ меню `Картотека`:</b><br>
-<p>Кожна тварина має власну електронну <a href='javascript:{object=window.open("files/101_03uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>картку</a>, до якої заноситься паспортна частина, а саме: номер тварини, дата народження, код транспондера, дата реєстрації транспондера, прізвисько, інформація про надої поза доїльним залом, дані про батьків, належність до певної <a href='javascript:{object=window.open("files/501_61uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>ферми</a> (<a href='javascript:{object=window.open("files/501_62uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>секцiї</a>, пiдгрупи, <a href='javascript:{object=window.open("files/501_64uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>породи</a>).</p>
+<p>Кожна тварина має власну електронну <a href='javascript:{object=window.open("files/101_03uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>картку</a>, до якої заноситься паспортна частина, а саме: номер тварини, дата народження, код транспондера, дата реєстрації транспондера, прізвисько, інформація про надої поза доїльним залом, дані про батьків, належність до певної <a href='javascript:{object=window.open("files/501_61uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>ферми</a> (<a href='javascript:{object=window.open("files/501_62uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>секцiї</a>, пiдгрупи, <a href='javascript:{object=window.open("files/501_64uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>породи</a>).</p>
 <p>Картотека поділяється на наступні категорії:
 <ul>
-<li><a href='javascript:{object=window.open("files/501_66uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>картки биків</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_65uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>картки корів (телиць)</a>;</li>
-<li><a href='javascript:{object=window.open("files/501_61uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus()}'>картки груп тварин</a>.</li>
+<li><a href='javascript:{object=window.open("files/501_66uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>картки биків</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_65uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>картки корів (телиць)</a>;</li>
+<li><a href='javascript:{object=window.open("files/501_61uk.jpg","windowname","menubar=0,location=0,toolbar=0,resizable=0,scrollbars=0");object.focus();}'>картки груп тварин</a>.</li>
 </ul>
 </p>
 <p>Кожна категорія вміщує таблицю зі скороченими даними. Для перегляду детальної інформації по конкретній тварині (корові/телиці, бику) або групі необхідно навести вказівник "миші" на відповідний номер в таблиці та один раз клацнути лівою кнопкою "миші". Відкриється картка, наповненням якої можна керувати спеціальними перемикачами в верхній частині.</p>
 <b>Режим використання системи:</b><br>
-<p>Комп'ютер, що входить до складу системи «Интернет-Ферма», призначений для цілодобової безперервної роботи. В випадках короткочасного зникнення напруги його робота підтримується блоком безперебійного живлення (ББЖ). В випадках тривалих зникнень напруги, що призводить до автоматичного безпечного вимикання комп’ютера, подальше його завантаження має здiйснювати персонал.</p>
+<p>Комп’ютер, що входить до складу системи «Інтернет-Ферма», призначений для цілодобової безперервної роботи. В випадках короткочасного зникнення напруги його робота підтримується блоком безперебійного живлення (ББЖ). В випадках тривалих зникнень напруги, що призводить до автоматичного безпечного вимикання комп’ютера, подальше його завантаження має здiйснювати персонал.</p>
 <p><i>УВАГА! Не рекомендується використовувати систему з неробочим ББЖ або взагалі без нього. Цілісність Ваших даних в такому разі не гарантується.</i></p>
 <p>З 00:00 до 00:10 за Вашим локальним часом виконуються регламентні роботи з обслуговування бази даних і файлової системи комп’ютера. В цей період часу (технічна перерва) робота персоналу з даними та робота в доїльному залі мають бути призупинені.</p>
 		</div></div>
 		<div id='page-clear'></div>
 	</div>
-	<div id='footer'><div style='margin-left:0; margin-right:0'>
+	<div id='footer'><div style='margin-left:0; margin-right:0;'>
 		<table align='center' border='0' cellpadding='0' cellspacing='0' height='100%' width='100%'>
 		<tr background='files/menu.jpg'>
 			<td></td>

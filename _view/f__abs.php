@@ -13,8 +13,8 @@ if ( CookieGet( "_mobile" )*1==0 ) {
 	$_content_style="style='height:".$_list_height."px'";
 } else $_content_style="";
 
-if ( CookieGet( "_mobile" )*1==0 ) $_card_content_style="style=\"height:".$_list_height."px; margin:0; padding:15px; overflow-y:auto;\"";
-else $_card_content_style="style=\"margin:0; padding:15px;\"";
+if ( CookieGet( "_mobile" )*1==0 ) $_card_content_style="style=\"border-radius:0; height:".$_list_height."px; margin:0; padding:15px; overflow-y:auto;\"";
+else $_card_content_style="style=\"border-radius:0; margin:0; padding:15px;\"";
 ?>
 
 <nav1>
@@ -59,16 +59,16 @@ window.onresize=function() {
 </script>
 
 <!--<div ng-controller="x"></div>-->
-<div ng-controller="DbController" style="height:0">
+<div ng-controller="DbController" style="height:0;">
 <!--	<h3 class="text-center">Breeds</h3>-->
 	<div class="alert navbar-brand">
-		<button class="btn btn-primary" style="border-radius:0;" ng-show="show_form" ng-click="B_add_form_show();">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+		<button class="btn btn-primary" style="border-radius:0; padding-left:10px; padding-right:10px;" ng-show="show_form" ng-click="B_add_form_show();">Додати&nbsp;&nbsp;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
 	</div>
 	<div class="alert input-group search-box">
 		<span class="input-group-btn"><input type="text" class="form-control" placeholder="Search In..." style="border-radius:0;" ng-model="search_query"></span>
 	</div>
 <!-- Form template which is used to insert data -->
-	<form class="alert alert-warning" id="b_add_form" name="b_add" style="margin:0; padding:0;" hidden>
+	<form class="alert alert-warning" id="b_add_form" name="b_add" <?php echo $_form_content_style;?> hidden>
 		<div <?php echo $_card_content_style;?>>
 <?php
 include( "f__ab_a.htm" );
@@ -76,7 +76,7 @@ include( "f__ab_a.htm" );
 		</div>
 	</form>
 <!-- Form template which is used to edit and update data -->
-	<form class="alert alert-warning" id="b_edit_form" name="b_edit" style="margin:0; padding:0;" hidden>
+	<form class="alert alert-warning" id="b_edit_form" name="b_edit" <?php echo $_form_content_style;?> hidden>
 		<div <?php echo $_card_content_style;?>>
 <?php
 include( "f__ab_e.htm" );
@@ -90,12 +90,12 @@ include( "f__ab_e.htm" );
 		<tr>
 			<th width="80px"></th>
 			<th width="80px"></th>
-			<th>Nick</th>
-			<th width="80px">Num.</th>
+			<th>Name</th>
+			<th width="80px">№</th>
 		</tr>
 		<tr ng-repeat="detail in details | filter:search_query">
-			<td style="padding-left:16px;"><button class="btn btn-warning" style="border-radius:0;" title="Edit Breed" ng-click="B_edit_form_show(detail);"><span class="glyphicon glyphicon-edit"></span></button></td>
-			<td><button class="btn btn-danger" style="border-radius:0;" title="Delete Breed" ng-disabled="detail.id==1" ng-click="db_B_delete(detail);"><span class="glyphicon glyphicon-trash"></span></button></td>
+			<td style="padding-left:16px;"><button class="btn btn-warning" style="border-radius:0; padding-left:10px; padding-right:10px;" title="Edit" ng-click="B_edit_form_show(detail);"><span class="glyphicon glyphicon-edit"></span></button></td>
+			<td><button class="btn btn-danger" style="border-radius:0; padding-left:10px; padding-right:10px;" title="Delete" ng-disabled="detail.id==1 || detail.locked.length>0" ng-click="db_B_delete(detail);"><span class="glyphicon glyphicon-trash"></span></button></td>
 			<td>{{detail.nick}}</td>
 			<td>{{detail.num}}</td>
 		</tr>

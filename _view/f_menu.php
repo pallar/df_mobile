@@ -21,6 +21,7 @@ echo "
 
 $body_onload="Is_CookiesOn(); App_Login(); App_OnStart();";
 if ( $body_onload_add."."!="." ) $body_onload=$body_onload." ".$body_onload_add;
+if ( $include_tag_style*1>0  ) include( "$included_tag_style_php" );
 ?>
 
 <link href='../css/f_.css' rel='stylesheet' type='text/css'>
@@ -54,59 +55,59 @@ function ok_keyp( i_, ok_ ) {
 }
 
 function Shadow_Close() {
-	eid=$$( "__shadow__" );
-	eid.style.visibility="hidden";
-	eid.style.display="none";
+	eid=$$( '__shadow__' );
+	eid.style.visibility='hidden';
+	eid.style.display='none';
 }
 
 function Shadow_Show() {
-	eid=$$( "__shadow__" );
-	eid.style.visibility="visible";
-	eid.style.display="block";
+	eid=$$( '__shadow__' );
+	eid.style.visibility='visible';
+	eid.style.display='block';
 }
 
 function Login_Close() {
-	eid=$$( "login_div" );
-	eid.style.visibility="hidden";
-	eid.style.display="none";
+	eid=$$( 'login_div' );
+	eid.style.visibility='hidden';
+	eid.style.display='none';
 	Shadow_Close();
 }
 
 function Login_Show() {
 	Period_Close();
-	JsHttpRequest.query( "../_view/f__logi_.php",
-	 { init:"1" },
+	JsHttpRequest.query( '../_view/f__logi_.php',
+	 { init:'1' },
 	 function( responseJS, responseText ) {
 		Shadow_Show();
-		eid=$$( "login_div" );
+		eid=$$( 'login_div' );
 		eid.innerHTML=responseJS.text;
-		eid.style.left="-5px";
-		eid.style.top="35px";
-		eid.style.visibility="visible";
-		eid.style.display="block";
+		eid.style.left='-5px';
+		eid.style.top='35px';
+		eid.style.visibility='visible';
+		eid.style.display='block';
 	 },	false );
 }
 
 function Login_OnOk() {
-	var user=$$( "user" ).value;
-	var passwd=$$( "pass" ).value;
-	JsHttpRequest.query( "../_view/f__logi_.php",
-	 { event:"login_checkpassw", user:user, passwd:passwd },
+	var user=$$( 'user' ).value;
+	var passwd=$$( 'pass' ).value;
+	JsHttpRequest.query( '../_view/f__logi_.php',
+	 { event:'login_checkpassw', user:user, passwd:passwd },
 	 function( responseJS, responseText ) {
-		if ( responseJS==null | responseJS=="");
+		if ( responseJS==null | responseJS=='');
 		else {
-			window.document.cookie="userCoo="+responseJS.user+";path=/";
-			window.document.cookie="unickCoo="+encodeURI( responseJS.usernick )+";path=/";
+			window.document.cookie='userCoo='+responseJS.user+';path=/';
+			window.document.cookie='unickCoo='+encodeURI( responseJS.usernick )+';path=/';
 			Login_Close();
 		}
 	 }, false );
 }
 
 function Login_OnCancel() {
-	var user="not_changed";
-	var passwd="not_required";
-	JsHttpRequest.query( "../_view/f__logi_.php",
-	 { event:"login_cancel", user:user, passwd:passwd },
+	var user='not_changed';
+	var passwd='not_required';
+	JsHttpRequest.query( '../_view/f__logi_.php',
+	 { event:'login_cancel', user:user, passwd:passwd },
 	 function( responseJS, responseText ) {
 		if ( responseJS==null | responseJS=="");
 		else Login_Close();
@@ -114,28 +115,36 @@ function Login_OnCancel() {
 }
 
 function Period_Close() {
-	eid=$$( "period_div" );
-	eid.style.visibility="hidden";
-	eid.style.display="none";
+	eid=$$( 'period_div' );
+	eid.style.visibility='hidden';
+	eid.style.display='none';
 	Shadow_Close();
 }
 
 function Period_Show() {
 	Login_Close();
-	JsHttpRequest.query( "../_view/f__pe_.php",
-	 { init:"1" },
+	JsHttpRequest.query( '../_view/f__pe_.php',
+	 { init:'1' },
 	 function( responseJS, responseText ) {
 		Shadow_Show();
-		eid=$$( "period_div" );
+		eid=$$( 'period_div' );
 		eid.innerHTML=responseJS.text;
-		eid.style.left=( document.body.scrollWidth-289 )+"px";
-		eid.style.top="35px";
-		eid.style.visibility="visible";
-		eid.style.display="block";
+		eid.style.left=( document.body.scrollWidth-289 )+'px';
+		eid.style.top='35px';
+		eid.style.visibility='visible';
+		eid.style.display='block';
 	 }, false );
 	Per_FromCoo();
 }
 
+function get_window_prop() {
+	window.width=window.innerWidth || document.documentElement.clientWidth;
+	window.height=window.innerHeight;
+	window.document.cookie='_width='+width+';path=/';
+	window.document.cookie='_height='+height+';path=/';
+	if ( window.width<=800 ) window.document.cookie='_mobile=1;path=/';
+	else window.document.cookie='_mobile=0;path=/';
+}
 </script>
 <script language='JavaScript' src='../dflib/f_date.js'></script>
 <script language='JavaScript' src='../dflib/f_per.js'></script>
@@ -169,14 +178,3 @@ echo "
 	</div>
 </nav>";
 ?>
-
-<script language='JavaScript' type='text/javascript'>
-function get_window_prop() {
-	window.width=window.innerWidth || document.documentElement.clientWidth;
-	window.height=window.innerHeight;
-	window.document.cookie='_width='+width+';path=/';
-	window.document.cookie='_height='+height+';path=/';
-	if ( window.width<=800 ) window.document.cookie='_mobile=1;path=/';
-	else window.document.cookie='_mobile=0;path=/';
-}
-</script>

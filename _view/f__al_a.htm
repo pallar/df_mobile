@@ -1,8 +1,8 @@
 <!-- DF_ajs: Add Lot Form -->
 		<div class="form-group row">
 			<div class="col-md-8">
-				<button class="btn btn-success" style="border-radius:0;" ng-disabled="l_add.$invalid" ng-click="db_L_insert(new_l); L_form_close('cancel');">Add</button>
-				<button class="btn btn-danger" style="border-radius:0;" ng-click="L_form_close('cancel');">Cancel</button>
+				<button class="btn btn-success" style="<?php echo $_btn_style;?>" ng-disabled="l_add.$invalid" ng-click="db_L_insert(new_l); Ls_form_close('cancel');">Застосувати</button>
+				<button class="btn btn-danger" style="<?php echo $_btn_style;?>" ng-click="Ls_form_close('cancel');">X</button>
 			</div>
 			<div class="col-md-4 has-warning">
 				<label>New Lot' Card</label>
@@ -10,19 +10,19 @@
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Number:<span class="text-danger" ng-show="l_add.num.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="border-radius:0; width:100px;" type="text" ng-model="new_l.num" required>
+				<label>№<span class="text-danger" ng-show="l_add.num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="4" placeholder="Enter Number" style="<?php echo $_inp_style;?> width:100px;" type="text" ng-model="new_l.num" required>
 			</div>
 			<div class="col-md-4">
-				<label>National Number:</label>
-				<input class="form-control" maxlength="30" name="national_descr" placeholder="Enter National Number" style="border-radius:0; width:200px;" type="text" ng-model="new_l.national_descr">
+				<label>National №</label>
+				<input class="form-control" maxlength="30" placeholder="Enter National Number" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_l.national_descr">
 			</div>
 			<div class="col-md-4">
-				<label>Nick:</label>
-				<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="border-radius:0; width:200px;" type="text" ng-model="new_l.nick">
-			</div>				
+				<label>Name</label>
+				<input class="form-control" maxlength="100" placeholder="Enter Name" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_l.nick">
+			</div>
 		</div>
 		<div class="form-group">
-			<label>Comments:</label>
-			<input class="form-control" maxlength="100" name="comments" placeholder="Enter Comments" style="border-radius:0; width:200px;" type="text" ng-model="new_l.comments">
+			<label>Comments</label>
+			<input class="form-control" maxlength="100" placeholder="Enter Comments" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_l.comments">
 		</div>

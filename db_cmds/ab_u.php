@@ -10,7 +10,7 @@ $nick = mysqli_real_escape_string($conn, $__data->nick);
 $comments = mysqli_real_escape_string($conn, $__data->comments);
 $__query = "UPDATE f__brs
  SET num='$num', national_descr='$national_descr', nick='$nick', comments='$comments'
- WHERE id=$id";
-Sql_query($__query);
+ WHERE id=$id AND locked=''";
+Sqli_query($__query);
 echo $__data;
 ?>

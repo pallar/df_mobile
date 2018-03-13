@@ -15,5 +15,5 @@ echo "<h3>TURKISH LOCALE...</h3>";
 
 include( "../setup/f_set--.php" );
 
-if ( $error==0 ) include( "../setup/f_updtr.php" );
+if ( $sqlerr==0 ) include( "../setup/f_updtr.php" );
 ?>

@@ -2,7 +2,9 @@
 /* DF_2: oper/f_o_jagg.php
 oper -8192 (114) [jagging and "disable milking"]
 c: 10.08.2009
-m: 06.10.2017 */
+m: 20.02.2018 */
+
+$_list_height=$_list_height+80;
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -149,8 +151,8 @@ function reset_all_keyp( i_ ) {
 	echo "
 	</table>";
 	if ( $div_hide!=1 ) echo "
-</div>"; else echo "
-	<table id='div' width='760px'></table><br>";
+</div>";
 	echo "
 </form>";
 }
+?>

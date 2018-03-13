@@ -2,9 +2,13 @@
 /* DF_2: f_vars0.php
 init: main vars
 c: 14.10.2008
-m: 04.10.2017 */
+m: 13.03.2018 */
 
 ob_start();
+
+$__author="PALLAR LTD., 2003-2018";
+$__author_tel="+380 432 560751";
+$__author_mail="office@pallar.com.ua";
 
 //WARNING! DONT TRANSLATE THIS TEXT BLOCK. MUST BE IN RUSSIAN (CP1251) [BEGIN]
 $insem1st_varname="первое_осем.";//days before 1st insemination (after birthday)
@@ -55,9 +59,6 @@ $hFrm["0700"]=$hDir["forms"]."f__conf.php";
 $hFrm["0011"]=$hDir["forms"]."f__login.php";
 $hFrm["0012"]=$hDir["forms"]."f__per.php";
 
-$hFrm["0013"]=$hDir["forms"]."f__dfexp.php";
-$hFrm["0014"]=$hDir["forms"]."f__dfimp.php";
-
 $hFrm["0610"]=$hDir["oper"]."f_chcws.php";
 
 $hFrm["0510"]=$hDir["forms"]."f__ccw_l.php";
@@ -75,8 +76,6 @@ $hRep["mcws1"]=$hDir["reps"]."f_mcws1.php";
 $hRep["mcws1"]=$hDir["reps"]."f_mcws1.php";
 $hRep["mlact"]=$hDir["reps"]."f_mlact.php";
 $hRep["o"]=$hDir["reps"]."f_o.php";
-$hRep["ofore2"]=$hDir["reps"]."f_ofore2.php";
-$hRep["ofore3"]=$hDir["reps"]."f_ofore3.php";
 
 $hcss["f_0.css"]="f_0.css";
 $hcss["f_1ff036.css"]="f_1ff036.css";
@@ -84,7 +83,6 @@ $hcss["f_1ie060.css"]="f_1ie060.css";
 $hcss["f_1ch100.css"]="f_1ch100.css";
 $hcss["f_1op110.css"]="f_1op110.css";
 $hcss["f_1ch100.css"]="f_1ch100.css";
-
 if ( $ANGULAR_IS_USED>0 ) {
 	$hcss["f_0.css"]="../css/".$hcss["f_0.css"];
 	$hcss["f_1ff036.css"]="../css/".$hcss["f_1ff036.css"];
@@ -97,6 +95,10 @@ if ( $ANGULAR_IS_USED>0 ) {
 	$hFrm["9910"]=$hDir["forms"]."f__mne_1.php";
 	$hFrm["0011"]=$hDir["forms"]."f__logi_.php";
 	$hFrm["0012"]=$hDir["forms"]."f__pe_.php";
+	$_btn_style="border-radius:0; padding-left:10px; padding-right:10px;";
+	$_inp_style="border-radius:0; padding-left:7px;";
+	$_sel_style="border-radius:0; padding-left:3px;";
+	$_form_content_style="style=\"border-radius:0; margin:0; padding:0;\"";
 } else {
 	$hcss["f_0.css"]="../".$hcss["f_0.css"];
 	$hcss["f_1ff036.css"]="../".$hcss["f_1ff036.css"];
@@ -160,41 +162,6 @@ $view_class="class='cards_title'"; $edit_class="class='cards_title1'";
 
 $cownum_div="&nbsp;"; $cownum_div1=".&nbsp;";
 
-function Dbase_connect() {
-	global $db, $db_host, $db_user, $db_password;
-	$db=mysql_connect( $db_host, $db_user, $db_password );
-}
-
-function Dbase_disconnect() {
-	global $db;
-	mysql_close( $db );
-}
-
-function Dbase_select() {
-	global $db, $db_name, $db_utf8, $connectionCharset, $connectionCharset1;
-	if ( $connectionCharset!="cp1251" ) $connectionCharset="utf8";
-//DONT TOUCH NEXT! CRITICAL FOR EXPORT!
-	if ( $connectionCharset1=="cp1251" ) $connectionCharset="cp1251";
-	mysql_select_db( $db_name, $db );
-	if ( $db_utf8==1 ) {
-		mysql_query( "SET CHARACTER SET ".$connectionCharset, $db );
-		mysql_query( "SET NAMES ".$connectionCharset, $db );
-	}
-}
-
-function CookieGet( $cname ) {
-	global $HTTP_COOKIE_VARS, $_COOKIE;
-//FOR PHP5 AND PHP4 COMPATIBILITY
-	$res=$HTTP_COOKIE_VARS["$cname"];
-	$res_php5=$_COOKIE["$cname"];
-	if ( strlen( $res_php5 )>strlen( $res )) $res=$res_php5;
-	return $res;
-}
-
-function CookieSet( $cname, $cvalue ) {
-	setcookie( "$cname", "$cvalue", 0, "/" );
-}
-
 if ( $db_utf8==1 ) {
 	$table_utf8="DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
 	$dbCharset="utf8";
@@ -235,7 +202,7 @@ $HTML_TAG";
 	echo "
 <meta content='text/html; charset=".$contentCharset."' http-equiv='content-type'>
 <meta content='Dairy_Farm:php' name='generator'>
-<meta content='PALLAR LTD., 2008-2017' name='author'>
+<meta content='".$__author."' name='author'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>";
 	if ( $skip_CSS!=1 ) echo "
 <link href='".$hcss["f_0.css"]."' rel='stylesheet' type='text/css'>

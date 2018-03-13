@@ -1,7 +1,6 @@
 html, body {background:#ffffff; font:8pt Tahoma,sans-serif; height:100%; margin:0; padding:0;}
-a {color:#cc6600; text-decoration:none;}
-a:hover {color:#1685a9; text-decoration:none;}
 a {color:#003366; text-decoration:none;}
+a:hover {color:#1685a9; text-decoration:none;}
 div .column {float:left; width:49%;}
 hr {background:#cccccc; border:0; color:#cccccc; height:1px; width:95%;}
 img, input, select {border:0;}
@@ -10,78 +9,55 @@ p .left_floating {float:left; border:solid 2px #5671b1; margin-right:1em; margin
 p .right_floating {float:right; border:solid 2px #5671b1; margin-right:1em; margin-left:1em; padding:0.5em;}
 table {border-collapse:collapse; font:8pt Tahoma,sans-serif;}
 table td {padding:0;}
+.tbl1 td {background:#ccddcc; color:#003366; padding:1px;}
 
+.cards_title {background:#f7f7f7; border:1px solid #cccccc; color:#003366;}
+.cards_title1 {background:#ffffff; border:1px solid #cccccc; color:#003366;}
+.dot {font-size:1px; line-height:1px; width:1px;}
+.h2 {background:url('dfimg/img/6_1.gif') repeat-x; width:100%;}
+.menu {background:#ca7a29; height:35px;}
+.menu1 {background:#e4efdb; height:35px;}
+.menu2 {background:#e6fdc9; height:35px;}
+.mk {background-color:#faf9de; border:1px solid #d0d8dd; margin:10px;}
+.o {border-top:1px solid #909ba2; padding:2px; z-index:100;}
+.p_100 {margin-bottom:-3px; width:70px; white-space:nowrap; height:2px; overflow:hidden;}
 .pad {color:#003366; padding:5px; outline:none; position:relative; white-space:nowrap;}
-
 .st {background:#cccccc; border-collapse:separate; width:100%;}
 .st tr {height:15px;}
 .st td {line-height:15px; padding:1px;}
-
-.tdk2 {background:#e5e4b5; height:25px; line-height:15px;}
-.tdv2 {background:#f2f1d3; height:25px; line-height:15px;}
-.mk {background-color:#faf9de; border:1px solid #d0d8dd; margin:10px;}
-
-.st3 {background:#cccccc; border-collapse:separate; border-spacing:0; width:100%;}
-.st3 td {padding:1px;}
-.cards_title {background:#f7f7f7; border:1px solid #cccccc; color:#003366;}
-.cards_title1 {background:#ffffff; border:1px solid #cccccc; color:#003366;}
-
+.st_title2 {background:#e4efdb; color:#003366;}
 .st2 {background:#cccccc; border-collapse:separate; border-spacing:1px; width:100%;}
 .st2 tr {height:12px;}
 .st2 td {line-height:12px; padding:0 2px 0 2px;}
-
-.st_title2 {background:#e4efdb; color:#003366;}
-
+.st3 {background:#cccccc; border-collapse:separate; border-spacing:0; width:100%;}
+.st3 td {padding:1px;}
+.tdk2, .tdv2 {background:#e5e4b5; height:25px; line-height:15px;}
+.tdv2 {background:#f2f1d3;}
+.user_login {color:#004262; font:10pt Tahoma,sans-serif; padding:6 6 6 0; text-align:left;}
+.v1 {background:url('dfimg/img/6.gif') repeat-y;}
+.v2 {background:url('dfimg/img/6_1.gif') repeat-y; height:100%;}
+.v3 {background:url('dfimg/img/checkrt.gif') repeat-x; height:1px; width:100%;}
+.v4 {background:url('dfimg/img/checklt.gif') repeat-y; width:1px;}
 .zag1 {color:#00509d; font:10pt Tahoma,sans-serif; font-weight:bold; padding:4; text-align:center;}
 .zag2 {color:#004262; font:10pt Tahoma,sans-serif; font-weight:bold; padding:4; text-align:left;}
 .zag3 {color:#666666; font:10pt Tahoma,sans-serif; font-weight:bold; text-align:center;}
-.user_login {color:#004262; font:10pt Tahoma,sans-serif; padding:6 6 6 0; text-align:left;}
-
-
-.tbl1 td {background:#ccddcc; color:#003366; padding:1px;}
 
 /* button */
 .btn {border:0; color:#ffffff; cursor:pointer;}
 /* button onkeypress */
 .btn:active {box-shadow:0 0 5px #ffffff;}
-.sel {border-bottom:1px solid #f2f1d3; border-left:0; border-right:0; border-top:1px solid #f2f1d3; font:10pt Tahoma,sans-serif;}
-.txt {border-bottom:1px solid #f2f1d3; border-left:0; border-right:0; border-top:1px solid #f2f1d3; font:10pt Tahoma,sans-serif;}
-.y_chk {cursor:pointer; margin-left:0; margin:0; vertical-align:middle;}
-.z_chk {cursor:pointer; margin-left:0; margin:10px; vertical-align:middle;}
+.sel, .txt {border-bottom:1px solid #f2f1d3; border-left:0; border-right:0; border-top:1px solid #f2f1d3; font:10pt Tahoma,sans-serif;}
+.y_chk, .z_chk {cursor:pointer; margin-left:0; margin:0; vertical-align:middle;}
+.z_chk {margin:10px;}
 .chk- {color:#cccccc; cursor:pointer;}
 .chk0 {color:#000000; cursor:pointer;}
 .chk1 {color:#003366; cursor:pointer;}
-
-.h2 {background:url('dfimg/img/6_1.gif') repeat-x; width:100%;}
-
-.v1 {background:url('dfimg/img/6.gif') repeat-y;}
-.v2 {background:url('dfimg/img/6_1.gif') repeat-y; height:100%;}
-.v3 {background:url('dfimg/img/checkrt.gif') repeat-x; height:1px; width:100%;}
-.v4 {background:url('dfimg/img/checklt.gif') repeat-y; width:1px;}
-
-.dot {font-size:1px; line-height:1px; width:1px;}
-
-.menu {background:#ca7a29; height:35px;}
-.menu1 {background:#e4efdb; height:35px;}
-.menu2 {background:#e6fdc9; height:35px;}
-
 
 .rC, .rCG {cursor:pointer; color:#003366; float:right; line-height:19px; margin-left:0; margin-right:4px; margin-top:0; outline:none; position:relative; text-align:center; top:4px; white-space:nowrap;}
 .rC {background-color:#e4efdb; border:0 solid #909ba2; border-bottom:1px solid #ffffff; padding-bottom:5px;}
 .rCG {background-color:#f4ffeb; border:0 solid #d0d8dd; border-bottom:1px solid #f4ffeb; padding-bottom:0;}
 .rCG:hover {text-decoration:none;}
-
-.rCm, .rCGm {background-color:#e4efdb; cursor:pointer; color:#003366; float:right; line-height:18px; margin-left:4px; margin-right:0; margin-top:0; outline:none; padding:2px; position:relative; text-align:center; top:4px; white-space:nowrap;}
-.rCm {border:1px solid #909ba2; border-bottom:1px solid #ffffff; margin-top:3px; top:1px; padding-bottom:5px;}
-.rCGm {border:1px solid #d0d8dd; border-bottom:1px solid #e7ebee; margin-top:0; top:4px; padding-bottom:1px;}
-.rCGm:hover {text-decoration:none;}
-
-.rC, .rCm, #box input, .i, .sel, .sel_MO {background-color:#ffffff; border:0;}
-
-.p_100 {margin-bottom:-3px; width:70px; white-space:nowrap; height:2px; overflow:hidden;}
-
-.o {border-top:1px solid #909ba2; padding:2px; z-index:100;}
-.o1 {border-top:1px solid #cccccc;}
+.rC, #box input, .i, .sel, .sel_MO {background-color:#ffffff; border:0;}
 
 .b_h {background:#dfeedf; position:relative; width:100%;}
 .caption {color:#005a92; height:26px; font-size:100%; font-weight:bolder; overflow:hidden; padding-left:4px;}

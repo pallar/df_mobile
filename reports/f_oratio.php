@@ -44,35 +44,35 @@ $others=0;
 
 $qr1="SELECT id, a_dates, b_dates, b_dates_res, c_dates, c_dates_res FROM $cows WHERE z_dates=''";
 $res1=mysql_query( $qr1, $db );
-while( $row=mysql_fetch_array( $res1 )) {
+while ( $row=mysql_fetch_array( $res1 )) {
 	$total++;
-	if( $row[a_dates]>$row[b_dates] && $row[a_dates]>$row[c_dates] ) {
+	if ( $row[a_dates]>$row[b_dates] && $row[a_dates]>$row[c_dates] ) {
 		$insem++; $cid=$row[id];
 		$plus=0;
 		$qr="SELECT code, year, month, day FROM 000000_o WHERE cow_id=$cid AND ( oper_id=128 OR oper_id=256 )";
 		$res=mysql_query( $qr, $db );
-		while( $r=mysql_fetch_row( $res )) {
+		while ( $r=mysql_fetch_row( $res )) {
 			$dt=$r[1]."-".$r[2]."-".$r[3];
-			if( $dt>=$row[c_dates] ) $plus++;
+			if ( $dt>=$row[c_dates] ) $plus++;
 		}
-		if( $plus!=0 && $plus==1 ) $insem1++; elseif( $plus>1 ) $insem2++;
-	} elseif( $row[b_dates]>$row[a_dates] && $row[b_dates]>$row[c_dates] && $row[b_dates]!='' ) {
+		if ( $plus!=0 && $plus==1 ) $insem1++; elseif ( $plus>1 ) $insem2++;
+	} elseif ( $row[b_dates]>$row[a_dates] && $row[b_dates]>$row[c_dates] && $row[b_dates]!='' ) {
 		$cid=$row[id];
-		if( $row[b_dates_res]==4 ) {
+		if ( $row[b_dates_res]==4 ) {
 			$pregn++;
 			$plus=0;
 			$qr="SELECT code, year, month, day FROM 000000_o WHERE cow_id=$cid AND ( oper_id=128 OR oper_id=256 )";
 			$res=mysql_query( $qr, $db );
-			while( $r=mysql_fetch_row( $res )) {
+			while ( $r=mysql_fetch_row( $res )) {
 				$dt=$r[1]."-".$r[2]."-".$r[3];
-				if( $dt<=$row[b_dates] && $dt>=$row[c_dates] ) $plus++;
+				if ( $dt<=$row[b_dates] && $dt>=$row[c_dates] ) $plus++;
 			}
-			if( $plus==1 ) $pregn1++; elseif( $plus==2 ) $pregn2++; elseif( $plus>2 ) $pregn3++; else $pregn4++;
+			if ( $plus==1 ) $pregn1++; elseif ( $plus==2 ) $pregn2++; elseif ( $plus>2 ) $pregn3++; else $pregn4++;
 		} else $npregn++;
-	} elseif( $row[c_dates]>$row[a_dates] && $row[c_dates]>$row[b_dates] ) {
-		if( $row[c_dates_res]==4 ) $calvings++;
+	} elseif ( $row[c_dates]>$row[a_dates] && $row[c_dates]>$row[b_dates] ) {
+		if ( $row[c_dates_res]==4 ) $calvings++;
 		else $aborts++;
-	} elseif( $row[c_dates]==$row[a_dates] && $row[c_dates]==$row[b_dates]) {
+	} elseif ( $row[c_dates]==$row[a_dates] && $row[c_dates]==$row[b_dates]) {
 		$others++;
 	}
 }

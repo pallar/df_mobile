@@ -1,5 +1,5 @@
 <?php
-// Modified: 15.01.2014
+// m: 13.03.2018
 include "../../f_vars0.php";
 ?>
 
@@ -8,19 +8,19 @@ include "../../f_vars0.php";
 <?php
 include "0_menutr.php";
 ?>
-			<tr style='background:#f0ffff' height='40'>
+			<tr style='background:#f0ffff;' height='40'>
 				<td colspan='6'>
-					<div style='margin-left:7; margin-right:7'><font size='+2'><b>Состав системы</b></font></div>
+					<div style='margin-left:7; margin-right:7;'><font size='+2'><b>Состав системы</b></font></div>
 				</td>
 			</tr>
 			</table>
 		</div></div>
-		<div id='content' style='background:#f0ffff; height:60%; overflow-y:auto'><div style='margin-left:7; margin-right:7'>
+		<div id='content' style='background:#f0ffff; height:60%; overflow-y:auto;'><div style='margin-left:7; margin-right:7;'>
 <p></p>
-			<div style='float:left; margin:7'><img border='0' src='files/201_00.jpg'></div>
+			<div style='float:left; margin:7;'><img border='0' src='files/201_00.jpg'></div>
 <b>Общее описание:</b><br>
 <p>«Интернет-Ферма» - это не просто отдельное программное обеспечение для компьютера на ферме. Это целостный комплекс программных, электронных и механических компонентов и узлов, которые специально настроены для синхронной работы с целью осуществления постоянного, автоматического, эффективного управления вашим хозяйством. Комплекс работает в автономном режиме и практически не требует вмешательства со стороны персонала хозяйства. Комплекс самостоятельно выполняет накопление и сортировку оперативной информации в базе данных. Комплекс обрабатывает полученные данные и автоматически формирует отчёты по заданным пользователем критериям.</p>
-			<div style='float:right; margin:7'><img border='0' src='files/201_01.jpg'></div>
+			<div style='float:right; margin:7;'><img border='0' src='files/201_01.jpg'></div>
 <b>Состав:</b><br>
 <ul>
 <li>доильный зал;</li>
@@ -45,7 +45,7 @@ include "0_menutr.php";
 <li>передача сформированной очереди животных (из кодов их транспондеров) в процессорный блок.</li>
 </ul>
 <b>Селекционные ворота:</b><br>
-			<div style='float:right; margin:7'><img border='0' src='files/201_02.jpg'></div>
+			<div style='float:right; margin:7;'><img border='0' src='files/201_02.jpg'></div>
 <p>Ворота обеспечивают автоматическую сортировку животных, которая не требует непосредственного контакта персонала с животными. Они могут быть использованы для распределения животных по загонам, для сортировки по группам согласно указанным критериям (возрасту, надою, лактации, тельности и т. д.), для отделения отдельных особей с целью проведения разных мероприятий (осмотра, осеменения, лечения).</p>
 <b>Процессорный блок:</b><br>
 <p>Предназначен для: хранения электронных карточек животных; хранения детальных данных надоев из доильного зала; управления селекционными воротами; ведения поточных операций, происходящих с каждым животным; выполнения расчётов с выводом результатов в виде различных электронных документов, необходимых для управления стадом.</p>
@@ -57,7 +57,7 @@ include "0_menutr.php";
 		</div></div>
 		<div id='page-clear'></div>
 	</div>
-	<div id='footer'><div style='margin-left:0; margin-right:0'>
+	<div id='footer'><div style='margin-left:0; margin-right:0;'>
 		<table align='center' border='0' cellpadding='0' cellspacing='0' height='100%' width='100%'>
 		<tr background='files/menu.jpg'>
 			<td></td>

@@ -11,7 +11,7 @@ $__query = "SELECT
  language,
  os, suex_dir, suex_ver, suex_passw, rfid_mode
  FROM f_consts";
-$__res = mysqli_query($conn, $__query);
+$__res = Sqli_query($__query);
 if(mysqli_num_rows($__res) != 0)
 	while($__row = mysqli_fetch_assoc($__res)) $arr[] = $__row;
 $__query1 = "SELECT
@@ -24,7 +24,7 @@ $__query1 = "SELECT
  ports, ports_type, port_first,
  driver_dir, driver_fname
  FROM f_hardw";
-$__res1 = mysqli_query($conn, $__query1);
+$__res1 = Sqli_query($__query1);
 if(mysqli_num_rows($__res1) != 0)
 	while($__row1 = mysqli_fetch_assoc($__res1)) $arr[1] = $__row1;
 // Return json array containing data from the database

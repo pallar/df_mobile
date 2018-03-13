@@ -1,9 +1,9 @@
-<!-- DF_2 Edit Cow Form -->
+<!-- DF_ajs: Edit Cow Form -->
 		<div class="form-group row">
 			<div class="col-md-4">
-				<button class="btn btn-success" style="border-radius:0;" g-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw);">Update</button>
-				<button class="btn btn-warning" style="border-radius:0;" ng-disabled="cw_edit.$invalid || cur_cw.id==1" ng-click="db_Cw_update(cur_cw); Cw_form_close('cancel',cur_ox.id);">Update & List</button>
-				<button class="btn btn-danger" style="border-radius:0;" ng-click="Cw_form_close('cancel',cur_cw.id);">Cancel</button>
+				<button class="btn btn-success" style="<?php echo $_btn_style;?>" ng-disabled="cw_edit.$invalid || cur_cw.id==1 || cur_cw.locked.length>0" ng-click="db_Cw_update(cur_cw, 1);">Update</button>
+				<button class="btn btn-warning" style="<?php echo $_btn_style;?>" ng-disabled="cw_edit.$invalid || cur_cw.id==1 || cur_cw.locked.length>0" ng-click="db_Cw_update(cur_cw, 0); Cws_form_close('cancel',cur_ox.id);">Update & List</button>
+				<button class="btn btn-danger" style="<?php echo $_btn_style;?>" ng-click="Cws_form_close('cancel',cur_cw.id);">X</button>
 			</div>
 			<div class="col-md-4">
 				<label></label>
@@ -14,56 +14,56 @@
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Birth Date:<span class="text-danger" ng-show="cw_edit.b_date.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="10" name="cur_cw_b_date" readonly style="border-radius:0; width:200px;" type="text" value="{{cur_cw.b_date}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_date" required>
+				<label>Дата народж.<span class="text-danger" ng-show="cw_edit.b_date.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="10" readonly style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_date" required>
 			</div>
 			<div class="col-md-4">
-				<label>Birth Number:</label>
-				<input class="form-control" maxlength="30" name="cur_cw_b_num" style="border-radius:0; width:200px;" type="text" value="{{cur_cw.b_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_num">
+				<label>№ новонародж.</label>
+				<input class="form-control" maxlength="30" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_num">
 			</div>
 			<div class="col-md-4">
-				<label>National Number:</label>
-				<input class="form-control" maxlength="30" name="cur_cw_n_descr" style="border-radius:0; width:200px;" type="text" value="{{cur_cw.national_descr}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.national_descr">
-			</div>
-		</div>
-		<div class="form-group row">
-			<div class="col-md-4">
-				<label>Number:<span class="text-danger" ng-show="cw_edit.cow_num.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="7" name="cur_cw_cow_num" style="border-radius:0; width:100px;" type="text" value="{{cur_cw.cow_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.cow_num" required>
-			</div>
-			<div class="col-md-4">
-				<label>Nick:</label>
-				<input class="form-control" maxlength="100" name="cur_cw_nick" style="border-radius:0; width:200px;" type="text" value="{{cur_cw.nick}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.nick">
-			</div>
-			<div class="col-md-4">
-				<label>TAG:</label>
-				<input class="form-control" maxlength="30" name="cur_cw_rfid_num" style="border-radius:0; width:200px;" type="text" value="{{cur_cw.rfid_num}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.rfid_num">
+				<label>Нац. №</label>
+				<input class="form-control" maxlength="30" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_cw.id==1" ng-model="cur_cw.n_descr">
 			</div>
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Lot:</label>
-				<select class="form-control" name="cur_cw_l_id" style="border-radius:0; width:200px;" type="select" ng-disabled="cur_cw.id==1" ng-model="cur_cw.l_det">
+				<label>№<span class="text-danger" ng-show="cw_edit.cow_num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="7" style="<?php echo $_inp_style;?> width:100px;" type="text" ng-disabled="cur_cw.id==1" ng-model="cur_cw.cow_num" required>
+			</div>
+			<div class="col-md-4">
+				<label>Прізв.</label>
+				<input class="form-control" maxlength="100" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_cw.id==1" ng-model="cur_cw.nick">
+			</div>
+			<div class="col-md-4">
+				<label>RFID</label>
+				<input class="form-control" maxlength="30" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_cw.id==1" ng-model="cur_cw.tag_num">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-md-4">
+				<label>Ферма</label>
+				<select class="form-control" style="<?php echo $_sel_style;?> width:200px;" type="select" ng-disabled="cur_cw.id==1" ng-model="cur_cw.lid">
 					<option class="form-control" ng-repeat="lots in lots_details" value="{{lots.id}}">{{lots.nick}}</option>
 				</select>
 			</div>
 			<div class="col-md-4">
-				<label>Group:</label>
-				<select class="form-control" name="cur_cw_g_id" style="border-radius:0; width:200px;" type="select" ng-disabled="cur_cw.id==1" ng-model="cur_cw.g_det">
+				<label>Секція</label>
+				<select class="form-control" style="<?php echo $_sel_style;?> width:200px;" type="select" ng-disabled="cur_cw.id==1" ng-model="cur_cw.gid">
 					<option class="form-control" ng-repeat="grs in grs_details" value="{{grs.id}}">{{grs.nick}}</option>
 				</select>
 			</div>
 			<div class="col-md-4">
-				<label>Subgroup:</label>
-				<select class="form-control" name="cur_cw_sg_id" style="border-radius:0; width:200px;" type="select" ng-disabled="cur_cw.id==1" ng-model="cur_cw.sg_det">
+				<label>Підгрупа</label>
+				<select class="form-control" style="<?php echo $_sel_style;?> width:200px;" type="select" ng-disabled="cur_cw.id==1" ng-model="cur_cw.sgid">
 					<option class="form-control" ng-repeat="subgrs in subgrs_details" value="{{subgrs.id}}">{{subgrs.nick}}</option>
 				</select>
 			</div>
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Breed:</label>
-				<select class="form-control" name="cur_cw_b_id" style="border-radius:0; width:200px;" type="select" ng-disabled="cur_cw.id==1" ng-model="cur_cw.b_det">
+				<label>Порода</label>
+				<select class="form-control" style="<?php echo $_sel_style;?> width:200px;" type="select" ng-disabled="cur_cw.id==1" ng-model="cur_cw.bid">
 					<option class="form-control" ng-repeat="breeds in breeds_details" value="{{breeds.id}}">{{breeds.nick}}</option>
 				</select>
 			</div>
@@ -72,31 +72,31 @@
 		</div>
 		<div class="form-group row">
 			<div class="col-md-2">
-				<label>Mom:</label>
-				<input class="form-control" readonly style="border-radius:0; width:200px;" type="text" value="{{cur_cw.mom_data}}" ng-disabled="cur_cw.id==1">
+				<label>Мати</label>
+				<input class="form-control" readonly style="<?php echo $_inp_style;?> width:200px;" type="text" value="{{cur_cw.mom_data}}" ng-disabled="cur_cw.id==1">
 			</div>
 			<div class="col-md-2">
 				<label ng-hide="cur_cw.id==1">Mom' Search:</label>
-				<input class="form-control mom-search" maxlength="100" placeholder="..." style="border-radius:0; width:100px;" type="text" ng-model="cur_mom.search" ng-hide="cur_cw.id==1" ng-keyup="cws_list_fill($event, 'mom_list');">
-				<select class="form-control mom_list" name="cur_cw_mom_id" style="border-radius:0; width:160px;" ng-model="cur_cw.mom" ng-hide="cur_cw.id==1" ng-change="mom_is_changed();"></select>
+				<input class="form-control mom-search" maxlength="100" placeholder="..." style="<?php echo $_inp_style;?> width:100px;" type="text" ng-model="cur_mom.search" ng-hide="cur_cw.id==1" ng-keyup="cws_list_fill($event, 'mom-list');">
+				<select class="form-control mom-list" style="<?php echo $_sel_style;?> width:160px;" ng-model="cur_cw.mom" ng-hide="cur_cw.id==1" ng-change="mom_is_changed();"></select>
 			</div>
 			<div class="col-md-2">
-				<label>Dad:</label>
-				<input class="form-control" readonly style="border-radius:0; width:200px;" type="text" value="{{cur_cw.dad_data}}" ng-disabled="cur_cw.id==1">
+				<label>Батько</label>
+				<input class="form-control" readonly style="<?php echo $_inp_style;?> width:200px;" type="text" value="{{cur_cw.dad_data}}" ng-disabled="cur_cw.id==1">
 			</div>
 			<div class="col-md-2">
 				<label ng-hide="cur_cw.id==1">Dad' Search:</label>
-				<input class="form-control dad-search" maxlength="100" placeholder="..." style="border-radius:0; width:100px;" type="text" ng-hide="cur_cw.id==1" ng-keyup="oxs_list_fill($event, 'dad_list');">
-				<select class="form-control dad_list" name="cur_cw_dad_id" style="border-radius:0; width:160px;" ng-model="cur_cw.dad" ng-hide="cur_cw.id==1" ng-change="dad_is_changed();"></select>
+				<input class="form-control dad-search" maxlength="100" placeholder="..." style="<?php echo $_inp_style;?> width:100px;" type="text" ng-hide="cur_cw.id==1" ng-keyup="oxs_list_fill($event, 'dad-list');">
+				<select class="form-control dad-list" style="<?php echo $_sel_style;?> width:160px;" ng-model="cur_cw.dad" ng-hide="cur_cw.id==1" ng-change="dad_is_changed();"></select>
 			</div>
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Exterior Defects:</label>
-				<input class="form-control" maxlength='100' style="border-radius:0; width:200px;" type="text" value="{{cur_cw.defects}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.defects">
+				<label>Зовнішні вади</label>
+				<input class="form-control" maxlength='100' style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_cw.id==1" ng-model="cur_cw.defects">
 			</div>
 			<div class="col-md-4">
-				<label>Comments:</label>
-				<input class="form-control" maxlength='100' style="border-radius:0; width:200px;" type="text" value="{{cur_cw.comments}}" ng-disabled="cur_cw.id==1" ng-model="cur_cw.comments">
+				<label>Коментар</label>
+				<input class="form-control" maxlength='100' style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_cw.id==1" ng-model="cur_cw.comments">
 			</div>
 		</div>

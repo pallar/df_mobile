@@ -39,8 +39,8 @@ echo "
 $query="SELECT id, cow_num, gr_id, nick, a_dates, b_dates, b_dates_res, c_dates, c_dates_res FROM $cows WHERE z_dates='' ORDER BY c_dates ASC"; $res=mysql_query( $query, $db );
 while ( $row=mysql_fetch_array( $res )) {
 	$all++;
-	if( $row[c_dates]>$row[a_dates] && $row[c_dates]>$row[b_dates] ) {
-		if( $row[c_dates_res]==4 ) {
+	if ( $row[c_dates]>$row[a_dates] && $row[c_dates]>$row[b_dates] ) {
+		if ( $row[c_dates_res]==4 ) {
 			$query1="SELECT nick FROM $groups WHERE id=$row[gr_id]"; $res1=mysql_query( $query1, $db );
 			$row1=mysql_fetch_array( $res1 );
 			$dt=strtotime( $row[c_dates] );
@@ -58,7 +58,7 @@ while ( $row=mysql_fetch_array( $res )) {
 				$href="";
 				$href_e="";
 			}
-			if( $date31<$now ) {
+			if ( $date31<$now ) {
 				$warning=$ged["Bad_insem~"];
 				$warning_tip=$ged["Bad_insem"];
 			}

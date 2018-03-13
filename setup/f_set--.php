@@ -3,7 +3,7 @@
 // --version 2.6.1
 // --http://www.phpmyadmin.net
 // --
-// --m: 01.04.2015
+// --m: 23.02.2018
 // --PHP: 5.2.4
 
 //DON'T TOUCH THIS SCRIPT! IT'S NOT FOR MODIFICATION!
@@ -11,7 +11,7 @@
 include( "../f_vars.php" );
 include( "../dflib/f_func.php" );
 
-mysql_query( "DROP DATABASE IF EXISTS $db_name" );
+Sql_query( "DROP DATABASE IF EXISTS $db_name" );
 $sqlerr=$error=mysql_errno();
 if ( $error==0 ) echo "<h4>*** DATABASE \"$db_name\" IS DROPPED.</h4>";
 else {
@@ -20,21 +20,21 @@ else {
 
 $query="CREATE DATABASE $db_name";
 if ( $db_utf8==1 ) $query=$query." DEFAULT CHARACTER SET utf8";
-mysql_query( $query ) or die( mysql_error());
+Sql_query( $query );
 echo "<h4>*** DATABASE \"$db_name\" IS CREATED.</h4>";
 $sqlerr=$error=mysql_errno();
 
 mysql_select_db( $db_name, $db );
 
-mysql_query( "CREATE TABLE `f_chat` (
+Sql_query( "CREATE TABLE `f_chat` (
  `id` int( 10 ) NOT NULL auto_increment,
  `name` varchar( 255 ) NOT NULL,
  `text` text,
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $globals (
+Sql_query( "CREATE TABLE $globals (
  `state` varchar( 250 ) NOT NULL default '',
  `region` varchar( 250 ) NOT NULL default '',
  `subregion` varchar( 250 ) NOT NULL default '',
@@ -57,12 +57,12 @@ mysql_query( "CREATE TABLE $globals (
  `today_date` date NOT NULL default '1991-12-31',
  `db_rel` varchar( 11 ) NOT NULL default '[2009:0808]',
  `db_charset` varchar( 50 ) default '$db_charset' )
- $table_utf8 $mysql_TYPE COMMENT='Globals *$globals.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE COMMENT='Globals *$globals.MYD*'" );
 echo "Table \"$globals\" is created. Adding defaults...<br>";
-$res1=0; $res=mysql_query( "SELECT * FROM $globals" );
+$res1=0; $res=Sql_query1( "SELECT * FROM $globals" );
 while ( mysql_fetch_row( $res )) $res1++;
 mysql_free_result( $res );
-if ( $res1==0 ) mysql_query( "INSERT INTO $globals (
+if ( $res1==0 ) Sql_query( "INSERT INTO $globals (
  `language`,
  `state`, `region`, `subregion`, `address`,
  `enterprise`,
@@ -83,10 +83,10 @@ if ( $res1==0 ) mysql_query( "INSERT INTO $globals (
  '16',
  'ON',
  '0',
- '3' )" ) or die( mysql_error());
+ '3' )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $person (
+Sql_query( "CREATE TABLE $person (
  `id` tinyint( 3 ) unsigned NOT NULL auto_increment,
  `user_id` tinyint( 3 ) unsigned NOT NULL default '2',
  `created_date` date NOT NULL default '1991-12-31',
@@ -104,9 +104,9 @@ mysql_query( "CREATE TABLE $person (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Personnel *$person.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Personnel *$person.MYD*'" );
 echo "Table \"$person\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $person
+Sql_query( "INSERT INTO $person
  ( `id`, `user_id`, `num`,
  `nick`, `comments`, `passw`,
  `locked`, `valid_from`, `valid_to`, `modif_uid` )
@@ -122,17 +122,17 @@ mysql_query( "INSERT INTO $person
  '', '1991-01-01', '2037-12-31', 1 ),
  ( 9, 9, '8',
  'anonymous', 'anonymous', '',
- '5230', '1991-01-01', '2037-12-31', 1 )" ) or die( mysql_error());
+ '5230', '1991-01-01', '2037-12-31', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $dairymds (
+Sql_query( "CREATE TABLE $dairymds (
  `dairymd_devs` varchar( 255 ) NOT NULL default '',
  `dairymd_idx` tinyint( 2 ) unsigned NOT NULL default '0' )
- $table_utf8 $mysql_TYPE COMMENT='Dairymaids *$dairymds.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE COMMENT='Dairymaids *$dairymds.MYD*'" );
 echo "Table \"$dairymds\" is created.<br>";
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $xfuncs (
+Sql_query( "CREATE TABLE $xfuncs (
  `id` tinyint( 3 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -147,15 +147,15 @@ mysql_query( "CREATE TABLE $xfuncs (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Functions *$xfuncs.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Functions *$xfuncs.MYD*'" );
 echo "Table \"$xfuncs\" is created. Adding defaults...<br>";
-for ( $i=1; $i<=10; $i++ ) mysql_query( "INSERT INTO $xfuncs
+for ( $i=1; $i<=10; $i++ ) Sql_query( "INSERT INTO $xfuncs
  ( `id`, `num`, `locked`, `modif_uid` )
  VALUES
- ( $i, $i-1, '5230', 1 )" ) or die( mysql_error());
+ ( $i, $i-1, '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $xraces (
+Sql_query( "CREATE TABLE $xraces (
  `id` tinyint( 3 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -170,15 +170,15 @@ mysql_query( "CREATE TABLE $xraces (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Races *$xraces.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Races *$xraces.MYD*'" );
 echo "Table \"$xraces\" is created. Adding defaults...<br>";
-for ( $i=1; $i<=9; $i++ ) mysql_query( "INSERT INTO $xraces
+for ( $i=1; $i<=9; $i++ ) Sql_query( "INSERT INTO $xraces
  ( `id`, `num`, `locked`, `modif_uid` )
  VALUES
- ( $i, $i-1, '5230', 1 )" ) or die( mysql_error());
+ ( $i, $i-1, '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $xclasses (
+Sql_query( "CREATE TABLE $xclasses (
  `id` tinyint( 3 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -193,15 +193,15 @@ mysql_query( "CREATE TABLE $xclasses (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Complex classes *$xclasses.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Complex classes *$xclasses.MYD*'" );
 echo "Table \"$xclasses\" is created. Adding defaults...<br>";
-for ( $i=1; $i<=6; $i++ ) mysql_query( "INSERT INTO $xclasses
+for ( $i=1; $i<=6; $i++ ) Sql_query( "INSERT INTO $xclasses
  ( `id`, `num`, `locked`, `modif_uid` )
  VALUES
- ( $i, $i-1, '5230', 1 )" ) or die( mysql_error());
+ ( $i, $i-1, '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $breeds (
+Sql_query( "CREATE TABLE $breeds (
  `id` smallint( 5 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -216,15 +216,15 @@ mysql_query( "CREATE TABLE $breeds (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Breeds *$breeds.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Breeds *$breeds.MYD*'" );
 echo "Table \"$breeds\" is created. Adding defaults...<br>";
-for ( $i=1; $i<=56; $i++ ) mysql_query( "INSERT INTO $breeds
+for ( $i=1; $i<=56; $i++ ) Sql_query( "INSERT INTO $breeds
  ( `id`, `num`, `modif_uid` )
  VALUES
- ( $i, $i-1, 1 )" ) or die( mysql_error());
+ ( $i, $i-1, 1 )" );
 
 // ---------------------------------------------------------
-mysql_query( "CREATE TABLE $lots (
+Sql_query( "CREATE TABLE $lots (
  `id` smallint( 5 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -239,15 +239,15 @@ mysql_query( "CREATE TABLE $lots (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Lots *$lots.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Lots *$lots.MYD*'" );
 echo "Table \"$lots\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $lots (
+Sql_query( "INSERT INTO $lots (
  `id`, `num`, `national_descr`, `nick`, `comments`, `locked`, `modif_uid` )
  VALUES
- ( 1, '0', '**0', '-', '**', '5230', 1 )" ) or die( mysql_error());
+ ( 1, '0', '**0', '-', '**', '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $groups (
+Sql_query( "CREATE TABLE $groups (
  `id` smallint( 5 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -263,15 +263,15 @@ mysql_query( "CREATE TABLE $groups (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Groups *$groups.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Groups *$groups.MYD*'" );
 echo "Table \"$groups\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $groups
+Sql_query( "INSERT INTO $groups
  ( `id`, `num`, `national_descr`, `lot_id`, `nick`, `comments`, `locked`, `modif_uid` )
  VALUES
- ( 1, '0', '***0', 1, '-', '***', '5230', 1 )" ) or die( mysql_error());
+ ( 1, '0', '***0', 1, '-', '***', '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $subgrs (
+Sql_query( "CREATE TABLE $subgrs (
  `id` smallint( 5 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -287,15 +287,15 @@ mysql_query( "CREATE TABLE $subgrs (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Subgroups *$subgrs.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Subgroups *$subgrs.MYD*'" );
 echo "Table \"$subgrs\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $subgrs
+Sql_query( "INSERT INTO $subgrs
  ( `id`, `num`, `national_descr`, `gr_id`, `nick`, `comments`, `locked`, `modif_uid` )
  VALUES
- ( 1, '0', '****0', 1, '-', '****', '5230', 1 )" ) or die( mysql_error());
+ ( 1, '0', '****0', 1, '-', '****', '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $departs (
+Sql_query( "CREATE TABLE $departs (
  `id` smallint( 5 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -309,15 +309,15 @@ mysql_query( "CREATE TABLE $departs (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Cows departments *$departs.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Cows departments *$departs.MYD*'" );
 echo "Table \"$departs\" is created. Adding defaults...<br>";
-for ( $i=1; $i<=7; $i++ ) mysql_query( "INSERT INTO $departs
+for ( $i=1; $i<=7; $i++ ) Sql_query( "INSERT INTO $departs
  ( `id`, `locked`, `modif_uid` )
  VALUES
- ( $i, '5230', 1 )" ) or die( mysql_error());
+ ( $i, '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $states (
+Sql_query( "CREATE TABLE $states (
  `id` smallint( 5 ) unsigned NOT NULL default '0',
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -328,19 +328,19 @@ mysql_query( "CREATE TABLE $states (
  `modif_date` date NOT NULL default '1991-12-31',
  `modif_time` time NOT NULL default '00:00:00',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='States *$states.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='States *$states.MYD*'" );
 echo "Table \"$states\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $states
+Sql_query( "INSERT INTO $states
  ( `id`, `locked`, `modif_uid` )
  VALUES
  ( 01, '5230', 1 ),
  ( 02, '5230', 1 ),
  ( 04, '5230', 1 ),
  ( 08, '5230', 1 ),
- ( 16, '5230', 1 )" ) or die( mysql_error());
+ ( 16, '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $results (
+Sql_query( "CREATE TABLE $results (
  `id` smallint( 5 ) unsigned NOT NULL default '0',
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -351,19 +351,19 @@ mysql_query( "CREATE TABLE $results (
  `modif_date` date NOT NULL default '1991-12-31',
  `modif_time` time NOT NULL default '00:00:00',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Results *$results.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Results *$results.MYD*'" );
 echo "Table \"$results\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $results
+Sql_query( "INSERT INTO $results
  ( `id`, `locked`, `modif_uid` )
  VALUES
  ( 01, '5230', 1 ),
  ( 02, '5230', 1 ),
  ( 04, '5230', 1 ),
  ( 08, '5230', 1 ),
- ( 16, '5230', 1 )" ) or die( mysql_error());
+ ( 16, '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $pregnant (
+Sql_query( "CREATE TABLE $pregnant (
  `id` smallint( 5 ) unsigned NOT NULL default '0',
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -374,17 +374,17 @@ mysql_query( "CREATE TABLE $pregnant (
  `modif_date` date NOT NULL default '1991-12-31',
  `modif_time` time NOT NULL default '00:00:00',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Pregnant states *$pregnant.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Pregnant states *$pregnant.MYD*'" );
 echo "Table \"$pregnant\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $pregnant
+Sql_query( "INSERT INTO $pregnant
  ( `id`, `locked`, `modif_uid` )
  VALUES
  ( 01, '5230', 1 ),
  ( 02, '5230', 1 ),
- ( 04, '5230', 1 )" ) or die( mysql_error());
+ ( 04, '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $cows (
+Sql_query( "CREATE TABLE $cows (
  `id` int( 10 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -439,9 +439,9 @@ mysql_query( "CREATE TABLE $cows (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Cows *$cows.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Cows *$cows.MYD*'" );
 echo "Table \"$cows\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $cows
+Sql_query( "INSERT INTO $cows
  ( `id`, `cow_num`, `b_date`, `b_num`, `national_descr`,
  `rfid_num`, `rfid_native`, `rfid_date`,
  `nick`,
@@ -450,10 +450,10 @@ mysql_query( "INSERT INTO $cows
  ( 1, '0', '1991-12-31', '0-0', '0-00',
  '12345', '1.2.3.4.5', '1991-12-31',
  '- w/o RFID',
- '5230', 1 )" ) or die( mysql_error());
+ '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $oxes (
+Sql_query( "CREATE TABLE $oxes (
  `id` int( 10 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -477,19 +477,19 @@ mysql_query( "CREATE TABLE $oxes (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Oxes *$oxes.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Oxes *$oxes.MYD*'" );
 echo "Table \"$oxes\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $oxes
+Sql_query( "INSERT INTO $oxes
  ( `id`, `num`, `b_num`, `national_descr`,
  `mth_id`, `fth_id`, `breed_id`, `gr_id`, `subgr_id`, `lot_id`, `nick`,
  `locked`, `modif_uid` )
  VALUES
  ( 1, '0', '', '',
  1, 1, 1, 1, 1, 1, '-',
- '5230', 1 )" ) or die( mysql_error());
+ '5230', 1 )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $operstyp (
+Sql_query( "CREATE TABLE $operstyp (
  `id` mediumint( 8 ) unsigned NOT NULL default '0',
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -502,9 +502,9 @@ mysql_query( "CREATE TABLE $operstyp (
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Operations types *$operstyp.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Operations types *$operstyp.MYD*'" );
 echo "Table \"$operstyp\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $operstyp
+Sql_query( "INSERT INTO $operstyp
  ( `id`, `locked`, `modif_uid` )
  VALUES
  ( 0000, '5230', 1 ),
@@ -519,13 +519,13 @@ mysql_query( "INSERT INTO $operstyp
  ( 0512, '5230', 1 ),
  ( 1024, '5230', 1 ),
  ( 2048, '5230', 1 ),
- ( 8192, '5230', 1 )" ) or die( mysql_error());
+ ( 8192, '5230', 1 )" );
 //LOCKED OPERATIONS
 // ( 4096, '5230', 1 ),
 //LOCKED OPERATIONS
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $parlor (
+Sql_query( "CREATE TABLE $parlor (
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
  `milk_kg` varchar( 5 ) NOT NULL default '',
@@ -558,15 +558,15 @@ mysql_query( "CREATE TABLE $parlor (
  `modif_uid` tinyint( 3 ) unsigned NOT NULL default '1',
  `modif_date` date NOT NULL default '1991-12-31',
  `modif_time` time NOT NULL default '00:00:00' )
- $table_utf8 $mysql_TYPE COMMENT='Parlor *$parlor.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE COMMENT='Parlor *$parlor.MYD*'" );
 echo "Table \"$parlor\" is created. Adding defaults...<br>";
 for ( $i=1; $i<=96; $i++ ) {
 	$bd_num=Int2StrZ( $i, 2 );
-	mysql_query( "INSERT INTO $parlor ( `bd_num` ) VALUES ( '$bd_num' )" ) or die( mysql_error());
+	Sql_query( "INSERT INTO $parlor ( `bd_num` ) VALUES ( '$bd_num' )" );
 }
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $sessions (
+Sql_query( "CREATE TABLE $sessions (
  `id` tinyint( 2 ) unsigned NOT NULL default '0',
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -577,9 +577,9 @@ mysql_query( "CREATE TABLE $sessions (
  `modif_date` date NOT NULL default '1991-12-31',
  `modif_time` time NOT NULL default '00:00:00',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=4 COMMENT='Sessions *$sessions.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=4 COMMENT='Sessions *$sessions.MYD*'" );
 echo "Table \"$sessions\" is created. Adding defaults...<br>";
-mysql_query( "INSERT INTO $sessions
+Sql_query( "INSERT INTO $sessions
  ( `id`, `locked` )
  VALUES
  ( 10, '5230' ),
@@ -587,10 +587,10 @@ mysql_query( "INSERT INTO $sessions
  ( 20, '5230' ),
  ( 21, '5230' ),
  ( 30, '5230' ),
- ( 31, '5230' )" ) or die( mysql_error());
+ ( 31, '5230' )" );
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $hardw (
+Sql_query( "CREATE TABLE $hardw (
  `pits` tinyint( 2 ) unsigned NOT NULL default '1',
  `drmds_by_pit` tinyint( 1 ) unsigned NOT NULL default '1',
  `drmd_bds` tinyint( 1 ) unsigned NOT NULL default '0',
@@ -603,20 +603,20 @@ mysql_query( "CREATE TABLE $hardw (
  `port_bps` mediumint( 6 ) unsigned NOT NULL default '2400',
  `driver_dir` varchar( 255 ) NOT NULL default '/_df2drv',
  `driver_fname` varchar( 30 ) NOT NULL default 'httpbd06' )
- $table_utf8 $mysql_TYPE COMMENT='Hardware configuration *$hardw.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE COMMENT='Hardware configuration *$hardw.MYD*'" );
 echo "Table \"$hardw\" is created. Adding defaults...<br>";
-$res1=0; $res=mysql_query( "SELECT * FROM $hardw" );
+$res1=0; $res=Sql_query1( "SELECT * FROM $hardw" );
 while ( mysql_fetch_row( $res )) $res1++;
 mysql_free_result( $res );
 if ( $res1==0 ) {
-	mysql_query( "INSERT INTO $hardw (
+	Sql_query( "INSERT INTO $hardw (
 	 `ports` )
 	 VALUES (
-	 '0' )" ) or die( mysql_error());
+	 '0' )" );
 }
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $hardwj (
+Sql_query( "CREATE TABLE $hardwj (
  `jaggs` tinyint( 2 ) unsigned NOT NULL default '0',
  `ports` tinyint( 2 ) unsigned NOT NULL default '0',
  `ports_type` varchar( 30 ) NOT NULL default 'COM',
@@ -624,31 +624,31 @@ mysql_query( "CREATE TABLE $hardwj (
  `port_bps` mediumint( 6 ) unsigned NOT NULL default '9600',
  `driver_dir` varchar( 255 ) NOT NULL default '/_df2drv',
  `driver_fname` varchar( 30 ) NOT NULL default 'httpsep' )
- $table_utf8 $mysql_TYPE COMMENT='Hardware (jagg) configuration *$hardwj.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE COMMENT='Hardware (jagg) configuration *$hardwj.MYD*'" );
 echo "Table \"$hardwj\" is created. Adding defaults...<br>";
-$res1=0; $res=mysql_query( "SELECT * FROM $hardwj" );
+$res1=0; $res=Sql_query1( "SELECT * FROM $hardwj" );
 while ( mysql_fetch_row( $res )) $res1++;
 mysql_free_result( $res );
 if ( $res1==0 ) {
-	mysql_query( "INSERT INTO $hardwj (
+	Sql_query( "INSERT INTO $hardwj (
 	 `ports` )
 	 VALUES (
-	 '0' )" ) or die( mysql_error());
+	 '0' )" );
 }
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $hardwports (
+Sql_query( "CREATE TABLE $hardwports (
  `port_name` varchar( 32 ) default '',
  `port_bps` mediumint( 6 ) unsigned NOT NULL default '2400',
  `dev_first` tinyint( 2 ) unsigned NOT NULL default '0',
  `dev_last` tinyint( 2 ) unsigned NOT NULL default '0',
  `waitstate_between_devs` smallint( 4 ) unsigned NOT NULL default '0',
  `port_idx` tinyint( 3 ) unsigned NOT NULL default '0' )
- $table_utf8 $mysql_TYPE COMMENT='Hardware ports *$hardwports.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE COMMENT='Hardware ports *$hardwports.MYD*'" );
 echo "Table \"$hardwports\" is created.<br>";
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $vars (
+Sql_query( "CREATE TABLE $vars (
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
  `var_name` varchar( 100 ) NOT NULL default '',
@@ -660,11 +660,11 @@ mysql_query( "CREATE TABLE $vars (
  `modif_time` time NOT NULL default '00:00:00',
  `int_res` mediumint( 9 ) NOT NULL default '0',
  `str_res` varchar( 255 ) NOT NULL default '' )
- $table_utf8 $mysql_TYPE COMMENT='Variables *$vars.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE COMMENT='Variables *$vars.MYD*'" );
 echo "Table \"$vars\" is created.<br>";
 
 // ----------------------------------------------------------
-mysql_query( "CREATE TABLE $dbidx (
+Sql_query( "CREATE TABLE $dbidx (
  `id` mediumint( 8 ) unsigned NOT NULL auto_increment,
  `created_date` date NOT NULL default '1991-12-31',
  `created_time` time NOT NULL default '00:00:00',
@@ -677,7 +677,7 @@ mysql_query( "CREATE TABLE $dbidx (
  `modif_date` date NOT NULL default '1991-12-31',
  `modif_time` time NOT NULL default '00:00:00',
  PRIMARY KEY ( `id` ))
- $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Database structure *$dbidx.MYD*'", $db ) or die( mysql_error());
+ $table_utf8 $mysql_TYPE MIN_ROWS=1 COMMENT='Database structure *$dbidx.MYD*'" );
 echo "Table \"$dbidx\" is created.<br>";
 
 echo "<br><hr>OK";

@@ -1,9 +1,9 @@
 <!-- DF_ajs: Edit Ox Form -->
 		<div class="form-group row">
 			<div class="col-md-8">
-				<button class="btn btn-success" style="border-radius:0;" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox);">Update</button>
-				<button class="btn btn-warning" style="border-radius:0;" ng-disabled="ox_edit.$invalid || cur_ox.id==1" ng-click="db_Ox_update(cur_ox); Ox_form_close('cancel',cur_ox.id);">Update & List</button>
-				<button class="btn btn-danger" style="border-radius:0;" ng-click="Ox_form_close('cancel',cur_ox.id);">Cancel</button>
+				<button class="btn btn-success" style="<?php echo $_btn_style;?>" ng-disabled="ox_edit.$invalid || cur_ox.id==1 || cur_ox.locked.length>0" ng-click="db_Ox_update(cur_ox);">Update</button>
+				<button class="btn btn-warning" style="<?php echo $_btn_style;?>" ng-disabled="ox_edit.$invalid || cur_ox.id==1 || cur_ox.locked.length>0" ng-click="db_Ox_update(cur_ox); Oxs_form_close('cancel',cur_ox.id);">Update & List</button>
+				<button class="btn btn-danger" style="<?php echo $_btn_style;?>" ng-click="Oxs_form_close('cancel',cur_ox.id);">X</button>
 			</div>
 			<div class="col-md-4 has-warning">
 				<label>Ox' Card</label>
@@ -11,19 +11,19 @@
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Number:<span class="text-danger" ng-show="ox_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="border-radius:0; width:100px;" type="text" value="{{cur_ox.num}}" ng-disabled="cur_ox.id==1" ng-model="cur_ox.num" required>
+				<label>№<span class="text-danger" ng-show="ox_edit.num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="6" placeholder="Enter Number" style="<?php echo $_inp_style;?> width:100px;" type="text" ng-disabled="cur_ox.id==1" ng-model="cur_ox.num" required>
 			</div>
 			<div class="col-md-4">
-				<label>Birth Date:<span class="text-danger" ng-show="ox_edit.b_date.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="10" name="b_date" placeholder="Enter Birth Date" style="border-radius:0; width:200px;" type="text" ng-disabled="cur_ox.id==1" ng-model="cur_ox.b_date" required>
+				<label>Birth Date<span class="text-danger" ng-show="ox_edit.b_date.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="10" placeholder="Enter Birth Date" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_ox.id==1" ng-model="cur_ox.b_date" required>
 			</div>
 			<div class="col-md-4">
-				<label>Birth Number:</label>
-				<input class="form-control" maxlength="30" name="b_num" placeholder="Enter Birth Number" style="border-radius:0; width:200px;" type="text" value="{{cur_ox.b_num}}" ng-disabled="cur_ox.id==1" ng-model="cur_ox.b_num">
+				<label>Birth №</label>
+				<input class="form-control" maxlength="30" placeholder="Enter Birth Number" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_ox.id==1" ng-model="cur_ox.b_num">
 			</div>
 		</div>
 		<div class="form-group">
-			<label>Nick:</label>
-			<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="border-radius:0; width:200px;" type="text" value="{{cur_ox.nick}}" ng-disabled="cur_ox.id==1" ng-model="cur_ox.nick">
+			<label>Nick</label>
+			<input class="form-control" maxlength="100" placeholder="Enter Nick" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-disabled="cur_ox.id==1" ng-model="cur_ox.nick">
 		</div>

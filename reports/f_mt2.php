@@ -2,7 +2,7 @@
 /* DF_2: reports/f_mt2.php
 report: conductivity by table, total for 8 last days
 c: 25.12.2005
-m: 24.03.2017 */
+m: 07.03.2018 */
 
 function OutputRes_ByIdAndDate( $r, $sess ) {
 	global $rjust, $mf, $mf_days, $df, $mrowt, $mrowaq;
@@ -191,6 +191,8 @@ if ( mysql_errno()<1 ) { while ( $row=mysql_fetch_row( $res1 )) {
 	<td>".$t_His."&nbsp;</td>
 </tr>";
 			}
+			$t_rows++;
+			$dots_cnt++;
 		} else {//prep diagram
 			$dots[$dots_cnt]=$m;
 			$dots_cnt++;
@@ -203,7 +205,13 @@ if ( $graph<1 ) {
 	if ( $mtt==0 ) $mtt="&nbsp;";
 	if ( $mt1==0 ) $mt1="&nbsp;";
 	if ( $mtm==0 ) $mtm="&nbsp;";
-	echo "
+	if ( $t_rows==0 ) {
+		echo "
+</tbody>
+</table><br>
+<center><b>".$ged["No_data_for_period"]."</b></center><br>";
+	} else {
+		echo "
 </tbody>
 <tfoot id='rep_tfoot'>
 <tr $rjust height='28px'>
@@ -212,12 +220,12 @@ if ( $graph<1 ) {
 	<td><b>".$mtt."</b></td>
 	<td><b>".$mt1."</b></td>
 	<td><b>".$mtm."</b></td>";
-	for ( $i=1; $i<9; $i++ ) echo "
+		for ( $i=1; $i<9; $i++ ) echo "
 	<td>&nbsp;</td>";
-	if ( $mttq<1 ) $mttq="&nbsp;";
-	if ( $mtmq<1 ) $mtmq="&nbsp;";
-	if ( $mt0q<1 ) $mt0q="&nbsp;";
-	echo "
+		if ( $mttq<1 ) $mttq="&nbsp;";
+		if ( $mtmq<1 ) $mtmq="&nbsp;";
+		if ( $mt0q<1 ) $mt0q="&nbsp;";
+		echo "
 	<td><b>".$mttq."</b></td>
 	<td><b>".$mtmq."</b></td>
 	<td><b>".$mt0q."</b></td>
@@ -225,6 +233,7 @@ if ( $graph<1 ) {
 </tr>
 </tfoot>
 </table><br>";
+	}
 
 } else {
 	$dots_set=$dots[0];

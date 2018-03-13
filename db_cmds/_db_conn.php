@@ -1,9 +1,13 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "20095230", "df2");
+$halt_mysql_connect = 1;
+include("../f_myadm.php");
+$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 $conn->set_charset("utf8");
 
-function Sql_query($query) {
+function Sqli_query($query) {
 	global $conn;
-	mysqli_query($conn, $query);
+//	$res=mysqli_query($conn, $query);
+	$res=$conn->query($query);
+	return $res;
 }
 ?>

@@ -2,7 +2,7 @@
 /* DF_2: oper/f_o_mlk.php
 oper ----1 (101) [milking]
 c: 09.01.2006
-m: 06.10.2017 */
+m: 20.02.2018 */
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -93,30 +93,31 @@ function milksess_keyp( i_ ) {
 	echo "
 <script language='JavaScript' src='../dflib/f_input.js'></script>";
 	include_once( "../oper/f_dtdiv.php" );//<tr>'s date
-	$td1w="10px";
 	$td2w="40px";
 	$td3w="60px";
 	$td4w="60px";
 	$td5w="20px";
 	$td9w="30px";
-	$tdew="60px";
-	if ( $div_hide!=1 ) {
-		if ( count( $cows_arr )>99 ) $td1w="20px";
-		if ( count( $cows_arr )>999 ) $td1w="30px";
-	}
-	if ( $varsession!=1 ) include_once( "../oper/f_oprwd.php" );
-	if ( $userCoo!=9 ) echo "
-<input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:200px' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype].")...'>&nbsp;";
-	if ( $div_hide!=1 ) include_once( "../oper/f_dt.php" );//page's date
-	else if ( $varsession!=1 & $userCoo!=9 ) echo "
-&nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";
-	$query="SELECT $cows.id, $cows.cow_num, $cows.nick, $groups.nick FROM $cows, $groups WHERE $groups.id=$cows.gr_id";
-	if ( $varsession!=1 ) { $query.=" ORDER BY gr_id, cow_num*1"; } else $query.=" AND $cows.id=$cow_id";
-	$res=mysql_query( $query, $db );
-	if ( $div_hide!=1 ) echo "
-<div style='$theadS0; height:59px;'>";
+	$tdw[21]="170px";
+//	$tdw[1]="10px";
+//	if ( $div_hide!=1 ) {
+//		if ( count( $cows_arr )>99 ) $td1w="20px";
+//		if ( count( $cows_arr )>999 ) $td1w="30px";
+	include_once( "../oper/f_oprwd.php" );
 	echo "
-	<table id='OPER_TABLE' class='st2'>";
+<div class='mk' style='border:0; height:50px; margin:0; overflow-x:hidden; overflow-y:scroll; padding:10px 10px 0 10px;'>";
+	if ( $userCoo!=9 ) echo "
+	<input class='btn btn_h0 gradient_0f0' id='add_oper' name='add_oper' style='width:91px;' type='$add_oper_type' value='".$php_mm["_com_forward_btn_"]."...' title='".$add_oper_tip."&nbsp;(".$opername[$opertype].")...'>&nbsp;";
+	else if ( $varsession!=1 & $userCoo!=9 ) echo "&nbsp;<a onclick='sele_to_dele( \"co10\", \"".$php_mm["_06_forward_delete_btn_tip"]."\" ); return false' href=''>".$php_mm["_com_DELE_lnk_"]."</a>";
+	echo "
+</div>";
+	if ( $div_hide!=1 ) echo "
+<div class='mk' style='border:0; $theadS0; height:59px;'>";
+	else if ( $nosession==1 ) echo "<br><br>";
+	echo "
+	<table id='OPER_TABLE' style='width:100%;'>
+	<tbody id='rep_tbody'>
+	<tr $cjust style='height:27px;'>";
 	if ( $div_hide==1 ) {
 		$row=mysql_fetch_row( $res );
 		echo "
@@ -189,15 +190,15 @@ function milksess_keyp( i_ ) {
 		<td width='$td5w'><input id='mast4".$i."' maxlength='4' name='arr_m4[".$i."]' size='2' style='$rwS0; height:100%;' type='text' onfocus='mastitus_keyp( \"mast4$i\" )' onclick='mastitus_keyp( \"mast4$i\" )' onkeypress='mastitus_keyp( \"mast4$i\" )'></td>
 		<td width='$td5w'><input class='y_chk' id='tr".$i."' name='arr_t[".$i."]' type='checkbox'></td>
 		<td width='$td5w'><input class='y_chk' id='ov".$i."' name='arr_o[".$i."]' type='checkbox'></td>
-		<td style='background:#fff' width='$tdew'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$liS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></a></td>
+		<td width='".$tdw[21]."'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;' href=''><input class='txt txt_h0' id='rdmY".$i."' name='dates_[".$i."]' size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
 	</tr>";
 		}}
 	}
 	echo "
 	</table>";
 	if ( $div_hide!=1 ) echo "
-</div>"; else echo "
-	<table id='div' width='760px'></table><br>";
+</div>";
 	echo "
 </form>";
 }
+?>

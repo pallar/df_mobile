@@ -1,8 +1,8 @@
 <!-- DF_ajs: Add Ox Form -->
 		<div class="form-group row">
 			<div class="col-md-8">
-				<button class="btn btn-success" style="border-radius:0;" ng-disabled="ox_add.$invalid" ng-click="db_Ox_insert(new_ox); Ox_form_close('cancel');">Add</button>
-				<button class="btn btn-danger" style="border-radius:0;" ng-click="Ox_form_close('cancel');">Cancel</button>
+				<button class="btn btn-success" style="<?php echo $_btn_style;?>" ng-disabled="ox_add.$invalid" ng-click="db_Ox_insert(new_ox); Oxs_form_close('cancel');">Застосувати</button>
+				<button class="btn btn-danger" style="<?php echo $_btn_style;?>" ng-click="Oxs_form_close('cancel');">X</button>
 			</div>
 			<div class="col-md-4 has-warning">
 				<label>New Ox' Card</label>
@@ -10,19 +10,19 @@
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label>Number:<span class="text-danger" ng-show="ox_add.num.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="4" name="num" placeholder="Enter Number" style="border-radius:0; width:100px;" type="text" ng-model="new_ox.num" required>
+				<label>№<span class="text-danger" ng-show="ox_add.num.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="6" placeholder="Enter Number" style="<?php echo $_inp_style;?> width:100px;" type="text" ng-model="new_ox.num" required>
 			</div>
 			<div class="col-md-4">
-				<label>Birth Date:<span class="text-danger" ng-show="ox_add.b_date.$invalid">&nbsp;REQUIRED!</span></label>
-				<input class="form-control" maxlength="10" name="b_date" placeholder="Enter Birth Date" style="border-radius:0; width:200px;" type="text" ng-model="new_ox.b_date" required>
+				<label>Birth Date<span class="text-danger" ng-show="ox_add.b_date.$invalid">&nbsp;REQUIRED!</span></label>
+				<input class="form-control" maxlength="10" placeholder="Enter Birth Date" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_ox.b_date" required>
 			</div>
 			<div class="col-md-4">
-				<label>Birth Number:</label>
-				<input class="form-control" maxlength="30" name="b_num" placeholder="Enter Birth Number" style="border-radius:0; width:200px;" type="text" ng-model="new_ox.b_num">
+				<label>Birth №</label>
+				<input class="form-control" maxlength="30" placeholder="Enter Birth Number" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_ox.b_num">
 			</div>
 		</div>
 		<div class="form-group">
-			<label>Nick:</label>
-			<input class="form-control" maxlength="100" name="nick" placeholder="Enter Nick" style="border-radius:0; width:200px;" type="text" ng-model="new_ox.nick">
+			<label>Nick</label>
+			<input class="form-control" maxlength="100" placeholder="Enter Nick" style="<?php echo $_inp_style;?> width:200px;" type="text" ng-model="new_ox.nick">
 		</div>

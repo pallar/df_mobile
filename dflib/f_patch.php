@@ -2,17 +2,17 @@
 /* DF_2: dflib/f_patch.php
 patch database (ALTER TABLE)
 c: 06.10.2008
-m: 16.11.2015 */
+m: 06.03.2018 */
 
 ob_start();//lock output to set cookies properly!
 
 //DROP UNUSED TABLES
 mysql_query( "SELECT * FROM $parlorstate" ); $sqlerr=mysql_errno();
-if ( $sqlerr==0 ) mysql_query( "DROP TABLE `$parlorstate`", $db );
+if ( $sqlerr==0 ) mysql_query( "DROP TABLE `$parlorstate`" );
 mysql_query( "SELECT * FROM $cowsdyna" ); $sqlerr=mysql_errno();
-if ( $sqlerr==0 ) mysql_query( "DROP TABLE `$cowsdyna`", $db );
+if ( $sqlerr==0 ) mysql_query( "DROP TABLE `$cowsdyna`" );
 mysql_query( "SELECT * FROM $cowsstat" ); $sqlerr=mysql_errno();
-if ( $sqlerr==0 ) mysql_query( "DROP TABLE `$cowsstat`", $db );
+if ( $sqlerr==0 ) mysql_query( "DROP TABLE `$cowsstat`" );
 
 //FIX DATABASE VERSION
 mysql_query( "SELECT db_rel FROM $globals" ); $sqlerr=mysql_errno();
@@ -161,7 +161,7 @@ if ( $sqlerr!=0 )
 	 ADD `b_place_id` int( 10 ) unsigned NOT NULL default '1' AFTER `b_num`,
 	 ADD `owner_id` int( 10 ) unsigned NOT NULL default '1' AFTER `i_date`" );
 
-$db_rel=DbRelease( $globals, $db )*1;
+$db_rel=DbRelease( $globals )*1;
 if ( $db_rel<=20091120 ) {
 	mysql_query( "SELECT * FROM 000000_o" );
 	$sqlerr=mysql_errno();
@@ -297,7 +297,7 @@ if ( $sqlerr!=0 )
 	 ADD `ctrl_value_02` double NOT NULL default '-1' AFTER `locked`,
 	 ADD `ctrl_value_01` double NOT NULL default '-1' AFTER `locked`" );
 
-$db_rel=DbRelease( $globals, $db )*1;
+$db_rel=DbRelease( $globals )*1;
 if ( $db_rel!=20101130 ) {
 	$res=mysql_query( "SHOW TABLES LIKE '%_m'" );
 	$sqlerr=mysql_errno();
@@ -313,7 +313,7 @@ if ( $db_rel!=20101130 ) {
 			$tables_2=0; $tables_=0;
 			for ( $i=0; $i<count( $tables ); $i++ ) {
 //echo "+$tables[$i]!";
-				$res=mysql_query( "SELECT gr_id FROM $tables[$i]", $db );
+				$res=mysql_query( "SELECT gr_id FROM $tables[$i]" );
 				$sqlerr=mysql_errno();
 				if ( $sqlerr!=0 ) {
 					if ( $tables_2==0 ) $tables_2=$tables[$i];
@@ -338,7 +338,7 @@ if ( $db_rel!=20101130 ) {
 			$tables=split( ";", trim( $tables_1 ));//LAST CHECK MUST BE DONE WITH FULL LIST!
 			for ( $i=0; $i<count( $tables ); $i++ ) {
 //echo "+$tables[$i]!";
-				$res=mysql_query( "SELECT gr_id FROM $tables[$i]", $db );
+				$res=mysql_query( "SELECT gr_id FROM $tables[$i]" );
 				$sqlerr=mysql_errno();
 				if ( $sqlerr!=0 ) $db_ready=-1;
 			}
@@ -364,7 +364,7 @@ if ( $sqlerr!=0 )
 	Sql_query( "ALTER TABLE `$cows`
 	 ADD `z_dates` varchar( 10 ) NOT NULL default '' AFTER `c_dates_res`" );
 
-$db_rel=DbRelease( $globals, $db )*1;
+$db_rel=DbRelease( $globals )*1;
 if ( $db_utf8==1 & $db_rel<20110201 ) {
 	$db_ready=0;
 	$dbt="000000_o";
@@ -394,7 +394,7 @@ if ( $db_utf8==1 & $db_rel<20110201 ) {
 	}
 }
 
-$db_rel=DbRelease( $globals, $db )*1;
+$db_rel=DbRelease( $globals )*1;
 if ( $db_rel<20110211 ) {
 	$db_ready=1;
 	$dbt="000000_o";
@@ -507,7 +507,20 @@ if ( $db_rel<20110211 ) {
 			$sqlerr=mysql_errno();
 		}
 	}
-	if ( $db_ready>0 ) mysql_query( "UPDATE $globals SET db_rel='[2011:0211]'" );
+	if ( $sqlerr==0 ) {
+		if ( $db_ready>0 ) mysql_query( "UPDATE $globals SET db_rel='[2011:0211]'" );
+	}
+}
+
+$db_rel=DbRelease( $globals )*1;
+if ( $db_rel<20110301 ) {
+	$db_ready=1;
+	mysql_query( "ALTER TABLE $oxes
+	 CHANGE `num` `num` varchar( 6 ) NOT NULL default '0'" );
+	$sqlerr=mysql_errno();
+	if ( $sqlerr==0 ) {
+		if ( $db_ready>0 ) mysql_query( "UPDATE $globals SET db_rel='[2011:0301]'" );
+	}
 }
 
 //NOT_TESTED!!! 28.03.2011
