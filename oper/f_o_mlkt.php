@@ -5,7 +5,7 @@ c: 09.01.2006
 m: 11.10.2017 */
 
 $dbt_ext="_o";//DONT MOVE THIS BELOW!
-$_list_height=$_list_height+80;
+$_list_height=$_list_height+90;
 
 if ( strlen( $key )>8 ) {
 	$somop=$_GET["row8"];
@@ -113,7 +113,7 @@ if ( $add_oper!="" ) {
 		<td width='$td7w'><input id='d4".$i."' name='d4_[".$i."]' style='' type='text' value='$fatp' onclick='real_keyp( \"d4$i\", 0, 15, 6, 3 );' onfocus='real_keyp( \"d4$i\", 0, 15, 6, 3 );' onkeypress='real_keyp( \"d4$i\", 0, 15, 6, 3 );'></td>
 		<td width='$td8w'><input id='d5".$i."' name='d5_[".$i."]' style='' type='text' value='$albp' onclick='real_keyp( \"d5$i\", 0, 15, 6, 3 );' onfocus='real_keyp( \"d5$i\", 0, 15, 6, 3 );' onkeypress='real_keyp( \"d5$i\", 0, 15, 6, 3 );'></td>
 		<td width='".$tdw[20]."'><input class='txt txt_h0' id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$inpS1; width:100%;' type='text' value='$co'></td>
-		<td width='".$tdw[21]."'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;' href=''><input class='txt txt_h0' id='date1".$i."' name='dates_[".$i."]' size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
+		<td width='".$tdw[21]."'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;'><input class='txt txt_h0' id='date1".$i."' name='dates_[".$i."]' readonly size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
 	</tr>";
 		}
 	}

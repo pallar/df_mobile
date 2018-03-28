@@ -2,10 +2,10 @@
 /* DF_2: f_ver.php
 releases of project & database structure
 c: 04.06.2008
-m: 13.03.2018 */
+m: 22.03.2018 */
 
 //DONT CHANGE THIS FILE IN ANY CASE, BECAUSE YOU MAY DESTROY DATABASE!
-$app_rel="[m:2018:0313]"; $dbstruc_rel="[2011:0301]";
+$app_rel="[m:2018:0322]"; $dbstruc_rel="[2011:0301]";
 $log_me=0;//if $log_me==1 then log mode is activated
 
 $ANGULAR_IS_USED=1;

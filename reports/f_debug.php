@@ -36,8 +36,7 @@ if ( $ml<10 ) $ml="0".$ml;
 $Ymd2=$yl."-".$ml."-".$dl;
 
 $query="SELECT
- modif_Ymd,
- modif_His,
+ modif_Ymd, modif_His,
  dev_num, cmd, data
  FROM $debug_log
  WHERE modif_Ymd>='$Ymd1' AND modif_Ymd<='$Ymd2'";

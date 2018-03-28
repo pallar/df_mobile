@@ -121,7 +121,7 @@ function Period_Close() {
 	Shadow_Close();
 }
 
-function Period_Show() {
+function Period_Show(v) {
 	Login_Close();
 	JsHttpRequest.query( '../_view/f__pe_.php',
 	 { init:'1' },
@@ -134,6 +134,7 @@ function Period_Show() {
 		eid.style.visibility='visible';
 		eid.style.display='block';
 	 }, false );
+alert("1111");
 	Per_FromCoo();
 }
 

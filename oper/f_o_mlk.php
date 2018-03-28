@@ -190,7 +190,7 @@ function milksess_keyp( i_ ) {
 		<td width='$td5w'><input id='mast4".$i."' maxlength='4' name='arr_m4[".$i."]' size='2' style='$rwS0; height:100%;' type='text' onfocus='mastitus_keyp( \"mast4$i\" )' onclick='mastitus_keyp( \"mast4$i\" )' onkeypress='mastitus_keyp( \"mast4$i\" )'></td>
 		<td width='$td5w'><input class='y_chk' id='tr".$i."' name='arr_t[".$i."]' type='checkbox'></td>
 		<td width='$td5w'><input class='y_chk' id='ov".$i."' name='arr_o[".$i."]' type='checkbox'></td>
-		<td width='".$tdw[21]."'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;' href=''><input class='txt txt_h0' id='rdmY".$i."' name='dates_[".$i."]' size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
+		<td width='".$tdw[21]."'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;'><input class='txt txt_h0' id='rdmY".$i."' name='dates_[".$i."]' readonly size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
 	</tr>";
 		}}
 	}

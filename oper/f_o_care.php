@@ -149,7 +149,7 @@ if ( $add_oper!="" ) {
 		<td width='$td9w'><input maxlength='55' name='d7_[$i]' style='' type='text' value='$d16_[3]'></td>
 		<td width='$tdaw'><input maxlength='55' name='d8_[$i]' style='' type='text' value='$d16_[4]'></td>
 		<td width='".$tdw[20]."'><input class='txt txt_h0' id='co1".$i."' name='co_[".$i."]' maxlength='255' style='$inpS1; width:100%;' type='text' value='$co'></td>
-		<td width='".$tdw[21]."'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;' href=''><input class='txt txt_h0' id='date1".$i."' name='dates_[".$i."]' size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
+		<td width='".$tdw[21]."'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;'><input class='txt txt_h0' id='date1".$i."' name='dates_[".$i."]' readonly size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
 	</tr>
 	<tr ".GrTrCol().">
 		<td width='$td5w'><select name='d1_1_[$i]' style=''>";

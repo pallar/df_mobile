@@ -2,7 +2,7 @@
 /* DF: locales/tr/f_prep._tr
 reports (main text set) azerbaijani locale
 c: 25.12.2005
-m: 26.04.2015 */
+m: 16.03.2018 */
 
 $ged["months"]="jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec,";
 $ged["operunknown"]="E-hata operasyonda: operasyon bilinmeyen bir tür";
@@ -30,14 +30,14 @@ $ged["[C34]"]="Buğa";
 $ged["[C35]"]="Belirsiz durumu ile Hayvanlar";
 $ged["[C36]"]="Bir İlk doğumu olmalı Hayvanlar";
 
-$ged['young']="düve";
-$ged['insem?']="tohumlama edilebilir";
-$ged['insem+']="tohumlama";
-$ged['rectal?']="rektal geçirebilirsiniz";
-$ged['fault_insem']="sığır";
-$ged['pregnant']="buzağı";
-$ged['abort+']="İPTAL+";
-$ged['abort-']="İptal-";
+$ged["young"]="düve";
+$ged["insem?"]="tohumlama edilebilir";
+$ged["insem+"]="tohumlama";
+$ged["rectal?"]="rektal geçirebilirsiniz";
+$ged["fault_insem"]="sığır";
+$ged["pregnant"]="buzağı";
+$ged["abort+"]="İPTAL+";
+$ged["abort-"]="İptal-";
 
 $ged["A3.0"]="günlük";
 $ged["A3.1"]="sabah";
@@ -208,39 +208,39 @@ $ged["milk_at_per."]="verim";
 $ged["1day,2days,5days,.."]="1 gün, 2 gün...";
 $ged["stats"]="istatistik";
 
-$ged['Days_Before_Insem~']="Tohum. önce.";
-$ged['Days_Before_Insem']="Tohum. önce. Gün";
-$ged['Insem_Date~']="Tohum.";
-$ged['Insem_Date']="Tohumlama Tarih";
-$ged['Days_Before_Rectal~']="Rect. önce.";
-$ged['Days_Before_Rectal']="Rect. önce. Gün";
-$ged['Rectal_Date~']="Rect.";
-$ged['Rectal_Date']="Rect. Tarih";
-$ged['Days_Before_Prep_Zapusk~']="B./h.";
-$ged['Days_Before_Prep_Zapusk']="Başlamaya hazırlık. önce. Gün";
-$ged['Prep_Zapusk_Date~']="B./h.";
-$ged['Prep_Zapusk_Date']="Başlamaya hazırlık. Tarih";
-$ged['Days_Before_Zapusk~']="Başlamadan önce.";
-$ged['Days_Before_Zapusk']="Başlamadan önce. Gün";
-$ged['Zapusk_Date~']="Başlatım";
-$ged['Zapusk_Date']="Başlatım. Tarih";
-$ged['Days_Before_Abort~']="Buzağılamadan önce.";
-$ged['Days_Before_Abort']="Abort önce. Gün";
-$ged['Abort_Date~']="Abort";
-$ged['Abort_Date']="Abort Tarih";
-$ged['Today_Milk~']="Bugün";
-$ged['Today_Milk']="Nada bugün, kg";
-$ged['Yesterday_Milk~']="Dün.";
-$ged['Yesterday_Milk']="Nada dün, kg";
-$ged['Average_7~']="Ort. 7";
-$ged['Average_7']="Ortalama 7 gün, kg";
-$ged['Phis._State']="Fizyolojik durumu";
-$ged['Lact_Days~']="G. lakt.";
-$ged['Lact_Days']="Laktasyon Gün";
-$ged['Last_Data']="Son Tohum.; Son Abort/Buzağılma; ...";
+$ged["Days_Before_Insem~"]="Tohum. önce.";
+$ged["Days_Before_Insem"]="Tohum. önce. Gün";
+$ged["Insem_Date~"]="Tohum.";
+$ged["Insem_Date"]="Tohumlama Tarih";
+$ged["Days_Before_Rectal~"]="Rect. önce.";
+$ged["Days_Before_Rectal"]="Rect. önce. Gün";
+$ged["Rectal_Date~"]="Rect.";
+$ged["Rectal_Date"]="Rect. Tarih";
+$ged["Days_Before_Prep_Zapusk~"]="B./h.";
+$ged["Days_Before_Prep_Zapusk"]="Başlamaya hazırlık. önce. Gün";
+$ged["Prep_Zapusk_Date~"]="B./h.";
+$ged["Prep_Zapusk_Date"]="Başlamaya hazırlık. Tarih";
+$ged["Days_Before_Zapusk~"]="Başlamadan önce.";
+$ged["Days_Before_Zapusk"]="Başlamadan önce. Gün";
+$ged["Zapusk_Date~"]="Başlatım";
+$ged["Zapusk_Date"]="Başlatım. Tarih";
+$ged["Days_Before_Abort~"]="Buzağılamadan önce.";
+$ged["Days_Before_Abort"]="Abort önce. Gün";
+$ged["Abort_Date~"]="Abort";
+$ged["Abort_Date"]="Abort Tarih";
+$ged["Today_Milk~"]="Bugün";
+$ged["Today_Milk"]="Nada bugün, kg";
+$ged["Yesterday_Milk~"]="Dün.";
+$ged["Yesterday_Milk"]="Nada dün, kg";
+$ged["Average_7~"]="Ort. 7";
+$ged["Average_7"]="Ortalama 7 gün, kg";
+$ged["Phis._State"]="Fizyolojik durumu";
+$ged["Lact_Days~"]="G. lakt.";
+$ged["Lact_Days"]="Laktasyon Gün";
+$ged["Last_Data"]="Son Tohum.; Son Abort/Buzağılma; ...";
 
-$ged['o_mlk']="sağım";
-$ged['o_ctrl_mlk']="kontr.sağım";
+$ged["o_mlk"]="sağım";
+$ged["o_ctrl_mlk"]="kontr.sağım";
 
 $ged["A4.F0000"]="bilinmeyen";
 $ged["A4.F0001"]="buzağılma";

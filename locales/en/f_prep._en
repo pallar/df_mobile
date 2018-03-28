@@ -2,7 +2,7 @@
 /* DF: locales/en/f_prep._en
 reports (main text set) english locale
 c: 25.12.2005
-m: 26.04.2015 */
+m: 16.03.2018 */
 
 $ged["months"]="jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec,";
 $ged["operunknown"]="E-error at operation. Unknown operation type";
@@ -30,14 +30,14 @@ $ged["[C34]"]="Bulls";
 $ged["[C35]"]="Cows without status";
 $ged["[C36]"]="Cows that must have the first calving";
 
-$ged['young']="heifer";
-$ged['insem?']="permitted insem.";
-$ged['insem+']="already insem.";
-$ged['rectal?']="recommended to rectal checking";
-$ged['fault_insem']="NOT PREGNANT";
-$ged['pregnant']="pregnant";
-$ged['abort+']="ABORT";
-$ged['abort-']="calved";
+$ged["young"]="heifer";
+$ged["insem?"]="permitted insem.";
+$ged["insem+"]="already insem.";
+$ged["rectal?"]="recommended to rectal checking";
+$ged["fault_insem"]="NOT PREGNANT";
+$ged["pregnant"]="pregnant";
+$ged["abort+"]="ABORT";
+$ged["abort-"]="calved";
 
 $ged["A3.0"]="total";
 $ged["A3.1"]="morning";
@@ -208,39 +208,39 @@ $ged["milk_at_per."]="milk by";
 $ged["1day,2days,5days,.."]="1 day, 2 days...";
 $ged["stats"]="statistics";
 
-$ged['Days_Before_Insem~']="B/insem.";
-$ged['Days_Before_Insem']="Days to insem.";
-$ged['Insem_Date~']="Insem.";
-$ged['Insem_Date']="Insem. date";
-$ged['Days_Before_Rectal~']="B/rectal";
-$ged['Days_Before_Rectal']="Days to rectal";
-$ged['Rectal_Date~']="Rectal";
-$ged['Rectal_Date']="Rectal date";
-$ged['Days_Before_Prep_Zapusk~']="B/dry p.";
-$ged['Days_Before_Prep_Zapusk']="Days to dry preparation";
-$ged['Prep_Zapusk_Date~']="P/dry";
-$ged['Prep_Zapusk_Date']="Date prep. to dry";
-$ged['Days_Before_Zapusk~']="B/dry";
-$ged['Days_Before_Zapusk']="Days to dry";
-$ged['Zapusk_Date~']="Dry";
-$ged['Zapusk_Date']="Dry date";
-$ged['Days_Before_Abort~']="B/calving";
-$ged['Days_Before_Abort']="Days to calving";
-$ged['Abort_Date~']="Calving";
-$ged['Abort_Date']="Calving date";
-$ged['Today_Milk~']="Today";
-$ged['Today_Milk']="Milk by today, kg";
-$ged['Yesterday_Milk~']="Yest.";
-$ged['Yesterday_Milk']="Milk by yesterday, kg";
-$ged['Average_7~']="Avg. 7";
-$ged['Average_7']="Average milk by 7 days, kg";
-$ged['Phis._State']="Phis. condition";
-$ged['Lact_Days~']="Lact. d.";
-$ged['Lact_Days']="Lact. days";
-$ged['Last_Data']="Last: insem.; abort/calving; ...";
+$ged["Days_Before_Insem~"]="B/insem.";
+$ged["Days_Before_Insem"]="Days to insem.";
+$ged["Insem_Date~"]="Insem.";
+$ged["Insem_Date"]="Insem. date";
+$ged["Days_Before_Rectal~"]="B/rectal";
+$ged["Days_Before_Rectal"]="Days to rectal";
+$ged["Rectal_Date~"]="Rectal";
+$ged["Rectal_Date"]="Rectal date";
+$ged["Days_Before_Prep_Zapusk~"]="B/dry p.";
+$ged["Days_Before_Prep_Zapusk"]="Days to dry preparation";
+$ged["Prep_Zapusk_Date~"]="P/dry";
+$ged["Prep_Zapusk_Date"]="Date prep. to dry";
+$ged["Days_Before_Zapusk~"]="B/dry";
+$ged["Days_Before_Zapusk"]="Days to dry";
+$ged["Zapusk_Date~"]="Dry";
+$ged["Zapusk_Date"]="Dry date";
+$ged["Days_Before_Abort~"]="B/calving";
+$ged["Days_Before_Abort"]="Days to calving";
+$ged["Abort_Date~"]="Calving";
+$ged["Abort_Date"]="Calving date";
+$ged["Today_Milk~"]="Today";
+$ged["Today_Milk"]="Milk by today, kg";
+$ged["Yesterday_Milk~"]="Yest.";
+$ged["Yesterday_Milk"]="Milk by yesterday, kg";
+$ged["Average_7~"]="Avg. 7";
+$ged["Average_7"]="Average milk by 7 days, kg";
+$ged["Phis._State"]="Phis. condition";
+$ged["Lact_Days~"]="Lact. d.";
+$ged["Lact_Days"]="Lact. days";
+$ged["Last_Data"]="Last: insem.; abort/calving; ...";
 
-$ged['o_mlk']="milking";
-$ged['o_ctrl_mlk']="contr. milking";
+$ged["o_mlk"]="milking";
+$ged["o_ctrl_mlk"]="contr. milking";
 
 $ged["A4.F0000"]="unknown";
 $ged["A4.F0001"]="calving";

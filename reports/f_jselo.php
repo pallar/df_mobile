@@ -40,5 +40,5 @@ if ( $query_descending!=-1 ) $query=$query."
 else
  $query=$query."
  ORDER BY $dbt.year*10000+$dbt.month*100+$dbt.day+$dbt.code/100000000";
-$res=mysql_query( $query, $db ); $error=$sqlerr=mysql_errno();
+$res=mysql_query( $query ); $error=$sqlerr=mysql_errno();
 ?>

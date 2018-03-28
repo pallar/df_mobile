@@ -4,7 +4,7 @@ oper -8192 (114) [jagging and "disable milking"]
 c: 10.08.2009
 m: 20.02.2018 */
 
-$_list_height=$_list_height+80;
+$_list_height=$_list_height+90;
 
 $t0=$_GET["opertype"]; $t1=$_GET["sess_id"]; $t2=$_GET["row_date"]; $key=$_GET["key"];
 if ( empty( $t0 ) & empty( $t1 ) & empty( $t2 ) & empty( $key )) return;
@@ -110,7 +110,7 @@ function reset_all_keyp( i_ ) {
 		<td height='22px' style='background:#fff' width='$td5w'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i4." ); return false' href=''><input id='date1".$i4."' name='dates_[".$i4."]' size='8' style='$liS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></a></td>
 		<td height='22px' style='background:#fff' width='$td5w'><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i5." ); return false' href=''><input id='date1".$i5."' name='dates_[".$i5."]' size='8' style='$liS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></a></td>
 		<td rowspan='2' style='background:#fff' width='$tdew'>
-			<a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false' href=''><input id='date1".$i."' name='dates_[".$i."]' size='8' style='$liS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></a>
+			<a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;'><input id='date1".$i."' name='dates_[".$i."]' readonly size='8' style='$liS0; height:18px;' type='text' value='$dmY' onkeypress='return false'></a>
 			<a onclick='reset_all_keyp( ".$i." ); return false' href=''><input size='8' style='border:none; cursor:pointer; height:24px; width:100%' type='text' value='".$_06_reset_."' onkeypress='return false'></a>
 		</td>
 	</tr>

@@ -2,7 +2,7 @@
 /* DF_2: locales/uk/f_prep._uk
 reports (main text set) ukrainian locale
 c: 25.12.2005
-m: 31.03.2015 */
+m: 16.03.2018 */
 
 $ged["months"]="jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec,";
 $ged["operunknown"]="E-помилка в операцiї: невiдомий тип операцiї";
@@ -30,14 +30,14 @@ $ged["[C34]"]="Бики";
 $ged["[C35]"]="Тварини з невизначеним статусом";
 $ged["[C36]"]="Тварини, у яких вже має бути перший отел";
 
-$ged['young']="телиця";
-$ged['insem?']="можна запліднювати";
-$ged['insem+']="вже запліднено";
-$ged['rectal?']="можно проводити ректальні";
-$ged['fault_insem']="НЕТІЛЬНА";
-$ged['pregnant']="тільна";
-$ged['abort+']="АБОРТ";
-$ged['abort-']="отелилась";
+$ged["young"]="телиця";
+$ged["insem?"]="можна запліднювати";
+$ged["insem+"]="вже запліднено";
+$ged["rectal?"]="можно проводити ректальні";
+$ged["fault_insem"]="НЕТІЛЬНА";
+$ged["pregnant"]="тільна";
+$ged["abort+"]="АБОРТ";
+$ged["abort-"]="отелилась";
 
 $ged["A3.0"]="загалом";
 $ged["A3.1"]="вранiшнє";
@@ -208,39 +208,39 @@ $ged["milk_at_per."]="надiй за";
 $ged["1day,2days,5days,.."]="1 день, 2 днi...";
 $ged["stats"]="статистика";
 
-$ged['Days_Before_Insem~']="До запл.";
-$ged['Days_Before_Insem']="Днів до запліднення";
-$ged['Insem_Date~']="Запл.";
-$ged['Insem_Date']="Дата запліднення";
-$ged['Days_Before_Rectal~']="До рект.";
-$ged['Days_Before_Rectal']="Днів до ректальних";
-$ged['Rectal_Date~']="Рект.";
-$ged['Rectal_Date']="Дата ректальних";
-$ged['Days_Before_Prep_Zapusk~']="До п. зап.";
-$ged['Days_Before_Prep_Zapusk']="Днів до підготовки запуску";
-$ged['Prep_Zapusk_Date~']="Підг. зап.";
-$ged['Prep_Zapusk_Date']="Дата підготовки запуску";
-$ged['Days_Before_Zapusk~']="До зап.";
-$ged['Days_Before_Zapusk']="Днів до запуску";
-$ged['Zapusk_Date~']="Запуск";
-$ged['Zapusk_Date']="Дата запуску";
-$ged['Days_Before_Abort~']="До отел.";
-$ged['Days_Before_Abort']="Днів до отелу";
-$ged['Abort_Date~']="Отел.";
-$ged['Abort_Date']="Дата отелу";
-$ged['Today_Milk~']="Сьог.";
-$ged['Today_Milk']="Надій за сьогодні, кг";
-$ged['Yesterday_Milk~']="Вч.";
-$ged['Yesterday_Milk']="Надій за вчора, кг";
-$ged['Average_7~']="Срд. 7";
-$ged['Average_7']="Середній надій за 7 днів, кг";
-$ged['Phis._State']="Фізіологічний стан";
-$ged['Lact_Days~']="Дн. л.";
-$ged['Lact_Days']="Днів лактації";
-$ged['Last_Data']="Останні: запл.; аборт/отел; ...";
+$ged["Days_Before_Insem~"]="До запл.";
+$ged["Days_Before_Insem"]="Днів до запліднення";
+$ged["Insem_Date~"]="Запл.";
+$ged["Insem_Date"]="Дата запліднення";
+$ged["Days_Before_Rectal~"]="До рект.";
+$ged["Days_Before_Rectal"]="Днів до ректальних";
+$ged["Rectal_Date~"]="Рект.";
+$ged["Rectal_Date"]="Дата ректальних";
+$ged["Days_Before_Prep_Zapusk~"]="До п. зап.";
+$ged["Days_Before_Prep_Zapusk"]="Днів до підготовки запуску";
+$ged["Prep_Zapusk_Date~"]="Підг. зап.";
+$ged["Prep_Zapusk_Date"]="Дата підготовки запуску";
+$ged["Days_Before_Zapusk~"]="До зап.";
+$ged["Days_Before_Zapusk"]="Днів до запуску";
+$ged["Zapusk_Date~"]="Запуск";
+$ged["Zapusk_Date"]="Дата запуску";
+$ged["Days_Before_Abort~"]="До отел.";
+$ged["Days_Before_Abort"]="Днів до отелу";
+$ged["Abort_Date~"]="Отел.";
+$ged["Abort_Date"]="Дата отелу";
+$ged["Today_Milk~"]="Сьог.";
+$ged["Today_Milk"]="Надій за сьогодні, кг";
+$ged["Yesterday_Milk~"]="Вч.";
+$ged["Yesterday_Milk"]="Надій за вчора, кг";
+$ged["Average_7~"]="Срд. 7";
+$ged["Average_7"]="Середній надій за 7 днів, кг";
+$ged["Phis._State"]="Фізіологічний стан";
+$ged["Lact_Days~"]="Дн. л.";
+$ged["Lact_Days"]="Днів лактації";
+$ged["Last_Data"]="Останні: запл.; аборт/отел; ...";
 
-$ged['o_mlk']="доїння";
-$ged['o_ctrl_mlk']="контр.доїння";
+$ged["o_mlk"]="доїння";
+$ged["o_ctrl_mlk"]="контр.доїння";
 
 $ged["A4.F0000"]="невiдоме";
 $ged["A4.F0001"]="отелення";

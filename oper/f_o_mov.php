@@ -2,10 +2,10 @@
 /* DF_2: oper/f_o_mov.php
 oper ---64 (107) [moving & death]
 c: 09.01.2006
-m: 13.03.2018 */
+m: 22.03.2018 */
 
 $dbt_ext="_o";//DONT MOVE THIS BELOW!
-$_list_height=$_list_height+80;
+$_list_height=$_list_height+90;
 
 if ( strlen( $key )>8 ) {
 	$dp_id=$_GET["row14"];
@@ -29,12 +29,6 @@ if ( $add_oper!="" ) {
 	mysql_query( "DROP TABLE IF EXISTS $tmpdbt" );
 	include( "../oper/f_rcwsf1.php" );
 } else {
-	$tdw[2]="60px";
-	$tdw[3]="60px";
-	$tdw[4]="170px";
-	$tdw[5]="100px";
-	$tdw[20]="100px";
-	$tdw[21]="170px";
 //	$tdw[1]="10px";
 //	if ( $div_hide!=1 ) {
 //		if ( count( $cows_arr )>99 ) $tdw[1]="20px";
@@ -49,12 +43,12 @@ if ( $add_oper!="" ) {
 	echo "
 </div>";
 	if ( $div_hide!=1 ) echo "
-<div class='mk' id='rep_head_div' style='border:0; $theadS0;'>";
+<div class='mk' id='rep_thead_div' style='border:0; $theadS0;'>";
 	else if ( $nosession==1 ) echo "<br><br>";
 	echo "
 	<table id='OPER_TABLE' style='width:100%;'>
 	<thead id='rep_thead'>
-	<tr $cjust style='height:27px;'>";
+	<tr>";
 	if ( $div_hide!=1 ) {
 //		echo "
 //		<th width='".$tdw[1]."'>&nbsp;</th>";
@@ -68,12 +62,12 @@ if ( $add_oper!="" ) {
 		<th width='".$tdw[20]."'>".$th[20]."</th>
 		<th width='".$tdw[21]."'>".$th[21]."</th>
 	</tr>
-	</tbody>
-	<tbody id='rep_tbody'>
-	<tr style='height:27px;'>";
+	</thead>
+	<tbody id='rep_thead'>
+	<tr>";
 	if ( $div_hide!=1 ) {
 //		echo "
-//		<td width='".$tdw[1]."'>&nbsp;</td>";
+//		<td>&nbsp;</td>";
 		echo "
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
@@ -111,14 +105,14 @@ if ( $add_oper!="" ) {
 //				echo "
 //		<td $cjust width='".$tdw[1]."'>".$j."</td>
 				echo "
-		<td title='".StrCutLen1( $row[3], 59, $contentCharset )."'>".StrCutLen1( $row[3], 7, $contentCharset )."</td>
+		<td title='".StrCutLen1( $row[3], 59, $contentCharset )."'>&nbsp;".StrCutLen1( $row[3], 7, $contentCharset )."</td>
 		<td title='".$cownum_div.$row[1].$cownum_div1."'><b>".$cownum_div.StrCutLen1( $row[1], 9, $contentCharset ).$cownum_div1."</b></td>
-		<td title='".StrCutLen1( $row[2], 59, $contentCharset ) ."'>".StrCutLen1( $row[2], 11, $contentCharset )."</td>";
+		<td title='".StrCutLen1( $row[2], 59, $contentCharset ) ."'>&nbsp;".StrCutLen1( $row[2], 11, $contentCharset )."</td>";
 			}		
 			if ( $varsession!=1 ) echo "
-		<td><input class='txt txt_h0' style='$disS0; width:100%;' type='text' value='$dp_name' onkeypress='return false;'></td>
-		<td><input class='txt txt_h0' style='$disS1; width:100%;' type='text' value='$co' onkeypress='return false;'></td>
-		<td><input class='txt txt_h0' style='$disS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></td>
+		<td>&nbsp;REMOVE_THIS $dp_name</td>
+		<td>&nbsp;REMOVE_THIS $co</td>
+		<td>&nbsp;REMOVE_THIS $dmY</td>
 	</tr>
 	<tr>";
 			if ( $div_hide!=1 ) {
@@ -138,7 +132,7 @@ if ( $add_oper!="" ) {
 			}
 			echo "</select></td>
 		<td><input class='txt txt_h0' id='tco".$i."' name='co_[".$i."]' maxlength='255' style='$inpS1; width:100%;' type='text' value='$co'></td>
-		<td><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;' href=''><input class='txt txt_h0' id='date1".$i."' name='dates_[".$i."]' size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
+		<td><a onclick='cal_u1( event, 0, 0 ); cal_load1( sender_=".$i." ); return false;'><input class='txt txt_h0' id='date1".$i."' name='dates_[".$i."]' readonly size='8' style='$inpS0; width:100%;' type='text' value='$dmY' onkeypress='return false;'></a></td>
 	</tr>";
 		}
 	}
@@ -146,7 +140,7 @@ if ( $add_oper!="" ) {
 	</tbody>
 	</table>";
 	if ( $div_hide!=1 ) echo "
-</div>";
+</div><br>";
 	echo "
 </form>";
 }

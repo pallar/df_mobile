@@ -2,7 +2,7 @@
 /* DF_ajs: _view/f__pe_.php
 form: set period
 c: 01.02.2006
-m: 27.09.2017 */
+m: 16.03.2018 */
 
 $skip_W3C_DOCTYPE=1;
 
@@ -16,12 +16,12 @@ include( "../locales/$lang/f_sel._$lang" );
 include( "../dflib/f_func.php" );
 
 require_once "../dflib/ajax/jshttprq.php";
-$JsHttpRequest=& new JsHttpRequest( $contentCharset );
+$JsHttpRequest=new JsHttpRequest( $contentCharset );
 $event=$_REQUEST["event"];
 
 ob_start();
 
-switch ( $event ) {
+switch( $event ) {
 	case "":
 		$init=$_REQUEST["init"]*1;
 		if ( $init==1 ) {
@@ -54,7 +54,7 @@ switch ( $event ) {
 		<table width='100%'>
 		<tr height='13px'><td></td></tr>
 		<tr>
-			<td style='color:#666666'>
+			<td style='color:#666666;'>
 				<select class='sel sel_h0' id='per_d1' style='width:43px;' onchange='Per_d1();'><option value='1'>1</option></select>";
 Date_MonthsList( "<select class='sel sel_h0' id='per_m1' style='width:140px;' onclick='Per_m1();' onchange='Per_m1(); Per_d1list();'>" );
 Date_YearsList( "<select class='sel sel_h0' id='per_y1' style='width:60px;' onclick='Per_y1();' onchange='Per_y1(); Per_d1list();'>" );
